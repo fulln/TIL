@@ -48,8 +48,8 @@ def build_database(repo_path):
         }
         record.update(all_times[path])
         table.insert(record)
-    if "til_fts" not in db.table_names():
-        table.enable_fts(["title", "body"])
+   # if "til_fts" not in db.table_names():
+   #     table.enable_fts(["title", "body"])
 
 
 if __name__ == "__main__":
