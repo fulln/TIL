@@ -18,7 +18,10 @@ if __name__ == "__main__":
         by_topic.setdefault(row["topic"], []).append(row)
     index = ["<!-- index starts -->"]
     for topic, rows in by_topic.items():
-        index.append("## {}\n".format(topic))
+        sharp = '##'
+        for i in range topic:
+            index.append("{} {}\n".format(sharp,topic))
+            sharp = sharp +'#'
         for row in rows:
             index.append(
                 "* [{title}]({url}) - {date}".format(
