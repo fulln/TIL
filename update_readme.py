@@ -19,8 +19,8 @@ if __name__ == "__main__":
     index = ["<!-- index starts -->"]
     for topic, rows in by_topic.items():
         sharp = '##'
-        for i in range topic:
-            index.append("{} {}\n".format(sharp,topic))
+        for i in range len(topic):
+            index.append("{} {}\n".format(sharp,topic[i]))
             sharp = sharp +'#'
         for row in rows:
             index.append(
