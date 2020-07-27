@@ -56,7 +56,7 @@ def build_database(repo_path):
         url = "https://github.com/fulln/TIL/blob/master/{}".format(path)
         record = {
             "path": path.replace("/", "_"),
-            "topic": path.split("/"),
+            "topic": path.split("/")[:-1],
             "title": title,
             "url": url,
             "body": body,

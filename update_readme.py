@@ -21,7 +21,7 @@ if __name__ == "__main__":
     for topic, rows in by_topic.items():
         sharp = '##'
         topic = json.loads(topic)
-        for i in range(len(topic)):
+        for i in range(len(topic) - 1):
             index.append("{} {}\n".format(sharp,topic[i]))
             sharp = sharp +'#'
         for row in rows:
