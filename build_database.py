@@ -31,8 +31,8 @@ def created_changed_times(repo_path, ref="master"):
 
 def build_database(repo_path):
     all_times = created_changed_times(repo_path)
-    db = sqlite_utils.Database(repo_path + "/til.db")
-    table = db.table("til", pk="path")
+    db = sqlite_utils.Database(repo_path / "til.db")
+    table = db.table("tild", pk="path")
     for filepath in root.glob("*/*.md"):
         fp = filepath.open()
         title = fp.readline().lstrip("#").strip()
@@ -48,6 +48,7 @@ def build_database(repo_path):
         }
         record.update(all_times[path])
         table.insert(record)
+   print("current get db counts: "+table.count)     
    # if "til_fts" not in db.table_names():
    #     table.enable_fts(["title", "body"])
 
