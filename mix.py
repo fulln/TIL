@@ -54,10 +54,9 @@ COUNT_TEMPLATE = "<!-- count starts -->{}<!-- count ends -->"
 
 if __name__ == "__main__":
     build_list(root)   
-    db = sqlite_utils.Database(root / "til.db")
     by_topic = {}
-    for row in db["til"].rows_where(order_by="created_utc"):
-        by_topic.setdefault(row["topic"], []).append(row)
+    for i in len(table):
+        by_topic.setdefault(table[i]["topic"], []).append(table[i])
     index = ["<!-- index starts -->"]
     for topic, rows in by_topic.items():
         sharp = '##'
@@ -79,8 +78,7 @@ if __name__ == "__main__":
         index_txt = "\n".join(index).strip()
         readme_contents = readme.open().read()
         rewritten = index_re.sub(index_txt, readme_contents)
-        table = db.table("til", pk="path")
-        rewritten = count_re.sub(COUNT_TEMPLATE.format(table.count), rewritten)
+        rewritten = count_re.sub(len(table), rewritten)
         readme.open("w").write(rewritten)
     else:
         print("\n".join(index))if __name__ == "__main__":
