@@ -16,11 +16,11 @@ if __name__ == "__main__":
     db = sqlite_utils.Database(root / "til.db")
     by_topic = {}
     for row in db["til"].rows_where(order_by="created_utc"):
-        by_topic.setdefault(row["topic"], []).append(row)
+        by_topic.setdefault(".".join(row["topic"]), []).append(row)
     index = ["<!-- index starts -->"]
     for topic, rows in by_topic.items():
         sharp = '##'
-        topic = json.loads(topic)
+        topic = topic.split(".")
         for i in range(len(topic) - 1):
             index.append("{} {}\n".format(sharp,topic[i]))
             sharp = sharp +'#'
