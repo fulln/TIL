@@ -1,11 +1,10 @@
 from datetime import timezone
 import git
 import pathlib
-import sqlite_utils
-
 
 root = pathlib.Path(__file__).parent.resolve()
 
+table = []
 
 def created_changed_times(repo_path, ref="master"):
     created_changed_times = {}
@@ -29,10 +28,8 @@ def created_changed_times(repo_path, ref="master"):
     return created_changed_times
 
 
-def build_database(repo_path):
+def build_list(repo_path):
     all_times = created_changed_times(repo_path)
-    db = sqlite_utils.Database(repo_path + "/til.db")
-    table = db.table("til", pk="path")
     for filepath in root.glob("*/*.md"):
         fp = filepath.open()
         title = fp.readline().lstrip("#").strip()
@@ -47,10 +44,44 @@ def build_database(repo_path):
             "body": body,
         }
         record.update(all_times[path])
-        table.insert(record)
-   # if "til_fts" not in db.table_names():
-   #     table.enable_fts(["title", "body"])
+        table.append(record)
 
+
+index_re = re.compile(r"<!\-\- index starts \-\->.*<!\-\- index ends \-\->", re.DOTALL)
+count_re = re.compile(r"<!\-\- count starts \-\->.*<!\-\- count ends \-\->", re.DOTALL)
+
+COUNT_TEMPLATE = "<!-- count starts -->{}<!-- count ends -->"
 
 if __name__ == "__main__":
-    build_database(root)
+    build_list(root)   
+    db = sqlite_utils.Database(root / "til.db")
+    by_topic = {}
+    for row in db["til"].rows_where(order_by="created_utc"):
+        by_topic.setdefault(row["topic"], []).append(row)
+    index = ["<!-- index starts -->"]
+    for topic, rows in by_topic.items():
+        sharp = '##'
+        for i in range(len(topic)):
+            index.append("{} {}\n".format(sharp,topic[i]))
+            sharp = sharp +'#'
+        for row in rows:
+            index.append(
+                "* [{title}]({url}) - {date}".format(
+                    date=row["created"].split("T")[0], **row
+                )
+            )
+        index.append("")
+    if index[-1] == "":
+        index.pop()
+    index.append("<!-- index ends -->")
+    if "--rewrite" in sys.argv:
+        readme = root / "README.md"
+        index_txt = "\n".join(index).strip()
+        readme_contents = readme.open().read()
+        rewritten = index_re.sub(index_txt, readme_contents)
+        table = db.table("til", pk="path")
+        rewritten = count_re.sub(COUNT_TEMPLATE.format(table.count), rewritten)
+        readme.open("w").write(rewritten)
+    else:
+        print("\n".join(index))if __name__ == "__main__":
+    

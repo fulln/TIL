@@ -12,7 +12,7 @@ count_re = re.compile(r"<!\-\- count starts \-\->.*<!\-\- count ends \-\->", re.
 COUNT_TEMPLATE = "<!-- count starts -->{}<!-- count ends -->"
 
 if __name__ == "__main__":
-    db = sqlite_utils.Database(root / "til.db")
+    db = sqlite_utils.Database(root + "/til.db")
     by_topic = {}
     for row in db["til"].rows_where(order_by="created_utc"):
         by_topic.setdefault(row["topic"], []).append(row)
@@ -33,7 +33,7 @@ if __name__ == "__main__":
         index.pop()
     index.append("<!-- index ends -->")
     if "--rewrite" in sys.argv:
-        readme = root / "README.md"
+        readme = root + "/README.md"
         index_txt = "\n".join(index).strip()
         readme_contents = readme.open().read()
         rewritten = index_re.sub(index_txt, readme_contents)
