@@ -3,6 +3,7 @@ import pathlib
 import sqlite_utils
 import sys
 import re
+import json
 
 root = pathlib.Path(__file__).parent.resolve()
 
@@ -19,6 +20,7 @@ if __name__ == "__main__":
     index = ["<!-- index starts -->"]
     for topic, rows in by_topic.items():
         sharp = '##'
+        topic = json.loads(topic)
         for i in range(len(topic)):
             index.append("{} {}\n".format(sharp,topic[i]))
             sharp = sharp +'#'
