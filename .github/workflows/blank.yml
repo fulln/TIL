@@ -43,7 +43,7 @@ jobs:
       run: |-
         python update_readme.py --rewrite
     - name: Update TOC
-      run: npx markdown-toc README.md
+      run: npx markdown-toc README.md -i
     - name: Commit and push if README changed
       run: |-
         git diff
