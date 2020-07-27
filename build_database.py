@@ -48,6 +48,21 @@ def build_database(repo_path):
         }
         record.update(all_times[path])
         table.insert(record)
+    for filepath in root.glob("*/*.md"):
+        fp = filepath.open()
+        title = fp.readline().lstrip("#").strip()
+        body = fp.read().strip()
+        path = str(filepath.relative_to(root))
+        url = "https://github.com/fulln/TIL/blob/master/{}".format(path)
+        record = {
+            "path": path.replace("/", "_"),
+            "topic": path.split("/"),
+            "title": title,
+            "url": url,
+            "body": body,
+        }
+        record.update(all_times[path])
+        table.insert(record)    
     print("current get db counts is: "+table.count)
    # if "til_fts" not in db.table_names():
    #     table.enable_fts(["title", "body"])
