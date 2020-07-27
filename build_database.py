@@ -48,7 +48,7 @@ def build_database(repo_path):
         }
         record.update(all_times[path])
         table.insert(record)
-    print("current get db counts is: "+table.counts)
+    print("current get db counts is: "+table.count)
    # if "til_fts" not in db.table_names():
    #     table.enable_fts(["title", "body"])
 
