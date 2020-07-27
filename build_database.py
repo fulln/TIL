@@ -31,7 +31,7 @@ def created_changed_times(repo_path, ref="master"):
 
 def build_database(repo_path):
     all_times = created_changed_times(repo_path)
-    db = sqlite_utils.Database(repo_path / "til.db")
+    db = sqlite_utils.Database(repo_path / "tild.db")
     table = db.table("tild", pk="path")
     for filepath in root.glob("*/*.md"):
         fp = filepath.open()
