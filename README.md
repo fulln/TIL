@@ -3,6 +3,10 @@
 today i learn
 
 <!-- toc -->
+
+- [leetcoded](#leetcoded)
+  * [easy](#easy)
+
 <!-- tocstop -->
 
 ---
