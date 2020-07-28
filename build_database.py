@@ -16,9 +16,12 @@ def created_changed_times(repo_path, ref="master"):
         dt = commit.committed_datetime
         affected_files = list(commit.stats.files.keys())
         for filepath in affected_files:
-            patt = re.compile(r'=>(.*?)}', re.S)  #最小匹配
-            new_value = re.findall(patt,filepath)
-            if len(new_value) != 0:
+         #  patt = re.compile(r'=>(.*?)}', re.S)  #最小匹配
+         #  new_value = re.findall(patt,filepath)
+         #    if len(new_value) != 0:
+            if '=>' in filepath:
+                patt = re.compile(r'=>(.*?)}', re.S)  #最小匹配
+                new_value = re.findall(patt,filepath)
                 filepath = re.sub('{(.*?)}',new_value[0].replace(' ', ''),filepath,1)
             if '=>' in filepath:
                 patt = re.compile(r'=>(.*?)$', re.S)  #最小匹配
