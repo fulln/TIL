@@ -16,8 +16,6 @@ def created_changed_times(repo_path, ref="master"):
         affected_files = list(commit.stats.files.keys())
         for filepath in affected_files:                        
             if filepath not in created_changed_times:                
-                if '=>' in filepath :
-                    filepath = 'leetcode'
                 created_changed_times[filepath] = {
                     "created": dt.isoformat(),
                     "created_utc": dt.astimezone(timezone.utc).isoformat(),
