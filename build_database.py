@@ -30,6 +30,7 @@ def created_changed_times(repo_path, ref="master"):
                     "updated_utc": dt.astimezone(timezone.utc).isoformat(),
                 }
             )
+            print(filepath)
     return created_changed_times
 
 def insert_table(all_times,filepath,table):
