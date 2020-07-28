@@ -28,41 +28,33 @@ def created_changed_times(repo_path, ref="master"):
             )
     return created_changed_times
 
+def insert_table(all_times,filepath,table):
+    fp = filepath.open()
+    title = fp.readline().lstrip("#").strip()
+    body = fp.read().strip()
+    path = str(filepath.relative_to(root))
+    url = "https://github.com/fulln/TIL/blob/master/{}".format(path)
+    record = {
+        "path": path.replace("/", "_"),
+        "topic": path.split("/")[:-1],
+        "title": title,
+        "url": url,
+        "body": body,
+    }
+    record.update(all_times[path])
+    table.insert(record)
+
 
 def build_database(repo_path):
     all_times = created_changed_times(repo_path)
     db = sqlite_utils.Database(repo_path / "til.db")
     table = db.table("til", pk="path")
-    for filepath in root.glob("*/*/*.md"):
-        fp = filepath.open()
-        title = fp.readline().lstrip("#").strip()
-        body = fp.read().strip()
-        path = str(filepath.relative_to(root))
-        url = "https://github.com/fulln/TIL/blob/master/{}".format(path)
-        record = {
-            "path": path.replace("/", "_"),
-            "topic": path.split("/")[:-1],
-            "title": title,
-            "url": url,
-            "body": body,
-        }
-        record.update(all_times[path])
-        table.insert(record)
-    for filepath in root.glob("*/*.md"):
-        fp = filepath.open()
-        title = fp.readline().lstrip("#").strip()
-        body = fp.read().strip()
-        path = str(filepath.relative_to(root))
-        url = "https://github.com/fulln/TIL/blob/master/{}".format(path)
-        record = {
-            "path": path.replace("/", "_"),
-            "topic": path.split("/")[:-1],
-            "title": title,
-            "url": url,
-            "body": body,
-        }
-        record.update(all_times[path])
-        table.insert(record)    
+    path = "*.md"
+    for i in range(1,5):        
+        path = "*/"+path
+        for filepath in root.glob(path):
+            insert_table(all_times,filepath,table)
+        
    # if "til_fts" not in db.table_names():
    #     table.enable_fts(["title", "body"])
 
