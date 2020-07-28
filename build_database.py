@@ -15,10 +15,7 @@ def created_changed_times(repo_path, ref="master"):
     for commit in commits:
         dt = commit.committed_datetime
         affected_files = list(commit.stats.files.keys())
-        for filepath in affected_files:
-         #  patt = re.compile(r'=>(.*?)}', re.S)  #最小匹配
-         #  new_value = re.findall(patt,filepath)
-         #    if len(new_value) != 0:
+        for filepath in affected_files:        
             if '=>' in filepath:
                 patt = re.compile(r'=>(.*?)}', re.S)  #最小匹配
                 new_value = re.findall(patt,filepath)
@@ -38,8 +35,7 @@ def created_changed_times(repo_path, ref="master"):
                     "updated": dt.isoformat(),
                     "updated_utc": dt.astimezone(timezone.utc).isoformat(),
                 }
-            )
-            print(filepath)
+            )           
     return created_changed_times
 
 def insert_table(all_times,filepath,table):
