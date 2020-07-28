@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*-
 from datetime import timezone
 import git
 import pathlib
@@ -19,6 +20,7 @@ def created_changed_times(repo_path, ref="master"):
             new_value = re.findall(patt,filepath)
             if len(new_value) != 0:
                 filepath = re.sub('{(.*?)}',new_value[0].replace(' ', ''),filepath,1)
+                filepath = eval(filepath)
             if filepath not in created_changed_times:                
                 created_changed_times[filepath] = {
                     "created": dt.isoformat(),
