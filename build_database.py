@@ -22,7 +22,7 @@ def created_changed_times(repo_path, ref="master"):
             if '=>' in filepath:
                 patt = re.compile(r'=>(.*?)}', re.S)  #最小匹配
                 new_value = re.findall(patt,filepath)
-                if len(new_value != 0:
+                if len(new_value) != 0:
                     filepath = re.sub('{(.*?)}',new_value[0].replace(' ', ''),filepath,1)
             if '=>' in filepath:
                 patt = re.compile(r'=>(.*?)$', re.S)  #最小匹配
