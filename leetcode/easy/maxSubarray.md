@@ -19,26 +19,21 @@
 
 //leetcode submit region begin(Prohibit modification and deletion)
 func maxSubArray(nums []int) int {
-max := nums[0]
-	var maxSum = max
+	var maxSum = nums[0]
 	var sum int
 	for i := range nums {
-		if max < nums[i] {
-			max = nums[i]
-			if sum > 0 {
-				sum = sum + max
-			} else {
-				sum = max
-			}
-			maxSum = sum
-		} else {
-			sum = sum + nums[i]
-			if maxSum < sum {
-				maxSum = sum
-			}
+		if sum > 0{
+			sum += nums[i]
+		}else {
+			sum = nums[i]
 		}
 
+		if maxSum < sum {
+			maxSum = sum
+		}
 	}
+
+
 	return maxSum
 }
 //leetcode submit region end(Prohibit modification and deletion)
