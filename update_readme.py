@@ -4,6 +4,7 @@ import sqlite_utils
 import sys
 import re
 import json
+import os
 
 root = pathlib.Path(__file__).parent.resolve()
 
