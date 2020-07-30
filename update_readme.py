@@ -15,7 +15,7 @@ COUNT_TEMPLATE = "<!-- count starts -->{}<!-- count ends -->"
 
 def download_to_json(context):
     # 准备工作：创建存放json文件夹
-    path = "menu.json"
+    path = root / "menu.json"
     '''
     用于JSON文件下载
     '''
