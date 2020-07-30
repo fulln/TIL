@@ -12,6 +12,20 @@ count_re = re.compile(r"<!\-\- count starts \-\->.*<!\-\- count ends \-\->", re.
 
 COUNT_TEMPLATE = "<!-- count starts -->{}<!-- count ends -->"
 
+def download_to_json(topic):
+    # 准备工作：创建存放json文件夹
+    path = "menu.json"
+    '''
+    用于JSON文件下载
+    '''
+    if not os.path.exists(path):
+        os.system(r"touch {}".format(path))  # 调用系统命令行来创建文件
+    with open(path, 'w', encoding='utf-8') as result:
+        json.dump(context, result, ensure_ascii=False)
+
+
+
+
 if __name__ == "__main__":
     db = sqlite_utils.Database(root / "til.db")
     by_topic = {}
@@ -31,6 +45,7 @@ if __name__ == "__main__":
                 )
             )
         index.append("")
+    download_to_json(by_topic)    
     if index[-1] == "":
         index.pop()
     index.append("<!-- index ends -->")
