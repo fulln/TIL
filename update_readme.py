@@ -28,6 +28,7 @@ if __name__ == "__main__":
     for row in db["til"].rows_where(order_by="created_utc"):
         by_topic.setdefault(str(row["topic"]), []).append(row)
     index = ["<!-- index starts -->"]
+    zs_json= {}
     for topic, rows in by_topic.items():
         sharp = '##'
         topic = json.loads(topic)
@@ -35,13 +36,14 @@ if __name__ == "__main__":
             index.append("{} {}\n".format(sharp,topic[i]))
             sharp = sharp +'#'
         for row in rows:
-            index.append(
-                "* [{title}]({url}) - {date}".format(
+            line = "* [{title}]({url}) - {date}".format(
                     date=row["created"].split("T")[0], **row
                 )
-            )
+            zs_json.setdefault("top",[]).append(line)
+            if len(zs_json['top'])  == 5:
+                download_to_json(zs_json)
+            index.append(line)
         index.append("")
-    download_to_json(by_topic)    
     if index[-1] == "":
         index.pop()
     index.append("<!-- index ends -->")
