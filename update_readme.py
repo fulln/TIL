@@ -40,10 +40,9 @@ if __name__ == "__main__":
                     date=row["created"].split("T")[0], **row
                 )
             zs_json.setdefault("top",[]).append(line)
-            if len(zs_json['top'])  == 5:
-                download_to_json(zs_json)
             index.append(line)
         index.append("")
+    download_to_json(zs_json['topic'][-5:])    
     if index[-1] == "":
         index.pop()
     index.append("<!-- index ends -->")
