@@ -42,7 +42,7 @@ if __name__ == "__main__":
             zs_json.setdefault("top",[]).append(line)
             index.append(line)
         index.append("")
-    download_to_json(zs_json['topic'][-5:])    
+    download_to_json(zs_json['top'][-5:])    
     if index[-1] == "":
         index.pop()
     index.append("<!-- index ends -->")
