@@ -7,11 +7,12 @@ today i learn
 - [leetcode](#leetcode)
   * [easy](#easy)
 - [vim](#vim)
+- [react](#react)
 
 <!-- tocstop -->
 
 ---
-there is total <!-- count starts -->14<!-- count ends --> TILs . keep going
+there is total <!-- count starts -->15<!-- count ends --> TILs . keep going
 
 ---
 
@@ -37,6 +38,10 @@ there is total <!-- count starts -->14<!-- count ends --> TILs . keep going
 ## vim
 
 * [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
+
+## react
+
+* [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
 <!-- index ends -->
 
 
