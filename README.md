@@ -12,7 +12,7 @@ today i learn
 <!-- tocstop -->
 
 ---
-there is total <!-- count starts -->17<!-- count ends --> TILs . keep going
+there is total <!-- count starts -->18<!-- count ends --> TILs . keep going
 
 ---
 
@@ -36,6 +36,7 @@ there is total <!-- count starts -->17<!-- count ends --> TILs . keep going
 * [maxSubArray-最大子序和](https://github.com/fulln/TIL/blob/master/leetcode/easy/maxSubarray.md) - 2020-07-29
 * [copyAndArray 外观数列](https://github.com/fulln/TIL/blob/master/leetcode/easy/copyAndArray.md) - 2020-07-31
 * [](https://github.com/fulln/TIL/blob/master/leetcode/easy/lengthOfLastWord.md) - 2020-08-01
+* [plus_one_加一](https://github.com/fulln/TIL/blob/master/leetcode/easy/plus_one.md) - 2020-08-03
 
 ## vim
 
