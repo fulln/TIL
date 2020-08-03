@@ -21,17 +21,40 @@
 
 //leetcode submit region begin(Prohibit modification and deletion)
 func lengthOfLastWord(s string) int {
-	//分治
-	index := len(s) /2
-	for{
-		 if string(s[index]) == ""{
-			index = index + index/2
+	//暴力破解
+	end := len(s) - 1
+	begin := end
+
+	for {
+		if begin <0 {
+			return end - begin
 		}
-
+		if string(s[begin]) == " " {
+			if len(s) <= 1 {
+				return 0
+			} else {
+				if begin != end {
+					return end - begin
+				}
+			}
+		}
+		if string(s[end]) == " " {
+			if len(s) <= 1 {
+				return 0
+			} else {
+				begin--
+				end--
+			}
+		} else {
+			if len(s) <= 1 {
+				return len(s)
+			} else {
+				begin--
+			}
+		}
 	}
+}	
 
-	return 0
-}
 func main() {
 	lengthOfLastWord("Hello World")
 }
