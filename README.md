@@ -8,11 +8,12 @@ today i learn
   * [easy](#easy)
 - [vim](#vim)
 - [react](#react)
+- [maven](#maven)
 
 <!-- tocstop -->
 
 ---
-there is total <!-- count starts -->19<!-- count ends --> TILs . keep going
+there is total <!-- count starts -->20<!-- count ends --> TILs . keep going
 
 ---
 
@@ -46,6 +47,10 @@ there is total <!-- count starts -->19<!-- count ends --> TILs . keep going
 ## react
 
 * [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
+
+## maven
+
+* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
 <!-- index ends -->
 
 
