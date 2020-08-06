@@ -9,11 +9,13 @@ today i learn
 - [vim](#vim)
 - [react](#react)
 - [maven](#maven)
+- [java](#java)
+  * [basic](#basic)
 
 <!-- tocstop -->
 
 ---
-there is total <!-- count starts -->20<!-- count ends --> TILs . keep going
+there is total <!-- count starts -->21<!-- count ends --> TILs . keep going
 
 ---
 
@@ -51,6 +53,12 @@ there is total <!-- count starts -->20<!-- count ends --> TILs . keep going
 ## maven
 
 * [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
+
+## java
+
+### basic
+
+* [java为啥会有static main?](https://github.com/fulln/TIL/blob/master/java/basic/staticMain.md) - 2020-08-06
 <!-- index ends -->
 
 
