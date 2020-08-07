@@ -15,7 +15,7 @@ today i learn
 <!-- tocstop -->
 
 ---
-there is total <!-- count starts -->21<!-- count ends --> TILs . keep going
+there is total <!-- count starts -->22<!-- count ends --> TILs . keep going
 
 ---
 
@@ -41,6 +41,7 @@ there is total <!-- count starts -->21<!-- count ends --> TILs . keep going
 * [lengthOfLastWord_最后一个单词](https://github.com/fulln/TIL/blob/master/leetcode/easy/lengthOfLastWord.md) - 2020-08-01
 * [plus_one_加一](https://github.com/fulln/TIL/blob/master/leetcode/easy/plus_one.md) - 2020-08-03
 * [addBrain-2进制计算](https://github.com/fulln/TIL/blob/master/leetcode/easy/addBrain.md) - 2020-08-04
+* [x的平方根](https://github.com/fulln/TIL/blob/master/leetcode/easy/xSqurt.md) - 2020-08-07
 
 ## vim
 
