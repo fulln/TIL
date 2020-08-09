@@ -39,7 +39,7 @@ func climbStairs(n int) int {
 }
 
 func climbStep(step int,n int)int{
-
+ //递归容易超时
 	if step +1 == n{
 		return 1
 	}
@@ -53,11 +53,26 @@ func climbStep(step int,n int)int{
 		return 1
 	}
 
+}
 
+func climbStairs2(n int) int {
+	//后一步的爬法 = 前面2步之和？
+	var first, second = 1, 2
+
+	if n == 1 {
+		return 1
+	}
+	if n == 2 {
+		return 2
+	}
+	for i := 3; i <= n; i++ {
+		first, second = second, first+second
+	}
+	return second
 }
 
 func main() {
-	stairs := climbStairs(3)
+	stairs := climbStairs2(3)
 	print(stairs)
 }
 
