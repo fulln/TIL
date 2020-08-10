@@ -15,7 +15,7 @@ today i learn
 <!-- tocstop -->
 
 ---
-there is total <!-- count starts -->23<!-- count ends --> TILs . keep going
+there is total <!-- count starts -->24<!-- count ends --> TILs . keep going
 
 ---
 
@@ -43,6 +43,7 @@ there is total <!-- count starts -->23<!-- count ends --> TILs . keep going
 * [addBrain-2进制计算](https://github.com/fulln/TIL/blob/master/leetcode/easy/addBrain.md) - 2020-08-04
 * [x的平方根](https://github.com/fulln/TIL/blob/master/leetcode/easy/xSqurt.md) - 2020-08-07
 * [爬楼梯](https://github.com/fulln/TIL/blob/master/leetcode/easy/ClimbStep.md) - 2020-08-08
+* [删除排序链表中的重复元素](https://github.com/fulln/TIL/blob/master/leetcode/easy/deleteDuplicate.md) - 2020-08-10
 
 ## vim
 
