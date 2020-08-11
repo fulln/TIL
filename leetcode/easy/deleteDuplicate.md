@@ -14,6 +14,18 @@
 输出: 1->2->3
 */
 func deleteDuplicates(head *ListNode) *ListNode {
+var tail = &ListNode{}
 
+	tail.Next = head
+
+	for head.Next != nil {
+		if head.Val == head.Next.Val {
+			head.Next = head.Next.Next
+		} else {
+			head = head.Next
+		}
+
+	}
+	return tail.Next
 }
 ```
