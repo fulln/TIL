@@ -19,7 +19,18 @@ nums2 = [2,5,6],       n = 3
 输出: [1,2,2,3,5,6]
 */
 func merge(nums1 []int, m int, nums2 []int, n int)  {
+    
+    
+    nums1 = append(nums1[:m], nums2[:n]... )
 
+    for i:=0 ;i<len(nums1);i++{
+        for j:=0;j< len(nums1) -i -1 ;j++{
+            if nums1[j] > nums1[j+1]{
+                nums1[j],nums1[j+1] = nums1[j+1],nums1[j]
+            }
+        }
+    }
+    
 }
 
 ```
