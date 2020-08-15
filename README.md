@@ -11,11 +11,12 @@ today i learn
 - [maven](#maven)
 - [java](#java)
   * [basic](#basic)
+- [shell](#shell)
 
 <!-- tocstop -->
 
 ---
-there is total <!-- count starts -->28<!-- count ends --> TILs . keep going
+there is total <!-- count starts -->29<!-- count ends --> TILs . keep going
 
 ---
 
@@ -66,6 +67,10 @@ there is total <!-- count starts -->28<!-- count ends --> TILs . keep going
 ### basic
 
 * [java为啥会有static main?](https://github.com/fulln/TIL/blob/master/java/basic/staticMain.md) - 2020-08-06
+
+## shell
+
+* [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
 <!-- index ends -->
 
 
