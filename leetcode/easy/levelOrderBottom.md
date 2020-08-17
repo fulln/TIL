@@ -29,49 +29,27 @@
  * }
  */
 func levelOrderBottom(root *TreeNode) [][]int {
-    var returns = [][]int{}
-    if root ==  nil{
-        return returns
+        res := [][]int{}
+    if root == nil{
+        return res
     }
+    var queue = []*TreeNode{root}
 
-    left := levelOrderBottom(root.Left)
-    right := levelOrderBottom(root.Right)
-    
-    var index  = []int{}
-
-    index =append(index,root.Val)
-
-    returns = append(returns,index)
-
-    if left == nil && right == nil{
-        return returns
-    }
-
-    if left == nil {
-        return append(right,returns...)
-    }
-
-    
-    if right == nil {
-        return append(left,returns...)
-    }
-
-
-    if len(left) >= len(right){
-        for i:=0 ; i <len(left) ;i++{
-            if len(right) <i{
-                left[i] = append(left[i],right[i]...)        
+    for len(queue) > 0 {
+        queueLen := len(queue)
+        res = append([][]int{[]int{}},res...) // 头插当前层遍历结果
+        for queueLen > 0 {
+            queueLen--
+            if queue[0].Left != nil {
+                queue = append(queue, queue[0].Left)
             }
+            if queue[0].Right != nil {
+                queue = append(queue, queue[0].Right)
+            }
+            res[0] = append(res[0], queue[0].Val)
+            queue = queue[1:]
         }
-        return append(left,returns...) 
-    }else{
-        for i:=0 ; i <len(right) ;i++{
-            if len(left) <i{
-                right[i] = append(right[i],left[i]...)
-            }
-        } 
-        return append(right,returns...)
     }
-
+    return res
 }
 ```
