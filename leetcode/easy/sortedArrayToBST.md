@@ -29,8 +29,26 @@
  * }
  */
 func sortedArrayToBST(nums []int) *TreeNode {
-    
+    return sortedArray(nums,0,len(nums) -1)     
+}
+
+func sortedArray(nums []int,left,right int)*TreeNode{
+
+    if left > right{
+        return nil
+    }
+
+    center := left + (right - left)/2
+
+    current := &TreeNode{ Val:nums[center]}
+
+    current.Left= sortedArray(nums,left,center -1)
+
+    current.Right= sortedArray(nums,center+1,right)
+
+    return current
 
 
 }
+
 ```
