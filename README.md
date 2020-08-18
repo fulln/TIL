@@ -16,7 +16,7 @@ today i learn
 <!-- tocstop -->
 
 ---
-there is total <!-- count starts -->31<!-- count ends --> TILs . keep going
+there is total <!-- count starts -->32<!-- count ends --> TILs . keep going
 
 ---
 
@@ -51,6 +51,7 @@ there is total <!-- count starts -->31<!-- count ends --> TILs . keep going
 * [最大深度](https://github.com/fulln/TIL/blob/master/leetcode/easy/maxDeep.md) - 2020-08-14
 * [二叉树的层次遍历II](https://github.com/fulln/TIL/blob/master/leetcode/easy/levelOrderBottom.md) - 2020-08-16
 * [将有序数组转换为二叉搜索树](https://github.com/fulln/TIL/blob/master/leetcode/easy/sortedArrayToBST.md) - 2020-08-17
+* [平衡二叉树](https://github.com/fulln/TIL/blob/master/leetcode/easy/isBalanced.md) - 2020-08-18
 
 ## vim
 
