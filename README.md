@@ -16,7 +16,7 @@ today i learn
 <!-- tocstop -->
 
 ---
-there is total <!-- count starts -->34<!-- count ends --> TILs . keep going
+there is total <!-- count starts -->35<!-- count ends --> TILs . keep going
 
 ---
 
@@ -54,6 +54,7 @@ there is total <!-- count starts -->34<!-- count ends --> TILs . keep going
 * [平衡二叉树](https://github.com/fulln/TIL/blob/master/leetcode/easy/isBalanced.md) - 2020-08-18
 * [最小深度](https://github.com/fulln/TIL/blob/master/leetcode/easy/minDepth.md) - 2020-08-19
 * [换酒问题](https://github.com/fulln/TIL/blob/master/leetcode/easy/numWaterBottles.md) - 2020-08-20
+* [树的所有路径](https://github.com/fulln/TIL/blob/master/leetcode/easy/hashPathSum.md) - 2020-08-20
 
 ## vim
 
