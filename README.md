@@ -16,7 +16,7 @@ today i learn
 <!-- tocstop -->
 
 ---
-there is total <!-- count starts -->38<!-- count ends --> TILs . keep going
+there is total <!-- count starts -->39<!-- count ends --> TILs . keep going
 
 ---
 
@@ -57,6 +57,7 @@ there is total <!-- count starts -->38<!-- count ends --> TILs . keep going
 * [树的所有路径](https://github.com/fulln/TIL/blob/master/leetcode/easy/hashPathSum.md) - 2020-08-20
 * [杨辉三角](https://github.com/fulln/TIL/blob/master/leetcode/easy/yhSquare.md) - 2020-08-21
 * [杨辉三角II](https://github.com/fulln/TIL/blob/master/leetcode/easy/YHgetRow.md) - 2020-08-21
+* [买卖股票的最佳时机](https://github.com/fulln/TIL/blob/master/leetcode/easy/bestSell.md) - 2020-08-22
 
 ## vim
 
