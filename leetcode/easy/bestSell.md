@@ -24,6 +24,25 @@
         
     }
 }
- 
+// 第二种解法
+ func maxProfit(prices []int) int {
+    if prices == nil || len(prices) == 0{
+        return 0
+    }
+
+    max ,minindex := 0,prices[0]
+
+    for from:=0;from <len(prices);  from ++{
+       if max < prices[from] - minindex{
+            max = prices[from] -minindex
+       }   
+       if prices[from] < minindex{
+           minindex = prices[from]
+       }
+    }
+
+    return max 
+
+}
  
 ```
