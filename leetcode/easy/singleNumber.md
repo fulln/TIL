@@ -8,6 +8,7 @@
 
 
 ```go
+//不满足线性复杂度
 func singleNumber(nums []int) int {
     //如何体现只出现了2次
     //1. 设置index 和 current
@@ -23,5 +24,16 @@ func singleNumber(nums []int) int {
          index++
     }
     return nums[0]
+}
+//用了异或 来排除所有重复的值
+//0^a = a
+//a^a = 0
+//所以所有的值异或就是剩下的单独的数字
+func singleNumber2(nums []int) int {
+    single := 0
+    for _, num := range nums {
+        single ^= num
+    }
+    return single
 }
 ```
