@@ -16,7 +16,7 @@ today i learn
 <!-- tocstop -->
 
 ---
-there is total <!-- count starts -->41<!-- count ends --> TILs . keep going
+there is total <!-- count starts -->42<!-- count ends --> TILs . keep going
 
 ---
 
@@ -60,6 +60,7 @@ there is total <!-- count starts -->41<!-- count ends --> TILs . keep going
 * [买卖股票的最佳时机](https://github.com/fulln/TIL/blob/master/leetcode/easy/bestSell.md) - 2020-08-22
 * [买卖股票的最佳时机 II](https://github.com/fulln/TIL/blob/master/leetcode/easy/bestSell2.md) - 2020-08-23
 * [验证回文串](https://github.com/fulln/TIL/blob/master/leetcode/easy/isPalindromeStr.md) - 2020-08-24
+* [只出现一次的数字](https://github.com/fulln/TIL/blob/master/leetcode/easy/singleNumber.md) - 2020-08-25
 
 ## vim
 
