@@ -16,7 +16,7 @@ today i learn
 <!-- tocstop -->
 
 ---
-there is total <!-- count starts -->42<!-- count ends --> TILs . keep going
+there is total <!-- count starts -->43<!-- count ends --> TILs . keep going
 
 ---
 
@@ -80,6 +80,7 @@ there is total <!-- count starts -->42<!-- count ends --> TILs . keep going
 
 * [java为啥会有static main?](https://github.com/fulln/TIL/blob/master/java/basic/staticMain.md) - 2020-08-06
 * [jvm的大图流整理](https://github.com/fulln/TIL/blob/master/java/basic/jvmArrange.md) - 2020-08-22
+* [通过BTrace进行分析](https://github.com/fulln/TIL/blob/master/java/basic/BTrace.md) - 2020-08-26
 
 ## shell
 
