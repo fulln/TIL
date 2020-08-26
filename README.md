@@ -16,7 +16,7 @@ today i learn
 <!-- tocstop -->
 
 ---
-there is total <!-- count starts -->44<!-- count ends --> TILs . keep going
+there is total <!-- count starts -->45<!-- count ends --> TILs . keep going
 
 ---
 
@@ -62,6 +62,7 @@ there is total <!-- count starts -->44<!-- count ends --> TILs . keep going
 * [验证回文串](https://github.com/fulln/TIL/blob/master/leetcode/easy/isPalindromeStr.md) - 2020-08-24
 * [只出现一次的数字](https://github.com/fulln/TIL/blob/master/leetcode/easy/singleNumber.md) - 2020-08-25
 * [环形链表](https://github.com/fulln/TIL/blob/master/leetcode/easy/hasCycleNode.md) - 2020-08-26
+* [最小栈](https://github.com/fulln/TIL/blob/master/leetcode/easy/MinStack.md) - 2020-08-26
 
 ## vim
 
