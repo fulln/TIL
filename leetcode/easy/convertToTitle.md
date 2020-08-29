@@ -20,8 +20,8 @@
 ```go
 func convertToTitle(n int)string {
 
-	rest := n / 26
-	left := n % 26
+	rest := (n-1) / 26
+	left := (n-1) % 26
 
 	var returns string
 
@@ -34,11 +34,8 @@ func convertToTitle(n int)string {
 		}
 	}
 
-	if left == 0 {
-		return returns;
-	}
 
-	c :=rune(64+left)
+	c :=rune(65+left)
 	return returns+string(c)
 }
 ```
