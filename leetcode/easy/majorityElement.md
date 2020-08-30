@@ -26,5 +26,30 @@ func majorityElement(nums []int) int {
 	}
 	return  current
 }
+//摩尔投票法
+//时间最大O(n)
+//空间 O(1)
+func majorityElement(nums []int) int {
+	index := 0
+	curent := 0
+
+	for _,val := range nums{
+
+		if index == 0{
+			curent = val
+
+		}
+
+		if curent == val {
+			index ++
+		}else{
+			index --
+		}
+
+
+	}
+	return curent
+}
+
 
 ```
