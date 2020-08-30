@@ -16,7 +16,7 @@ today i learn
 <!-- tocstop -->
 
 ---
-there is total <!-- count starts -->50<!-- count ends --> TILs . keep going
+there is total <!-- count starts -->51<!-- count ends --> TILs . keep going
 
 ---
 
@@ -68,6 +68,7 @@ there is total <!-- count starts -->50<!-- count ends --> TILs . keep going
 * [两数之和 II - 输入有序数组](https://github.com/fulln/TIL/blob/master/leetcode/easy/twoSum3.md) - 2020-08-28
 * [Excel表列名称](https://github.com/fulln/TIL/blob/master/leetcode/easy/convertToTitle.md) - 2020-08-29
 * [反转字符串中的单词 III](https://github.com/fulln/TIL/blob/master/leetcode/easy/reverseWords.md) - 2020-08-30
+* [多数元素](https://github.com/fulln/TIL/blob/master/leetcode/easy/majorityElement.md) - 2020-08-30
 
 ## vim
 
