@@ -28,7 +28,6 @@ if __name__ == "__main__":
     for row in db["til"].rows_where(order_by="created_utc"):
         by_topic.setdefault(str(row["topic"]), []).append(row)
     index = ["<!-- index starts -->"]
-    zs_json= {}
     for topic, rows in by_topic.items():
         sharp = '##'
         topic = json.loads(topic)
@@ -38,15 +37,22 @@ if __name__ == "__main__":
         for row in rows:
             line = "* [{title}]({url}) - {date}".format(
                     date=row["created"].split("T")[0], **row
-                )
-            zs_json.setdefault("top",[]).append(line)
+                )           
             index.append(line)
-        index.append("")
-    zs_json['top'] = zs_json['top'][-5:]    
-    download_to_json(zs_json)    
+        index.append("")        
     if index[-1] == "":
         index.pop()
     index.append("<!-- index ends -->")
+    
+    
+    zs_json= {}
+    for row in db["til"].rows_where(order_by="created_utc desc limit 5"):
+         nums = "* [{title}]({url}) - {date}".format(
+                    date=row["created"].split("T")[0], **row
+                )
+         zs_json.setdefault("top",[]).append(line)   
+    download_to_json(zs_json)
+    
     if "--rewrite" in sys.argv:
         readme = root / "README.md"
         index_txt = "\n".join(index).strip()
