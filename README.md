@@ -16,7 +16,7 @@ today i learn
 <!-- tocstop -->
 
 ---
-there is total <!-- count starts -->53<!-- count ends --> TILs . keep going
+there is total <!-- count starts -->54<!-- count ends --> TILs . keep going
 
 ---
 
@@ -71,6 +71,7 @@ there is total <!-- count starts -->53<!-- count ends --> TILs . keep going
 * [多数元素](https://github.com/fulln/TIL/blob/master/leetcode/easy/majorityElement.md) - 2020-08-30
 * [钥匙和房间](https://github.com/fulln/TIL/blob/master/leetcode/easy/canVisitAllRooms.md) - 2020-09-01
 * [Excel表列序号](https://github.com/fulln/TIL/blob/master/leetcode/easy/titleToNumber.md) - 2020-09-02
+* [阶乘后的零](https://github.com/fulln/TIL/blob/master/leetcode/easy/trailingZeroes.md) - 2020-09-02
 
 ## vim
 
