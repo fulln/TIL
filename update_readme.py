@@ -47,10 +47,10 @@ if __name__ == "__main__":
     
     zs_json= {}
     for row in db["til"].rows_where(order_by="created_utc desc limit 5"):
-         nums = "* [{title}]({url}) - {date}".format(
+         zs = "* [{title}]({url}) - {date}".format(
                     date=row["created"].split("T")[0], **row
                 )
-         zs_json.setdefault("top",[]).append(line)   
+         zs_json.setdefault("top",[]).append(zs)   
     download_to_json(zs_json)
     
     if "--rewrite" in sys.argv:
