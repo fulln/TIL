@@ -25,30 +25,60 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+//自己写的暴力破解法
 func findContinuousSequence(target int) [][]int {
-    current :=0
+	current :=0
 
-    ints := [][]int{}
+	ints := [][]int{}
 
-    currents := []int{}
+	currents := []int{}
 
-    for i:= 1 ; i<= target ; i++{
+	for i:= 1 ; i<= target ; i++{
 
-        current += i
-        currents = append(currents,i)
+		current += i
+		currents = append(currents,i)
 
-        for current > target{
-            current = current - currents[0]
-            currents = currents[1:]
-            if current ==  target{
-                ints = append(ints,currents)
-                break
-            }
-            if current <  target{
-                break
-            }
-        } 
-    }
-    return ints
+		for {
+			if  current > target{
+				current = current - currents[0]
+				currents = currents[1:]
+			}
+			if current ==  target  {
+				if len(currents) > 1{
+					ints = append(ints,currents)
+				}
+				break
+			}
+			if current <  target{
+				break
+			}
+		}
+	}
+	return ints
+}
+
+// 使用等差数列公式
+
+func findContinuousSequence(target int) [][]int {
+
+	left :=1
+	right :=2
+	var res [][]int
+	for left<right{
+		sum :=(left+right)*(right-left+1)/2
+		if sum==target{
+			var list []int
+			for i:=left;i<=right;i++{
+				list = append(list,i)
+			}
+			res = append(res,list)
+			left++
+		}else if sum<target{
+			right++
+		}else {
+			left++
+		}
+	}
+	return res
 }
 ```
