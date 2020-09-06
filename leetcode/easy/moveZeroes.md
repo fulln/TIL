@@ -1,0 +1,34 @@
+## 移动零
+
+给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。
+
+示例:
+
+输入: [0,1,0,3,12]
+输出: [1,3,12,0,0]
+说明:
+
+必须在原数组上操作，不能拷贝额外的数组。
+尽量减少操作次数。
+
+来源：力扣（LeetCode）
+链接：https://leetcode-cn.com/problems/move-zeroes
+著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+```go
+func moveZeroes(nums []int)  {
+	i := 0
+	lens := len(nums) -1
+	tmp := lens
+	for i< tmp  {
+		if nums[i] == 0{
+			tmp =lens - i
+			for j :=i ;j< tmp;j++{
+				nums[j] =nums[j+1]
+			}
+			nums[tmp] =0
+		}else{
+			i++
+		}
+	}
+}
+```
