@@ -17,18 +17,22 @@
 ```go
 func moveZeroes(nums []int)  {
 	i := 0
+	c:=0
 	lens := len(nums) -1
-	tmp := lens
-	for i< tmp  {
-		if nums[i] == 0{
-			tmp =lens - i
-			for j :=i ;j< tmp;j++{
-				nums[j] =nums[j+1]
-			}
-			nums[tmp] =0
+	for index:= 0;index <= lens;index++  {
+		if nums[index]  != 0 {
+			nums[c] =nums[index]
+			c++
 		}else{
 			i++
 		}
 	}
+
+	for j := len(nums) -i ; j<=lens;j++{
+		nums[j] = 0
+	}
+	print(nums)
+
+
 }
 ```
