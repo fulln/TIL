@@ -16,7 +16,7 @@ today i learn
 <!-- tocstop -->
 
 ---
-there is total <!-- count starts -->59<!-- count ends --> TILs . keep going
+there is total <!-- count starts -->60<!-- count ends --> TILs . keep going
 
 ---
 
@@ -77,6 +77,7 @@ there is total <!-- count starts -->59<!-- count ends --> TILs . keep going
 * [和为s的连续正数序列](https://github.com/fulln/TIL/blob/master/leetcode/easy/findContinuousSequence.md) - 2020-09-05
 * [移动零](https://github.com/fulln/TIL/blob/master/leetcode/easy/moveZeroes.md) - 2020-09-06
 * [合并排序的数组](https://github.com/fulln/TIL/blob/master/leetcode/easy/merge.md) - 2020-09-07
+* [打家劫舍](https://github.com/fulln/TIL/blob/master/leetcode/easy/rob.md) - 2020-09-08
 
 ## vim
 
