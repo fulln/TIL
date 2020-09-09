@@ -15,6 +15,7 @@
 链接：https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 ```go
+//时间复杂度最低
 func findRepeatNumber(nums []int) int {
     maps := map[int]int{}
     for _,val := range(nums){
@@ -26,4 +27,18 @@ func findRepeatNumber(nums []int) int {
     }
     return 0
 }
+//空间复杂度O(1)
+func findRepeatNumber(nums []int) int {
+	for i:=0;i< len(nums);i++{
+		for j:=0; j< len(nums) -1-i;j++{
+			if nums[j] == nums[j+1]{
+				return nums[j]
+			}else if nums[j] > nums[j+1]{
+				nums[j],nums[j+1] = nums[j+1],nums[j]
+			}
+		}
+	}
+	return 0
+}
+
 ```
