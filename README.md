@@ -12,11 +12,13 @@ today i learn
 - [java](#java)
   * [basic](#basic)
 - [shell](#shell)
+- [leetcode](#leetcode-1)
+  * [middle](#middle)
 
 <!-- tocstop -->
 
 ---
-there is total <!-- count starts -->62<!-- count ends --> TILs . keep going
+there is total <!-- count starts -->63<!-- count ends --> TILs . keep going
 
 ---
 
@@ -104,6 +106,12 @@ there is total <!-- count starts -->62<!-- count ends --> TILs . keep going
 ## shell
 
 * [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
+
+## leetcode
+
+### middle
+
+* [钥匙和房间](https://github.com/fulln/TIL/blob/master/leetcode/middle/canVisitAllRooms.md) - 2020-09-11
 <!-- index ends -->
 
 
