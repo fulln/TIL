@@ -16,7 +16,7 @@ today i learn
 <!-- tocstop -->
 
 ---
-there is total <!-- count starts -->61<!-- count ends --> TILs . keep going
+there is total <!-- count starts -->62<!-- count ends --> TILs . keep going
 
 ---
 
@@ -79,6 +79,7 @@ there is total <!-- count starts -->61<!-- count ends --> TILs . keep going
 * [合并排序的数组](https://github.com/fulln/TIL/blob/master/leetcode/easy/merge.md) - 2020-09-07
 * [打家劫舍](https://github.com/fulln/TIL/blob/master/leetcode/easy/rob.md) - 2020-09-08
 * [数组中重复的数字](https://github.com/fulln/TIL/blob/master/leetcode/easy/findRepeatNumber.md) - 2020-09-09
+* [分糖果 II](https://github.com/fulln/TIL/blob/master/leetcode/easy/distributeCandies.md) - 2020-09-10
 
 ## vim
 
