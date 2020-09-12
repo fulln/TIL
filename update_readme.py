@@ -35,6 +35,7 @@ def merge_values(val1, val2):
             return get_huge_dict(val1,val2)
 
 def get_huge_dict(val1, val2):
+    print(val1, val2)
     return {
             key:merge_values(val1.get(key),val2.get(key))
             for key in set(val1).union(val2)
