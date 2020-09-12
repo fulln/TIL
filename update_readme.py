@@ -80,6 +80,7 @@ if __name__ == "__main__":
     index = ["<!-- index starts -->"]
     total_dict = {}
     for topic, rows in by_topic.items():
+        topic = json.loads(topic)
         current_dict = findOrSave(topic, rows)
         total_dict =get_huge_dict(current_dict,total_dict)
         
