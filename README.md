@@ -4,26 +4,22 @@ today i learn
 
 <!-- toc -->
 
-- [[](#)
-  * ["](#)
-    + [j](#j)
-      - [a](#a)
-        * [v](#v)
-    + [v](#v-1)
-      - [i](#i)
-        * [m](#m)
-    + [l](#l)
-      - [e](#e)
-        * [e](#e-1)
-    + [r](#r)
-      - [e](#e-2)
-        * [a](#a-1)
-    + [m](#m-1)
-      - [a](#a-2)
-        * [v](#v-2)
-    + [s](#s)
-      - [h](#h)
-        * [e](#e-3)
+- [java](#java)
+  * [basic](#basic)
+    + [value](#value)
+- [vim](#vim)
+  * [value](#value-1)
+- [shell](#shell)
+  * [value](#value-2)
+- [react](#react)
+  * [value](#value-3)
+- [leetcode](#leetcode)
+  * [easy](#easy)
+    + [value](#value-4)
+  * [middle](#middle)
+    + [value](#value-5)
+- [maven](#maven)
+  * [value](#value-6)
 
 <!-- tocstop -->
 
@@ -33,59 +29,37 @@ there is total <!-- count starts -->63<!-- count ends --> TILs . keep going
 ---
 
 <!-- index starts -->
-## [
+## java
 
-### "
+### basic
 
-#### j
+#### value
 
-##### a
+## vim
 
-###### v
+### value
 
-####### value
+## shell
 
-#### v
+### value
 
-##### i
+## react
 
-###### m
+### value
 
-####### value
+## leetcode
 
-#### l
+### easy
 
-##### e
+#### value
 
-###### e
+### middle
 
-####### value
+#### value
 
-####### value
+## maven
 
-#### r
-
-##### e
-
-###### a
-
-####### value
-
-#### m
-
-##### a
-
-###### v
-
-####### value
-
-#### s
-
-##### h
-
-###### e
-
-####### value
+### value
 
 <!-- index ends -->
 
