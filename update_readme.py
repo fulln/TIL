@@ -78,9 +78,16 @@ if __name__ == "__main__":
     
     index = ["<!-- index starts -->"]
     total_dict = {}
-    for i in db["til"].rows_where(order_by="created_utc"):  
-        row = i["topic"]
-        current_dict = findOrSave(row, i)
+    by_topic = []
+    for row in db["til"].rows_where(order_by="created_utc"):
+        by_topic_dict={}
+        by_topic_dict["topic"] = json.loads(str(row["topic"])
+        by_topic_dict["value"] = row
+        by_topic.append(by_topic_dict)
+
+    for i in by_topic:
+        topics = i["topic"]
+        current_dict = findOrSave(topics, i["value"])
         total_dict =get_huge_dict(current_dict,total_dict)
                            
     glance_line(total_dict,"##",index)
