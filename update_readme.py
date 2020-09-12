@@ -58,39 +58,39 @@ def findOrSave(row,entity):
 def glance_line(total_dict,sharp,line):
     for key, value in total_dict.items():
         if value is None:
-            continue    
-        if type(value).__name__=='dict' :
-            if key == 'value':
+            continue
+        if key == 'value':    
+            if type(value).__name__=='dict' :
                 thisline = "* [{title}]({url}) - {date}".format(
                     date=value["created"].split("T")[0], **value
                 )
-                line.append(thisline)        
-            else:
+                line.append(thisline)                  
+            elif type(value).__name__=='list':  
+                for item in value:
+                    thisline = "* [{title}]({url}) - {date}".format(
+                    date=item["created"].split("T")[0], **item
+                )     
+                    line.append(thisline)         
+        else:
                 line.append("{} {}\n".format(sharp,key))
-                glance_line(value,sharp+"#",line)      
-        elif type(value).__name__=='list':
-            line.append("{} {}\n".format(sharp,key))           
-            for i in range(len(value)):     
-                glance_line(value[i],sharp+"#",line)
+                glance_line(value,sharp+"#",line)
 
 if __name__ == "__main__":
     db = sqlite_utils.Database(root / "til.db")
     
     index = ["<!-- index starts -->"]
-    total_dict = {}
-    by_topic = []
-    for row in db["til"].rows_where(order_by="created_utc"):
-        by_topic_dict={}
-        by_topic_dict["topic"] = json.loads(str(row["topic"])
-        by_topic_dict["value"] = row
-        by_topic.append(by_topic_dict)
+    
+    by_topic={}
+    for row in dumps:
+        by_topic.setdefault(str(row["topic"]),[]).append(row)
 
-    for i in by_topic:
-        topics = i["topic"]
-        current_dict = findOrSave(topics, i["value"])
+    total_dict={}
+    for key,value in by_topic.items():
+        key = json.loads(key)
+        current_dict = findOrSave(key, value)
         total_dict =get_huge_dict(current_dict,total_dict)
-                           
     glance_line(total_dict,"##",index)
+    
     if index[-1] == "":
         index.pop()
     index.append("<!-- index ends -->")
