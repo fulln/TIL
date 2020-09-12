@@ -4,15 +4,15 @@ today i learn
 
 <!-- toc -->
 
+- [vim](#vim)
 - [java](#java)
   * [basic](#basic)
+- [maven](#maven)
 - [shell](#shell)
+- [react](#react)
 - [leetcode](#leetcode)
   * [middle](#middle)
   * [easy](#easy)
-- [maven](#maven)
-- [vim](#vim)
-- [react](#react)
 
 <!-- tocstop -->
 
@@ -22,6 +22,9 @@ there is total <!-- count starts -->63<!-- count ends --> TILs . keep going
 ---
 
 <!-- index starts -->
+## vim
+
+* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
 ## java
 
 ### basic
@@ -29,9 +32,15 @@ there is total <!-- count starts -->63<!-- count ends --> TILs . keep going
 * [java为啥会有static main?](https://github.com/fulln/TIL/blob/master/java/basic/staticMain.md) - 2020-08-06
 * [jvm的大图流整理](https://github.com/fulln/TIL/blob/master/java/basic/jvmArrange.md) - 2020-08-22
 * [通过BTrace进行分析](https://github.com/fulln/TIL/blob/master/java/basic/BTrace.md) - 2020-08-26
+## maven
+
+* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
 ## shell
 
 * [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
+## react
+
+* [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
 ## leetcode
 
 ### middle
@@ -94,15 +103,6 @@ there is total <!-- count starts -->63<!-- count ends --> TILs . keep going
 * [数组中重复的数字](https://github.com/fulln/TIL/blob/master/leetcode/easy/findRepeatNumber.md) - 2020-09-09
 * [分糖果 II](https://github.com/fulln/TIL/blob/master/leetcode/easy/distributeCandies.md) - 2020-09-10
 * [剑指 Offer 40. 最小的k个数](https://github.com/fulln/TIL/blob/master/leetcode/easy/getLeastNumbersK.md) - 2020-09-12
-## maven
-
-* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
-## vim
-
-* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
-## react
-
-* [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
 <!-- index ends -->
 
 
