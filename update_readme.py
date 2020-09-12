@@ -22,24 +22,69 @@ def download_to_json(context):
     with open(path, 'w', encoding='utf-8') as result:
         json.dump(context, result, ensure_ascii=False)
 
+
+def merge_values(val1, val2):
+    if val1 is None:
+        return val2
+    elif val2 is None:
+        return val1
+    else:
+        if val1.__contains__("value") & val2.__contains__("value"):
+            return [val1, val2]
+        else:
+            return get_huge_dict(val1,val2)
+
+def get_huge_dict(val1, val2):
+    return {
+            key:merge_values(val1.get(key),val2.get(key))
+            for key in set(val1).union(val2)
+        }
+
+def findOrSave(row,entity):
+    if len(row) >5:
+        row=row[:5]
+    current_dict={}
+    row_index = len(row)
+    for i in range(1,row_index + 1):
+        if current_dict == {}:
+            current_dict[row[row_index -i]] ={"value":entity} 
+        else:
+            new_dict = {}
+            new_dict[row[row_index -i]] =current_dict     
+            current_dict =new_dict
+    return current_dict        
+
+def glance_line(total_dict,sharp,line):
+    for key, value in total_dict.items():
+        if value is None:
+            continue    
+        if type(value).__name__=='dict' :
+            if key == 'value':
+                thisline = "* [{title}]({url}) - {date}".format(
+                    date=value["created"].split("T")[0], **value
+                )
+                line.append(thisline)        
+            else:
+                line.append("{} {}\n".format(sharp,key))
+                glance_line(value,sharp+"#",line)      
+        elif type(value).__name__=='list':
+            line.append("{} {}\n".format(sharp,key))           
+            for i in range(len(value)):     
+                glance_line(value[i],sharp+"#",line)
+
 if __name__ == "__main__":
     db = sqlite_utils.Database(root / "til.db")
     by_topic = {}
     for row in db["til"].rows_where(order_by="created_utc"):
         by_topic.setdefault(str(row["topic"]), []).append(row)
     index = ["<!-- index starts -->"]
+    total_dict = {}
     for topic, rows in by_topic.items():
-        sharp = '##'
-        topic = json.loads(topic)
-        for i in range(len(topic)):
-            index.append("{} {}\n".format(sharp,topic[i]))
-            sharp = sharp +'#'
-        for row in rows:
-            line = "* [{title}]({url}) - {date}".format(
-                    date=row["created"].split("T")[0], **row
-                )           
-            index.append(line)
-        index.append("")        
+        current_dict = findOrSave(topic, rows)
+        total_dict =get_huge_dict(current_dict,total_dict)
+        
+    glance_line(total_dict,"##",index)
+    
     if index[-1] == "":
         index.pop()
     index.append("<!-- index ends -->")
