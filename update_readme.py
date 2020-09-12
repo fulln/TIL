@@ -35,7 +35,6 @@ def merge_values(val1, val2):
             return get_huge_dict(val1,val2)
 
 def get_huge_dict(val1, val2):
-    print(val1, val2)
     return {
             key:merge_values(val1.get(key),val2.get(key))
             for key in set(val1).union(val2)
@@ -72,8 +71,8 @@ def glance_line(total_dict,sharp,line):
                 )     
                     line.append(thisline)         
         else:
-                line.append("{} {}\n".format(sharp,key))
-                glance_line(value,sharp+"#",line)
+            line.append("{} {}\n".format(sharp,key))
+            glance_line(value,sharp+"#",line)
 
 if __name__ == "__main__":
     db = sqlite_utils.Database(root / "til.db")
