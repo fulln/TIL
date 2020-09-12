@@ -80,6 +80,7 @@ if __name__ == "__main__":
     
     for row in db["til"].rows_where(order_by="created_utc"):
         topic = json.loads(str(row["topic"])
+        print(row)                   
         current_dict = findOrSave(row, i)
         total_dict =get_huge_dict(current_dict,total_dict)
                         
