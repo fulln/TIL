@@ -81,7 +81,7 @@ if __name__ == "__main__":
     for row in db["til"].rows_where(order_by="created_utc"):
         topic = json.loads(str(row["topic"])
         current_dict = findOrSave(topic, row)
-        total_dict =get_huge_dict(current_dict,total_dict)
+        total_dict = get_huge_dict(current_dict,total_dict)
                         
     glance_line(total_dict,"##",index)
     if index[-1] == "":
