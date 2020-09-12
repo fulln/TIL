@@ -74,18 +74,16 @@ def glance_line(total_dict,sharp,line):
 
 if __name__ == "__main__":
     db = sqlite_utils.Database(root / "til.db")
-    by_topic = {}
-    for row in db["til"].rows_where(order_by="created_utc"):
-        by_topic.setdefault(str(row["topic"]), []).append(row)
+    
     index = ["<!-- index starts -->"]
     total_dict = {}
-    for topic, rows in by_topic.items():
-        topic = json.loads(topic)
-        current_dict = findOrSave(topic, rows)
-        total_dict =get_huge_dict(current_dict,total_dict)
-        
-    glance_line(total_dict,"##",index)
     
+    for row in db["til"].rows_where(order_by="created_utc"):
+        topic = json.loads(str(row["topic"])
+        current_dict = findOrSave(topic, row)
+        total_dict =get_huge_dict(current_dict,total_dict)
+                        
+    glance_line(total_dict,"##",index)
     if index[-1] == "":
         index.pop()
     index.append("<!-- index ends -->")
