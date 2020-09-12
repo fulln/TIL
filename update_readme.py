@@ -81,7 +81,8 @@ if __name__ == "__main__":
     index = ["<!-- index starts -->"]
     
     by_topic={}
-    for row in dumps:
+    
+    for row in db["til"].rows_where(order_by="created_utc"):
         by_topic.setdefault(str(row["topic"]),[]).append(row)
 
     total_dict={}
