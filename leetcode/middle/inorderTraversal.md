@@ -52,4 +52,28 @@ func inorderTraversal(root *TreeNode) []int {
     return returns
 
 }
+
+ //迭代
+func inorderTraversal(root *TreeNode) []int {
+
+    returns  := []int{}
+    nodes := []*TreeNode{}
+    
+
+    for root != nil || len(nodes) != 0{
+
+        for root != nil{
+            nodes = append(nodes,root)
+            root = root.Left
+        }
+        root = nodes[len(nodes) -1]
+        nodes = nodes[:len(nodes) -1]
+        returns = append(returns,root.Val)
+        root = root.Right   
+    }
+
+    return returns
+}
+
+
 ```
