@@ -4,15 +4,15 @@ today i learn
 
 <!-- toc -->
 
-- [maven](#maven)
-- [shell](#shell)
-- [vim](#vim)
-- [java](#java)
-  * [basic](#basic)
 - [react](#react)
+- [maven](#maven)
+- [vim](#vim)
+- [shell](#shell)
 - [leetcode](#leetcode)
   * [easy](#easy)
   * [middle](#middle)
+- [java](#java)
+  * [basic](#basic)
 
 <!-- tocstop -->
 
@@ -22,25 +22,18 @@ there is total <!-- count starts -->64<!-- count ends --> TILs . keep going
 ---
 
 <!-- index starts -->
-## maven
-
-* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
-## shell
-
-* [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
-## vim
-
-* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
-## java
-
-### basic
-
-* [java为啥会有static main?](https://github.com/fulln/TIL/blob/master/java/basic/staticMain.md) - 2020-08-06
-* [jvm的大图流整理](https://github.com/fulln/TIL/blob/master/java/basic/jvmArrange.md) - 2020-08-22
-* [通过BTrace进行分析](https://github.com/fulln/TIL/blob/master/java/basic/BTrace.md) - 2020-08-26
 ## react
 
 * [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
+## maven
+
+* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
+## vim
+
+* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
+## shell
+
+* [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
 ## leetcode
 
 ### easy
@@ -104,6 +97,13 @@ there is total <!-- count starts -->64<!-- count ends --> TILs . keep going
 
 * [钥匙和房间](https://github.com/fulln/TIL/blob/master/leetcode/middle/canVisitAllRooms.md) - 2020-09-11
 * [二叉树的中序遍历](https://github.com/fulln/TIL/blob/master/leetcode/middle/inorderTraversal.md) - 2020-09-14
+## java
+
+### basic
+
+* [java为啥会有static main?](https://github.com/fulln/TIL/blob/master/java/basic/staticMain.md) - 2020-08-06
+* [jvm的大图流整理](https://github.com/fulln/TIL/blob/master/java/basic/jvmArrange.md) - 2020-08-22
+* [通过BTrace进行分析](https://github.com/fulln/TIL/blob/master/java/basic/BTrace.md) - 2020-08-26
 <!-- index ends -->
 
 
