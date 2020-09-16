@@ -4,30 +4,25 @@ today i learn
 
 <!-- toc -->
 
-- [vim](#vim)
-- [react](#react)
 - [leetcode](#leetcode)
   * [middle](#middle)
   * [easy](#easy)
+- [vim](#vim)
 - [shell](#shell)
+- [react](#react)
 - [java](#java)
   * [basic](#basic)
 - [maven](#maven)
+- [sql](#sql)
 
 <!-- tocstop -->
 
 ---
-there is total <!-- count starts -->65<!-- count ends --> TILs . keep going
+there is total <!-- count starts -->66<!-- count ends --> TILs . keep going
 
 ---
 
 <!-- index starts -->
-## vim
-
-* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
-## react
-
-* [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
 ## leetcode
 
 ### middle
@@ -92,9 +87,15 @@ there is total <!-- count starts -->65<!-- count ends --> TILs . keep going
 * [分糖果 II](https://github.com/fulln/TIL/blob/master/leetcode/easy/distributeCandies.md) - 2020-09-10
 * [剑指 Offer 40. 最小的k个数](https://github.com/fulln/TIL/blob/master/leetcode/easy/getLeastNumbersK.md) - 2020-09-12
 * [判断子序列](https://github.com/fulln/TIL/blob/master/leetcode/easy/isSubsequence.md) - 2020-09-15
+## vim
+
+* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
 ## shell
 
 * [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
+## react
+
+* [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
 ## java
 
 ### basic
@@ -105,6 +106,9 @@ there is total <!-- count starts -->65<!-- count ends --> TILs . keep going
 ## maven
 
 * [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
+## sql
+
+* [mysql 事务锁相关查看](https://github.com/fulln/TIL/blob/master/sql/qeury_transaction.md) - 2020-09-16
 <!-- index ends -->
 
 
