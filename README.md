@@ -4,37 +4,27 @@ today i learn
 
 <!-- toc -->
 
-- [sql](#sql)
-- [react](#react)
 - [leetcode](#leetcode)
-  * [middle](#middle)
   * [easy](#easy)
+  * [middle](#middle)
+- [sql](#sql)
 - [vim](#vim)
-- [shell](#shell)
+- [maven](#maven)
 - [java](#java)
   * [basic](#basic)
-- [maven](#maven)
+- [shell](#shell)
+- [react](#react)
 
 <!-- tocstop -->
 
 ---
-there is total <!-- count starts -->68<!-- count ends --> TILs . keep going
+there is total <!-- count starts -->69<!-- count ends --> TILs . keep going
 
 ---
 
 <!-- index starts -->
-## sql
-
-* [mysql 事务锁相关查看](https://github.com/fulln/TIL/blob/master/sql/qeury_transaction.md) - 2020-09-16
-## react
-
-* [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
 ## leetcode
 
-### middle
-
-* [钥匙和房间](https://github.com/fulln/TIL/blob/master/leetcode/middle/canVisitAllRooms.md) - 2020-09-11
-* [二叉树的中序遍历](https://github.com/fulln/TIL/blob/master/leetcode/middle/inorderTraversal.md) - 2020-09-14
 ### easy
 
 * [判断一个整数是否是回文数](https://github.com/fulln/TIL/blob/master/leetcode/easy/isPalindrome.md) - 2020-07-28
@@ -95,12 +85,20 @@ there is total <!-- count starts -->68<!-- count ends --> TILs . keep going
 * [判断子序列](https://github.com/fulln/TIL/blob/master/leetcode/easy/isSubsequence.md) - 2020-09-15
 * [翻转二叉树](https://github.com/fulln/TIL/blob/master/leetcode/easy/invertTree.md) - 2020-09-16
 * [最长回文串](https://github.com/fulln/TIL/blob/master/leetcode/easy/longestPalindrome.md) - 2020-09-17
+* [链表的中间结点](https://github.com/fulln/TIL/blob/master/leetcode/easy/middleNode.md) - 2020-09-17
+### middle
+
+* [钥匙和房间](https://github.com/fulln/TIL/blob/master/leetcode/middle/canVisitAllRooms.md) - 2020-09-11
+* [二叉树的中序遍历](https://github.com/fulln/TIL/blob/master/leetcode/middle/inorderTraversal.md) - 2020-09-14
+## sql
+
+* [mysql 事务锁相关查看](https://github.com/fulln/TIL/blob/master/sql/qeury_transaction.md) - 2020-09-16
 ## vim
 
 * [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
-## shell
+## maven
 
-* [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
+* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
 ## java
 
 ### basic
@@ -108,9 +106,12 @@ there is total <!-- count starts -->68<!-- count ends --> TILs . keep going
 * [java为啥会有static main?](https://github.com/fulln/TIL/blob/master/java/basic/staticMain.md) - 2020-08-06
 * [jvm的大图流整理](https://github.com/fulln/TIL/blob/master/java/basic/jvmArrange.md) - 2020-08-22
 * [通过BTrace进行分析](https://github.com/fulln/TIL/blob/master/java/basic/BTrace.md) - 2020-08-26
-## maven
+## shell
 
-* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
+* [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
+## react
+
+* [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
 <!-- index ends -->
 
 
