@@ -32,14 +32,15 @@ func subsets(nums []int) [][]int {
 	for i < len(nums){
 		var clen  = len(returns)
 		for j := 0;j < clen;{
-			var curr = returns[j]
-			curr = append(curr,nums[i])
-			returns = append(returns,curr)
+			var jlen  =len(returns[j])
+			//golang 这里直接数组append 原数组就会发生变化
+			var news = returns[j][:jlen:jlen]
+			one := append(news,nums[i])
+			returns = append(returns,one)
 		 	j++
 		}
 		i++
 	}
 	return returns
 }
-
 ```
