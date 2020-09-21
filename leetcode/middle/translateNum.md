@@ -15,4 +15,35 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 ```go
 
+//递归
+func translateNum(num int) int {
+	if num < 10{
+		return 1;
+	}
+	if num %100 <26 && num %100 >9 {
+		return translateNum(num/100)+ translateNum(num/10)
+	}else{
+		return translateNum(num/10)
+	}
+}
+//动态规划
+func translateNum(num int) int {
+	b,a := 1,1
+	strnum :=strconv.Itoa(num)
+	for j:=2; j<=len(strnum);j++ {
+		i, _ := strconv.Atoi(string(strnum[j-2:j]))
+		var cvalue int
+		if i > 9 && i < 26 {
+			cvalue  = a+b
+		}else {
+			cvalue = a
+		}
+		b = a
+		a =cvalue
+	}
+	return a
+}
+
+
+
 ```
