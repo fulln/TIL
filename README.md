@@ -5,16 +5,16 @@ today i learn
 <!-- toc -->
 
 - [sql](#sql)
-- [react](#react)
-- [vim](#vim)
+- [git](#git)
 - [maven](#maven)
 - [shell](#shell)
-- [git](#git)
+- [react](#react)
 - [java](#java)
   * [basic](#basic)
 - [leetcode](#leetcode)
   * [easy](#easy)
   * [middle](#middle)
+- [vim](#vim)
 
 <!-- tocstop -->
 
@@ -27,21 +27,18 @@ there is total <!-- count starts -->75<!-- count ends --> TILs . keep on study
 ## sql
 
 * [mysql 事务锁相关查看](https://github.com/fulln/TIL/blob/master/sql/qeury_transaction.md) - 2020-09-16
-## react
+## git
 
-* [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
-## vim
-
-* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
+* [git 版本的回滚](https://github.com/fulln/TIL/blob/master/git/gitreset.md) - 2020-09-23
 ## maven
 
 * [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
 ## shell
 
 * [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
-## git
+## react
 
-* [git 版本的回滚](https://github.com/fulln/TIL/blob/master/git/gitreset.md) - 2020-09-23
+* [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
 ## java
 
 ### basic
@@ -121,6 +118,9 @@ there is total <!-- count starts -->75<!-- count ends --> TILs . keep on study
 * [二叉树的中序遍历](https://github.com/fulln/TIL/blob/master/leetcode/middle/inorderTraversal.md) - 2020-09-14
 * [子集](https://github.com/fulln/TIL/blob/master/leetcode/middle/subsets.md) - 2020-09-20
 * [剑指 Offer 46. 把数字翻译成字符串](https://github.com/fulln/TIL/blob/master/leetcode/middle/translateNum.md) - 2020-09-21
+## vim
+
+* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
 <!-- index ends -->
 
 
