@@ -19,7 +19,7 @@ today i learn
 <!-- tocstop -->
 
 ---
-there is total <!-- count starts -->75<!-- count ends --> TILs . keep going
+there is total <!-- count starts -->75<!-- count ends --> TILs . keep on study
 
 ---
 
