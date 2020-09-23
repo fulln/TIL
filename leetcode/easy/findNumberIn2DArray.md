@@ -8,5 +8,22 @@
 
 ```go
 
+func findNumberIn2DArray(matrix [][]int, target int) bool {
+	if matrix == nil|| len(matrix) == 0{
+		return false
+	}
 
+	i ,j := len(matrix) -1,0
+	for j <= len(matrix[0]) -1 && i >= 0 {
+		if target == matrix[i][j]{
+			return true
+		} else if target > matrix[i][j]{
+			j++
+		} else if target < matrix[i][j]{
+			i--
+		}
+
+	}
+	return false
+}
 ```
