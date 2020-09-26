@@ -26,6 +26,7 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+//用go回溯很容易出现问题. 主要在go在数组上的处理不是函数式编程的形式
 func pathSum(root *TreeNode, sum int) [][]int {
 	res := make([][]int,0)
 	tmp := make([]int,0)
