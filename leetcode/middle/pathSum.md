@@ -26,5 +26,25 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+func pathSum(root *TreeNode, sum int) [][]int {
+	res := make([][]int,0)
+	tmp := make([]int,0)
+	var depth func(root * TreeNode , left int )
+	depth = func(root *TreeNode , left int ) {
+		//先序遍历，中左右
+		if root== nil {return}
+		if left == root.Val && (root.Left == nil && root.Right == nil) {
+			res = append(res,append([]int{},append(tmp,root.Val)...))
+			return
+		}
+		tmp = append(tmp, root.Val)
+		depth(root.Left,left-root.Val)
+		depth(root.Right,left-root.Val)
+		tmp = tmp[:len(tmp) -1 ]
+	}
+	depth(root,sum)
+	return res
+}
+
 
 ```
