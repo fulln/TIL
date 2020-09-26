@@ -28,23 +28,35 @@
 ```go
 //用go回溯很容易出现问题. 主要在go在数组上的处理不是函数式编程的形式
 func pathSum(root *TreeNode, sum int) [][]int {
-	res := make([][]int,0)
-	tmp := make([]int,0)
-	var depth func(root * TreeNode , left int )
-	depth = func(root *TreeNode , left int ) {
-		//先序遍历，中左右
-		if root== nil {return}
-		if left == root.Val && (root.Left == nil && root.Right == nil) {
-			res = append(res,append([]int{},append(tmp,root.Val)...))
+
+	if root == nil{
+		return nil
+	}
+
+	ans := make([][]int, 0)
+	cur := []int{}
+	var backtrace func( root *TreeNode, sum int)
+	backtrace = func(root *TreeNode, sum int) {
+		if root == nil{
 			return
 		}
-		tmp = append(tmp, root.Val)
-		depth(root.Left,left-root.Val)
-		depth(root.Right,left-root.Val)
-		tmp = tmp[:len(tmp) -1 ]
+
+
+		if sum == root.Val && root.Left == nil && root.Right == nil{
+			ans = append(ans,append([]int{},append(cur,root.Val)...))
+			return
+		}
+
+		cur  = append(cur,root.Val)
+
+		backtrace(root.Left,sum-root.Val)
+		backtrace(root.Right,sum-root.Val)
+		cur = cur[:len(cur) -1]
 	}
-	depth(root,sum)
-	return res
+
+	backtrace(root,sum)
+	return ans
+
 }
 
 
