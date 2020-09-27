@@ -4,29 +4,32 @@ today i learn
 
 <!-- toc -->
 
-- [git](#git)
+- [sql](#sql)
+- [maven](#maven)
 - [java](#java)
   * [basic](#basic)
-- [vim](#vim)
-- [maven](#maven)
 - [react](#react)
-- [sql](#sql)
+- [git](#git)
 - [shell](#shell)
 - [leetcode](#leetcode)
   * [middle](#middle)
   * [easy](#easy)
+- [vim](#vim)
 
 <!-- tocstop -->
 
 ---
-there is total <!-- count starts -->78<!-- count ends --> TILs . keep on study
+there is total <!-- count starts -->79<!-- count ends --> TILs . keep on study
 
 ---
 
 <!-- index starts -->
-## git
+## sql
 
-* [git 版本的回滚](https://github.com/fulln/TIL/blob/master/git/gitreset.md) - 2020-09-23
+* [mysql 事务锁相关查看](https://github.com/fulln/TIL/blob/master/sql/qeury_transaction.md) - 2020-09-16
+## maven
+
+* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
 ## java
 
 ### basic
@@ -34,18 +37,12 @@ there is total <!-- count starts -->78<!-- count ends --> TILs . keep on study
 * [java为啥会有static main?](https://github.com/fulln/TIL/blob/master/java/basic/staticMain.md) - 2020-08-06
 * [jvm的大图流整理](https://github.com/fulln/TIL/blob/master/java/basic/jvmArrange.md) - 2020-08-22
 * [通过BTrace进行分析](https://github.com/fulln/TIL/blob/master/java/basic/BTrace.md) - 2020-08-26
-## vim
-
-* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
-## maven
-
-* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
 ## react
 
 * [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
-## sql
+## git
 
-* [mysql 事务锁相关查看](https://github.com/fulln/TIL/blob/master/sql/qeury_transaction.md) - 2020-09-16
+* [git 版本的回滚](https://github.com/fulln/TIL/blob/master/git/gitreset.md) - 2020-09-23
 ## shell
 
 * [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
@@ -124,6 +121,10 @@ there is total <!-- count starts -->78<!-- count ends --> TILs . keep on study
 * [剑指 Offer 22. 链表中倒数第k个节点](https://github.com/fulln/TIL/blob/master/leetcode/easy/getKthFromEnd.md) - 2020-09-19
 * [合并二叉树](https://github.com/fulln/TIL/blob/master/leetcode/easy/mergeTrees.md) - 2020-09-23
 * [剑指 Offer 05. 替换空格](https://github.com/fulln/TIL/blob/master/leetcode/easy/replaceSpace.md) - 2020-09-26
+* [判定字符是否唯一](https://github.com/fulln/TIL/blob/master/leetcode/easy/isUnique.md) - 2020-09-27
+## vim
+
+* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
 <!-- index ends -->
 
 
