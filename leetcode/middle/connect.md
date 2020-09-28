@@ -53,4 +53,41 @@ func connect(root *Node) *Node {
 	}
 	return root
 }
+//使用空间为常量
+func connect(root *Node) *Node {
+	if root == nil{
+		return nil
+	}
+
+    cLink := root
+	for cLink != nil {
+        var head *Node
+        var pre * Node 
+		for cLink != nil{
+			
+			if cLink.Left != nil{
+                if head != nil{
+                    head.Next =cLink.Left
+                }else{
+                    pre =cLink.Left
+                }
+                head = cLink.Left
+			}
+
+			
+			if cLink.Right != nil{
+                if head != nil{
+                    head.Next =cLink.Right
+                }else{
+                    pre =cLink.Right
+                }
+                head = cLink.Right
+			}
+		
+			cLink=cLink.Next
+		}
+        cLink =pre
+	}
+	return root
+}
 ```
