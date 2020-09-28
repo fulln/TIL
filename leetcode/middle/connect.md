@@ -24,5 +24,33 @@ struct Node {
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+func connect(root *Node) *Node {
+	if root == nil{
+		return nil
+	}
 
+	cur := []*Node{root}
+
+	for len(cur) >0 {
+		queue:= len(cur)
+
+		for queue>0{
+			queue --
+			if cur[0].Left != nil{
+				cur = append(cur,cur[0].Left)
+			}
+			if cur[0].Right != nil{
+				cur = append(cur,cur[0].Right)
+			}
+		
+            if queue ==0{
+                cur[0].Next = nil
+            }else{
+                cur[0].Next =cur[1]			    
+            }
+			cur =cur[1:]
+		}
+	}
+	return root
+}
 ```
