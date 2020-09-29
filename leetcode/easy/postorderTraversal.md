@@ -45,26 +45,29 @@ func postorderTraversal(root *TreeNode) []int {
 
 
  //迭代
-func inorderTraversal(root *TreeNode) []int {
-
-    returns  := []int{}
-    nodes := []*TreeNode{}
-    
-
-    for root != nil || len(nodes) != 0{
-
-        for root != nil{
-            nodes = append(nodes,root)
+func postorderTraversal(root *TreeNode) []int {
+    returns := []int{}
+    last := []*TreeNode{}
+    var r *TreeNode
+    for root != nil || len(last) != 0 {
+       if root != nil{
+            last =append(last,root)
             root = root.Left
-        }
-        root = nodes[len(nodes) -1]
-        nodes = nodes[:len(nodes) -1]
-        returns = append(returns,root.Val)
-        root = root.Right   
+       }else{
+            root = last[len(last) -1]
+            
+            if root.Right == nil || root.Right ==r{
+                returns =append(returns,root.Val)
+                r = root
+                last  = last[:len(last)-1]
+                root =nil    
+            }else{
+                root =root.Right
+            }
+       }
+    
     }
-
     return returns
 }
-
 
 ```
