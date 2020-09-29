@@ -4,43 +4,47 @@ today i learn
 
 <!-- toc -->
 
-- [sql](#sql)
-- [vim](#vim)
-- [leetcode](#leetcode)
-  * [middle](#middle)
-  * [easy](#easy)
 - [shell](#shell)
+- [maven](#maven)
 - [git](#git)
+- [react](#react)
 - [java](#java)
   * [basic](#basic)
-- [maven](#maven)
-- [react](#react)
+- [leetcode](#leetcode)
+  * [easy](#easy)
+  * [middle](#middle)
+- [sql](#sql)
+- [vim](#vim)
 
 <!-- tocstop -->
 
 ---
-there is total <!-- count starts -->80<!-- count ends --> TILs . keep on study
+there is total <!-- count starts -->81<!-- count ends --> TILs . keep on study
 
 ---
 
 <!-- index starts -->
-## sql
+## shell
 
-* [mysql 事务锁相关查看](https://github.com/fulln/TIL/blob/master/sql/qeury_transaction.md) - 2020-09-16
-## vim
+* [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
+## maven
 
-* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
+* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
+## git
+
+* [git 版本的回滚](https://github.com/fulln/TIL/blob/master/git/gitreset.md) - 2020-09-23
+## react
+
+* [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
+## java
+
+### basic
+
+* [java为啥会有static main?](https://github.com/fulln/TIL/blob/master/java/basic/staticMain.md) - 2020-08-06
+* [jvm的大图流整理](https://github.com/fulln/TIL/blob/master/java/basic/jvmArrange.md) - 2020-08-22
+* [通过BTrace进行分析](https://github.com/fulln/TIL/blob/master/java/basic/BTrace.md) - 2020-08-26
 ## leetcode
 
-### middle
-
-* [钥匙和房间](https://github.com/fulln/TIL/blob/master/leetcode/middle/canVisitAllRooms.md) - 2020-09-11
-* [二叉树的中序遍历](https://github.com/fulln/TIL/blob/master/leetcode/middle/inorderTraversal.md) - 2020-09-14
-* [子集](https://github.com/fulln/TIL/blob/master/leetcode/middle/subsets.md) - 2020-09-20
-* [剑指 Offer 46. 把数字翻译成字符串](https://github.com/fulln/TIL/blob/master/leetcode/middle/translateNum.md) - 2020-09-21
-* [二叉搜索树中的众数](https://github.com/fulln/TIL/blob/master/leetcode/middle/findMode.md) - 2020-09-25
-* [路径总和 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/pathSum.md) - 2020-09-26
-* [填充每个节点的下一个右侧节点指针 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/connect.md) - 2020-09-28
 ### easy
 
 * [判断一个整数是否是回文数](https://github.com/fulln/TIL/blob/master/leetcode/easy/isPalindrome.md) - 2020-07-28
@@ -107,25 +111,22 @@ there is total <!-- count starts -->80<!-- count ends --> TILs . keep on study
 * [合并二叉树](https://github.com/fulln/TIL/blob/master/leetcode/easy/mergeTrees.md) - 2020-09-23
 * [剑指 Offer 05. 替换空格](https://github.com/fulln/TIL/blob/master/leetcode/easy/replaceSpace.md) - 2020-09-26
 * [判定字符是否唯一](https://github.com/fulln/TIL/blob/master/leetcode/easy/isUnique.md) - 2020-09-27
-## shell
+* [二叉树的后序遍历](https://github.com/fulln/TIL/blob/master/leetcode/easy/postorderTraversal.md) - 2020-09-29
+### middle
 
-* [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
-## git
+* [钥匙和房间](https://github.com/fulln/TIL/blob/master/leetcode/middle/canVisitAllRooms.md) - 2020-09-11
+* [二叉树的中序遍历](https://github.com/fulln/TIL/blob/master/leetcode/middle/inorderTraversal.md) - 2020-09-14
+* [子集](https://github.com/fulln/TIL/blob/master/leetcode/middle/subsets.md) - 2020-09-20
+* [剑指 Offer 46. 把数字翻译成字符串](https://github.com/fulln/TIL/blob/master/leetcode/middle/translateNum.md) - 2020-09-21
+* [二叉搜索树中的众数](https://github.com/fulln/TIL/blob/master/leetcode/middle/findMode.md) - 2020-09-25
+* [路径总和 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/pathSum.md) - 2020-09-26
+* [填充每个节点的下一个右侧节点指针 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/connect.md) - 2020-09-28
+## sql
 
-* [git 版本的回滚](https://github.com/fulln/TIL/blob/master/git/gitreset.md) - 2020-09-23
-## java
+* [mysql 事务锁相关查看](https://github.com/fulln/TIL/blob/master/sql/qeury_transaction.md) - 2020-09-16
+## vim
 
-### basic
-
-* [java为啥会有static main?](https://github.com/fulln/TIL/blob/master/java/basic/staticMain.md) - 2020-08-06
-* [jvm的大图流整理](https://github.com/fulln/TIL/blob/master/java/basic/jvmArrange.md) - 2020-08-22
-* [通过BTrace进行分析](https://github.com/fulln/TIL/blob/master/java/basic/BTrace.md) - 2020-08-26
-## maven
-
-* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
-## react
-
-* [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
+* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
 <!-- index ends -->
 
 
