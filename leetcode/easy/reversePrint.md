@@ -11,4 +11,13 @@
 输出：[2,3,1]
 
 ```go
+func reversePrint(head *ListNode) []int {
+
+    returns := []int{}
+    for head != nil{
+        returns = append([]int{head.Val},returns...)
+        head =head.Next
+    }
+    return returns
+}
 ```
