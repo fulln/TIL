@@ -28,4 +28,12 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+func reverseBits(num uint32) uint32 {
+    for i,j := 0,31;i<j;i,j = i+1,j-1{
+        if (num >> i& 1)!= (num >>j & 1){
+            num ^= ((1 << i) | (1 << j))
+        }  
+    }
+    return num
+}
 ```
