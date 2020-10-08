@@ -27,15 +27,24 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处
 
 ```go
+//go库
 func rotate(nums []int, k int)  {
 
-        if nums == nil{
-            return
-        }
-        newmake := make([]int,len(nums)+k)
-        newmake = append(nums[k:])
-        newmake = append(nums[:k+1])
-        nums = newmake
+	k = len(nums) - k%len(nums)
+	copy(nums, append(nums[k:], nums[0:k]...))
+}
+//翻转
+func rotate(nums []int, k int)  {
+    k = k%len(nums)
+    revert(nums)
+    revert(nums[:k])
+    revert(nums[k:])
+}
+
+func revert(nums []int){
+    for start,end := 0,len(nums) -1;start<=end;start,end = start+1,end-1{
+        nums[start],nums[end] = nums[end],nums[start]
+    }
 }
 
 ``` 
