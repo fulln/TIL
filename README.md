@@ -4,52 +4,28 @@ today i learn
 
 <!-- toc -->
 
-- [shell](#shell)
+- [leetcode](#leetcode)
+  * [easy](#easy)
+  * [middle](#middle)
 - [vim](#vim)
-- [react](#react)
 - [git](#git)
 - [maven](#maven)
-- [leetcode](#leetcode)
-  * [middle](#middle)
-  * [easy](#easy)
 - [java](#java)
   * [basic](#basic)
+- [react](#react)
 - [sql](#sql)
+- [shell](#shell)
 
 <!-- tocstop -->
 
 ---
-there is total <!-- count starts -->84<!-- count ends --> TILs . keep on study
+there is total <!-- count starts -->85<!-- count ends --> TILs . keep on study
 
 ---
 
 <!-- index starts -->
-## shell
-
-* [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
-## vim
-
-* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
-## react
-
-* [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
-## git
-
-* [git 版本的回滚](https://github.com/fulln/TIL/blob/master/git/gitreset.md) - 2020-09-23
-## maven
-
-* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
 ## leetcode
 
-### middle
-
-* [钥匙和房间](https://github.com/fulln/TIL/blob/master/leetcode/middle/canVisitAllRooms.md) - 2020-09-11
-* [二叉树的中序遍历](https://github.com/fulln/TIL/blob/master/leetcode/middle/inorderTraversal.md) - 2020-09-14
-* [子集](https://github.com/fulln/TIL/blob/master/leetcode/middle/subsets.md) - 2020-09-20
-* [剑指 Offer 46. 把数字翻译成字符串](https://github.com/fulln/TIL/blob/master/leetcode/middle/translateNum.md) - 2020-09-21
-* [二叉搜索树中的众数](https://github.com/fulln/TIL/blob/master/leetcode/middle/findMode.md) - 2020-09-25
-* [路径总和 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/pathSum.md) - 2020-09-26
-* [填充每个节点的下一个右侧节点指针 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/connect.md) - 2020-09-28
 ### easy
 
 * [两数之合](https://github.com/fulln/TIL/blob/master/leetcode/easy/twoSum.md) - 2020-07-28
@@ -120,6 +96,25 @@ there is total <!-- count starts -->84<!-- count ends --> TILs . keep on study
 * [剑指 Offer 06. 从尾到头打印链表](https://github.com/fulln/TIL/blob/master/leetcode/easy/reversePrint.md) - 2020-09-30
 * [颠倒二进制位](https://github.com/fulln/TIL/blob/master/leetcode/easy/reverseBits.md) - 2020-10-03
 * [旋转数组](https://github.com/fulln/TIL/blob/master/leetcode/easy/rotate.md) - 2020-10-07
+* [面试题 01.06. 字符串压缩](https://github.com/fulln/TIL/blob/master/leetcode/easy/compressString.md) - 2020-10-09
+### middle
+
+* [钥匙和房间](https://github.com/fulln/TIL/blob/master/leetcode/middle/canVisitAllRooms.md) - 2020-09-11
+* [二叉树的中序遍历](https://github.com/fulln/TIL/blob/master/leetcode/middle/inorderTraversal.md) - 2020-09-14
+* [子集](https://github.com/fulln/TIL/blob/master/leetcode/middle/subsets.md) - 2020-09-20
+* [剑指 Offer 46. 把数字翻译成字符串](https://github.com/fulln/TIL/blob/master/leetcode/middle/translateNum.md) - 2020-09-21
+* [二叉搜索树中的众数](https://github.com/fulln/TIL/blob/master/leetcode/middle/findMode.md) - 2020-09-25
+* [路径总和 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/pathSum.md) - 2020-09-26
+* [填充每个节点的下一个右侧节点指针 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/connect.md) - 2020-09-28
+## vim
+
+* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
+## git
+
+* [git 版本的回滚](https://github.com/fulln/TIL/blob/master/git/gitreset.md) - 2020-09-23
+## maven
+
+* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
 ## java
 
 ### basic
@@ -127,9 +122,15 @@ there is total <!-- count starts -->84<!-- count ends --> TILs . keep on study
 * [java为啥会有static main?](https://github.com/fulln/TIL/blob/master/java/basic/staticMain.md) - 2020-08-06
 * [jvm的大图流整理](https://github.com/fulln/TIL/blob/master/java/basic/jvmArrange.md) - 2020-08-22
 * [通过BTrace进行分析](https://github.com/fulln/TIL/blob/master/java/basic/BTrace.md) - 2020-08-26
+## react
+
+* [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
 ## sql
 
 * [mysql 事务锁相关查看](https://github.com/fulln/TIL/blob/master/sql/qeury_transaction.md) - 2020-09-16
+## shell
+
+* [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
 <!-- index ends -->
 
 
