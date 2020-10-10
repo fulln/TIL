@@ -48,5 +48,17 @@ func massage(nums []int) int {
 	return now1
 
 }
+//简化版本
+func massage(nums []int) int {
+	a := 0
+	b := 0
+
+	for i:= 0;i<len(nums);i++{
+		a,b = b,int(math.Max(float64(a+nums[i]),float64(b)))
+	}
+	
+	return b
+
+}
 
 ```
