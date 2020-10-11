@@ -25,8 +25,29 @@
  *     Next *ListNode
  * }
  */
+/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+ // 时间复杂度  3/2 On  空间复杂度On
 func isPalindrome(head *ListNode) bool {
+    tmp :=make([]*ListNode,0) 
+    
+    for head != nil {
+        tmp = append(tmp,head)
+        head = head.Next     
+    }
+    
+    for from,end :=0,len(tmp) -1;from < end;from,end =  from+1,end -1{
+        if tmp[from].Val != tmp[end].Val{
+            return false
+        }
+    }
+
+    return true
 
 }
-
 ```
