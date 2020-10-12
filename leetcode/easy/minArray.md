@@ -19,7 +19,6 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
-
 func minArray(numbers []int) int {
 	if numbers == nil || len(numbers) == 0 {
 		return 0
@@ -40,7 +39,13 @@ func minArray(numbers []int) int {
 	if numbers[middle] <= numbers[middle+1] && numbers[middle] < numbers[middle-1] {
 		return numbers[middle]
 	} else {
-		return int(math.Min(float64(minArray(numbers[:middle])), float64(minArray(numbers[middle:]))))
+        starts := minArray(numbers[:middle])
+        if numbers[start] == starts {
+            return int(math.Min(float64(starts), float64(minArray(numbers[middle:]))))
+        }else{
+            return starts
+        }
+		
 	}
 
 }
