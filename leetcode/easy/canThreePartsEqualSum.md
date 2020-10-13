@@ -26,5 +26,34 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+func canThreePartsEqualSum(A []int) bool {
+    sum:= 0;
+    for _,val:= range(A){
+        sum += val
+    }
 
+    if sum % 3  != 0{
+        return false
+    }
+
+    aims := sum /3
+
+    sum = 0
+    times :=0
+    for _,val := range(A){
+        sum += val
+        if sum == aims{
+            sum = 0
+            times ++
+        }
+    }
+
+    if times >= 3{
+        return true
+    }else{
+        return false
+    }
+
+
+}
 ```
