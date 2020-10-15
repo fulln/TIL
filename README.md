@@ -4,42 +4,41 @@ today i learn
 
 <!-- toc -->
 
-- [git](#git)
-- [java](#java)
-  * [basic](#basic)
-- [vim](#vim)
+- [react](#react)
+- [sql](#sql)
 - [shell](#shell)
+- [vim](#vim)
+- [maven](#maven)
 - [leetcode](#leetcode)
   * [middle](#middle)
   * [easy](#easy)
-- [react](#react)
-- [sql](#sql)
-- [maven](#maven)
+- [git](#git)
+- [java](#java)
+  * [basic](#basic)
 
 <!-- tocstop -->
 
 ---
-there is total <!-- count starts -->90<!-- count ends --> TILs . keep on study
+there is total <!-- count starts -->91<!-- count ends --> TILs . keep on study
 
 ---
 
 <!-- index starts -->
-## git
+## react
 
-* [git 版本的回滚](https://github.com/fulln/TIL/blob/master/git/gitreset.md) - 2020-09-23
-## java
+* [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
+## sql
 
-### basic
-
-* [java为啥会有static main?](https://github.com/fulln/TIL/blob/master/java/basic/staticMain.md) - 2020-08-06
-* [jvm的大图流整理](https://github.com/fulln/TIL/blob/master/java/basic/jvmArrange.md) - 2020-08-22
-* [通过BTrace进行分析](https://github.com/fulln/TIL/blob/master/java/basic/BTrace.md) - 2020-08-26
-## vim
-
-* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
+* [mysql 事务锁相关查看](https://github.com/fulln/TIL/blob/master/sql/qeury_transaction.md) - 2020-09-16
 ## shell
 
 * [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
+## vim
+
+* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
+## maven
+
+* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
 ## leetcode
 
 ### middle
@@ -127,15 +126,17 @@ there is total <!-- count starts -->90<!-- count ends --> TILs . keep on study
 * [剑指 Offer 11. 旋转数组的最小数字](https://github.com/fulln/TIL/blob/master/leetcode/easy/minArray.md) - 2020-10-12
 * [将数组分成和相等的三个部分](https://github.com/fulln/TIL/blob/master/leetcode/easy/canThreePartsEqualSum.md) - 2020-10-13
 * [快乐数](https://github.com/fulln/TIL/blob/master/leetcode/easy/isHappy.md) - 2020-10-14
-## react
+* [剑指 Offer 10- I. 斐波那契数列](https://github.com/fulln/TIL/blob/master/leetcode/easy/fib.md) - 2020-10-15
+## git
 
-* [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
-## sql
+* [git 版本的回滚](https://github.com/fulln/TIL/blob/master/git/gitreset.md) - 2020-09-23
+## java
 
-* [mysql 事务锁相关查看](https://github.com/fulln/TIL/blob/master/sql/qeury_transaction.md) - 2020-09-16
-## maven
+### basic
 
-* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
+* [java为啥会有static main?](https://github.com/fulln/TIL/blob/master/java/basic/staticMain.md) - 2020-08-06
+* [jvm的大图流整理](https://github.com/fulln/TIL/blob/master/java/basic/jvmArrange.md) - 2020-08-22
+* [通过BTrace进行分析](https://github.com/fulln/TIL/blob/master/java/basic/BTrace.md) - 2020-08-26
 <!-- index ends -->
 
 
