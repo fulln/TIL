@@ -35,5 +35,15 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+func hammingWeight(num uint32) int {
+    count := 0
+    for 0 < num {
+        if num%2 == 1{
+            count++
+        }
+        num /=2
+    }
+    return count
+}
 
 ```
