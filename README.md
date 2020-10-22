@@ -4,36 +4,30 @@ today i learn
 
 <!-- toc -->
 
-- [shell](#shell)
-- [vim](#vim)
-- [react](#react)
+- [sql](#sql)
 - [leetcode](#leetcode)
   * [easy](#easy)
   * [middle](#middle)
-- [sql](#sql)
-- [git](#git)
-- [maven](#maven)
+- [shell](#shell)
 - [java](#java)
-  * [basic](#basic)
   * [spring](#spring)
+  * [basic](#basic)
+- [react](#react)
+- [git](#git)
+- [vim](#vim)
+- [maven](#maven)
 
 <!-- tocstop -->
 
 ---
-there is total <!-- count starts -->96<!-- count ends --> TILs . keep on study
+there is total <!-- count starts -->97<!-- count ends --> TILs . keep on study
 
 ---
 
 <!-- index starts -->
-## shell
+## sql
 
-* [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
-## vim
-
-* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
-## react
-
-* [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
+* [mysql 事务锁相关查看](https://github.com/fulln/TIL/blob/master/sql/qeury_transaction.md) - 2020-09-16
 ## leetcode
 
 ### easy
@@ -117,6 +111,7 @@ there is total <!-- count starts -->96<!-- count ends --> TILs . keep on study
 * [剑指 Offer 29. 顺时针打印矩阵](https://github.com/fulln/TIL/blob/master/leetcode/easy/spiralOrder.md) - 2020-10-18
 * [剑指 Offer 09. 用两个栈实现队列](https://github.com/fulln/TIL/blob/master/leetcode/easy/CQueue.md) - 2020-10-20
 * [二叉树的直径](https://github.com/fulln/TIL/blob/master/leetcode/easy/diameterOfBinaryTree.md) - 2020-10-21
+* [拼写单词](https://github.com/fulln/TIL/blob/master/leetcode/easy/countCharacters.md) - 2020-10-22
 ### middle
 
 * [钥匙和房间](https://github.com/fulln/TIL/blob/master/leetcode/middle/canVisitAllRooms.md) - 2020-09-11
@@ -126,25 +121,31 @@ there is total <!-- count starts -->96<!-- count ends --> TILs . keep on study
 * [二叉搜索树中的众数](https://github.com/fulln/TIL/blob/master/leetcode/middle/findMode.md) - 2020-09-25
 * [路径总和 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/pathSum.md) - 2020-09-26
 * [填充每个节点的下一个右侧节点指针 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/connect.md) - 2020-09-28
-## sql
+## shell
 
-* [mysql 事务锁相关查看](https://github.com/fulln/TIL/blob/master/sql/qeury_transaction.md) - 2020-09-16
-## git
-
-* [git 版本的回滚](https://github.com/fulln/TIL/blob/master/git/gitreset.md) - 2020-09-23
-## maven
-
-* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
+* [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
 ## java
 
+### spring
+
+* [CVE-2020-5421漏洞 spring相关代码探寻](https://github.com/fulln/TIL/blob/master/java/spring/CVE-2020-5421.md) - 2020-10-19
 ### basic
 
 * [java为啥会有static main?](https://github.com/fulln/TIL/blob/master/java/basic/staticMain.md) - 2020-08-06
 * [jvm的大图流整理](https://github.com/fulln/TIL/blob/master/java/basic/jvmArrange.md) - 2020-08-22
 * [通过BTrace进行分析](https://github.com/fulln/TIL/blob/master/java/basic/BTrace.md) - 2020-08-26
-### spring
+## react
 
-* [CVE-2020-5421漏洞 spring相关代码探寻](https://github.com/fulln/TIL/blob/master/java/spring/CVE-2020-5421.md) - 2020-10-19
+* [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
+## git
+
+* [git 版本的回滚](https://github.com/fulln/TIL/blob/master/git/gitreset.md) - 2020-09-23
+## vim
+
+* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
+## maven
+
+* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
 <!-- index ends -->
 
 
