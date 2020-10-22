@@ -28,5 +28,32 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+func countCharacters(words []string, chars string) int {
+	dic  :=make(map[int32]int)
+	for _,value := range(chars){
+		dic[value] +=1
+	}
+
+	sum := 0
+	for _,value :=range(words){
+		tmp :=make(map[int32]int)
+		for k,v := range dic{
+			tmp[k] =v
+		}
+		flag := true
+		for _,value2:=range(value){
+			if  tmp[value2] >0{
+				tmp[value2]--
+			}else {
+					flag = false;
+					break;
+			}
+		}
+		if flag {
+			sum +=	len(value)
+		}
+	}
+	return sum;
+}
 
 ```
