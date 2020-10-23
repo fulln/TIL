@@ -31,5 +31,20 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+func kidsWithCandies(candies []int, extraCandies int) []bool {
+	returns := make([]bool, len(candies))
+	max := 0
+	for _,i := range candies {
+		if max < i {
+			max = i
+		}
+	}
 
+	for j := 0; j < len(candies); j++ {
+		returns[j] = (candies[j] + extraCandies) >= max
+	}
+
+	return returns
+
+}
 ```
