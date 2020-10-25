@@ -40,4 +40,25 @@ func isAnagram(s string, t string) bool {
 
 	return true
 }
+// 用数组代替map
+func isAnagram(s string, t string) bool {
+	if len(s) != len(t){
+		return false
+	}
+	
+	list:= make([]int,26);
+	for _,val:= range s {
+		list[val - 'a']++
+	}
+
+	for _,val := range t {
+		if list[val - 'a'] >0{
+			list[val - 'a'] --
+		}else{
+			return false
+		}
+	}
+
+	return true
+}
 ```
