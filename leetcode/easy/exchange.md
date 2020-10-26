@@ -32,4 +32,18 @@ func exchange(nums []int) []int {
 	}
 	return append(returns,return2...)
 }
+func exchange(nums []int) []int {
+
+	//O(1)
+	q,all := 0,0
+	for _,val :=range nums{
+		if val & 1 == 1{
+			nums[q],nums[all] = nums[all],nums[q]
+			q++
+		}
+		all ++
+	}
+	return nums
+}
+
 ```
