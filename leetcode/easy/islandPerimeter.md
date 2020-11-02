@@ -26,5 +26,26 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+func islandPerimeter(grid [][]int) int {
+    y := len(grid[0])
+    x := len(grid)
+    result:= 0
+    for i:=0; i<x ;{
+        for j:= 0; j<y ;{
+            if grid[i][j] == 1{
+                result += 4
+                if i>0 && grid[i-1][j] == 1{
+                    result  -=2
+                }
+                if j>0 && grid[i][j-1] == 1{
+                    result  -= 2
+                }
+            }
+            j++
+        }
+        i++
+    }
+    return result 
+}
 
 ```
