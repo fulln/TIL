@@ -4,31 +4,37 @@ today i learn
 
 <!-- toc -->
 
-- [maven](#maven)
+- [sql](#sql)
+- [react](#react)
+- [vim](#vim)
 - [leetcode](#leetcode)
   * [middle](#middle)
   * [easy](#easy)
-- [sql](#sql)
-- [shell](#shell)
 - [git](#git)
-- [react](#react)
+- [shell](#shell)
 - [java](#java)
-  * [jvm](#jvm)
-  * [basic](#basic)
   * [spring](#spring)
-- [vim](#vim)
+  * [basic](#basic)
+  * [jvm](#jvm)
+- [maven](#maven)
 
 <!-- tocstop -->
 
 ---
-there is total <!-- count starts -->112<!-- count ends --> TILs . keep on study
+there is total <!-- count starts -->113<!-- count ends --> TILs . keep on study
 
 ---
 
 <!-- index starts -->
-## maven
+## sql
 
-* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
+* [mysql 事务锁相关查看](https://github.com/fulln/TIL/blob/master/sql/qeury_transaction.md) - 2020-09-16
+## react
+
+* [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
+## vim
+
+* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
 ## leetcode
 
 ### middle
@@ -135,35 +141,30 @@ there is total <!-- count starts -->112<!-- count ends --> TILs . keep on study
 * [203. 移除链表元素](https://github.com/fulln/TIL/blob/master/leetcode/easy/removeElements.md) - 2020-11-03
 * [剑指 Offer 27. 二叉树的镜像](https://github.com/fulln/TIL/blob/master/leetcode/easy/mirrorTree.md) - 2020-11-04
 * [剑指 Offer 42. 连续子数组的最大和](https://github.com/fulln/TIL/blob/master/leetcode/easy/maxSubArray.md) - 2020-11-05
-## sql
-
-* [mysql 事务锁相关查看](https://github.com/fulln/TIL/blob/master/sql/qeury_transaction.md) - 2020-09-16
-## shell
-
-* [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
+* [字符串相加](https://github.com/fulln/TIL/blob/master/leetcode/easy/addStrings.md) - 2020-11-07
 ## git
 
 * [git 版本的回滚](https://github.com/fulln/TIL/blob/master/git/gitreset.md) - 2020-09-23
-## react
+## shell
 
-* [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
+* [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
 ## java
 
-### jvm
+### spring
 
-* [JVM调优与GC](https://github.com/fulln/TIL/blob/master/java/jvm/JvmDaily1.md) - 2020-10-28
+* [CVE-2020-5421漏洞 spring相关代码探寻](https://github.com/fulln/TIL/blob/master/java/spring/CVE-2020-5421.md) - 2020-10-19
 ### basic
 
 * [java为啥会有static main?](https://github.com/fulln/TIL/blob/master/java/basic/staticMain.md) - 2020-08-06
 * [jvm的大图流整理](https://github.com/fulln/TIL/blob/master/java/basic/jvmArrange.md) - 2020-08-22
 * [通过BTrace进行分析](https://github.com/fulln/TIL/blob/master/java/basic/BTrace.md) - 2020-08-26
 * [JDK15视频发布会及新特性](https://github.com/fulln/TIL/blob/master/java/basic/JDK15.md) - 2020-11-01
-### spring
+### jvm
 
-* [CVE-2020-5421漏洞 spring相关代码探寻](https://github.com/fulln/TIL/blob/master/java/spring/CVE-2020-5421.md) - 2020-10-19
-## vim
+* [JVM调优与GC](https://github.com/fulln/TIL/blob/master/java/jvm/JvmDaily1.md) - 2020-10-28
+## maven
 
-* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
+* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
 <!-- index ends -->
 
 
