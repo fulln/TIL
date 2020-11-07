@@ -17,4 +17,29 @@ num1 和num2 都不包含任何前导零
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+func addStrings(num1 string, num2 string) string {
+    sum := 0
+    returns := ""  
+    for i,j:=len(num1)-1,len(num2)-1;i >=0 || j >=0 ;i,j = i-1,j-1{
+        if i >= 0 {
+            sum += int(num1[i] - '0') 
+        }
+       
+        if j >= 0 {
+            sum += int(num2[j] - '0') 
+        }
+        
+        left := sum % 10
+        sum = sum / 10
+        returns = strconv.Itoa(left) +returns
+    }
+
+        if sum != 0{
+            returns = strconv.Itoa(sum) + returns
+        }
+    
+
+    return returns;
+}
+
 ```
