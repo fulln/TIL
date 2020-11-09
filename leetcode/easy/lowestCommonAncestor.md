@@ -23,3 +23,19 @@
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+
+```go
+
+func lowestCommonAncestor(root, p, q *TreeNode) *TreeNode {
+
+    if p.Val <root.Val && q.Val < root.Val {
+        return lowestCommonAncestor(root.Left,p,q)
+    }
+
+    if p.Val >root.Val && q.Val > root.Val {
+        return lowestCommonAncestor(root.Right,p,q)
+    }
+
+    return root	
+}
+```
