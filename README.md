@@ -4,19 +4,19 @@ today i learn
 
 <!-- toc -->
 
-- [maven](#maven)
+- [git](#git)
 - [java](#java)
   * [jvm](#jvm)
   * [basic](#basic)
   * [spring](#spring)
-- [sql](#sql)
-- [vim](#vim)
-- [react](#react)
 - [shell](#shell)
+- [react](#react)
+- [maven](#maven)
+- [sql](#sql)
 - [leetcode](#leetcode)
   * [middle](#middle)
   * [easy](#easy)
-- [git](#git)
+- [vim](#vim)
 
 <!-- tocstop -->
 
@@ -26,9 +26,9 @@ there is total <!-- count starts -->117<!-- count ends --> TILs . keep on study
 ---
 
 <!-- index starts -->
-## maven
+## git
 
-* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
+* [git 版本的回滚](https://github.com/fulln/TIL/blob/master/git/gitreset.md) - 2020-09-23
 ## java
 
 ### jvm
@@ -43,18 +43,18 @@ there is total <!-- count starts -->117<!-- count ends --> TILs . keep on study
 ### spring
 
 * [CVE-2020-5421漏洞 spring相关代码探寻](https://github.com/fulln/TIL/blob/master/java/spring/CVE-2020-5421.md) - 2020-10-19
-## sql
-
-* [mysql 事务锁相关查看](https://github.com/fulln/TIL/blob/master/sql/qeury_transaction.md) - 2020-09-16
-## vim
-
-* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
-## react
-
-* [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
 ## shell
 
 * [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
+## react
+
+* [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
+## maven
+
+* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
+## sql
+
+* [mysql 事务锁相关查看](https://github.com/fulln/TIL/blob/master/sql/qeury_transaction.md) - 2020-09-16
 ## leetcode
 
 ### middle
@@ -166,9 +166,9 @@ there is total <!-- count starts -->117<!-- count ends --> TILs . keep on study
 * [二叉搜索树的最近公共祖先](https://github.com/fulln/TIL/blob/master/leetcode/easy/lowestCommonAncestor.md) - 2020-11-09
 * [. 字符串的最大公因子](https://github.com/fulln/TIL/blob/master/leetcode/easy/gcdOfStrings.md) - 2020-11-10
 * [矩形重叠](https://github.com/fulln/TIL/blob/master/leetcode/easy/isRectangleOverlap.md) - 2020-11-11
-## git
+## vim
 
-* [git 版本的回滚](https://github.com/fulln/TIL/blob/master/git/gitreset.md) - 2020-09-23
+* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
 <!-- index ends -->
 
 
