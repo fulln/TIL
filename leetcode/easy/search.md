@@ -23,4 +23,19 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+func search(nums []int, target int) int {
+    //2分
+
+    l := len(nums)
+
+    sum :=0
+    for i:=0 ;i<l;i++{
+        if target == nums[i]{
+            sum ++
+        }
+    }
+
+    return sum
+
+}
 ```
