@@ -4,33 +4,33 @@ today i learn
 
 <!-- toc -->
 
-- [git](#git)
 - [java](#java)
+  * [spring](#spring)
   * [jvm](#jvm)
   * [basic](#basic)
-  * [spring](#spring)
-- [shell](#shell)
-- [react](#react)
-- [maven](#maven)
 - [sql](#sql)
-- [leetcode](#leetcode)
-  * [middle](#middle)
-  * [easy](#easy)
+- [git](#git)
 - [vim](#vim)
+- [react](#react)
+- [leetcode](#leetcode)
+  * [easy](#easy)
+  * [middle](#middle)
+- [shell](#shell)
+- [maven](#maven)
 
 <!-- tocstop -->
 
 ---
-there is total <!-- count starts -->117<!-- count ends --> TILs . keep on study
+there is total <!-- count starts -->118<!-- count ends --> TILs . keep on study
 
 ---
 
 <!-- index starts -->
-## git
-
-* [git 版本的回滚](https://github.com/fulln/TIL/blob/master/git/gitreset.md) - 2020-09-23
 ## java
 
+### spring
+
+* [CVE-2020-5421漏洞 spring相关代码探寻](https://github.com/fulln/TIL/blob/master/java/spring/CVE-2020-5421.md) - 2020-10-19
 ### jvm
 
 * [JVM调优与GC](https://github.com/fulln/TIL/blob/master/java/jvm/JvmDaily1.md) - 2020-10-28
@@ -40,33 +40,20 @@ there is total <!-- count starts -->117<!-- count ends --> TILs . keep on study
 * [jvm的大图流整理](https://github.com/fulln/TIL/blob/master/java/basic/jvmArrange.md) - 2020-08-22
 * [通过BTrace进行分析](https://github.com/fulln/TIL/blob/master/java/basic/BTrace.md) - 2020-08-26
 * [JDK15视频发布会及新特性](https://github.com/fulln/TIL/blob/master/java/basic/JDK15.md) - 2020-11-01
-### spring
-
-* [CVE-2020-5421漏洞 spring相关代码探寻](https://github.com/fulln/TIL/blob/master/java/spring/CVE-2020-5421.md) - 2020-10-19
-## shell
-
-* [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
-## react
-
-* [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
-## maven
-
-* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
 ## sql
 
 * [mysql 事务锁相关查看](https://github.com/fulln/TIL/blob/master/sql/qeury_transaction.md) - 2020-09-16
+## git
+
+* [git 版本的回滚](https://github.com/fulln/TIL/blob/master/git/gitreset.md) - 2020-09-23
+## vim
+
+* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
+## react
+
+* [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
 ## leetcode
 
-### middle
-
-* [钥匙和房间](https://github.com/fulln/TIL/blob/master/leetcode/middle/canVisitAllRooms.md) - 2020-09-11
-* [二叉树的中序遍历](https://github.com/fulln/TIL/blob/master/leetcode/middle/inorderTraversal.md) - 2020-09-14
-* [子集](https://github.com/fulln/TIL/blob/master/leetcode/middle/subsets.md) - 2020-09-20
-* [剑指 Offer 46. 把数字翻译成字符串](https://github.com/fulln/TIL/blob/master/leetcode/middle/translateNum.md) - 2020-09-21
-* [二叉搜索树中的众数](https://github.com/fulln/TIL/blob/master/leetcode/middle/findMode.md) - 2020-09-25
-* [路径总和 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/pathSum.md) - 2020-09-26
-* [填充每个节点的下一个右侧节点指针 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/connect.md) - 2020-09-28
-* [144. 二叉树的前序遍历](https://github.com/fulln/TIL/blob/master/leetcode/middle/preorderTraversal.md) - 2020-10-28
 ### easy
 
 * [将两个升序链表合并为一个新的 升序 链表并返回](https://github.com/fulln/TIL/blob/master/leetcode/easy/mergeTwoLists.md) - 2020-07-28
@@ -166,9 +153,23 @@ there is total <!-- count starts -->117<!-- count ends --> TILs . keep on study
 * [二叉搜索树的最近公共祖先](https://github.com/fulln/TIL/blob/master/leetcode/easy/lowestCommonAncestor.md) - 2020-11-09
 * [. 字符串的最大公因子](https://github.com/fulln/TIL/blob/master/leetcode/easy/gcdOfStrings.md) - 2020-11-10
 * [矩形重叠](https://github.com/fulln/TIL/blob/master/leetcode/easy/isRectangleOverlap.md) - 2020-11-11
-## vim
+* [53 - I. 在排序数组中查找数字 I](https://github.com/fulln/TIL/blob/master/leetcode/easy/search.md) - 2020-11-12
+### middle
 
-* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
+* [钥匙和房间](https://github.com/fulln/TIL/blob/master/leetcode/middle/canVisitAllRooms.md) - 2020-09-11
+* [二叉树的中序遍历](https://github.com/fulln/TIL/blob/master/leetcode/middle/inorderTraversal.md) - 2020-09-14
+* [子集](https://github.com/fulln/TIL/blob/master/leetcode/middle/subsets.md) - 2020-09-20
+* [剑指 Offer 46. 把数字翻译成字符串](https://github.com/fulln/TIL/blob/master/leetcode/middle/translateNum.md) - 2020-09-21
+* [二叉搜索树中的众数](https://github.com/fulln/TIL/blob/master/leetcode/middle/findMode.md) - 2020-09-25
+* [路径总和 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/pathSum.md) - 2020-09-26
+* [填充每个节点的下一个右侧节点指针 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/connect.md) - 2020-09-28
+* [144. 二叉树的前序遍历](https://github.com/fulln/TIL/blob/master/leetcode/middle/preorderTraversal.md) - 2020-10-28
+## shell
+
+* [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
+## maven
+
+* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
 <!-- index ends -->
 
 
