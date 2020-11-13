@@ -4,19 +4,19 @@ today i learn
 
 <!-- toc -->
 
-- [shell](#shell)
-- [sql](#sql)
-- [git](#git)
-- [maven](#maven)
-- [java](#java)
-  * [basic](#basic)
-  * [spring](#spring)
-  * [jvm](#jvm)
-- [vim](#vim)
-- [react](#react)
 - [leetcode](#leetcode)
   * [easy](#easy)
   * [middle](#middle)
+- [react](#react)
+- [maven](#maven)
+- [shell](#shell)
+- [vim](#vim)
+- [sql](#sql)
+- [java](#java)
+  * [spring](#spring)
+  * [jvm](#jvm)
+  * [basic](#basic)
+- [git](#git)
 
 <!-- tocstop -->
 
@@ -26,38 +26,6 @@ there is total <!-- count starts -->119<!-- count ends --> TILs . keep on study
 ---
 
 <!-- index starts -->
-## shell
-
-* [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
-## sql
-
-* [mysql 事务锁相关查看](https://github.com/fulln/TIL/blob/master/sql/qeury_transaction.md) - 2020-09-16
-## git
-
-* [git 版本的回滚](https://github.com/fulln/TIL/blob/master/git/gitreset.md) - 2020-09-23
-## maven
-
-* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
-## java
-
-### basic
-
-* [java为啥会有static main?](https://github.com/fulln/TIL/blob/master/java/basic/staticMain.md) - 2020-08-06
-* [jvm的大图流整理](https://github.com/fulln/TIL/blob/master/java/basic/jvmArrange.md) - 2020-08-22
-* [通过BTrace进行分析](https://github.com/fulln/TIL/blob/master/java/basic/BTrace.md) - 2020-08-26
-* [JDK15视频发布会及新特性](https://github.com/fulln/TIL/blob/master/java/basic/JDK15.md) - 2020-11-01
-### spring
-
-* [CVE-2020-5421漏洞 spring相关代码探寻](https://github.com/fulln/TIL/blob/master/java/spring/CVE-2020-5421.md) - 2020-10-19
-### jvm
-
-* [JVM调优与GC](https://github.com/fulln/TIL/blob/master/java/jvm/JvmDaily1.md) - 2020-10-28
-## vim
-
-* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
-## react
-
-* [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
 ## leetcode
 
 ### easy
@@ -171,6 +139,38 @@ there is total <!-- count starts -->119<!-- count ends --> TILs . keep on study
 * [路径总和 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/pathSum.md) - 2020-09-26
 * [填充每个节点的下一个右侧节点指针 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/connect.md) - 2020-09-28
 * [144. 二叉树的前序遍历](https://github.com/fulln/TIL/blob/master/leetcode/middle/preorderTraversal.md) - 2020-10-28
+## react
+
+* [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
+## maven
+
+* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
+## shell
+
+* [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
+## vim
+
+* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
+## sql
+
+* [mysql 事务锁相关查看](https://github.com/fulln/TIL/blob/master/sql/qeury_transaction.md) - 2020-09-16
+## java
+
+### spring
+
+* [CVE-2020-5421漏洞 spring相关代码探寻](https://github.com/fulln/TIL/blob/master/java/spring/CVE-2020-5421.md) - 2020-10-19
+### jvm
+
+* [JVM调优与GC](https://github.com/fulln/TIL/blob/master/java/jvm/JvmDaily1.md) - 2020-10-28
+### basic
+
+* [java为啥会有static main?](https://github.com/fulln/TIL/blob/master/java/basic/staticMain.md) - 2020-08-06
+* [jvm的大图流整理](https://github.com/fulln/TIL/blob/master/java/basic/jvmArrange.md) - 2020-08-22
+* [通过BTrace进行分析](https://github.com/fulln/TIL/blob/master/java/basic/BTrace.md) - 2020-08-26
+* [JDK15视频发布会及新特性](https://github.com/fulln/TIL/blob/master/java/basic/JDK15.md) - 2020-11-01
+## git
+
+* [git 版本的回滚](https://github.com/fulln/TIL/blob/master/git/gitreset.md) - 2020-09-23
 <!-- index ends -->
 
 
