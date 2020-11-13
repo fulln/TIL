@@ -4,54 +4,54 @@ today i learn
 
 <!-- toc -->
 
-- [java](#java)
-  * [basic](#basic)
-  * [spring](#spring)
-  * [jvm](#jvm)
-- [react](#react)
-- [maven](#maven)
-- [shell](#shell)
+- [vim](#vim)
 - [sql](#sql)
+- [react](#react)
+- [git](#git)
+- [java](#java)
+  * [spring](#spring)
+  * [basic](#basic)
+  * [jvm](#jvm)
 - [leetcode](#leetcode)
   * [middle](#middle)
   * [easy](#easy)
-- [git](#git)
-- [vim](#vim)
+- [maven](#maven)
+- [shell](#shell)
 
 <!-- tocstop -->
 
 ---
-there is total <!-- count starts -->118<!-- count ends --> TILs . keep on study
+there is total <!-- count starts -->119<!-- count ends --> TILs . keep on study
 
 ---
 
 <!-- index starts -->
+## vim
+
+* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
+## sql
+
+* [mysql 事务锁相关查看](https://github.com/fulln/TIL/blob/master/sql/qeury_transaction.md) - 2020-09-16
+## react
+
+* [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
+## git
+
+* [git 版本的回滚](https://github.com/fulln/TIL/blob/master/git/gitreset.md) - 2020-09-23
 ## java
 
+### spring
+
+* [CVE-2020-5421漏洞 spring相关代码探寻](https://github.com/fulln/TIL/blob/master/java/spring/CVE-2020-5421.md) - 2020-10-19
 ### basic
 
 * [java为啥会有static main?](https://github.com/fulln/TIL/blob/master/java/basic/staticMain.md) - 2020-08-06
 * [jvm的大图流整理](https://github.com/fulln/TIL/blob/master/java/basic/jvmArrange.md) - 2020-08-22
 * [通过BTrace进行分析](https://github.com/fulln/TIL/blob/master/java/basic/BTrace.md) - 2020-08-26
 * [JDK15视频发布会及新特性](https://github.com/fulln/TIL/blob/master/java/basic/JDK15.md) - 2020-11-01
-### spring
-
-* [CVE-2020-5421漏洞 spring相关代码探寻](https://github.com/fulln/TIL/blob/master/java/spring/CVE-2020-5421.md) - 2020-10-19
 ### jvm
 
 * [JVM调优与GC](https://github.com/fulln/TIL/blob/master/java/jvm/JvmDaily1.md) - 2020-10-28
-## react
-
-* [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
-## maven
-
-* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
-## shell
-
-* [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
-## sql
-
-* [mysql 事务锁相关查看](https://github.com/fulln/TIL/blob/master/sql/qeury_transaction.md) - 2020-09-16
 ## leetcode
 
 ### middle
@@ -164,12 +164,13 @@ there is total <!-- count starts -->118<!-- count ends --> TILs . keep on study
 * [. 字符串的最大公因子](https://github.com/fulln/TIL/blob/master/leetcode/easy/gcdOfStrings.md) - 2020-11-10
 * [矩形重叠](https://github.com/fulln/TIL/blob/master/leetcode/easy/isRectangleOverlap.md) - 2020-11-11
 * [53 - I. 在排序数组中查找数字 I](https://github.com/fulln/TIL/blob/master/leetcode/easy/search.md) - 2020-11-12
-## git
+* [. 丢失的数字](https://github.com/fulln/TIL/blob/master/leetcode/easy/missingNumber.md) - 2020-11-13
+## maven
 
-* [git 版本的回滚](https://github.com/fulln/TIL/blob/master/git/gitreset.md) - 2020-09-23
-## vim
+* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
+## shell
 
-* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
+* [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
 <!-- index ends -->
 
 
