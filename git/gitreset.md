@@ -9,15 +9,15 @@
 
 - 查看git 本地的操作日志
 
-     git reflog
+          git reflog
 
 - 修改最近一次提交的comments
 
-     git commit --amend
+          git commit --amend
 
 - 撤销最近一次的提交，并保留提交内容
 
-     git reset HEAD^
+          git reset HEAD^
 
 ### 修改已经提交的git
 
