@@ -25,4 +25,13 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+func hammingDistance(x int, y int) int {
+    z := x^y
+    sum := 0 
+    for z >0{
+        sum += z&1
+        z = z>>1
+    }
+    return sum
+}
 ```
