@@ -21,6 +21,31 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
-  
+ func hasGroupsSizeX(deck []int) bool {
+    maps := make(map[int]int,len(deck))
+    for _,val := range deck{
+        maps[val] ++
+    }
+
+    last := 0 
+    for _,val := range maps{
+        last = gcd(last,val)
+        if last == 1{
+            return false
+        }
+    }
+
+    return last >= 2
+
+}
+
+
+func gcd(x,y int) int{
+    if y==0{
+        return x
+    }
+    return gcd(y,x%y)
+}
+
 
 ```
