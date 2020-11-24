@@ -24,5 +24,42 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+// bfs 一次性写出
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func levelOrder(root *TreeNode) [][]int {
 
+    returns := [][]int{}
+
+    if root == nil{
+        return returns
+    }
+    queue := []*TreeNode{root}
+    for len(queue) > 0 {
+        queuel := len(queue)
+        box := []int{}
+        for queuel > 0{
+            if queue[0].Left != nil{
+                queue = append(queue,queue[0].Left)
+            }
+            
+            if queue[0].Right != nil{
+                queue = append(queue,queue[0].Right)
+            }
+            box = append(box,queue[0].Val)
+            queue = queue[1:]
+            queuel --
+        }
+        returns = append(returns,box)
+    }
+
+    return returns
+
+}
 ```
