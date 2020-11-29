@@ -54,3 +54,30 @@
 链接：https://leetcode-cn.com/leetbook/read/top-interview-questions-easy/x2f9gg/
 来源：力扣（LeetCode）
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+```go
+func isValidSudoku(board [][]byte) bool {
+    var xmaps,ymaps,zmaps [9]int
+    for i:= 0;i< 9;i++{
+        for j:= 0;j< 9;j++{   
+            if board[i][j] == '.'{
+                continue 
+            }
+
+            cu := 1 << (board[i][j] - '1')
+            packs := (i/3) + j/3 *3
+
+            if (xmaps[i] & cu) | (ymaps[j] & cu)  | (zmaps[packs] & cu ) != 0 {
+                return false
+            }else{
+                xmaps[i] |= cu
+                ymaps[j] |=  cu
+                zmaps[packs] |=  cu
+            }
+                       
+        }
+    }
+    return true
+
+}
+```
