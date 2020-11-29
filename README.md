@@ -4,29 +4,51 @@ today i learn
 
 <!-- toc -->
 
+- [sql](#sql)
+- [react](#react)
+- [windows](#windows)
+- [git](#git)
+- [maven](#maven)
+- [vim](#vim)
+- [shell](#shell)
 - [leetcode](#leetcode)
   * [easy](#easy)
   * [middle](#middle)
 - [java](#java)
+  * [spring](#spring)
   * [basic](#basic)
   * [jvm](#jvm)
-  * [spring](#spring)
-- [vim](#vim)
-- [windows](#windows)
-- [git](#git)
-- [shell](#shell)
-- [sql](#sql)
-- [react](#react)
-- [maven](#maven)
 
 <!-- tocstop -->
 
 ---
-there is total <!-- count starts -->134<!-- count ends --> TILs . keep on 
+there is total <!-- count starts -->136<!-- count ends --> TILs . keep on 
 
 ---
 
 <!-- index starts -->
+## sql
+
+* [mysql 事务锁相关查看](https://github.com/fulln/TIL/blob/master/sql/qeury_transaction.md) - 2020-09-16
+## react
+
+* [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
+## windows
+
+* [windows 中cmd 相关的操作](https://github.com/fulln/TIL/blob/master/windows/shellOption.md) - 2020-11-14
+* [合并多个sheet](https://github.com/fulln/TIL/blob/master/windows/ExcelCopy.md) - 2020-11-17
+## git
+
+* [git 版本的回滚](https://github.com/fulln/TIL/blob/master/git/gitreset.md) - 2020-09-23
+## maven
+
+* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
+## vim
+
+* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
+## shell
+
+* [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
 ## leetcode
 
 ### easy
@@ -138,6 +160,8 @@ there is total <!-- count starts -->134<!-- count ends --> TILs . keep on
 * [卡牌分组](https://github.com/fulln/TIL/blob/master/leetcode/easy/hasGroupsSizeX.md) - 2020-11-23
 * [941. 有效的山脉数组](https://github.com/fulln/TIL/blob/master/leetcode/easy/validMountainArray.md) - 2020-11-25
 * [999. 可以被一步捕获的棋子数](https://github.com/fulln/TIL/blob/master/leetcode/easy/numRookCaptures.md) - 2020-11-26
+* [字符串中的第一个唯一字符](https://github.com/fulln/TIL/blob/master/leetcode/easy/firstUniqChar.md) - 2020-11-27
+* [有效的数独](https://github.com/fulln/TIL/blob/master/leetcode/easy/isValidSudoku.md) - 2020-11-29
 ### middle
 
 * [钥匙和房间](https://github.com/fulln/TIL/blob/master/leetcode/middle/canVisitAllRooms.md) - 2020-09-11
@@ -153,6 +177,11 @@ there is total <!-- count starts -->134<!-- count ends --> TILs . keep on
 * [二叉树的层序遍历](https://github.com/fulln/TIL/blob/master/leetcode/middle/levelOrder.md) - 2020-11-24
 ## java
 
+### spring
+
+* [CVE-2020-5421漏洞 spring相关代码探寻](https://github.com/fulln/TIL/blob/master/java/spring/CVE-2020-5421.md) - 2020-10-19
+* [spring-quartz 使用](https://github.com/fulln/TIL/blob/master/java/spring/spring-quartz.md) - 2020-11-14
+* [spring-data-redis](https://github.com/fulln/TIL/blob/master/java/spring/springDataRedis.md) - 2020-11-14
 ### basic
 
 * [java为啥会有static main?](https://github.com/fulln/TIL/blob/master/java/basic/staticMain.md) - 2020-08-06
@@ -162,33 +191,6 @@ there is total <!-- count starts -->134<!-- count ends --> TILs . keep on
 ### jvm
 
 * [JVM调优与GC](https://github.com/fulln/TIL/blob/master/java/jvm/JvmDaily1.md) - 2020-10-28
-### spring
-
-* [CVE-2020-5421漏洞 spring相关代码探寻](https://github.com/fulln/TIL/blob/master/java/spring/CVE-2020-5421.md) - 2020-10-19
-* [spring-quartz 使用](https://github.com/fulln/TIL/blob/master/java/spring/spring-quartz.md) - 2020-11-14
-* [spring-data-redis](https://github.com/fulln/TIL/blob/master/java/spring/springDataRedis.md) - 2020-11-14
-## vim
-
-* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
-## windows
-
-* [windows 中cmd 相关的操作](https://github.com/fulln/TIL/blob/master/windows/shellOption.md) - 2020-11-14
-* [合并多个sheet](https://github.com/fulln/TIL/blob/master/windows/ExcelCopy.md) - 2020-11-17
-## git
-
-* [git 版本的回滚](https://github.com/fulln/TIL/blob/master/git/gitreset.md) - 2020-09-23
-## shell
-
-* [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
-## sql
-
-* [mysql 事务锁相关查看](https://github.com/fulln/TIL/blob/master/sql/qeury_transaction.md) - 2020-09-16
-## react
-
-* [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
-## maven
-
-* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
 <!-- index ends -->
 
 
