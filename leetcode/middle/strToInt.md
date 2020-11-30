@@ -19,4 +19,43 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+func strToInt(s string) int {
+    sum := 0
+    flag := 1
+    space := 0
+    for i := 0; i < len(s);i++{
+
+        if s[i] == ' ' {
+            if sum != 0 || space ==1{
+                break
+            }
+            continue
+        }
+
+        if s[i] >= '0' && s[i] <= '9' {
+            sum = sum * 10 + int(s[i] -'0')
+            space = 1 
+        }else if s[i] == '-'  && space == 0 {
+            flag = -1
+            space = 1
+            continue 
+        }else if s[i] == '+'  && space == 0 {
+            space = 1
+        } else{
+            break
+        }
+
+        if sum > math.MaxInt32{
+            if flag == 1{
+                return math.MaxInt32
+            }else{
+                return math.MinInt32
+            }
+        }
+
+    }
+    
+    return sum * flag
+    
+}
 ```
