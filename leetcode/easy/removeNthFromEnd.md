@@ -20,4 +20,27 @@
 来源：力扣（LeetCode）
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 ```go
+func removeNthFromEnd(head *ListNode, n int) *ListNode {
+    
+
+    returns := &ListNode{
+        Next:head,
+    }
+
+    fast,slow := returns,returns
+
+   for i:=0;i<n;i++{
+        fast = fast.Next
+    }
+
+    for fast.Next != nil{
+        fast =fast.Next
+        slow =slow.Next
+    }
+    
+    slow.Next = slow.Next.Next
+
+    return returns.Next
+
+}
 ```
