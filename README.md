@@ -4,33 +4,35 @@ today i learn
 
 <!-- toc -->
 
-- [windows](#windows)
+- [react](#react)
+- [sql](#sql)
 - [maven](#maven)
 - [java](#java)
   * [basic](#basic)
-  * [spring](#spring)
   * [jvm](#jvm)
-- [git](#git)
-- [vim](#vim)
-- [sql](#sql)
-- [react](#react)
+  * [spring](#spring)
+- [shell](#shell)
+- [windows](#windows)
 - [leetcode](#leetcode)
   * [middle](#middle)
   * [easy](#easy)
-- [shell](#shell)
+- [git](#git)
+- [vim](#vim)
 
 <!-- tocstop -->
 
 ---
-there is total <!-- count starts -->137<!-- count ends --> TILs . keep on 
+there is total <!-- count starts -->138<!-- count ends --> TILs . keep on 
 
 ---
 
 <!-- index starts -->
-## windows
+## react
 
-* [windows 中cmd 相关的操作](https://github.com/fulln/TIL/blob/master/windows/shellOption.md) - 2020-11-14
-* [合并多个sheet](https://github.com/fulln/TIL/blob/master/windows/ExcelCopy.md) - 2020-11-17
+* [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
+## sql
+
+* [mysql 事务锁相关查看](https://github.com/fulln/TIL/blob/master/sql/qeury_transaction.md) - 2020-09-16
 ## maven
 
 * [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
@@ -42,26 +44,21 @@ there is total <!-- count starts -->137<!-- count ends --> TILs . keep on
 * [jvm的大图流整理](https://github.com/fulln/TIL/blob/master/java/basic/jvmArrange.md) - 2020-08-22
 * [通过BTrace进行分析](https://github.com/fulln/TIL/blob/master/java/basic/BTrace.md) - 2020-08-26
 * [JDK15视频发布会及新特性](https://github.com/fulln/TIL/blob/master/java/basic/JDK15.md) - 2020-11-01
+### jvm
+
+* [JVM调优与GC](https://github.com/fulln/TIL/blob/master/java/jvm/JvmDaily1.md) - 2020-10-28
 ### spring
 
 * [CVE-2020-5421漏洞 spring相关代码探寻](https://github.com/fulln/TIL/blob/master/java/spring/CVE-2020-5421.md) - 2020-10-19
 * [spring-quartz 使用](https://github.com/fulln/TIL/blob/master/java/spring/spring-quartz.md) - 2020-11-14
 * [spring-data-redis](https://github.com/fulln/TIL/blob/master/java/spring/springDataRedis.md) - 2020-11-14
-### jvm
+## shell
 
-* [JVM调优与GC](https://github.com/fulln/TIL/blob/master/java/jvm/JvmDaily1.md) - 2020-10-28
-## git
+* [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
+## windows
 
-* [git 版本的回滚](https://github.com/fulln/TIL/blob/master/git/gitreset.md) - 2020-09-23
-## vim
-
-* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
-## sql
-
-* [mysql 事务锁相关查看](https://github.com/fulln/TIL/blob/master/sql/qeury_transaction.md) - 2020-09-16
-## react
-
-* [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
+* [windows 中cmd 相关的操作](https://github.com/fulln/TIL/blob/master/windows/shellOption.md) - 2020-11-14
+* [合并多个sheet](https://github.com/fulln/TIL/blob/master/windows/ExcelCopy.md) - 2020-11-17
 ## leetcode
 
 ### middle
@@ -80,17 +77,17 @@ there is total <!-- count starts -->137<!-- count ends --> TILs . keep on
 * [把字符串转换成整数](https://github.com/fulln/TIL/blob/master/leetcode/middle/strToInt.md) - 2020-11-30
 ### easy
 
+* [外观数列](https://github.com/fulln/TIL/blob/master/leetcode/easy/countAndSay.md) - 2020-07-28
+* [判断一个整数是否是回文数](https://github.com/fulln/TIL/blob/master/leetcode/easy/isPalindrome.md) - 2020-07-28
 * [实现 strStr() 函数。](https://github.com/fulln/TIL/blob/master/leetcode/easy/strStr.md) - 2020-07-28
-* [给出一个 32 位的有符号整数,将这个整数中每位上的数字进行反转](https://github.com/fulln/TIL/blob/master/leetcode/easy/reverse.md) - 2020-07-28
-* [搜索插入位置](https://github.com/fulln/TIL/blob/master/leetcode/easy/searchInsert.md) - 2020-07-28
-* [判断字符串是否有效](https://github.com/fulln/TIL/blob/master/leetcode/easy/isValid.md) - 2020-07-28
+* [两数之合](https://github.com/fulln/TIL/blob/master/leetcode/easy/twoSum.md) - 2020-07-28
+* [编写一个函数来查找字符串数组中的最长公共前缀。](https://github.com/fulln/TIL/blob/master/leetcode/easy/longestCommonPrefix.md) - 2020-07-28
 * [罗马数字](https://github.com/fulln/TIL/blob/master/leetcode/easy/romanToInt.md) - 2020-07-28
+* [搜索插入位置](https://github.com/fulln/TIL/blob/master/leetcode/easy/searchInsert.md) - 2020-07-28
+* [给出一个 32 位的有符号整数,将这个整数中每位上的数字进行反转](https://github.com/fulln/TIL/blob/master/leetcode/easy/reverse.md) - 2020-07-28
 * [给定一个排序数组，需要在原地删除重复出现的元素](https://github.com/fulln/TIL/blob/master/leetcode/easy/removeDuplicates.md) - 2020-07-28
 * [移除所有数值等于val的元素](https://github.com/fulln/TIL/blob/master/leetcode/easy/removeElement.md) - 2020-07-28
-* [两数之合](https://github.com/fulln/TIL/blob/master/leetcode/easy/twoSum.md) - 2020-07-28
-* [外观数列](https://github.com/fulln/TIL/blob/master/leetcode/easy/countAndSay.md) - 2020-07-28
-* [编写一个函数来查找字符串数组中的最长公共前缀。](https://github.com/fulln/TIL/blob/master/leetcode/easy/longestCommonPrefix.md) - 2020-07-28
-* [判断一个整数是否是回文数](https://github.com/fulln/TIL/blob/master/leetcode/easy/isPalindrome.md) - 2020-07-28
+* [判断字符串是否有效](https://github.com/fulln/TIL/blob/master/leetcode/easy/isValid.md) - 2020-07-28
 * [合并两个有序链表](https://github.com/fulln/TIL/blob/master/leetcode/easy/mergeTwoLists.md) - 2020-07-28
 * [剑指 Offer 42. 连续子数组的最大和](https://github.com/fulln/TIL/blob/master/leetcode/easy/maxSubarray.md) - 2020-07-29
 * [copyAndArray 外观数列](https://github.com/fulln/TIL/blob/master/leetcode/easy/copyAndArray.md) - 2020-07-31
@@ -189,9 +186,13 @@ there is total <!-- count starts -->137<!-- count ends --> TILs . keep on
 * [999. 可以被一步捕获的棋子数](https://github.com/fulln/TIL/blob/master/leetcode/easy/numRookCaptures.md) - 2020-11-26
 * [字符串中的第一个唯一字符](https://github.com/fulln/TIL/blob/master/leetcode/easy/firstUniqChar.md) - 2020-11-27
 * [有效的数独](https://github.com/fulln/TIL/blob/master/leetcode/easy/isValidSudoku.md) - 2020-11-29
-## shell
+* [删除链表的倒数第N个节点](https://github.com/fulln/TIL/blob/master/leetcode/easy/removeNthFromEnd.md) - 2020-12-01
+## git
 
-* [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
+* [git 版本的回滚](https://github.com/fulln/TIL/blob/master/git/gitreset.md) - 2020-09-23
+## vim
+
+* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
 <!-- index ends -->
 
 
