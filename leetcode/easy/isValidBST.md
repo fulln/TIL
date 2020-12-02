@@ -31,5 +31,23 @@
 来源：力扣（LeetCode）
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 ```go
+func isValidBST(root *TreeNode) bool {
+    return valiBST(root,math.MinInt64,math.MaxInt64)
+}
 
+func valiBST(root *TreeNode,min,max int)bool{
+
+    if root == nil{
+        return true
+    }
+   // 判断节点的值是不是在区间呢，不是的话就false结束
+    if root.Val<=min || root.Val>=max{
+        return false
+    }
+
+    //左递归 最大值改为当前节点值
+    //右递归 最小值改为当前节点值
+    return valiBST(root.Left,min,root.Val) && valiBST(root.Right,root.Val,max) 
+
+}
 ```
