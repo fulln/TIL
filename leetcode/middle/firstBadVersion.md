@@ -34,27 +34,16 @@ func firstBadVersion(n int) int {
     from,end := 1,n
     var middle int 
 
-
-    for end != 0 {                        
-        middle = (from + end )  /2        
+    for from < end {                        
+        middle =from  + ( (end - from )  /2)        
         if isBadVersion(middle) {
-            if  !isBadVersion(middle -1){
-                return middle
-            }else{
-                from = middle/2
-                end =  middle -1      
-            }           
+            end = middle
         }else{
-             if isBadVersion(middle +1){
-                return middle +1
-            }else{
-                from = middle +2
-                end =  middle + middle/2
-            }
+            from =  middle +1
         }
     }
     
-    return n
+    return from
     
 }
 ```
