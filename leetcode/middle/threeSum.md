@@ -23,5 +23,55 @@
 
 
 ```go
+func threeSum(nums []int) [][]int {
+
+    returns := [][]int{}
+
+    if len(nums) < 3 {
+		return returns
+	}
+
+    
+    sort.Ints(nums)
+    var sum  int
+
+    for j := 0 ; j < len(nums) ;j++ {
+
+        if nums[j] > 0 {
+            break
+        }
+
+        if  j > 0 && nums[j] == nums[j -1] {
+            continue
+        }
+
+        for from ,to := j+1 ,len(nums) -1; from < to;{
+            sum = nums[from] + nums[to] + nums[j]
+            if sum < 0{
+                    from++
+            }else if sum > 0{
+                    to--
+            }else if sum == 0{
+                temp := []int{nums[j] , nums[from] , nums[to]}
+
+                returns  = append(returns,temp)
+
+                for from < to && nums[from] == nums[from +1]{
+                    from++
+                }
+                for from < to && nums[to] == nums[to -1]{
+                    to --
+                }
+
+                from  ++ 
+                to --
+            }
+        }
+    } 
+    return returns
+}
+
+
+
 
 ```
