@@ -20,4 +20,20 @@
 链接：https://leetcode-cn.com/problems/contains-duplicate-ii
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 ```go
+func containsNearbyDuplicate(nums []int, k int) bool {
+    maps := make(map[int]int)
+    for i := 0; i< len(nums);i++{
+        if _,ok := maps[nums[i]];ok {
+            if i - maps[nums[i]] <= k{
+                return true
+            }else{
+                maps[nums[i]] = i    
+            }
+        }else{
+            maps[nums[i]] = i
+        }
+    } 
+    return false
+
+}
 ```
