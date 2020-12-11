@@ -30,5 +30,24 @@
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 ```go
 
+func lengthOfLongestSubstring(s string) int {
 
+    maps := make(map[byte]int)
+    curr, max := -1,0 
+    for i:=0 ;i< len(s);i++{
+        if index,ok := maps[s[i]];ok{
+            if curr <= index{
+                curr = index 
+            }       
+        }
+        if max < i - curr  {
+                max = i - curr             
+        }
+
+        maps[s[i]] = i     
+    }
+
+    
+    return max
+}
 ```
