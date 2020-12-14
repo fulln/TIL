@@ -19,5 +19,40 @@
 
 ```go
 
+func longestPalindrome(s string) string {
+    //中心扩散法
+    left,right,lens,max,maxLen,maxStart := 0,0,1,0,0,0
+
+    for i := 0;i< len(s);i++{
+        left = i-1;
+        right = i+1
+
+        for left >=0 && s[i] == s[left]{
+            left --
+            lens +=1
+        }
+
+        for right < len(s) && s[i] == s[right]{
+            right++
+            lens +=1
+        }
+
+        for  left >=0  && right < len(s) && s[left] == s[right]{
+            lens +=2
+            left --
+            right ++
+        }
+
+        if (lens > max) {
+                maxLen = lens;
+                maxStart = left;
+                max = lens
+        }
+        lens = 1;
+    }
+
+    
+    return s[maxStart+1:maxStart+maxLen+1]
+}
 
 ```
