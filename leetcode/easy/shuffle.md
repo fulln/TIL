@@ -25,9 +25,11 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
-  rep := []int{}
+func shuffle(nums []int, n int) []int {
+    rep := []int{}
     for i,j:= 0,len(nums)/2;i <len(nums)/2 || j <len(nums) ;i,j = i+1,j+1{
         rep = append(rep,nums[i],nums[j])
     }
     return rep
+}
 ```
