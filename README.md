@@ -4,51 +4,35 @@ today i learn
 
 <!-- toc -->
 
-- [git](#git)
-- [vim](#vim)
 - [shell](#shell)
 - [react](#react)
-- [windows](#windows)
-- [maven](#maven)
-- [sql](#sql)
 - [java](#java)
   * [jvm](#jvm)
   * [spring](#spring)
   * [basic](#basic)
+- [maven](#maven)
+- [git](#git)
+- [sql](#sql)
+- [vim](#vim)
 - [leetcode](#leetcode)
-  * [middle](#middle)
   * [easy](#easy)
+  * [middle](#middle)
+- [windows](#windows)
 
 <!-- tocstop -->
 
 ---
-there is total <!-- count starts -->151<!-- count ends --> TILs . keep on 
+there is total <!-- count starts -->152<!-- count ends --> TILs . keep on 
 
 ---
 
 <!-- index starts -->
-## git
-
-* [git 版本的回滚](https://github.com/fulln/TIL/blob/master/git/gitreset.md) - 2020-09-23
-## vim
-
-* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
 ## shell
 
 * [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
 ## react
 
 * [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
-## windows
-
-* [windows 中cmd 相关的操作](https://github.com/fulln/TIL/blob/master/windows/shellOption.md) - 2020-11-14
-* [合并多个sheet](https://github.com/fulln/TIL/blob/master/windows/ExcelCopy.md) - 2020-11-17
-## maven
-
-* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
-## sql
-
-* [mysql 事务锁相关查看](https://github.com/fulln/TIL/blob/master/sql/qeury_transaction.md) - 2020-09-16
 ## java
 
 ### jvm
@@ -65,27 +49,20 @@ there is total <!-- count starts -->151<!-- count ends --> TILs . keep on
 * [jvm的大图流整理](https://github.com/fulln/TIL/blob/master/java/basic/jvmArrange.md) - 2020-08-22
 * [通过BTrace进行分析](https://github.com/fulln/TIL/blob/master/java/basic/BTrace.md) - 2020-08-26
 * [JDK15视频发布会及新特性](https://github.com/fulln/TIL/blob/master/java/basic/JDK15.md) - 2020-11-01
+## maven
+
+* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
+## git
+
+* [git 版本的回滚](https://github.com/fulln/TIL/blob/master/git/gitreset.md) - 2020-09-23
+## sql
+
+* [mysql 事务锁相关查看](https://github.com/fulln/TIL/blob/master/sql/qeury_transaction.md) - 2020-09-16
+## vim
+
+* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
 ## leetcode
 
-### middle
-
-* [钥匙和房间](https://github.com/fulln/TIL/blob/master/leetcode/middle/canVisitAllRooms.md) - 2020-09-11
-* [二叉树的中序遍历](https://github.com/fulln/TIL/blob/master/leetcode/middle/inorderTraversal.md) - 2020-09-14
-* [子集](https://github.com/fulln/TIL/blob/master/leetcode/middle/subsets.md) - 2020-09-20
-* [剑指 Offer 46. 把数字翻译成字符串](https://github.com/fulln/TIL/blob/master/leetcode/middle/translateNum.md) - 2020-09-21
-* [二叉搜索树中的众数](https://github.com/fulln/TIL/blob/master/leetcode/middle/findMode.md) - 2020-09-25
-* [路径总和 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/pathSum.md) - 2020-09-26
-* [填充每个节点的下一个右侧节点指针 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/connect.md) - 2020-09-28
-* [144. 二叉树的前序遍历](https://github.com/fulln/TIL/blob/master/leetcode/middle/preorderTraversal.md) - 2020-10-28
-* [5603. 确定两个字符串是否接近](https://github.com/fulln/TIL/blob/master/leetcode/middle/closeStrings.md) - 2020-11-15
-* [5606. 具有给定数值的最小字符串](https://github.com/fulln/TIL/blob/master/leetcode/middle/getSmallestString.md) - 2020-11-22
-* [二叉树的层序遍历](https://github.com/fulln/TIL/blob/master/leetcode/middle/levelOrder.md) - 2020-11-24
-* [把字符串转换成整数](https://github.com/fulln/TIL/blob/master/leetcode/middle/strToInt.md) - 2020-11-30
-* [第一个错误的版本](https://github.com/fulln/TIL/blob/master/leetcode/middle/firstBadVersion.md) - 2020-12-05
-* [K 和数对的最大数目](https://github.com/fulln/TIL/blob/master/leetcode/middle/maxOperations.md) - 2020-12-06
-* [三数之和](https://github.com/fulln/TIL/blob/master/leetcode/middle/threeSum.md) - 2020-12-07
-* [字母异位词分组](https://github.com/fulln/TIL/blob/master/leetcode/middle/groupAnagrams.md) - 2020-12-08
-* [最长回文子串](https://github.com/fulln/TIL/blob/master/leetcode/middle/longestPalindrome.md) - 2020-12-14
 ### easy
 
 * [给定一个排序数组，需要在原地删除重复出现的元素](https://github.com/fulln/TIL/blob/master/leetcode/easy/removeDuplicates.md) - 2020-07-28
@@ -206,6 +183,30 @@ there is total <!-- count starts -->151<!-- count ends --> TILs . keep on
 * [重新排列数组](https://github.com/fulln/TIL/blob/master/leetcode/easy/shuffle.md) - 2020-12-16
 * [计数质数](https://github.com/fulln/TIL/blob/master/leetcode/easy/countPrimes.md) - 2020-12-17
 * [反转字符串中的元音字母](https://github.com/fulln/TIL/blob/master/leetcode/easy/reverseVowels.md) - 2020-12-18
+### middle
+
+* [钥匙和房间](https://github.com/fulln/TIL/blob/master/leetcode/middle/canVisitAllRooms.md) - 2020-09-11
+* [二叉树的中序遍历](https://github.com/fulln/TIL/blob/master/leetcode/middle/inorderTraversal.md) - 2020-09-14
+* [子集](https://github.com/fulln/TIL/blob/master/leetcode/middle/subsets.md) - 2020-09-20
+* [剑指 Offer 46. 把数字翻译成字符串](https://github.com/fulln/TIL/blob/master/leetcode/middle/translateNum.md) - 2020-09-21
+* [二叉搜索树中的众数](https://github.com/fulln/TIL/blob/master/leetcode/middle/findMode.md) - 2020-09-25
+* [路径总和 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/pathSum.md) - 2020-09-26
+* [填充每个节点的下一个右侧节点指针 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/connect.md) - 2020-09-28
+* [144. 二叉树的前序遍历](https://github.com/fulln/TIL/blob/master/leetcode/middle/preorderTraversal.md) - 2020-10-28
+* [5603. 确定两个字符串是否接近](https://github.com/fulln/TIL/blob/master/leetcode/middle/closeStrings.md) - 2020-11-15
+* [5606. 具有给定数值的最小字符串](https://github.com/fulln/TIL/blob/master/leetcode/middle/getSmallestString.md) - 2020-11-22
+* [二叉树的层序遍历](https://github.com/fulln/TIL/blob/master/leetcode/middle/levelOrder.md) - 2020-11-24
+* [把字符串转换成整数](https://github.com/fulln/TIL/blob/master/leetcode/middle/strToInt.md) - 2020-11-30
+* [第一个错误的版本](https://github.com/fulln/TIL/blob/master/leetcode/middle/firstBadVersion.md) - 2020-12-05
+* [K 和数对的最大数目](https://github.com/fulln/TIL/blob/master/leetcode/middle/maxOperations.md) - 2020-12-06
+* [三数之和](https://github.com/fulln/TIL/blob/master/leetcode/middle/threeSum.md) - 2020-12-07
+* [字母异位词分组](https://github.com/fulln/TIL/blob/master/leetcode/middle/groupAnagrams.md) - 2020-12-08
+* [最长回文子串](https://github.com/fulln/TIL/blob/master/leetcode/middle/longestPalindrome.md) - 2020-12-14
+* [删除子数组的最大得分](https://github.com/fulln/TIL/blob/master/leetcode/middle/maximumUniqueSubarray.md) - 2020-12-20
+## windows
+
+* [windows 中cmd 相关的操作](https://github.com/fulln/TIL/blob/master/windows/shellOption.md) - 2020-11-14
+* [合并多个sheet](https://github.com/fulln/TIL/blob/master/windows/ExcelCopy.md) - 2020-11-17
 <!-- index ends -->
 
 
