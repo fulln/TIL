@@ -27,6 +27,34 @@ nums1 中数字 x 的下一个更大元素是指 x 在 nums2 中对应位
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+func nextGreaterElement(nums1 []int, nums2 []int) []int {
+    num := 0
 
+    rep := []int{}
+
+    for num < len(nums1){
+        var j = -1
+        for i:= 0;i<len(nums2);i++{
+            if nums1[num] == nums2[i]{
+                for s := i+1;s< len(nums2);s++{
+                    if nums2[s] > nums1[num]{
+                        j = nums2[s]
+                        break
+                    }else{
+                        continue
+                    }
+                }
+                if j != -1{
+                    break
+                }
+            }
+        }
+        rep = append(rep,j)
+        num ++
+    }
+
+    return rep
+
+}
 
 ```
