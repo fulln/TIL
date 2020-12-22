@@ -24,4 +24,37 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+func maximumUniqueSubarray(nums []int) int {
+	index,currs,max := -1,0,0
+	maps := make(map[int]int)
+	for k,v := range nums{
+		if _ , ok := maps[v] ;ok {
+			if max < currs{
+				max = currs
+			}
+            if maps[v] > index {                                    
+                index = maps[v] 			            
+                currs = sumInts(nums[index+1:k+1])
+            }else{
+			    currs += v
+		    }   
+		}else{
+			currs += v
+		}
+		maps[v] = k
+	}
+
+	if max < currs{
+		max = currs
+	}
+
+	return max
+}
+func sumInts(nums []int)int{
+	sum := 0
+	for _,val :=range nums{
+		sum += val
+	}
+	return sum;
+}
 ```
