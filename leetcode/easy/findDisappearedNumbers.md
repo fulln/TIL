@@ -15,5 +15,27 @@
 [5,6]
 
 ```go
+func findDisappearedNumbers(nums []int) []int {
+    res := []int{}
+    for _,val := range nums{
+        if val < 0 {
+            if nums[-(val+1)] >0 {
+                nums[-(val+1)] = nums[-(val+1)] * -1
+            }
+        }else{
+            if nums[val-1] >0{
+                nums[val-1] = nums[val-1]* -1
+            }
+        }
+    }
+
+    for i,val2 := range nums{
+        if val2 > 0{
+            res = append(res,i+1)
+        }
+    } 
+
+    return res
+}
 
 ```
