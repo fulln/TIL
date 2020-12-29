@@ -19,4 +19,24 @@
 如果不得使用临时缓冲区，该怎么解决？
 
 ```go
+func removeDuplicateNodes(head *ListNode) *ListNode {
+    
+    if head ==  nil{
+        return nil
+    }
+
+    rep := head
+    maps := make(map[int]int)
+    maps[head.Val] = 1
+    for head != nil && head.Next != nil{
+        if maps[head.Next.Val] == 1{
+            head.Next = head.Next.Next
+        }else{
+            maps[head.Next.Val] += 1            
+            head = head.Next
+        }
+    }
+    return rep
+
+}
 ```
