@@ -37,3 +37,22 @@
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/subtree-of-another-tree
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+```go
+func isSubtree(s *TreeNode, t *TreeNode) bool {
+
+	if s == nil {
+		return false
+	}
+	return isSubtree(s.Left, t) || isSameTree(s, t) || isSubtree(s.Right, t)
+
+}
+
+
+func isSameTree(p *TreeNode, q *TreeNode) bool {
+	if p == nil || q == nil {
+		return p == q
+	}
+	return isSameTree(p.Left, q.Left) && p.Val == q.Val && isSameTree(p.Right, q.Right)
+}
+
+```
