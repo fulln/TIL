@@ -25,5 +25,49 @@
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 
 ```go
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func zigzagLevelOrder(root *TreeNode) [][]int {
 
+    returns := [][]int{}
+
+    if root == nil{
+        return returns
+    }
+    queue := []*TreeNode{root}
+
+    for i :=0;len(queue) >0;i++{
+        check := []int{}
+        nows := queue
+        queue = nil
+        for _,node := range nows{
+            check =append(check,node.Val)
+            if node.Left != nil{
+                queue = append(queue,node.Left)
+            }
+
+            if node.Right != nil{
+                queue = append(queue,node.Right)
+            }
+        }
+
+        if i & 1 ==1 {
+            for from,end := 0,len(check)-1;from <end;from,end = from+1,end -1{
+                check[from],check[end] = check[end],check[from]
+            }
+        }
+
+        returns = append(returns,check)
+
+    }
+   
+    return returns
+
+}
 ```
