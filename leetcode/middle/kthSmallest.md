@@ -33,5 +33,28 @@
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 
 ```go
-
+func kthSmallest(root *TreeNode, k int) int {
+   //后续递归遍历
+    stru := dg(root,k)
+    return stru[k-1]
+}
+func dg(root *TreeNode,k int) []int{
+   returns := []int{}
+   if root ==  nil{
+       return returns
+   }
+   
+   returns =append(returns,dg(root.Left,k)...)
+   
+   if len(returns) >= k{
+       return returns
+   }
+   returns = append(returns,root.Val)
+   if len(returns) >= k{
+       return returns
+   }
+   returns =append(returns,dg(root.Right,k)...)
+   
+   return returns
+}
 ```
