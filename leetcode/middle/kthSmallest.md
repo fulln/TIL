@@ -57,4 +57,30 @@ func dg(root *TreeNode,k int) []int{
    
    return returns
 }
+
+func kthSmallest(root *TreeNode, k int) int {
+    returns := []*TreeNode{}
+
+    for{
+
+        for root != nil{
+            returns = append(returns,root)
+            root = root.Left
+        }
+
+        now := returns[len(returns) -1]
+        
+        returns = returns[:len(returns) -1]
+
+        k -= 1
+
+        if k == 0{
+            return now.Val
+        }
+
+        root = now.Right
+
+    }
+
+}
 ```
