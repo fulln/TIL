@@ -48,4 +48,34 @@ func letterCombinations(digits string) []string {
     }
   return returns
 }
+
+func letterCombinations(digits string) []string {
+    
+
+    ans :=[]string{}
+
+    
+    if digits == ""{
+        return ans
+    }
+
+    var dsf func(int,string)
+
+    dsf = func(i int,dis string){
+        if i == len(digits){
+            ans = append(ans,dis)
+            return
+        }
+
+        for _,m := range(phoneMap[string(digits[i])]){
+            dsf(i+1,dis+string(m))
+        }
+
+    }
+
+    dsf(0,"")
+
+    return ans
+
+}
 ```
