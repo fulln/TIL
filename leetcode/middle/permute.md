@@ -21,5 +21,34 @@
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 
 ```go
+func permute(nums []int) [][]int {
+    resp := [][]int{}
 
+    var dfs func([]bool,[]int)
+    dfs = func(m []bool,sum []int){
+
+        if len(sum) == len(nums) {
+            tmp := make([]int, len(nums))
+            copy(tmp, sum)
+            resp = append(resp,tmp)
+            return
+        }
+
+         for i:=0; i<len(nums); i++ {
+             if m[i]{
+                 continue
+             }
+            m[i]=true
+            sum = append(sum,nums[i])
+            dfs(m,sum)
+            sum = sum[:len(sum)-1]
+            m[i]=false
+         }
+    }
+    var used = make([]bool, len(nums))
+    dfs(used,[]int{})
+
+    return resp
+
+}
 ```
