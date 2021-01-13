@@ -35,9 +35,31 @@
 来源：力扣（LeetCode）
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 ```go
-//冒泡排序
+//O(n) 常量空间
+func sortColors(nums []int)  {
 func sortColors(nums []int)  {
 
+    begin,last, now:=0,len(nums)-1,0
+    for now <= last{
+        if nums[now] == 0{         
+            nums[begin],nums[now] = nums[now],nums[begin]        
+            begin++   
+            now ++     
+            continue
+        }
+
+        if nums[now] == 1{
+            now++
+            continue
+        }
+
+        
+        if nums[now] == 2{
+            nums[last],nums[now] = nums[now],nums[last]            
+            last-- 
+        }
+    } 
+}
 }
 
 ```
