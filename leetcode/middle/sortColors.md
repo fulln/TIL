@@ -37,7 +37,6 @@
 ```go
 //O(n) 常量空间
 func sortColors(nums []int)  {
-func sortColors(nums []int)  {
 
     begin,last, now:=0,len(nums)-1,0
     for now <= last{
@@ -59,7 +58,6 @@ func sortColors(nums []int)  {
             last-- 
         }
     } 
-}
 }
 
 ```
