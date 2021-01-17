@@ -49,7 +49,7 @@ func topKFrequent(nums []int, k int) []int {
     
     qsort(0,len(results)-1,results)
 
-    for i:=len(results)-1; i>= k-1 ;i--{
+    for i:=len(results)-1; i >= len(results) - k  ;i--{
         resp = append(resp,results[i][0])
     }
 
