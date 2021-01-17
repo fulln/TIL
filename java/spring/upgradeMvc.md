@@ -1,6 +1,6 @@
 ## springMvc升级springBoot
 
-	注意下使用的对应jar包的升级,其中升级mybatis的版本，造成新版本会检验强类型一致性，如果mybatis的xml的if test比较的类型相同的话，升级mybatis不会影响，否则需要把类型不一致进行比较要进行修改
+注意下使用的对应jar包的升级,其中升级mybatis的版本，造成新版本会检验强类型一致性，如果mybatis的xml的if test比较的类型相同的话，升级mybatis不会影响，否则需要把类型不一致进行比较要进行修改
 
 ### 升级步骤
 
@@ -24,7 +24,7 @@
 ```
 2. 将项目中的对应的Spring相关的依赖替换成springboot相关
 
-for example:web项目
+	for example:web项目
 
 ```java
 <dependency>
@@ -35,9 +35,9 @@ for example:web项目
 
 3. 更换项目打包插件
 	* 修改当前pom中packageType为jar
-
+		```
 		<packaging>jar</packaging>
-
+		```
 	* 更换springboot打包插件
 		```
 		<plugin>
