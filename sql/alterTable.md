@@ -29,6 +29,6 @@ ALTER TABLE 允许使用 ALTER COLUMN ,MODIFY COLUMN 和 CHANGE COLUMN 语句来
 
 ALTER TABLE操作是很让人痛苦的,大部分情况下进行ALTER TABLE还会锁表,并重建整张表,所以目前一般做法
 
-* 使用`Online DDL`对表数据
+* 使用`Online DDL`对表修改
 * 在建表时具有良好的前瞻性,并保留相关字段
 * 新建同名表,然后进行数据同步,再rename
