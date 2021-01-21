@@ -26,5 +26,21 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+n := len(s)
+    for i := 1; i * 2 <= n; i++ {
+        if n % i == 0 {
+            match := true
+            for j := i; j < n; j++ {
+                if s[j] != s[j - i] {
+                    match = false
+                    break
+                }
+            }
+            if match {
+                return true
+            }
+        }
+    }
+    return false
 
 ```
