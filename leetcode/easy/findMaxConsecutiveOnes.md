@@ -17,4 +17,22 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+func findMaxConsecutiveOnes(nums []int) int {
+    sum := 0
+    curr := 0
+    for _,i:= range nums{
+        if i == 1 {
+            curr +=1
+        }else{
+            if sum  <curr{
+                sum = curr
+            }
+            curr = 0
+        }
+    }
+   if sum  <curr{
+        sum = curr
+    }
+    return sum
+}
 ```
