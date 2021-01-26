@@ -28,5 +28,43 @@
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 
 ```go
-
+func searchRange(nums []int, target int) []int {
+    start,end:= 0,len(nums) -1
+    returns := []int{-1,-1}
+    for start <= end {
+        middle := (start+end)/2
+        if nums[middle] <target{
+            start = middle+1
+            continue
+        }else if nums[middle] > target{
+             end = middle -1
+            continue
+        }else{
+            returns[0] = middle
+            returns[1] = middle
+            curr := middle -1 
+            for start <= curr{
+                if nums[curr] == target{
+                    returns[0] = curr
+                    curr --
+                    continue
+                }else{
+                    break
+                }
+            }
+            curr = middle + 1 
+            for end >= curr{
+                if nums[curr] == target{
+                    returns[1] = curr
+                    curr++
+                    continue
+                }else{
+                    break
+                }
+            }
+            return returns
+        }
+    }
+    return returns
+}
 ```
