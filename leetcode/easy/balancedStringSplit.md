@@ -27,4 +27,22 @@
 链接：https://leetcode-cn.com/problems/split-a-string-in-balanced-strings
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 ```
+func balancedStringSplit(s string) int {
+    sum := 0
+    cr,l :=s[0],0
+    for i:= 0;i< len(s);i++{
+        if l == 0{
+            cr = s[i]
+        }
+        if s[i] == cr{
+            l ++
+        }else{
+            l --
+            if l == 0{
+                sum ++
+            }            
+        }
+    }
+    return sum
+}
 ```
