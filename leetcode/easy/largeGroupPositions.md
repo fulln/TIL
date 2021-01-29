@@ -37,4 +37,18 @@
 链接：https://leetcode-cn.com/problems/positions-of-large-groups
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 ```go
+func largeGroupPositions(s string) (ans [][]int) {
+    cnt := 1
+    for i := range s {
+        if i == len(s)-1 || s[i] != s[i+1] {
+            if cnt >= 3 {
+                ans = append(ans, []int{i - cnt + 1, i})
+            }
+            cnt = 1
+        } else {
+            cnt++
+        }
+    }
+    return
+}
 ```
