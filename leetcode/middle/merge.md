@@ -23,47 +23,74 @@
 
 ```go
 func merge(intervals [][]int) [][]int {
-    maps := make([]bool,100000)
+   lens := len(intervals)
 
-    if len(intervals) == 0{
-        return nil
+    if lens <= 1{
+        return intervals
     }
-    max := -1
-    min := 100000
-    for i:= 0 ;i < len(intervals);i++{
-        for j := intervals[i][0] ; j<= intervals[i][1]; j++{
-            maps[j] = true
-            if max < intervals[i][1]{
-                max = intervals[i][1]
-            }
 
-            if min > intervals[i][0]{
-                min = intervals[i][0]
-            }
+
+   qsort(0,lens-1,intervals)
+
+   returns := [][]int{}
+   lastMax := -1
+   for i:= 0;i < lens ;i++{
+
+       if lastMax != -1 &&  intervals[i][0] <= lastMax{
+           returns[len(returns) -1][1] = max(intervals[i][1],lastMax)
+           lastMax = max(intervals[i][1],lastMax)
+           continue
+       }
+      returns = append(returns,intervals[i])
+      lastMax = max(intervals[i][1],lastMax)
+       
+   }
+
+   return returns
+
+}
+
+func max(a,b int)int{
+    if a > b{
+        return a
+    }
+
+    return b
+}
+
+//手写快排
+func qsort(from,to int,res [][]int){
+    begin := from
+    end := to
+    index := from
+    if from >= to{
+        return
+    }
+
+    for begin < end{
+        for begin < end{
+            if res[index][0] <= res[end][0]{
+                end -- 
+                continue
+            }            
+            res[index] ,res[end] = res[end],res[index]
+            index =  end
+            break
+        }
+
+        for begin < end{
+            if res[index][0] >= res[begin][0]{
+                begin ++ 
+                continue
+            }            
+            res[index] ,res[begin] = res[begin],res[index]
+            index =  begin
+            break
         }
     }
-    returns := [][]int{}
-    thisreturn:=make([]int,2)
-    begin :=true
-    end := true
-    for i := min;i <max;i++{
-        if maps[i]  && begin{
-            thisreturn[0]=i
-            begin = false
-            end = true
-        }
 
-        if ! maps[i] && end{
-            thisreturn[1] = i-1 
-            returns = append(returns,thisreturn[::])
-            end = false
-            begin = true
-        }
-    } 
-    thisreturn[1] = max
-    returns = append(returns,thisreturn)
-
-    return returns
+    qsort(from,index-1,res)
+    qsort(index+1,to,res)
 
 }
 ```
