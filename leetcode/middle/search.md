@@ -35,11 +35,48 @@ nums 肯定会在某个点上旋转
 
 ```go
 func search(nums []int, target int) int {
-    for key,val:= range nums{
-        if val == target{
-            return key
-        }
-    }
-    return -1
+	start := 0
+	end := len(nums) - 1
 
-}```
+
+	for start <= end {
+		middle := (start + end) / 2
+		if nums[middle] == target {
+			return middle
+		}
+
+		if nums[middle] < target {
+			if nums[end] == target {
+				return end
+			}
+			if nums[end] > target {
+				start = middle
+				continue
+			}
+			i := search(nums[:middle], target)
+			if i == -1 {
+				return -1
+			} else {
+				return start + i
+			}
+		}
+
+		if nums[middle] > target {
+			if nums[start] == target {
+				return start
+			}
+			if nums[start] < target {
+				end = middle
+				continue
+			}
+			i := search(nums[middle+1:], target)
+			if i == -1 {
+				return -1
+			} else {
+				return middle + i
+			}
+		}
+	}
+	return -1
+}
+```
