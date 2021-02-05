@@ -38,42 +38,23 @@ func search(nums []int, target int) int {
 	start := 0
 	end := len(nums) - 1
 
-
 	for start <= end {
 		middle := (start + end) / 2
 		if nums[middle] == target {
 			return middle
 		}
 
-		if nums[middle] < target {
-			if nums[end] == target {
-				return end
-			}
-			if nums[end] > target {
-				start = middle
-				continue
-			}
-			i := search(nums[:middle], target)
-			if i == -1 {
-				return -1
+		if nums[middle] >= nums[start] {
+			if target >= nums[start] && target < nums[middle] {
+				end = middle - 1
 			} else {
-				return start + i
+				start = middle + 1
 			}
-		}
-
-		if nums[middle] > target {
-			if nums[start] == target {
-				return start
-			}
-			if nums[start] < target {
-				end = middle
-				continue
-			}
-			i := search(nums[middle+1:], target)
-			if i == -1 {
-				return -1
+		} else {
+			if target <= nums[end] && target > nums[middle] {
+				start = middle+1
 			} else {
-				return middle + i
+				end =  middle -1
 			}
 		}
 	}
