@@ -32,5 +32,31 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+func addToArrayForm(A []int, K int) []int {
+    returns := []int{}
+    for i:= len(A) -1;i >=0; i--{
+        sum := A[i] + K%10
+        K = K/10
+        if sum >= 10 {
+            K++
+            sum -= 10
+        }
+        returns =append(returns,sum)
+    }
+    for ; K > 0; K /= 10 {
+        returns = append(returns, K%10)
+    }
+    reverse(returns)
+    return returns
+
+}
+
+
+func reverse(A []int) {
+    for i, n := 0, len(A); i < n/2; i++ {
+        A[i], A[n-1-i] = A[n-1-i], A[i]
+    }
+}
+
 
 ```
