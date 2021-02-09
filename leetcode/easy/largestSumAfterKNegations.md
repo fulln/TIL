@@ -26,4 +26,39 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+func largestSumAfterKNegations(A []int, K int) int {
+    sort.Ints(A)
+    small:= 100
+    sum := 0
+    for _,val := range A{
+        
+        if val  < 0 {
+            if val <small{
+                thisVal := val * -1
+                if thisVal < small {
+                    small = thisVal
+                }
+            }
+        }else{
+            if val < small{
+                small = val
+            }
+        }
+
+        if val < 0 && K > 0 {        
+                K --
+                sum = sum  + ( (val) *  -1)
+        }else {
+            sum = sum + val
+        }
+    }
+    if K > 0  && K & 1 == 1{
+       sum = sum + small *-2 
+    }
+
+    return sum
+
+
+
+}
 ```
