@@ -21,5 +21,25 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+func constructRectangle(area int) []int {
+    maps := make(map[int]int)
+    small := 10000000
+    var returns []int
+    for i:= 1;i<=area && maps[i] == 0;i++{
+        if area % i== 0 {
+            if area / i == i {
+                return []int{i,i}
+            }
+            maps[i] = 1
+            maps[area / i] = 1
+            csmall := (area / i)  - i 
+            if csmall  < small {
+                small = csmall
+                returns = []int{area/i,i} 
+            }
+        }
+    }
+    return returns
 
+}
 ```
