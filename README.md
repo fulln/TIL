@@ -8,17 +8,17 @@ today i learn
 - [leetcode](#leetcode)
   * [easy](#easy)
   * [middle](#middle)
-- [shell](#shell)
-- [git](#git)
-- [react](#react)
-- [maven](#maven)
-- [windows](#windows)
-- [sql](#sql)
 - [java](#java)
   * [plug](#plug)
   * [jvm](#jvm)
   * [basic](#basic)
   * [spring](#spring)
+- [sql](#sql)
+- [react](#react)
+- [shell](#shell)
+- [maven](#maven)
+- [windows](#windows)
+- [git](#git)
 
 <!-- tocstop -->
 
@@ -208,27 +208,6 @@ there is total <!-- count starts -->192<!-- count ends --> TILs . keep on
 * [搜索二维矩阵 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/searchMatrix.md) - 2021-02-04
 * [## 跳跃游戏](https://github.com/fulln/TIL/blob/master/leetcode/middle/canJump.md) - 2021-02-07
 * [两数相加](https://github.com/fulln/TIL/blob/master/leetcode/middle/addTwoNumbers.md) - 2021-02-08
-## shell
-
-* [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
-## git
-
-* [git 版本的回滚](https://github.com/fulln/TIL/blob/master/git/gitreset.md) - 2020-09-23
-## react
-
-* [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
-## maven
-
-* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
-## windows
-
-* [windows 中cmd 相关的操作](https://github.com/fulln/TIL/blob/master/windows/shellOption.md) - 2020-11-14
-* [合并多个sheet](https://github.com/fulln/TIL/blob/master/windows/ExcelCopy.md) - 2020-11-17
-## sql
-
-* [mysql 事务锁相关查看](https://github.com/fulln/TIL/blob/master/sql/qeury_transaction.md) - 2020-09-16
-* [Transaction resolution unknown 异常分析](https://github.com/fulln/TIL/blob/master/sql/transactions-unkonw.md) - 2021-01-08
-* [Alter Table 操作执行过程](https://github.com/fulln/TIL/blob/master/sql/alterTable.md) - 2021-01-20
 ## java
 
 ### plug
@@ -250,6 +229,27 @@ there is total <!-- count starts -->192<!-- count ends --> TILs . keep on
 * [spring-data-redis](https://github.com/fulln/TIL/blob/master/java/spring/springDataRedis.md) - 2020-11-14
 * [springMvc升级springBoot](https://github.com/fulln/TIL/blob/master/java/spring/upgradeMvc.md) - 2021-01-15
 * [spring Enviroment 初始化及@value加载](https://github.com/fulln/TIL/blob/master/java/spring/envirment.md) - 2021-02-05
+## sql
+
+* [mysql 事务锁相关查看](https://github.com/fulln/TIL/blob/master/sql/qeury_transaction.md) - 2020-09-16
+* [Transaction resolution unknown 异常分析](https://github.com/fulln/TIL/blob/master/sql/transactions-unkonw.md) - 2021-01-08
+* [Alter Table 操作执行过程](https://github.com/fulln/TIL/blob/master/sql/alterTable.md) - 2021-01-20
+## react
+
+* [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
+## shell
+
+* [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
+## maven
+
+* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
+## windows
+
+* [windows 中cmd 相关的操作](https://github.com/fulln/TIL/blob/master/windows/shellOption.md) - 2020-11-14
+* [合并多个sheet](https://github.com/fulln/TIL/blob/master/windows/ExcelCopy.md) - 2020-11-17
+## git
+
+* [git 版本的回滚](https://github.com/fulln/TIL/blob/master/git/gitreset.md) - 2020-09-23
 <!-- index ends -->
 
 
