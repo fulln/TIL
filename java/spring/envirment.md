@@ -287,24 +287,29 @@ protected Object doCreateBean(final String beanName, final RootBeanDefinition mb
         // Instantiate the bean.
         BeanWrapper instanceWrapper = null;
 	if (mbd.isSingleton()) {
+	   //如果是单例,就需要在工厂bean中删除缓存,并获取到这个bean	
             instanceWrapper = this.factoryBeanInstanceCache.remove(beanName);
         
 	}
 	if (instanceWrapper == null) {
+	   //如果发现之前没有创建,就开始创建beanwapper对象
             instanceWrapper = createBeanInstance(beanName, mbd, args);
         
 	}
         final Object bean = instanceWrapper.getWrappedInstance();
         Class<?> beanType = instanceWrapper.getWrappedClass();
+	//开始设置bean的类型
 	if (beanType != NullBean.class) {
             mbd.resolvedTargetType = beanType;
         
 	}
 
         // Allow post-processors to modify the merged bean definition.
+	// 开始使用后置处理器
 	synchronized (mbd.postProcessingLock) {
 		if (!mbd.postProcessed) {
 			try {
+			//
                     applyMergedBeanDefinitionPostProcessors(mbd, beanType, beanName);
                 
 			}
@@ -318,7 +323,7 @@ protected Object doCreateBean(final String beanName, final RootBeanDefinition mb
 		}
         
 	}
-
+	//缓存bean对象,防止循环引用
         // Eagerly cache singletons to be able to resolve circular references
         // even when triggered by lifecycle interfaces like BeanFactoryAware.
         boolean earlySingletonExposure = (mbd.isSingleton() && this.allowCircularReferences &&
@@ -334,6 +339,8 @@ protected Object doCreateBean(final String beanName, final RootBeanDefinition mb
 	}
 
         // Initialize the bean instance.
+	//开始初始化bean.依赖注入就是在这里触发
+	//这个exposedObject 在初始化完成之后返回作为依赖注入完成后的Bean
         Object exposedObject = bean;
 	try {
             populateBean(beanName, mbd, instanceWrapper);
@@ -353,19 +360,25 @@ protected Object doCreateBean(final String beanName, final RootBeanDefinition mb
 		}
         
 	}
-
+	//缓存与否
 	if (earlySingletonExposure) {
+		// 获取指定名称的bean单例对象
             Object earlySingletonReference = getSingleton(beanName, false);
 	    if (earlySingletonReference != null) {
+		// 发现是同一个对象的话,就返回这个
 		    if (exposedObject == bean) {
                     exposedObject = earlySingletonReference;
                 
 		    }
+			// 发现bean依赖 其他bean,并且有循环引用不能注册对象时
 		    else if (!this.allowRawInjectionDespiteWrapping && hasDependentBean(beanName)) {
+			// 获取当前bean 依赖的其他所有bean
                     String[] dependentBeans = getDependentBeans(beanName);
                     Set<String> actualDependentBeans = new LinkedHashSet<>(dependentBeans.length);
 		    for (String dependentBean : dependentBeans) {
+				//进行类型检查, 主要检查有没有被创建, 创建过的就提示报错
 			    if (!removeSingletonIfCreatedForTypeCheckOnly(dependentBean)) {
+				
                             actualDependentBeans.add(dependentBean);
                         
 			    }
@@ -389,6 +402,7 @@ protected Object doCreateBean(final String beanName, final RootBeanDefinition mb
 	}
 
         // Register bean as disposable.
+	// 注册这个完成依赖注入的bean
 	try {
             registerDisposableBeanIfNecessary(beanName, bean, mbd);
         
@@ -404,5 +418,68 @@ protected Object doCreateBean(final String beanName, final RootBeanDefinition mb
     
 	}
 
+```
+ 可以看出,依赖bean的注入主要在populateBean 和createBeanInstance 这2个方法里面,开始分析`createBeanINstance`
+
+```java
+protected BeanWrapper createBeanInstance(String beanName, RootBeanDefinition mbd, @Nullable Object[] args) {
+		// Make sure bean class is actually resolved at this point.
+		//确认bean这里是可以被实例化的
+		Class<?> beanClass = resolveBeanClass(mbd, beanName);
+
+		if (beanClass != null && !Modifier.isPublic(beanClass.getModifiers()) && !mbd.isNonPublicAccessAllowed()) {
+			throw new BeanCreationException(mbd.getResourceDescription(), beanName,
+					"Bean class isn't public, and non-public access not allowed: " + beanClass.getName());
+		}
+		
+		Supplier<?> instanceSupplier = mbd.getInstanceSupplier();
+		if (instanceSupplier != null) {
+			return obtainFromSupplier(instanceSupplier, beanName);
+		}
+		// 发现这个bean可以被工厂bean初始化,就直接用这个工厂bean返回的实例
+		if (mbd.getFactoryMethodName() != null) {
+			return instantiateUsingFactoryMethod(beanName, mbd, args);
+		}
+
+		// Shortcut when re-creating the same bean...
+		// 重复创建相同的bean的时候就可以使用下面的方法,快速进行创建
+		boolean resolved = false;
+		boolean autowireNecessary = false;
+		if (args == null) {
+			synchronized (mbd.constructorArgumentLock) {
+				//看下之前创建bean 的时候 有没有需要对应的依赖bean注入
+				if (mbd.resolvedConstructorOrFactoryMethod != null) {
+					resolved = true;
+					autowireNecessary = mbd.constructorArgumentsResolved;
+				}
+			}
+		}
+		if (resolved) {
+			if (autowireNecessary) {
+				//使用构造方法注入的形式 注入对应bean
+				return autowireConstructor(beanName, mbd, null, null);
+			}
+			else {
+				// 使用了无参的方法进行构造
+				return instantiateBean(beanName, mbd);
+			}
+		}
+
+		// Candidate constructors for autowiring?
+		Constructor<?>[] ctors = determineConstructorsFromBeanPostProcessors(beanClass, beanName);
+		if (ctors != null || mbd.getResolvedAutowireMode() == AUTOWIRE_CONSTRUCTOR ||
+				mbd.hasConstructorArgumentValues() || !ObjectUtils.isEmpty(args)) {
+			return autowireConstructor(beanName, mbd, ctors, args);
+		}
+
+		// Preferred constructors for default construction?
+		ctors = mbd.getPreferredConstructors();
+		if (ctors != null) {
+			return autowireConstructor(beanName, mbd, ctors, null);
+		}
+
+		// No special handling: simply use no-arg constructor.
+		return instantiateBean(beanName, mbd);
+	}
 ```
 
