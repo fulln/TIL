@@ -39,4 +39,48 @@
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 
 ```go
+//动态规划
+func lengthOfLIS(nums []int) int {
+    dp :=make([]int,len(nums))
+	//最长的长度就是倒数长度+1
+	res := 0
+	for i:=0;i< len(nums);i++{
+		dp[i] = 1
+		for j:=0;j < i;j++{
+			if nums[i] <= nums[j] {
+				continue
+			}else {
+				max := dp[j] + 1
+				if dp[i] < max{
+					dp[i] = max
+				}
+			}
+		}
+		if res <dp[i] {
+			res =dp[i]
+		}
+	}
+	return res;
+}
+//2分
+func lengthOfLIS(nums []int) int {
+	tail := make([]int,len(nums))
+	res :=0
+	for _,num := range nums{
+		i,j := 0,res
+		for i<j{
+			m := (i+j)/2
+			if nums[m] < num {
+				i = m+1
+			}else{
+				j= m
+			}
+		}
+		tail[i] = num
+		if j ==res{
+			res ++
+		}
+	}
+	return res;
+}
 ```
