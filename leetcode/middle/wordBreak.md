@@ -28,5 +28,27 @@
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 
 ```go
+func wordBreak(s string, wordDict []string) bool {
+    dp := make([]bool,len(s)+1)
+    dp[0]=true
+    for i:=1; i<= len(s);i++{
+        for j:=0;j<i;j++{
+            if dp[j] && contains(s[j:i],wordDict){
+                dp[i]=true
+                break
+            }
+        }
+    }
+    return dp[len(s)]
 
+}
+
+func contains(s string,dict []string)bool{
+    for _,val:= range dict{
+        if val == s{
+            return true
+        }
+    }
+    return false
+}
 ```
