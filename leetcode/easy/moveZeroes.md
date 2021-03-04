@@ -16,23 +16,17 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 ```go
 func moveZeroes(nums []int)  {
-	i := 0
-	c:=0
-	lens := len(nums) -1
-	for index:= 0;index <= lens;index++  {
-		if nums[index]  != 0 {
-			nums[c] =nums[index]
-			c++
-		}else{
-			i++
-		}
-	}
-
-	for j := len(nums) -i ; j<=lens;j++{
-		nums[j] = 0
-	}
-	print(nums)
-
-
+    l := len(nums)
+    start:=0
+    for i:=0;i< len(nums);i++{
+        if nums[i] != 0 {
+            nums[start] = nums[i]
+            start++
+        }
+    }
+    for start < l{
+        nums[start] = 0
+        start++
+    }
 }
 ```
