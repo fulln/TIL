@@ -469,17 +469,217 @@ protected BeanWrapper createBeanInstance(String beanName, RootBeanDefinition mbd
 		Constructor<?>[] ctors = determineConstructorsFromBeanPostProcessors(beanClass, beanName);
 		if (ctors != null || mbd.getResolvedAutowireMode() == AUTOWIRE_CONSTRUCTOR ||
 				mbd.hasConstructorArgumentValues() || !ObjectUtils.isEmpty(args)) {
+			/使用容器的自动装配特性，调用匹配的构造方法实例化
 			return autowireConstructor(beanName, mbd, ctors, args);
 		}
 
 		// Preferred constructors for default construction?
 		ctors = mbd.getPreferredConstructors();
+		// 使用bean的有参构造方法初始化bean
 		if (ctors != null) {
 			return autowireConstructor(beanName, mbd, ctors, null);
 		}
-
+		// 使用默认的无参构造防范
 		// No special handling: simply use no-arg constructor.
 		return instantiateBean(beanName, mbd);
 	}
+
+protected BeanWrapper instantiateBean(final String beanName, final RootBeanDefinition mbd) {
+		try {
+			Object beanInstance;
+			final BeanFactory parent = this;
+			if (System.getSecurityManager() != null) {
+				//根据实例策略创建对应的对象
+				beanInstance = AccessController.doPrivileged((PrivilegedAction<Objct>) () ->
+						getInstantiationStrategy().instantiate(mbd, beanName, parent),
+						getAccessControlContext());
+			}
+			else {
+				//开始封装对应的实例
+				beanInstance = getInstantiationStrategy().instantiate(mbd, beanName, parent);
+			}
+			BeanWrapper bw = new BeanWrapperImpl(beanInstance);
+			initBeanWrapper(bw);
+			return bw;
+		}
+		catch (Throwable ex) {
+			throw new BeanCreationException(
+					mbd.getResourceDescription(), beanName, "Instantiation of bean failed", ex);
+		}
+}
+```
+执行bean实例化
+
+在使用默认的无参构造方法创建Bean 的实例化对象时，方法getInstantiationStrategy().instantiate()调用了SimpleInstantiationStrategy 类中的实例化Bean 的方法，其源码如下：
+
+```java
+@Override
+public Object instantiate(RootBeanDefinition bd, @Nullable String beanName, BeanFactory owner) {
+        // Don't override the class with CGLIB if no overrides.
+	//如果没有说需要重写  就不要用cglib重写
+	if (!bd.hasMethodOverrides()) {
+            Constructor<?> constructorToUse;
+	    synchronized (bd.constructorArgumentLock) {
+                constructorToUse = (Constructor<?>) bd.resolvedConstructorOrFactoryMethod;
+		if (constructorToUse == null) {
+                    final Class<?> clazz = bd.getBeanClass();
+		    if (clazz.isInterface()) {
+                        throw new BeanInstantiationException(clazz, "Specified class is an interface");
+                    
+		    }
+		    try {
+			    if (System.getSecurityManager() != null) {
+				//如果开启了严格保护系统, 用security的方式 开始获取构造,
+				    constructorToUse = AccessController.doPrivileged(
+                                    (PrivilegedExceptionAction<Constructor<?>>) clazz::getDeclaredConstructor
+						    );
+                        
+			    }
+			    else {
+				//直接获取构造方法
+                            constructorToUse = clazz.getDeclaredConstructor();
+                        
+			    }
+                        bd.resolvedConstructorOrFactoryMethod = constructorToUse;
+                    
+		    }
+		    catch (Throwable ex) {
+                        throw new BeanInstantiationException(clazz, "No default constructor found", ex);
+                    
+		    }
+                
+		}
+            
+	    }
+		//  使用beanutils实例话,反射执行对应的构造方法
+            return BeanUtils.instantiateClass(constructorToUse);
+        
+	}
+	else {
+	// 必须用cglib进行方法重写
+            // Must generate CGLIB subclass.
+            return instantiateWithMethodInjection(bd, beanName, owner);
+        
+	}
+    
+}
+```
+
+这里还有个`@CallerSensitive` 的注解,baidu了下  发现这个注解只是会出现在jvm内部,而且主要作用,我引用下其他人的发言
+
+```
+这个注解是为了堵住漏洞用的。曾经有黑客通过构造双重反射来提升权限，原理是当时反射只检查固定深度的调用者的类，看它有没有特权，例如固定看两层的调用者（getCallerClass(2)）。如果我的类本来没足够权限群访问某些信息，那我就可以通过双重反射去达到目的：反射相关的类是有很高权限的，而在 我->反射1->反射2 这样的调用链上，反射2检查权限时看到的是反射1的类，这就被欺骗了，导致安全漏洞。使用CallerSensitive后，getCallerClass不再用固定深度去寻找actual caller（“我”），而是把所有跟反射相关的接口方法都标注上CallerSensitive，搜索时凡看到该注解都直接跳过，这样就有效解决了前面举例的问题
+```
+
+### 准备依赖注入
+
+在创建完bean实例之后,并不是说就弄完, 获取到实例之后, 会去先看下这个bean相关的后置处理器,缓存当前单例实例以便循环解析使用,然后再初始化这个bean实例里面的成员,下面方法就是初始化成员的地方
+
+```java
+
+protected void populateBean(String beanName, RootBeanDefinition mbd, @Nullable BeanWrapper bw) {
+	// 非空的判断
+	if (bw == null) {
+		if (mbd.hasPropertyValues()) {
+			throw new BeanCreationException(
+                        mbd.getResourceDescription(), beanName, "Cannot apply property values to null instance"
+					);
+            
+		}
+		else {
+                // Skip property population phase for null instance.
+                return;
+            
+		}
+        
+	}
+
+        // Give any InstantiationAwareBeanPostProcessors the opportunity to modify the
+        // state of the bean before properties are set. This can be used, for example,
+        // to support styles of field injection.
+	//给任何实例化awarebeanpostprocessor在属性设置之前修改bean状态的机会。例如，这可以用来支持字段注入的样式。
+	if (!mbd.isSynthetic() && hasInstantiationAwareBeanPostProcessors()) {
+		for (BeanPostProcessor bp : getBeanPostProcessors()) {
+			if (bp instanceof InstantiationAwareBeanPostProcessor) {
+                    InstantiationAwareBeanPostProcessor ibp = (InstantiationAwareBeanPostProcessor) bp;
+		    if (!ibp.postProcessAfterInstantiation(bw.getWrappedInstance(), beanName)) {
+                        return;
+                    
+		    }
+                
+			}
+            
+		}
+        
+	}
+	//获取在bean定义的时候创建的配置属性值
+        PropertyValues pvs = (mbd.hasPropertyValues() ? mbd.getPropertyValues() : null);
+
+        int resolvedAutowireMode = mbd.getResolvedAutowireMode();
+	//根据名称或者是class类型注入bean 
+	if (resolvedAutowireMode == AUTOWIRE_BY_NAME || resolvedAutowireMode == AUTOWIRE_BY_TYPE) {
+            MutablePropertyValues newPvs = new MutablePropertyValues(pvs);
+            // Add property values based on autowire by name if applicable.
+	    if (resolvedAutowireMode == AUTOWIRE_BY_NAME) {
+                autowireByName(beanName, mbd, bw, newPvs);
+            
+	    }
+            // Add property values based on autowire by type if applicable.
+	    if (resolvedAutowireMode == AUTOWIRE_BY_TYPE) {
+                autowireByType(beanName, mbd, bw, newPvs);
+            
+	    }
+            pvs = newPvs;
+        
+	}
+	
+        boolean hasInstAwareBpps = hasInstantiationAwareBeanPostProcessors();
+        boolean needsDepCheck = (mbd.getDependencyCheck() != AbstractBeanDefinition.DEPENDENCY_CHECK_NONE);
+
+        PropertyDescriptor[] filteredPds = null;
+	if (hasInstAwareBpps) {
+		if (pvs == null) {
+                pvs = mbd.getPropertyValues();
+            
+		}
+		for (BeanPostProcessor bp : getBeanPostProcessors()) {
+			if (bp instanceof InstantiationAwareBeanPostProcessor) {
+                    InstantiationAwareBeanPostProcessor ibp = (InstantiationAwareBeanPostProcessor) bp;
+                    PropertyValues pvsToUse = ibp.postProcessProperties(pvs, bw.getWrappedInstance(), beanName);
+		    if (pvsToUse == null) {
+			    if (filteredPds == null) {
+                            filteredPds = filterPropertyDescriptorsForDependencyCheck(bw, mbd.allowCaching);
+                        
+			    }
+                        pvsToUse = ibp.postProcessPropertyValues(pvs, filteredPds, bw.getWrappedInstance(), beanName);
+			if (pvsToUse == null) {
+                            return;
+                        
+			}
+                    
+		    }
+                    pvs = pvsToUse;
+                
+			}
+            
+		}
+        
+	}
+	if (needsDepCheck) {
+		if (filteredPds == null) {
+                filteredPds = filterPropertyDescriptorsForDependencyCheck(bw, mbd.allowCaching);
+            
+		}
+            checkDependencies(beanName, mbd, filteredPds, pvs);
+        
+	}
+
+	if (pvs != null) {
+            applyPropertyValues(beanName, mbd, bw, pvs);
+        
+	}
+    
+}
+
 ```
 
