@@ -125,6 +125,30 @@ public interface CarMapper {
 
 ```
 
+5. 指定字段使用指定方法转换
+```java
+@Mapper( uses = Titles.class )
+public interface MovieMapper {
+
+     @Mapping( target = "title", qualifiedByName = { "TitleTranslator", "EnglishToGerman" } )
+     GermanRelease toGerman( OriginalRelease movies );
+
+}
+@Named("TitleTranslator")
+public class Titles {
+
+    @Named("EnglishToGerman")
+    public String translateTitleEG(String title) {
+        // some mapping logic
+    }
+
+    @Named("GermanToEnglish")
+    public String translateTitleGE(String title) {
+        // some mapping logic
+    }
+}
+
+```
 
 ## 总结 
 
