@@ -632,8 +632,9 @@ protected void populateBean(String beanName, RootBeanDefinition mbd, @Nullable B
             pvs = newPvs;
         
 	}
-	
+	//判断有没有bean的后置处理器	
         boolean hasInstAwareBpps = hasInstantiationAwareBeanPostProcessors();
+	// 判断需要深层次检查
         boolean needsDepCheck = (mbd.getDependencyCheck() != AbstractBeanDefinition.DEPENDENCY_CHECK_NONE);
 
         PropertyDescriptor[] filteredPds = null;
@@ -642,6 +643,7 @@ protected void populateBean(String beanName, RootBeanDefinition mbd, @Nullable B
                 pvs = mbd.getPropertyValues();
             
 		}
+		//构建bean的后置处理器对bean处理
 		for (BeanPostProcessor bp : getBeanPostProcessors()) {
 			if (bp instanceof InstantiationAwareBeanPostProcessor) {
                     InstantiationAwareBeanPostProcessor ibp = (InstantiationAwareBeanPostProcessor) bp;
@@ -673,7 +675,7 @@ protected void populateBean(String beanName, RootBeanDefinition mbd, @Nullable B
             checkDependencies(beanName, mbd, filteredPds, pvs);
         
 	}
-
+	//属性输入
 	if (pvs != null) {
             applyPropertyValues(beanName, mbd, bw, pvs);
         
@@ -681,5 +683,110 @@ protected void populateBean(String beanName, RootBeanDefinition mbd, @Nullable B
     
 }
 
+//应用给定的属性值，将所有运行时引用解析为该bean工厂中的其他bean。必须使用深层复制，因此我们不会永久修改此属性。
+protected void applyPropertyValues(String beanName, BeanDefinition mbd, BeanWrapper bw, PropertyValues pvs) {
+		if (pvs.isEmpty()) {
+			return;
+		}
+
+		if (System.getSecurityManager() != null && bw instanceof BeanWrapperImpl) {
+			((BeanWrapperImpl) bw).setSecurityContext(getAccessControlContext());
+		}
+		//多属性处理
+		MutablePropertyValues mpvs = null;
+		List<PropertyValue> original;
+
+		if (pvs instanceof MutablePropertyValues) {
+			mpvs = (MutablePropertyValues) pvs;
+			if (mpvs.isConverted()) {
+				// Shortcut: use the pre-converted values as-is.
+				try {
+					//直接设置好参数返回
+					bw.setPropertyValues(mpvs);
+					return;
+				}
+				catch (BeansException ex) {
+					throw new BeanCreationException(
+							mbd.getResourceDescription(), beanName, "Error setting property values", ex);
+				}
+			}
+			//获取对象的原始类型值 list
+			original = mpvs.getPropertyValueList();
+		}
+		else {
+			original = Arrays.asList(pvs.getPropertyValues());
+		}
+		//用户自定义转换
+		TypeConverter converter = getCustomTypeConverter();
+		if (converter == null) {
+			converter = bw;
+		}
+		//创建bean的定义解析器, 将bean中定义的属性解析成实际对象值
+		BeanDefinitionValueResolver valueResolver = new BeanDefinitionValueResolver(this, beanName, mbd, converter);
+
+		// Create a deep copy, resolving any references for values.
+		List<PropertyValue> deepCopy = new ArrayList<>(original.size());
+		boolean resolveNecessary = false;
+		
+		for (PropertyValue pv : original) {
+			//已经转换了的
+			if (pv.isConverted()) {
+				deepCopy.add(pv);
+			}
+			else {
+			// 未转换的
+				String propertyName = pv.getName();
+				//原始属性值
+				Object originalValue = pv.getValue();
+				if (originalValue == AutowiredPropertyMarker.INSTANCE) {
+					Method writeMethod = bw.getPropertyDescriptor(propertyName).getWriteMethod();
+					if (writeMethod == null) {
+						throw new IllegalArgumentException("Autowire marker for property without write method: " + pv);
+					}
+					originalValue = new DependencyDescriptor(new MethodParameter(writeMethod, 0), true);
+				}
+				Object resolvedValue = valueResolver.resolveValueIfNecessary(pv, originalValue);
+				Object convertedValue = resolvedValue;
+				boolean convertible = bw.isWritableProperty(propertyName) &&
+						!PropertyAccessorUtils.isNestedOrIndexedProperty(propertyName);
+				if (convertible) {
+					convertedValue = convertForProperty(resolvedValue, propertyName, bw, converter);
+				}
+				// Possibly store converted value in merged bean definition,
+				// in order to avoid re-conversion for every created bean instance.
+				if (resolvedValue == originalValue) {
+					if (convertible) {
+						pv.setConvertedValue(convertedValue);
+					}
+					deepCopy.add(pv);
+				}
+				else if (convertible && originalValue instanceof TypedStringValue &&
+						!((TypedStringValue) originalValue).isDynamic() &&
+						!(convertedValue instanceof Collection || ObjectUtils.isArray(convertedValue))) {
+					pv.setConvertedValue(convertedValue);
+					deepCopy.add(pv);
+				}
+				else {
+					resolveNecessary = true;
+					deepCopy.add(new PropertyValue(pv, convertedValue));
+				}
+			}
+		}
+		if (mpvs != null && !resolveNecessary) {
+			mpvs.setConverted();
+		}
+
+		// Set our (possibly massaged) deep copy.
+		try {
+			bw.setPropertyValues(new MutablePropertyValues(deepCopy));
+		}
+		catch (BeansException ex) {
+			throw new BeanCreationException(
+					mbd.getResourceDescription(), beanName, "Error setting property values", ex);
+		}
+	}
+
 ```
+
+
 
