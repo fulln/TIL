@@ -26,5 +26,24 @@ D = [ 0, 2]
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 
 ```go
+func fourSumCount(A []int, B []int, C []int, D []int) int {
+    maps := make(map[int]int)
+    totals := 0
+    for _,val1 := range A{
+        for _,val2 := range B{
+            maps[val1+val2] ++
+        }
+    }
+    
+    for _,val3 := range C{
+        for _,val4 := range D{
+            if _,ok := maps[-(val3+val4)];ok{
+                totals += maps[-(val3+val4)]
+            } 
+        }
+    }
+    return totals
 
+
+}
 ```
