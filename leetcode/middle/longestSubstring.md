@@ -30,34 +30,37 @@ s 仅由小写英文字母组成
 
 
 ```go
-func longestSubstring(s string, k int) int {
-    if len(s) == 0 {
-        return 0
+func longestSubstring(s string, k int) (ans int) {
+    if s == "" {
+        return
     }
-    dp := make([]int,len(s))
-    for i:=0;i< len(s);i++{   
-        maps := make(map[byte]int) 
-        for j:=0;j < i ;j++{
-            if index,ok := maps[s[j]];ok{
-                var max int
-                if index > k {    
-                    max = dp[i] + 1
-                }else if index == k{
-                    max = dp[i] + k
-                }
-                if dp[i] < max{
-                        dp[i] = max
-                    }
-            }
-            maps[s[j]]++
+
+    cnt := [26]int{}
+    for _, ch := range s {
+        cnt[ch-'a']++
+    }
+
+    var split byte
+    for i, c := range cnt[:] {
+        if 0 < c && c < k {
+            split = 'a' + byte(i)
+            break
         }
     }
-
-    if dp[len(s)-1] < k {
-        return 0
-    }else{
-        return dp[len(s)-1]
+    if split == 0 {
+        return len(s)
     }
 
+    for _, subStr := range strings.Split(s, string(split)) {
+        ans = max(ans, longestSubstring(subStr, k))
+    }
+    return
+}
+
+func max(a, b int) int {
+    if a > b {
+        return a
+    }
+    return b
 }
 ```
