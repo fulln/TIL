@@ -31,6 +31,33 @@ s 仅由小写英文字母组成
 
 ```go
 func longestSubstring(s string, k int) int {
+    if len(s) == 0 {
+        return 0
+    }
+    dp := make([]int,len(s))
+    for i:=0;i< len(s);i++{   
+        maps := make(map[byte]int) 
+        for j:=0;j < i ;j++{
+            if index,ok := maps[s[j]];ok{
+                var max int
+                if index > k {    
+                    max = dp[i] + 1
+                }else if index == k{
+                    max = dp[i] + k
+                }
+                if dp[i] < max{
+                        dp[i] = max
+                    }
+            }
+            maps[s[j]]++
+        }
+    }
+
+    if dp[len(s)-1] < k {
+        return 0
+    }else{
+        return dp[len(s)-1]
+    }
 
 }
 ```
