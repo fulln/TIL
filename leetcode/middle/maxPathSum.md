@@ -27,5 +27,39 @@
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 
 ```go
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func maxPathSum(root *TreeNode) int {
 
+    max := -10000
+	
+	var dfs  func(root *TreeNode)int
+
+	dfs = func(root *TreeNode)int{
+		if root ==  nil{
+			return 0
+		}
+        
+		left := Max(0,dfs(root.Left))
+		Right := Max(0,dfs(root.Right))
+		max = Max(max,left+Right+root.Val)
+		return Max(left,Right)+root.Val
+
+	}
+    dfs(root)
+	return  max
+}
+
+func Max(a, b int) int {
+	if a < b {
+		return b
+	}
+	return a
+}****
 ```
