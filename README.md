@@ -5,32 +5,35 @@ today i learn
 <!-- toc -->
 
 - [leetcode](#leetcode)
+  * [hard](#hard)
   * [middle](#middle)
   * [easy](#easy)
-  * [hard](#hard)
-- [git](#git)
-- [vim](#vim)
-- [maven](#maven)
+- [java](#java)
+  * [plug](#plug)
+  * [jvm](#jvm)
+  * [basic](#basic)
+  * [spring](#spring)
 - [react](#react)
+- [shell](#shell)
 - [sql](#sql)
 - [windows](#windows)
-- [java](#java)
-  * [basic](#basic)
-  * [plug](#plug)
-  * [spring](#spring)
-  * [jvm](#jvm)
-- [shell](#shell)
+- [git](#git)
+- [maven](#maven)
+- [vim](#vim)
 
 <!-- tocstop -->
 
 ---
-there is total <!-- count starts -->207<!-- count ends --> TILs . keep on 
+there is total <!-- count starts -->210<!-- count ends --> TILs . keep on 
 
 ---
 
 <!-- index starts -->
 ## leetcode
 
+### hard
+
+* [鸡蛋掉落](https://github.com/fulln/TIL/blob/master/leetcode/hard/superEggDrop.md) - 2021-02-28
 ### middle
 
 * [钥匙和房间](https://github.com/fulln/TIL/blob/master/leetcode/middle/canVisitAllRooms.md) - 2020-09-11
@@ -81,23 +84,26 @@ there is total <!-- count starts -->207<!-- count ends --> TILs . keep on
 * [复制带随机指针的链表](https://github.com/fulln/TIL/blob/master/leetcode/middle/copyRandomList.md) - 2021-03-11
 * [排序链表](https://github.com/fulln/TIL/blob/master/leetcode/middle/sortList.md) - 2021-03-15
 * [盛最多水的容器](https://github.com/fulln/TIL/blob/master/leetcode/middle/maxArea.md) - 2021-03-17
-* [## 四数相加 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/fourSumCount.md) - 2021-03-18
+* [四数相加 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/fourSumCount.md) - 2021-03-18
 * [至少有K个重复字符的最长子串](https://github.com/fulln/TIL/blob/master/leetcode/middle/longestSubstring.md) - 2021-03-19
 * [二叉树中的最大路径和](https://github.com/fulln/TIL/blob/master/leetcode/middle/maxPathSum.md) - 2021-03-21
+* [最长连续序列](https://github.com/fulln/TIL/blob/master/leetcode/middle/longestConsecutive.md) - 2021-03-22
+* [打家劫舍](https://github.com/fulln/TIL/blob/master/leetcode/middle/rob.md) - 2021-03-24
+* [二叉搜索树中的插入操作](https://github.com/fulln/TIL/blob/master/leetcode/middle/insertIntoBST.md) - 2021-03-25
 ### easy
 
+* [判断字符串是否有效](https://github.com/fulln/TIL/blob/master/leetcode/easy/isValid.md) - 2020-07-28
+* [给出一个 32 位的有符号整数,将这个整数中每位上的数字进行反转](https://github.com/fulln/TIL/blob/master/leetcode/easy/reverse.md) - 2020-07-28
+* [实现 strStr() 函数。](https://github.com/fulln/TIL/blob/master/leetcode/easy/strStr.md) - 2020-07-28
+* [判断一个整数是否是回文数](https://github.com/fulln/TIL/blob/master/leetcode/easy/isPalindrome.md) - 2020-07-28
+* [给定一个排序数组，需要在原地删除重复出现的元素](https://github.com/fulln/TIL/blob/master/leetcode/easy/removeDuplicates.md) - 2020-07-28
 * [外观数列](https://github.com/fulln/TIL/blob/master/leetcode/easy/countAndSay.md) - 2020-07-28
 * [合并两个有序链表](https://github.com/fulln/TIL/blob/master/leetcode/easy/mergeTwoLists.md) - 2020-07-28
-* [实现 strStr() 函数。](https://github.com/fulln/TIL/blob/master/leetcode/easy/strStr.md) - 2020-07-28
 * [编写一个函数来查找字符串数组中的最长公共前缀。](https://github.com/fulln/TIL/blob/master/leetcode/easy/longestCommonPrefix.md) - 2020-07-28
-* [搜索插入位置](https://github.com/fulln/TIL/blob/master/leetcode/easy/searchInsert.md) - 2020-07-28
-* [判断字符串是否有效](https://github.com/fulln/TIL/blob/master/leetcode/easy/isValid.md) - 2020-07-28
-* [判断一个整数是否是回文数](https://github.com/fulln/TIL/blob/master/leetcode/easy/isPalindrome.md) - 2020-07-28
-* [两数之合](https://github.com/fulln/TIL/blob/master/leetcode/easy/twoSum.md) - 2020-07-28
-* [给定一个排序数组，需要在原地删除重复出现的元素](https://github.com/fulln/TIL/blob/master/leetcode/easy/removeDuplicates.md) - 2020-07-28
-* [罗马数字](https://github.com/fulln/TIL/blob/master/leetcode/easy/romanToInt.md) - 2020-07-28
 * [移除所有数值等于val的元素](https://github.com/fulln/TIL/blob/master/leetcode/easy/removeElement.md) - 2020-07-28
-* [给出一个 32 位的有符号整数,将这个整数中每位上的数字进行反转](https://github.com/fulln/TIL/blob/master/leetcode/easy/reverse.md) - 2020-07-28
+* [两数之合](https://github.com/fulln/TIL/blob/master/leetcode/easy/twoSum.md) - 2020-07-28
+* [搜索插入位置](https://github.com/fulln/TIL/blob/master/leetcode/easy/searchInsert.md) - 2020-07-28
+* [罗马数字](https://github.com/fulln/TIL/blob/master/leetcode/easy/romanToInt.md) - 2020-07-28
 * [剑指 Offer 42. 连续子数组的最大和](https://github.com/fulln/TIL/blob/master/leetcode/easy/maxSubarray.md) - 2020-07-29
 * [copyAndArray 外观数列](https://github.com/fulln/TIL/blob/master/leetcode/easy/copyAndArray.md) - 2020-07-31
 * [lengthOfLastWord_最后一个单词](https://github.com/fulln/TIL/blob/master/leetcode/easy/lengthOfLastWord.md) - 2020-08-01
@@ -220,21 +226,33 @@ there is total <!-- count starts -->207<!-- count ends --> TILs . keep on
 * [较大分组的位置](https://github.com/fulln/TIL/blob/master/leetcode/easy/largeGroupPositions.md) - 2021-01-29
 * [数组形式的整数加法](https://github.com/fulln/TIL/blob/master/leetcode/easy/addToArrayForm.md) - 2021-02-06
 * [K 次取反后最大化的数组和](https://github.com/fulln/TIL/blob/master/leetcode/easy/largestSumAfterKNegations.md) - 2021-02-09
-### hard
+## java
 
-* [鸡蛋掉落](https://github.com/fulln/TIL/blob/master/leetcode/hard/superEggDrop.md) - 2021-02-28
-## git
+### plug
 
-* [git 版本的回滚](https://github.com/fulln/TIL/blob/master/git/gitreset.md) - 2020-09-23
-## vim
+* [mapStruct 开发使用](https://github.com/fulln/TIL/blob/master/java/plug/mapStructInUse.md) - 2021-01-23
+### jvm
 
-* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
-## maven
+* [JVM调优与GC](https://github.com/fulln/TIL/blob/master/java/jvm/JvmDaily1.md) - 2020-10-28
+### basic
 
-* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
+* [java为啥会有static main?](https://github.com/fulln/TIL/blob/master/java/basic/staticMain.md) - 2020-08-06
+* [jvm的大图流整理](https://github.com/fulln/TIL/blob/master/java/basic/jvmArrange.md) - 2020-08-22
+* [通过BTrace进行分析](https://github.com/fulln/TIL/blob/master/java/basic/BTrace.md) - 2020-08-26
+* [JDK15视频发布会及新特性](https://github.com/fulln/TIL/blob/master/java/basic/JDK15.md) - 2020-11-01
+### spring
+
+* [CVE-2020-5421漏洞 spring相关代码探寻](https://github.com/fulln/TIL/blob/master/java/spring/CVE-2020-5421.md) - 2020-10-19
+* [spring-quartz 使用](https://github.com/fulln/TIL/blob/master/java/spring/spring-quartz.md) - 2020-11-14
+* [spring-data-redis](https://github.com/fulln/TIL/blob/master/java/spring/springDataRedis.md) - 2020-11-14
+* [springMvc升级springBoot](https://github.com/fulln/TIL/blob/master/java/spring/upgradeMvc.md) - 2021-01-15
+* [spring Enviroment 初始化及@value加载](https://github.com/fulln/TIL/blob/master/java/spring/envirment.md) - 2021-02-05
 ## react
 
 * [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
+## shell
+
+* [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
 ## sql
 
 * [mysql 事务锁相关查看](https://github.com/fulln/TIL/blob/master/sql/qeury_transaction.md) - 2020-09-16
@@ -244,30 +262,15 @@ there is total <!-- count starts -->207<!-- count ends --> TILs . keep on
 
 * [windows 中cmd 相关的操作](https://github.com/fulln/TIL/blob/master/windows/shellOption.md) - 2020-11-14
 * [合并多个sheet](https://github.com/fulln/TIL/blob/master/windows/ExcelCopy.md) - 2020-11-17
-## java
+## git
 
-### basic
+* [git 版本的回滚](https://github.com/fulln/TIL/blob/master/git/gitreset.md) - 2020-09-23
+## maven
 
-* [java为啥会有static main?](https://github.com/fulln/TIL/blob/master/java/basic/staticMain.md) - 2020-08-06
-* [jvm的大图流整理](https://github.com/fulln/TIL/blob/master/java/basic/jvmArrange.md) - 2020-08-22
-* [通过BTrace进行分析](https://github.com/fulln/TIL/blob/master/java/basic/BTrace.md) - 2020-08-26
-* [JDK15视频发布会及新特性](https://github.com/fulln/TIL/blob/master/java/basic/JDK15.md) - 2020-11-01
-### plug
+* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
+## vim
 
-* [mapStruct 开发使用](https://github.com/fulln/TIL/blob/master/java/plug/mapStructInUse.md) - 2021-01-23
-### spring
-
-* [CVE-2020-5421漏洞 spring相关代码探寻](https://github.com/fulln/TIL/blob/master/java/spring/CVE-2020-5421.md) - 2020-10-19
-* [spring-quartz 使用](https://github.com/fulln/TIL/blob/master/java/spring/spring-quartz.md) - 2020-11-14
-* [spring-data-redis](https://github.com/fulln/TIL/blob/master/java/spring/springDataRedis.md) - 2020-11-14
-* [springMvc升级springBoot](https://github.com/fulln/TIL/blob/master/java/spring/upgradeMvc.md) - 2021-01-15
-* [spring Enviroment 初始化及@value加载](https://github.com/fulln/TIL/blob/master/java/spring/envirment.md) - 2021-02-05
-### jvm
-
-* [JVM调优与GC](https://github.com/fulln/TIL/blob/master/java/jvm/JvmDaily1.md) - 2020-10-28
-## shell
-
-* [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
+* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
 <!-- index ends -->
 
 
