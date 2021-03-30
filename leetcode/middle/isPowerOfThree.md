@@ -40,4 +40,25 @@
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 
 ```go
+func isPowerOfThree(n int) bool {
+
+    if n  == 1{
+        return true
+    }
+    
+    if n < 3{
+        return false
+    }
+
+    if n == 3{
+        return true
+    }
+
+    if n >3 && n % 3 != 0{
+        return false
+    }
+
+    return isPowerOfThree(n/3)
+
+}
 ```
