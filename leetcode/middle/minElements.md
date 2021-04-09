@@ -31,5 +31,19 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+func minElements(nums []int, limit int, goal int) int {
+
+    sum :=0
+    for _,val:= range nums{
+        sum +=val
+    }
+
+    res := math.Abs(float64(goal - sum))  
+
+   return  int((int(res) +limit -1)/limit)
+
+
+
+}
 
 ```
