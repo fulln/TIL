@@ -36,7 +36,7 @@ func minDiffInBST(root *TreeNode) int {
     small :=100000
     lastNode := small;
     var before func(root *TreeNode)
-    //2叉树前序遍历
+    //2叉树中序遍历
     before = func(root *TreeNode){
         if root ==  nil{
             return
