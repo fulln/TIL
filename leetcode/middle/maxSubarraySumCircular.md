@@ -38,5 +38,56 @@
 链接：https://leetcode-cn.com/problems/maximum-sum-circular-subarray
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
-```GO
+```go
+func maxSubarraySumCircular(A []int) int {
+    loop := len(A)
+    if A == nil || loop < 1 {
+            return 0;
+    }
+
+   sum, currMax,max,currMin,min := A[0],A[0],A[0],A[0],A[0]
+
+    for i:= 1;i< loop;i++{
+        sum += A[i]
+        if currMax > 0{
+            currMax = currMax + A[i]
+        }else{
+            currMax = A[i]
+        }
+        max = maxOne(max,currMax)
+
+        if currMin < 0{
+            currMin = currMin + A[i]
+        }else{
+            currMin = A[i]
+        }
+        min = minOne(min,currMin)
+    }
+
+    if max < 0{
+        return max
+    }else{
+        return maxOne(sum-min,max)
+    }
+
+
+
+}
+
+
+func minOne (a,b int)int{
+    if a >b {
+        return b
+    }else{
+        return a
+    }
+}
+
+func maxOne (a,b int)int{
+    if a >b {
+        return a
+    }else{
+        return b
+    }
+}
 ```
