@@ -35,4 +35,17 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+//DP
+
+func restoreIpAddresses(s string) []string {
+
+    dp :=[]string
+
+    for i:= 0 ;i< len(s);i++{
+        
+    }
+
+
+}
+
 ```
