@@ -854,7 +854,7 @@ public Object resolveValueIfNecessary(Object argName, @Nullable Object value) {
 			return resolveInnerBean(argName, innerBeanName, bd);
 		}
 		else if (value instanceof DependencyDescriptor) {
-			// 
+			//属于依赖描述的值
 			Set<String> autowiredBeanNames = new LinkedHashSet<>(4);
 			Object result = this.beanFactory.resolveDependency(
 					(DependencyDescriptor) value, this.beanName, autowiredBeanNames, this.typeConverter);
@@ -867,6 +867,7 @@ public Object resolveValueIfNecessary(Object argName, @Nullable Object value) {
 		}
 		else if (value instanceof ManagedArray) {
 			// May need to resolve contained runtime references.
+			//arrays的结果 运行时依赖 处理
 			ManagedArray array = (ManagedArray) value;
 			Class<?> elementType = array.resolvedElementType;
 			if (elementType == null) {
@@ -891,6 +892,7 @@ public Object resolveValueIfNecessary(Object argName, @Nullable Object value) {
 		}
 		else if (value instanceof ManagedList) {
 			// May need to resolve contained runtime references.
+			//list的 运行时依赖处理 
 			return resolveManagedList(argName, (List<?>) value);
 		}
 		else if (value instanceof ManagedSet) {
@@ -902,6 +904,7 @@ public Object resolveValueIfNecessary(Object argName, @Nullable Object value) {
 			return resolveManagedMap(argName, (Map<?, ?>) value);
 		}
 		else if (value instanceof ManagedProperties) {
+			// properties 在运行时去获取对应的结果
 			Properties original = (Properties) value;
 			Properties copy = new Properties();
 			original.forEach((propKey, propValue) -> {
@@ -922,11 +925,13 @@ public Object resolveValueIfNecessary(Object argName, @Nullable Object value) {
 		}
 		else if (value instanceof TypedStringValue) {
 			// Convert value to target type here.
+			// 运行时获取string的值 
 			TypedStringValue typedStringValue = (TypedStringValue) value;
 			Object valueObject = evaluate(typedStringValue);
 			try {
 				Class<?> resolvedTargetType = resolveTargetType(typedStringValue);
 				if (resolvedTargetType != null) {
+					//解析目标类型的属性,递归调用
 					return this.typeConverter.convertIfNecessary(valueObject, resolvedTargetType);
 				}
 				else {
@@ -941,12 +946,263 @@ public Object resolveValueIfNecessary(Object argName, @Nullable Object value) {
 			}
 		}
 		else if (value instanceof NullBean) {
+			// 直接返回空
 			return null;
 		}
 		else {
+			
 			return evaluate(value);
 		}
 	}
 
 ```
+
+这里主要针对进行解析,平常使用的也是比较多的是`resolveReference`
+
+```
+
+    /**
+     * Resolve a reference to another bean in the factory.
+     */
+    @Nullable
+    private Object resolveReference(Object argName, RuntimeBeanReference ref) {
+	    try {
+            Object bean;
+		// 获取beantype
+            Class<?> beanType = ref.getBeanType();
+	    if (ref.isToParent()) {
+		// 判断在父类bean 工厂是否有直接引用
+                BeanFactory parent = this.beanFactory.getParentBeanFactory();
+		if (parent == null) {
+			throw new BeanCreationException(
+                            this.beanDefinition.getResourceDescription(), this.beanName,
+                            "Cannot resolve reference to bean " + ref +
+                                    " in parent factory: no parent factory available"
+					);
+                
+		}
+		if (beanType != null) {
+			//从父类bean工厂 根据类型获取
+                    bean = parent.getBean(beanType);
+                
+		}
+		else {
+			// 从父类工厂 根据名称获取
+                    bean = parent.getBean(String.valueOf(doEvaluate(ref.getBeanName())));
+                
+		}
+            
+	    }
+	    else {
+		// 获取bean名称
+                String resolvedName;
+		if (beanType != null) {
+			// 根据bean类型 从bean工厂获取
+                    NamedBeanHolder<?> namedBean = this.beanFactory.resolveNamedBean(beanType);
+                    bean = namedBean.getBeanInstance();
+                    resolvedName = namedBean.getBeanName();
+                
+		}
+		else {
+			// 根据名称从bean工厂获取
+                    resolvedName = String.valueOf(doEvaluate(ref.getBeanName()));
+                    bean = this.beanFactory.getBean(resolvedName);
+                
+		}
+                this.beanFactory.registerDependentBean(resolvedName, this.beanName);
+            
+	    }
+	    if (bean instanceof NullBean) {
+                bean = null;
+            
+	    }
+            return bean;
+        
+	    }
+	    catch (BeansException ex) {
+		    throw new BeanCreationException(
+                    this.beanDefinition.getResourceDescription(), this.beanName,
+                    "Cannot resolve reference to bean '" + ref.getBeanName() + "' while setting " + argName, ex
+				    );
+        
+	    }
+    
+    }
+```
+,上面就是如何从bean工厂中获取到已经初始化好的bean,获取到之后还不能直接注入设置为对应值, 还需要改动下对应转换,看能否适配,下面说下适配的过程
+
+```
+
+    public void setPropertyValues(PropertyValues pvs, boolean ignoreUnknown, boolean ignoreInvalid)
+	throws BeansException {
+	
+        List<PropertyAccessException> propertyAccessExceptions = null;
+        List<PropertyValue> propertyValues = (pvs instanceof MutablePropertyValues ?
+                ((MutablePropertyValues) pvs).getPropertyValueList() : Arrays.asList(pvs.getPropertyValues()));
+	for (PropertyValue pv : propertyValues) {
+		try {
+                // This method may throw any BeansException, which won't be caught
+                // here, if there is a critical failure such as no matching field.
+                // We can attempt to deal only with less serious exceptions.
+                setPropertyValue(pv);
+            
+		}
+		catch (NotWritablePropertyException ex) {
+			if (!ignoreUnknown) {
+                    throw ex;
+                
+			}
+                // Otherwise, just ignore it and continue...
+            
+		}
+		catch (NullValueInNestedPathException ex) {
+			if (!ignoreInvalid) {
+                    throw ex;
+                
+			}
+                // Otherwise, just ignore it and continue...
+            
+		}
+		catch (PropertyAccessException ex) {
+			if (propertyAccessExceptions == null) {
+                    propertyAccessExceptions = new LinkedList<PropertyAccessException>();
+                
+			}
+                propertyAccessExceptions.add(ex);
+            
+		}
+        
+	}
+
+        // If we encountered individual exceptions, throw the composite exception.
+	if (propertyAccessExceptions != null) {
+            PropertyAccessException[] paeArray =
+                    propertyAccessExceptions.toArray(new PropertyAccessException[propertyAccessExceptions.size()]);
+            throw new PropertyBatchUpdateException(paeArray);
+        
+	}
+    
+	}
+```
+
+然后跳转到`org.springframework.beans.AbstractNestablePropertyAccessor#setPropertyValue(java.lang.String, java.lang.Object)`
+
+```
+@Override
+public void setPropertyValue(String propertyName, Object value) throws BeansException {
+        AbstractNestablePropertyAccessor nestedPa;
+	try {
+            nestedPa = getPropertyAccessorForPropertyPath(propertyName);
+        
+	}
+	catch (NotReadablePropertyException ex) {
+            throw new NotWritablePropertyException(getRootClass(), this.nestedPath + propertyName,
+                    "Nested property in path '" + propertyName + "' does not exist", ex);
+        
+	}
+        PropertyTokenHolder tokens = getPropertyNameTokens(getFinalPath(nestedPa, propertyName));
+        nestedPa.setPropertyValue(tokens, new PropertyValue(propertyName, value));
+    
+}
+
+
+protected void setPropertyValue(PropertyTokenHolder tokens, PropertyValue pv) throws BeansException {
+	if (tokens.keys != null) {
+            processKeyedProperty(tokens, pv);
+        
+	}
+	else {
+            processLocalProperty(tokens, pv);
+        
+	}
+    
+}
+
+private void processKeyedProperty(PropertyTokenHolder tokens, PropertyValue pv) {
+		Object propValue = getPropertyHoldingValue(tokens);
+		String lastKey = tokens.keys[tokens.keys.length - 1];
+		....
+}
+private Object getPropertyHoldingValue(PropertyTokenHolder tokens) {
+		// Apply indexes and map keys: fetch value for all keys but the last one.
+		PropertyTokenHolder getterTokens = new PropertyTokenHolder();
+		getterTokens.canonicalName = tokens.canonicalName;
+		getterTokens.actualName = tokens.actualName;
+		getterTokens.keys = new String[tokens.keys.length - 1];
+		System.arraycopy(tokens.keys, 0, getterTokens.keys, 0, tokens.keys.length - 1);
+
+		Object propValue;
+		try {
+			propValue = getPropertyValue(getterTokens);
+		}
+		catch (NotReadablePropertyException ex) {
+			throw new NotWritablePropertyException(getRootClass(), this.nestedPath + tokens.canonicalName,
+					"Cannot access indexed value in property referenced " +
+					"in indexed property path '" + tokens.canonicalName + "'", ex);
+		}
+
+		if (propValue == null) {
+			// null map value case
+			if (isAutoGrowNestedPaths()) {
+				int lastKeyIndex = tokens.canonicalName.lastIndexOf('[');
+				getterTokens.canonicalName = tokens.canonicalName.substring(0, lastKeyIndex);
+				propValue = setDefaultValue(getterTokens);
+			}
+			else {
+				throw new NullValueInNestedPathException(getRootClass(), this.nestedPath + tokens.canonicalName,
+						"Cannot access indexed value in property referenced " +
+						"in indexed property path '" + tokens.canonicalName + "': returned null");
+			}
+		}
+		return propValue;
+	}
+```
+通过对上面注入依赖代码的分析，我们已经明白了Spring IOC 容器是如何将属性的值注入到Bean 实例对象中去的：
+
+1)、对于集合类型的属性，将其属性值解析为目标类型的集合后直接赋值给属性。
+
+2)、对于非集合类型的属性，大量使用了JDK 的反射机制，通过属性的getter()方法获取指定属性注入以前的值，同时调用属性的setter()方法为属性设置注入后的值。看到这里相信很多人都明白了Spring的setter()注入原理。(processLocalProperty -> 到BeanWrapperImpl类的ph.setValue(valueToApply))
+
+```
+public void setValue(final Object object, Object valueToApply) throws Exception {
+			final Method writeMethod = (this.pd instanceof GenericTypeAwarePropertyDescriptor ?
+					((GenericTypeAwarePropertyDescriptor) this.pd).getWriteMethodForActualAccess() :
+					this.pd.getWriteMethod());
+			if (!Modifier.isPublic(writeMethod.getDeclaringClass().getModifiers()) && !writeMethod.isAccessible()) {
+				if (System.getSecurityManager() != null) {
+					AccessController.doPrivileged(new PrivilegedAction<Object>() {
+						@Override
+						public Object run() {
+							writeMethod.setAccessible(true);
+							return null;
+						}
+					});
+				}
+				else {
+					writeMethod.setAccessible(true);
+				}
+			}
+			final Object value = valueToApply;
+			if (System.getSecurityManager() != null) {
+				try {
+					AccessController.doPrivileged(new PrivilegedExceptionAction<Object>() {
+						@Override
+						public Object run() throws Exception {
+							writeMethod.invoke(object, value);
+							return null;
+						}
+					}, acc);
+				}
+				catch (PrivilegedActionException ex) {
+					throw ex.getException();
+				}
+			}
+			else {
+				writeMethod.invoke(getWrappedInstance(), value);
+			}
+		}
+```
+
+至此Spring IOC 容器对Bean 定义资源文件的定位，载入、解析和依赖注入已经全部分析完毕，现在Spring IOC 容器中管理了一系列靠依赖关系联系起来的Bean，程序不需要应用自己手动创建所需的对象，Spring IOC 容器会在我们使用的时候自动为我们创建，并且为我们注入好相关的依赖，这就是Spring 核心功能的控制反转和依赖注入的相关功能。
+
 
