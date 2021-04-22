@@ -24,5 +24,30 @@
 ```go
 func findLengthOfLCIS(nums []int) int {
 
+    if len(nums) <= 1{
+        return len(nums)
+    }
+    dp := make([]int,len(nums))
+    
+    dp[0] = 1
+    res :=1
+    for i:=1;i< len(nums);i++{
+        if nums[i] > nums[i-1]{
+            dp[i] = dp[i-1] +1
+        }else{
+            dp[i] = 1 
+        }
+        res = max(dp[i],res)
+    }
+
+    return res
+
+}
+func max(a,b int) int{
+    if a > b{
+        return a
+    }else{
+        return b
+    }
 }
 ```
