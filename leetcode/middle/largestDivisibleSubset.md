@@ -23,4 +23,46 @@ answer[j] % answer[i] == 0
 
 
 ```go
+func largestDivisibleSubset(nums []int) []int {
+    dp := make([]int,len(nums))
+    maxSize :=1
+    maxValue:=0
+    sort.Ints(nums)
+    n := len(nums)
+    for i:=0; i<n; i++ {
+        dp[i] = 1
+    }
+    for i:=1;i< n;i++{
+        for j :=0;j < i;j++{
+            if nums[i] % nums[j] == 0{
+                dp[i] = max(dp[i],dp[j] +1)
+            }
+        }
+        if dp[i] >maxSize{
+            maxSize = dp[i]
+            maxValue = i 
+        }
+    }
+    res := []int{}
+
+    for i:= maxValue ;i>=0;i --{
+         if(nums[maxValue] % nums[i] == 0 && dp[i]==maxSize && maxSize >= 0){
+                maxValue = i
+                res = append(res,nums[i]);
+                maxSize--;
+        }
+    }
+    return res
+
+
+
+}
+
+func max(a,b int)int{
+    if a >b {
+        return a
+    }else{
+        return b
+    }
+}
 ```
