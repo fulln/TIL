@@ -44,4 +44,41 @@
 链接：https://leetcode-cn.com/problems/capacity-to-ship-packages-within-d-days
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 ```go
+func shipWithinDays(weights []int, D int) int {
+    sum := 0
+    for _, v := range weights {
+        sum += v
+    }
+
+    var check func(x int) bool
+    check = func(x int) bool {
+        count, temp := 0, 0
+        for _, v := range weights {
+            if v > x {
+                return false
+            } else if temp + v > x {
+                count += 1
+                temp = 0
+            }
+            temp += v
+        }
+        if temp != 0 {
+            count += 1
+        }
+        return count <= D
+    }
+    
+    l, r, mid := 0, sum, 0
+    
+    for l + 1 < r {
+        mid = l + (r-l)/2
+        if check(mid) {
+            r = mid
+        } else {
+            l = mid
+        }
+    }
+    return r
+}
+
 ```
