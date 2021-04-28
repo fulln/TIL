@@ -31,5 +31,29 @@ candidates 中的每个数字在每个组合中只能使用一次。
 链接：https://leetcode-cn.com/problems/combination-sum-ii
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 ```go
+func combinationSum2(candidates []int, target int) [][]int {
+    sort.Ints(candidates)
+    return  dfs(candidates,target)
+    
+
+}
+
+  func dfs(num []int,size int)[][]int{
+    ret := [][]int{}
+    for i,curr := range num{
+        if i > 0  && num[i-1]  == curr {
+            continue
+        }else if curr == size{
+            ret = append(ret,[]int{curr})
+            continue
+        }else if curr > size{
+            break
+        }
+        for _,v := range dfs(num[i+1:],size -curr){
+            ret = append(ret, append([]int{curr}, v...))
+        }
+    }
+    return ret
+}
 
 ```
