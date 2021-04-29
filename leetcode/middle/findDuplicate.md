@@ -28,5 +28,21 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+func findDuplicate(nums []int) int {
+    i:=0
+    for {
+        if nums[i] != -1{
+            temp := nums[i]
+            nums[i]= -1
+            i = temp
+        }else{
+            return i
+        }
+    }
+
+    return nums[0]
+
+
+}
 ```
 
