@@ -27,4 +27,20 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+func findContentChildren(g []int, s []int) int {
+	// 从小到大排序
+	sort.Ints(g)
+	sort.Ints(s)
+	i, j, result := 0, 0, 0
+	for i < len(g) && j < len(s) {
+		if s[j] >= g[i] {
+			result ++
+			j++
+			i++
+		} else { 
+			j++
+		}
+	}
+	return result
+}
 ```
