@@ -23,4 +23,18 @@ HammingDistance(4, 14) + HammingDistance(4, 2) + HammingDistance(14, 2) = 2 + 2 
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+func totalHammingDistance(nums []int) int {
+    ans := 0
+	// 由于数组中最大值为1e9,也就是说用31位二进制就能表示最大值了。 
+	// 			(x位2进制 可以表示的原码最大值为 2^x-1)
+	for i := 0; i < 31; i++ {
+		count := [2]int{} // 类似哈希结构，count[0]表示0有多少个，count[1]表示1有多少个
+		for t := 0; t < len(nums); t++ {
+			count[nums[t]&1]++
+			nums[t] >>= 1
+		}
+		ans += count[0] * count[1]
+	}
+	return ans
+}
 ```
