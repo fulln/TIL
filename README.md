@@ -4,23 +4,23 @@ today i learn
 
 <!-- toc -->
 
-- [java](#java)
-  * [spring](#spring)
-  * [basic](#basic)
-  * [plug](#plug)
-  * [jvm](#jvm)
-- [react](#react)
-- [maven](#maven)
-- [redis](#redis)
-- [windows](#windows)
-- [vim](#vim)
-- [leetcode](#leetcode)
-  * [easy](#easy)
-  * [hard](#hard)
-  * [middle](#middle)
-- [sql](#sql)
 - [shell](#shell)
+- [redis](#redis)
+- [react](#react)
+- [sql](#sql)
+- [maven](#maven)
+- [vim](#vim)
+- [java](#java)
+  * [plug](#plug)
+  * [spring](#spring)
+  * [jvm](#jvm)
+  * [basic](#basic)
 - [git](#git)
+- [leetcode](#leetcode)
+  * [hard](#hard)
+  * [easy](#easy)
+  * [middle](#middle)
+- [windows](#windows)
 
 <!-- tocstop -->
 
@@ -30,8 +30,31 @@ there is total <!-- count starts -->239<!-- count ends --> TILs . keep on
 ---
 
 <!-- index starts -->
+## shell
+
+* [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
+## redis
+
+* [redis setnx setex](https://github.com/fulln/TIL/blob/master/redis/redisCommand.md) - 2021-03-25
+## react
+
+* [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
+## sql
+
+* [mysql 事务锁相关查看](https://github.com/fulln/TIL/blob/master/sql/qeury_transaction.md) - 2020-09-16
+* [Transaction resolution unknown 异常分析](https://github.com/fulln/TIL/blob/master/sql/transactions-unkonw.md) - 2021-01-08
+* [Alter Table 操作执行过程](https://github.com/fulln/TIL/blob/master/sql/alterTable.md) - 2021-01-20
+## maven
+
+* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
+## vim
+
+* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
 ## java
 
+### plug
+
+* [mapStruct 开发使用](https://github.com/fulln/TIL/blob/master/java/plug/mapStructInUse.md) - 2021-01-23
 ### spring
 
 * [CVE-2020-5421漏洞 spring相关代码探寻](https://github.com/fulln/TIL/blob/master/java/spring/CVE-2020-5421.md) - 2020-10-19
@@ -39,6 +62,9 @@ there is total <!-- count starts -->239<!-- count ends --> TILs . keep on
 * [spring-data-redis](https://github.com/fulln/TIL/blob/master/java/spring/springDataRedis.md) - 2020-11-14
 * [springMvc升级springBoot](https://github.com/fulln/TIL/blob/master/java/spring/upgradeMvc.md) - 2021-01-15
 * [spring Enviroment 初始化及@value加载](https://github.com/fulln/TIL/blob/master/java/spring/envirment.md) - 2021-02-05
+### jvm
+
+* [JVM调优与GC](https://github.com/fulln/TIL/blob/master/java/jvm/JvmDaily1.md) - 2020-10-28
 ### basic
 
 * [java为啥会有static main?](https://github.com/fulln/TIL/blob/master/java/basic/staticMain.md) - 2020-08-06
@@ -46,30 +72,14 @@ there is total <!-- count starts -->239<!-- count ends --> TILs . keep on
 * [通过BTrace进行分析](https://github.com/fulln/TIL/blob/master/java/basic/BTrace.md) - 2020-08-26
 * [JDK15视频发布会及新特性](https://github.com/fulln/TIL/blob/master/java/basic/JDK15.md) - 2020-11-01
 * [java 看加载的class 的来源](https://github.com/fulln/TIL/blob/master/java/basic/getsourceFile.md) - 2021-03-25
-### plug
+## git
 
-* [mapStruct 开发使用](https://github.com/fulln/TIL/blob/master/java/plug/mapStructInUse.md) - 2021-01-23
-### jvm
-
-* [JVM调优与GC](https://github.com/fulln/TIL/blob/master/java/jvm/JvmDaily1.md) - 2020-10-28
-## react
-
-* [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
-## maven
-
-* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
-## redis
-
-* [redis setnx setex](https://github.com/fulln/TIL/blob/master/redis/redisCommand.md) - 2021-03-25
-## windows
-
-* [windows 中cmd 相关的操作](https://github.com/fulln/TIL/blob/master/windows/shellOption.md) - 2020-11-14
-* [合并多个sheet](https://github.com/fulln/TIL/blob/master/windows/ExcelCopy.md) - 2020-11-17
-## vim
-
-* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
+* [git 版本的回滚](https://github.com/fulln/TIL/blob/master/git/gitreset.md) - 2020-09-23
 ## leetcode
 
+### hard
+
+* [鸡蛋掉落](https://github.com/fulln/TIL/blob/master/leetcode/hard/superEggDrop.md) - 2021-02-28
 ### easy
 
 * [合并两个有序链表](https://github.com/fulln/TIL/blob/master/leetcode/easy/mergeTwoLists.md) - 2020-07-28
@@ -213,9 +223,6 @@ there is total <!-- count starts -->239<!-- count ends --> TILs . keep on
 * [种花问题](https://github.com/fulln/TIL/blob/master/leetcode/easy/canPlaceFlowers.md) - 2021-04-18
 * [最长连续递增序列](https://github.com/fulln/TIL/blob/master/leetcode/easy/findLengthOfLCIS.md) - 2021-04-22
 * [使用最小花费爬楼梯](https://github.com/fulln/TIL/blob/master/leetcode/easy/minCostClimbingStairs.md) - 2021-05-04
-### hard
-
-* [鸡蛋掉落](https://github.com/fulln/TIL/blob/master/leetcode/hard/superEggDrop.md) - 2021-02-28
 ### middle
 
 * [钥匙和房间](https://github.com/fulln/TIL/blob/master/leetcode/middle/canVisitAllRooms.md) - 2020-09-11
@@ -292,17 +299,10 @@ there is total <!-- count starts -->239<!-- count ends --> TILs . keep on
 * [分发饼干](https://github.com/fulln/TIL/blob/master/leetcode/middle/findContentChildren.md) - 2021-04-30
 * [删除并获得点数](https://github.com/fulln/TIL/blob/master/leetcode/middle/deleteAndEarn.md) - 2021-05-05
 * [汉明距离总和](https://github.com/fulln/TIL/blob/master/leetcode/middle/totalHammingDistance.md) - 2021-05-07
-## sql
+## windows
 
-* [mysql 事务锁相关查看](https://github.com/fulln/TIL/blob/master/sql/qeury_transaction.md) - 2020-09-16
-* [Transaction resolution unknown 异常分析](https://github.com/fulln/TIL/blob/master/sql/transactions-unkonw.md) - 2021-01-08
-* [Alter Table 操作执行过程](https://github.com/fulln/TIL/blob/master/sql/alterTable.md) - 2021-01-20
-## shell
-
-* [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
-## git
-
-* [git 版本的回滚](https://github.com/fulln/TIL/blob/master/git/gitreset.md) - 2020-09-23
+* [windows 中cmd 相关的操作](https://github.com/fulln/TIL/blob/master/windows/shellOption.md) - 2020-11-14
+* [合并多个sheet](https://github.com/fulln/TIL/blob/master/windows/ExcelCopy.md) - 2020-11-17
 <!-- index ends -->
 
 
