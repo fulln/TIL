@@ -25,4 +25,27 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+func nthSuperUglyNumber(n int, primes []int) int {
+    dp := []int{1}
+    position := make([]int, len(primes))    //记录每个质数的指针位置
+
+    for len(dp) < n {
+        min := minVal(dp, primes, position)    //每次挑选出最小的
+        if dp[len(dp)-1] < min {           //防止重复值的情况
+            dp = append(dp, min)
+        }
+    }
+    return dp[n-1]
+}
+
+func minVal(dp, primes, position []int) int {  //返回最小值，并把相应的指针后移
+    min_i, min_val := 0, math.MaxInt32
+    for i, prime := range primes {
+        if val := dp[position[i]]*prime; val < min_val {
+            min_i, min_val = i, val
+        }
+    }
+    position[min_i]++
+    return min_val
+}
 ```
