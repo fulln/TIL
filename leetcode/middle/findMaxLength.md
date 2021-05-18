@@ -19,4 +19,37 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+func findMaxLength(nums []int) int {
+    for  i:=0;i< len(nums);i++{
+        if nums[i] ==0{
+            nums[i] =-1
+        }
+    }
+    maps := make(map[int]int)
+    sum := 0
+    curr := 0
+    for i:=0;i<len(nums);i++{
+        sum += nums[i]
+        if sum == 0 && i > curr{
+            curr = i +1
+        }
+
+        if val,ok := maps[sum];ok{
+            curr = max(i - val,curr)
+        }else{
+            maps[sum] = i
+        }
+    }
+    
+    return curr
+
+}
+
+func max (a,b int)int{
+    if a> b{
+        return a
+    }else{
+        return b
+    }
+}
 ```
