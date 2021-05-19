@@ -21,5 +21,89 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+func sequentialDigits(low int, high int) []int {
+    c := counts(low)
+    f := first(low,c)
+    flag := false
+    nums := []int{}
+    for{
+        curr := f
+        sum := c
+        total := curr
+        for ;sum>0;sum --{
+            curr = curr+1
+            if curr == 10{
+                c++
+                f = 1
+                flag = true
+                break                  
+            }else{
+                flag =false
+                total = total*10+curr
+            }
+        }
+
+        if flag {
+            continue
+        }
+
+        if total >= low && total <= high{
+            nums= append(nums,total)
+            f++
+        }
+        if total > high{
+            break
+        }
+        if total < low{
+            break
+        }
+    }
+   
+        
+
+       return nums
+}
+
+
+func first(a ,c int) int{
+    f := 1
+    for ;c >0;c--{
+        f = f * 10
+    }
+    return int(a/f)
+} 
+
+
+
+func counts(a int)int{
+    count := 0
+    for a >= 10 {
+        a = a/10
+        count ++
+    }
+    return count
+}
+//逆思维
+func sequentialDigits(low int, high int) []int {
+
+    res := []int{}
+
+    for i:=1;i<=9;i++{
+        sum := i
+        for j:= i+1 ;j<=9;j++{
+            sum =sum*10 +j
+            if  low <= sum && sum <= high{
+                res =append(res,sum)
+            }            
+             if sum > high{
+                    break;
+            }
+
+        }
+
+    }
+    sort.Ints(res)
+    return res
+}
 
 ```
