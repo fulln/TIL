@@ -12,4 +12,29 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+func lexicalOrder(n int) []int {
+
+    var ret []int
+    var dfs func(c int)
+    dfs = func(c int) {
+        if c > n {
+            return
+        }else{
+            ret = append(ret,c)
+            for j:=0;j<10;j++{
+                dfs(c * 10 + j)
+            }
+        }
+    } 
+
+    for i:=1;i<10;i++{
+        dfs(i)
+    }
+
+    return ret
+
+}
+
+
+
 ```
