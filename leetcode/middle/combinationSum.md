@@ -29,3 +29,30 @@ candidates 中的数字可以无限制重复被选取。
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/combination-sum
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+```go
+func combinationSum(candidates []int, target int) [][]int {
+    var res [][]int
+    var dfs func(count int,list []int,j int)
+    dfs=func(count int,list []int,j int){
+        if count==target{
+            newcopy:=make([]int,len(list))
+            copy(newcopy,list)
+            res=append(res,newcopy)
+            return
+        }
+        if count>target{
+            return
+        }
+        for i:=j;i<len(candidates);i++{
+            count=count+candidates[i]
+            list=append(list,candidates[i])
+            j=i         //设置一个标志位
+            dfs(count,list,j)       //内部的递归会从当前位开始，不会从头开始
+            count=count-candidates[i]      //回溯
+            list=list[:len(list)-1]      //回溯
+        }
+    }
+    dfs(0,[]int{},0)
+    return res
+}
+```
