@@ -29,4 +29,26 @@
 链接：https://leetcode-cn.com/problems/minimum-operations-to-make-the-array-increasing
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 ```go
+func minOperations(nums []int) int {
+
+    if  len(nums) == 0{
+        return 0
+    }
+
+    step := 0
+    curr := nums[0]
+
+    for i:=1;i< len(nums);i++{
+        if curr >= nums[i]{
+            step = step + curr - nums[i] +1
+            curr = curr + 1
+        }else{
+            curr = nums[i]
+        } 
+    } 
+
+    return step
+
+
+}
 ```
