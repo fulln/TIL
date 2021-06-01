@@ -18,6 +18,22 @@ R = 3
 
 
 ```go
+func numSubarrayBoundedMax(nums []int, left int, right int) int {
+    return counts(nums,right) - counts(nums,left -1)
+}
 
+func  counts(nums []int,limit int)int{
+    curr,total :=0,0
+
+    for _,val := range nums{
+        if val <= limit{
+            curr  ++
+        }else{
+            curr = 0
+        }
+        total +=curr
+    }
+    return total
+}
 
 ```
