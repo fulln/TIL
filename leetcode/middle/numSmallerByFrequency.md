@@ -26,5 +26,43 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+func numSmallerByFrequency(queries []string, words []string) []int {
+
+    ret :=[]int{}
+    curr :=make([]int,12)
+    for _,val := range words{
+        curr[find(val)]++
+    }
+
+    for i:=len(curr)-1; i > 0 ;i-- {
+        curr[i-1] = curr[i] +curr[i-1]
+    }
+
+    for  _,val := range queries{
+           now :=find(val)
+           ret = append(ret,curr[now+1])
+    }    
+
+    return ret
+
+
+}
+
+func find( c string)int{
+    small := 0
+    smaller := 'z'
+    for _,value := range c{
+        if smaller > value{
+            small  = 1
+            smaller = value
+        }else if smaller == value{
+            small ++
+        }
+    }
+    return small
+}
+
+
+
 
 ```
