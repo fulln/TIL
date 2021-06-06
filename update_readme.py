@@ -97,7 +97,7 @@ if __name__ == "__main__":
     
     
     zs_json= {}
-    for row in db["til"].rows_where(order_by="created_utc desc limit 5"):
+    for row in db["til"].rows_where(order_by="created_utc desc limit 10"):
          zs = "* [{title}]({url}) - {date}".format(
                     date=row["created"].split("T")[0], **row
                 )
