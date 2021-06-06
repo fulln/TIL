@@ -25,4 +25,44 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+func findMaxForm(strs []string, m int, n int) int {
+    if len(strs) == 0{
+        return 0
+    }
+
+    dp := make([][]int,m+1)
+
+    for z:=0;z<m+1;z++{
+        dp[z] = make([]int,n+1)
+    }
+
+    for _,val := range strs{
+        one := 0
+        zero := 0
+        for _,val := range val{
+            if '0' == val{
+                zero ++
+            }else{
+                one ++
+            }
+        }
+
+        for i :=m;i >= zero;i--{
+            for j:= n;j>=one;j--{
+                dp[i][j] = Max(dp[i][j],1+ dp[i-zero][j-one])
+            }
+        } 
+    }
+
+    return dp[m][n]
+
+}
+
+func Max(a ,b int) int{
+        if a > b{
+            return a
+        }
+        return b
+    }
+
 ```
