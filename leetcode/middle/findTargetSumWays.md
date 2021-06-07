@@ -28,4 +28,28 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+func findTargetSumWays(nums []int, target int) int {
+
+      sum := 0
+    for _,val := range nums {
+        sum += val;
+    }
+    if (sum < target || (sum + target) % 2 == 1) {
+        return 0;
+    }
+
+    w := (sum + target) / 2;
+    dp := make([]int,w+1)
+    dp[0] = 1
+    for _,val := range nums {
+        for j:= w ;j >= val; j--{
+            dp[j]  += dp[j - val] 
+        }
+    }
+    return dp[w]
+}
+
+
+
+
 ```
