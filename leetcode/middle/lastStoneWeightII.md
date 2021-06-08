@@ -34,5 +34,34 @@
 
 ```go
 
+func lastStoneWeightII(stones []int) int {
+    //无脑动态规划 一转背包问题
+    // 就是求 2堆之差最小问题
+    if len(stones) == 0{
+        return 0
+    }
+    sum :=0
+    for _,val:= range stones{
+        sum +=val
+    }
+
+    dp := make([]int,sum / 2 + 1)
+    
+    for i:= 0;i< len(stones);i++{
+        for j:= sum / 2 ;j >= stones[i];j--{
+            dp[j]  = max(dp[j],dp[j - stones[i]]+stones[i]) 
+        }
+    }
+    return sum -dp[sum/2]*2
+    
+}
+func max(a,b int)int{
+    if a > b {
+        return a
+    }else
+    {
+        return b
+    }
+}
 
 ``
