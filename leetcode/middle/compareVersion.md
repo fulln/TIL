@@ -33,4 +33,29 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+func compareVersion(version1 string, version2 string) int {
+
+    v1s := strings.Split(version1,".")
+	v2s := strings.Split(version2,".")
+	for {
+		if len(v1s)>len(v2s){
+			v2s = append(v2s,"0")
+		}else if len(v1s) < len(v2s) {
+			v1s = append(v1s,"0")
+		}else{
+			break
+		}
+	}
+	for i:=0;i<len(v1s);i++{
+		a,_ := strconv.Atoi(v1s[i])
+		b,_ := strconv.Atoi(v2s[i])
+		if a>b {
+			return 1
+		}else if a<b{
+			return -1
+		}
+	}
+	return 0
+
+}
 ```
