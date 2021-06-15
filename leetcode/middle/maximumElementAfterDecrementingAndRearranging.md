@@ -36,4 +36,15 @@ arr 中最大元素为 3 。
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+func maximumElementAfterDecrementingAndRearranging(arr []int) int {
+    sort.Ints(arr) 
+    arr[0] = 1
+    for i:= 1;i< len(arr);i++{
+        if arr[i] -arr[i-1] > 1 {
+            arr[i] = arr[i-1] + 1  
+        } 
+    }
+    return arr[len(arr) -1]
+
+}
 ```
