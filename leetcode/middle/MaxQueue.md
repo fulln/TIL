@@ -23,27 +23,43 @@
 
 ```go
 type MaxQueue struct {
-
+    queue []int
+    dequeue []int
 }
 
 
 func Constructor() MaxQueue {
-
+    return MaxQueue{}
 }
 
 
 func (this *MaxQueue) Max_value() int {
-
+    if len(this.queue) == 0{
+        return -1
+    }
+    return this.dequeue[0]
 }
 
 
 func (this *MaxQueue) Push_back(value int)  {
-
+    this.queue = append(this.queue,value)
+    for len(this.dequeue) > 0  && this.dequeue[len(this.dequeue) -1] < value{
+       this.dequeue = this.dequeue[:len(this.dequeue) -1]
+    }
+    this.dequeue = append(this.dequeue,value)
 }
 
 
 func (this *MaxQueue) Pop_front() int {
-
+      if len(this.queue) == 0 {
+        return -1
+    }
+    if this.queue[0] == this.dequeue[0] {
+        this.dequeue = this.dequeue[1: ]
+    }
+    value := this.queue[0]
+    this.queue = this.queue[1: ]
+    return value
 }
 
 
