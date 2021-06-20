@@ -2,74 +2,123 @@
 
 最近看到一个比较好的开发包`mapStruct` 这个对实现数据拷贝提供了一个简单的方式,可以用spring 或者静态变量的方式,对项目进行逻辑分层,代码分层提供了很方便的实现途径
 
-### 使用方式
+### 使用
 
-1. 引入pom
-```java
-	<dependency>
-            <groupId>org.mapstruct</groupId>
-            <artifactId>mapstruct-jdk8</artifactId>
-            <version>1.3.0.Final</version>
-        </dependency>
-        <dependency>
-            <groupId>org.mapstruct</groupId>
-            <artifactId>mapstruct-processor</artifactId>
-            <version>1.3.0.Final</version>
-        </dependency>
-```
+1. `pom`加载依赖
 
-后面的包是为了在🧬的时候就展示对应的实现类到本地
+   ```
+   <dependency>
+       <groupId>org.mapstruct</groupId>
+       <artifactId>mapstruct</artifactId>
+       <version>${org.mapstruct.version}</version>
+   </dependency>
+   <!-- https://mvnrepository.com/artifact/org.mapstruct/mapstruct-processor -->
+   <dependency>
+       <groupId>org.mapstruct</groupId>
+       <artifactId>mapstruct-processor</artifactId>
+       <version>${org.mapstruct.version}</version>
+   </dependency>
+   ```
 
-2. 使用demo
-```java
-@Mapper 1
-public interface CarMapper {
-	 
-    CarMapper INSTANCE = Mappers.getMapper( CarMapper.class ); 3
-    // 将car 转换为 carDTO
-    @Mapping(source = "numberOfSeats", target = "seatCount")
-    CarDto carToCarDto(Car car); 2
-}
+     此外,需要加载maven的`compiler` 插件
 
-public class Car {
- 
-    private String make;
-    private int numberOfSeats;
-    private CarType type;
- 
-    //constructor, getters, setters etc.
-}
+   ```
+   <build>
+       <plugins>
+           <plugin>
+               <groupId>org.springframework.boot</groupId>
+               <artifactId>spring-boot-maven-plugin</artifactId>
+           </plugin>
+           <plugin>
+               <groupId>org.apache.maven.plugins</groupId>
+               <artifactId>maven-compiler-plugin</artifactId>
+               <configuration>
+                   <source>15</source>
+                   <target>15</target>
+                   <annotationProcessorPaths>
+                       <path>
+                           <groupId>org.projectlombok</groupId>
+                           <artifactId>lombok</artifactId>
+                           <version>${lombok.version}</version>
+                       </path>
+                       <path>
+                           <groupId>org.mapstruct</groupId>
+                           <artifactId>mapstruct-processor</artifactId>
+                           <version>${org.mapstruct.version}</version>
+                       </path>
+                   </annotationProcessorPaths>
+                   <compilerArgs>--enable-preview</compilerArgs>
+               </configuration>
+           </plugin>
+       </plugins>
+   </build>
+   ```
 
-public class CarDto {
- 
-    private String make;
-    private int seatCount;
-    private String type;
- 
-    //constructor, getters, setters etc.
-}
-```
-然后使用
+2. 编写对应的转换实体和转换Mapper
 
-```java
-@Test
-public void shouldMapCarToDto() {
-    //given
-    Car car = new Car( "Morris", 5, CarType.SEDAN );
- 
-    //when
-    CarDto carDto = CarMapper.INSTANCE.carToCarDto( car );
- 
-    //then
-    assertThat( carDto ).isNotNull();
-    assertThat( carDto.getMake() ).isEqualTo( "Morris" );
-    assertThat( carDto.getSeatCount() ).isEqualTo( 5 );
-    assertThat( carDto.getType() ).isEqualTo( "SEDAN" );
-}
-```
-就可以轻易的转换了,不用自己手动写对应的转换
+   * `CarEntity`
 
-### 常用方式
+     ```
+     @Data
+     public class CarDto{
+         private String make;
+         private Integer seatCount;
+         private String type;
+     }
+     ```
+
+   * `CarDTO`
+
+     ```
+     @Data
+     public class CarDto{
+         private String make;
+         private Integer seatCount;
+         private String type;
+     }
+     ```
+
+   * `CarMapper`
+
+      `CarMapper `有多种 实现方式,建议如果要使用Mapper的话,继承`org.springframework.core.convert.converter.Converter`,2个类的成员变量基本相同的情况下,可以不用做额外的方法处理,`Mapper`最常见的还是以下2种
+
+     1.  声明为`SpringBean`
+     2.  生成静态常量
+
+       2种方式都行,代码如下
+
+     ```
+     @Mapper
+     //@Mapper(componentModel = "spring") //第一种方式
+     public interface CarMapper extends Converter<Car, CarDto> {
+     	//第二种方式
+         CarMapper MAPPER = Mappers.getMapper(CarMapper.class);
+     
+         @Mapping(target = "seatCount", source = "numberOfSeat")
+         @Override
+         CarDto convert(Car car);
+     }
+     ```
+
+   * `test`
+
+     测试类采用的第二种方式进行的转换,可见在使用方面还是比较方便的
+
+     ```
+     @Test
+     public void transferTest(){
+         Car car = new Car();
+         car.setMake("转换测试");
+         car.setNumberOfSeat(11);
+         car.setType("dd");
+         System.out.println(car);
+         CarDto convert = CarMapper.MAPPER.convert(car);
+         System.out.println(convert);
+     }
+     ```
+
+
+### 进阶使用方式
 下面选择几个常用场景描述下
 
 1. 多参数
