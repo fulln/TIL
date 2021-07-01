@@ -18,5 +18,38 @@ sentence = "jesslookedjustliketimherbrother"
 链接：https://leetcode-cn.com/problems/re-space-lcci
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 ```go
+func respace(dictionary []string, sentence string) int {
+    // 状态转移方程就是
+    //当前最少识别 =  长度- 最多识别数
+    //最多识别数 
+    // 如果当前  + w 能识别
+    // f[i][j] = f[i - dictionary[w]][j] + len(dictionary[w]) 
+    // 如果当前不能识别
+    // f[i][j] = f[i-1][j]
+    // 如果长度等于0
+    //f[0][0] = 0
+    n := len(dictionary)
 
+    dp :=make([]int,n+1)
+
+    for  i:=1;i <=n;i++ {
+            for _,val := range dictionary{
+                m:= len(val)
+                if i>= m && sentence[i-m:i] == val{
+                    dp[i] = max(dp[i],dp[i-m] + m)
+                }else{
+                    dp[i]  = max(dp[i],dp[i-1])
+                }
+        } 
+    }
+    return n - dp[n]
+}
+
+func max(a,b int)int{
+    if a >b{
+        return a
+    }else{
+        return b
+    }
+}
 ```
