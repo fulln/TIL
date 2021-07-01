@@ -52,4 +52,23 @@ func max(a,b int)int{
         return b
     }
 }
+
+//java 可行  golang不可行?
+class Solution {
+    public int respace(String[] dictionary, String sentence) {
+        int m = sentence.length();
+        int[] dp = new int[m+1];
+        for(int i=1;i<=m;i++){                 //外层循环字符串
+            for(String word:dictionary){             //内层循环字典
+                int len = word.length();
+                if(i >= len && word.equals(sentence.substring(i-len,i))){
+                    dp[i] = Math.max(dp[i],dp[i-len]+len);  //状态转移
+                }else{
+                    dp[i] = Math.max(dp[i],dp[i-1]);
+                }
+            }
+        }
+        return m-dp[m];
+    }
+}
 ```
