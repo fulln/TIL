@@ -41,4 +41,31 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+func frequencySort(s string) string {
+
+    maps:= make(map[rune]int)
+
+    ret := "" 
+    if len(s) == 0{
+        return ret
+    }
+    for _,val := range s{
+        maps[val] += 1
+    }
+    rets := make([]string,len(s)+1)
+
+    for key,val := range maps{
+        for l:=0;l < val;l++{
+            rets[val] = rets[val] + string(key)
+        }
+    }
+    
+    for j:=len(rets)-1;j>= 0;j--{
+            ret += rets[j]
+    }
+
+
+    return ret
+
+}
 ```
