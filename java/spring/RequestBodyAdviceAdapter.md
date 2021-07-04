@@ -79,7 +79,7 @@ public class RestControllerAdviceHandle extends RequestBodyAdviceAdapter {
 
 ### 流程
 
-![时序图](C:\Users\fulln\Desktop\requesrBody.png)
+![时序图](requesrBody.png)
 
 可以看出,在1.9部分调用`afterBodyRead`,其主要调用方法是从`org.springframework.web.servlet.mvc.method.annotation.HttpEntityMethodProcessor#resolveArgument` 出发开始处理,在处理参数的时候手动加入`beforeBodyRead`和`afterBodyRead`,实现`aop`的相同功能
 
