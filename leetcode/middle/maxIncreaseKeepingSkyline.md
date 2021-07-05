@@ -31,4 +31,42 @@ gridNew = [ [8, 4, 8, 7],
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+func maxIncreaseKeepingSkyline(grid [][]int) int {
+
+
+    xmax := make([]int,len(grid))
+    ymax := make([]int,len(grid))
+    for i:= 0;i< len(grid);i++{
+        // 判断 x轴
+        for j:=0;j< len(grid);j++{
+            if ymax[i] < grid[i][j] {
+                ymax[i] = grid[i][j]
+            } 
+        }
+
+        // 判断 y轴
+        for j:=0;j< len(grid);j++{
+            if xmax[i] < grid[j][i] {
+                xmax[i] = grid[j][i]
+            } 
+        }
+    }
+
+    sum := 0 
+    for m:=0;m<len(grid);m++{
+        for n:=0;n<len(grid);n++{
+            sum += min(xmax[m],ymax[n]) - grid[m][n]
+        }
+    }
+    return sum
+
+}
+
+func min(a,b int)int{
+    if a > b{
+        return b
+    }else{
+        return a
+    }
+}
 ```
