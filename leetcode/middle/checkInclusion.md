@@ -19,4 +19,29 @@
 链接：https://leetcode-cn.com/problems/permutation-in-string
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 ```go
+
+func checkInclusion(s1 string, s2 string) bool {
+
+   m1, m2 := len(s1), len(s2)
+    if m1 > m2 {
+        return false
+    }
+    var map1, map2 [26]int
+    for i, val := range s1 {
+        map1[val-'a']++
+        map2[s2[i]-'a']++
+    }
+    if map1 == map2 {
+        return true
+    }
+    for i := m1; i < m2; i++ {
+        map2[s2[i]-'a']++
+        map2[s2[i-m1]-'a']--
+        if map1 == map2 {
+            return true
+        }
+    }
+    return false
+
+}
 ```
