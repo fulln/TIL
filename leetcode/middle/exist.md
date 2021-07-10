@@ -33,4 +33,60 @@ board 和 word 中只包含大写和小写英文字母。
 
 ```go
 
+func exist(board [][]byte, word string) bool {
+
+	bools := make([][]bool,len(board))
+
+	for i:=0;i< len(bools);i++{
+		bools[i] =make([]bool,len(board[0]))
+	}
+
+
+	var dfs func(i,j ,index int)bool
+
+	dfs  = func(i,j,index int)bool{
+		if index == len(word){
+			return true
+		}
+		if i < 0  || i >= len(board) {
+			return false
+		}
+		if j < 0  || j >= len(board[0]) {
+			return false
+		}
+
+		if board[i][j] == word[index]  && bools[i][j] == false{
+
+			bools[i][j] = true
+
+			ret1 := dfs(i,j+1,index + 1)
+			ret2 := dfs(i,j-1,index + 1)
+			ret3 := dfs(i-1,j,index + 1)
+			ret4 := dfs(i+1,j,index + 1)
+
+			if ret1 || ret2 || ret3 || ret4 {
+				return true
+			}else{
+				bools[i][j] = false
+				return false
+			}
+		}else{
+			return false
+		}
+	}
+    
+    for i:=0;i< len(board);i++{
+		for j :=0;j<len(board[0]);j++{
+			if dfs(i,j,0)  == true{
+				return true
+			}
+		}
+	}
+
+	return false
+
+
+}
+
+
 ```
