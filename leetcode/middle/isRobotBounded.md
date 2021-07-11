@@ -34,4 +34,31 @@
 链接：https://leetcode-cn.com/problems/robot-bounded-in-circle
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 ```go
+func isRobotBounded(instructions string) bool {
+    // 方向d = 0,1,2,3
+    d := [][2]int{[2]int{1, 0}, [2]int{0, -1}, [2]int{-1, 0}, [2]int{0, 1}}
+
+    curPoint := [2]int{0, 0}
+    curD := 0
+    for t := 0; t < 4; t++ {
+        for  i := range instructions {
+            if instructions[i] == 'G' {
+                curPoint[0] += d[curD][0]
+                curPoint[1] += d[curD][1]
+            } else if instructions[i] == 'L' {
+                curD++
+                curD %= 4
+            } else {
+                curD += 3
+                curD %= 4
+            }
+        }
+    }
+   
+    return curPoint == [2]int{0, 0}
+
+
+}
+
+
 ```
