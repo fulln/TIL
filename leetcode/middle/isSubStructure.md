@@ -43,5 +43,19 @@ B是A的子结构， 即 A中有出现和B相同的结构和节点值。
  */
 func isSubStructure(A *TreeNode, B *TreeNode) bool {
 
+    if A == nil || B == nil{
+        return false
+    }
+    return dfs(A,B) || isSubStructure(A.Left,B) || isSubStructure(A.Right,B)
+}
+
+func dfs(A *TreeNode, B *TreeNode)bool{
+    if B == nil{
+        return true
+    }
+    if A == nil{
+        return false
+    }
+    return A.Val == B.Val && dfs(A.Left,B.Left) && dfs(A.Right,B.Right)
 }
 ```
