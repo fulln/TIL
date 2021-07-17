@@ -32,7 +32,9 @@
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/er-cha-sou-suo-shu-yu-shuang-xiang-lian-biao-lcof
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-```go
+```java
+/*
+// Definition for a Node.
 class Node {
     public int val;
     public Node left;
@@ -53,7 +55,42 @@ class Node {
 */
 class Solution {
     public Node treeToDoublyList(Node root) {
+            if (root ==  null){
+                return null;
+            }
+            Node curr = root;
+            List<Node> ret = new ArrayList<>();
+            List<Node> arr = new ArrayList<>();
+            //2叉搜索树,中序遍历
+            while (curr != null || arr.size() > 0) {
+                while (curr != null) {
+                    arr.add(curr);
+                    curr =curr.left;
+                }
+                curr = arr.get(arr.size() -1);
+                arr.remove(arr.size() -1);
+                ret.add(curr);
+                curr = curr.right;
+            }
+            int size = ret.size();
+            for (int i = 0; i < size; i++) {
+                //修改左边
+                if (i == 0) {
+                    ret.get(i).left = ret.get(size - 1);
+                } else {
+                    ret.get(i).left = ret.get(i - 1);
+                }
+                //修改右边
+                if (i == size - 1) {
+                    ret.get(i).right = ret.get(0);
+                } else {
+                    ret.get(i).right = ret.get(i + 1);
+                }
+            }
+            return ret.get(0);
+        }
         
-    }
+
+  
 }
 ```
