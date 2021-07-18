@@ -27,4 +27,63 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+
+
+func minNumber(nums []int) string {
+    quickSort(nums,0,len(nums)-1)
+    var sum string
+    for _,val := range nums{ 
+        sum += strconv.Itoa(val)
+    }
+    return sum
+}
+
+func quickSort(nums []int,from,to int){
+
+   if from >= to {
+		return 
+	}
+    begin := from
+    end := to
+    middle := from
+    for from < to{
+        
+        for from < to{
+            if compare(nums[middle],nums[to]){
+                to--
+                continue
+            }
+            nums[middle],nums[to] =  nums[to],nums[middle]
+            middle = to
+            break
+        }
+
+        for from < to{
+            if compare(nums[from],nums[middle]){
+                from++
+                continue
+            }
+            nums[from],nums[middle] =  nums[middle],nums[from]
+            middle = from
+            break
+        }
+    }
+
+    quickSort(nums,begin,middle-1)
+    
+    quickSort(nums,middle+1,end)
+
+
+}
+
+func compare(a,b int)bool{
+    one := strconv.Itoa(a) +strconv.Itoa(b)
+	two := strconv.Itoa(b) + strconv.Itoa(a)
+
+    if one <= two{
+        return true
+    }else{
+        return false
+    }
+}
 ```
