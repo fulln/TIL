@@ -32,6 +32,17 @@ pushed 是 popped 的排列。
 
 ```go
 func validateStackSequences(pushed []int, popped []int) bool {
-
+var stack []int
+	for _, val := range pushed {
+		stack = append(stack,val)
+		for len(stack)!= 0 && stack[len(stack) -1] == popped[0]{
+			popped = popped[1:]
+			stack = stack[:len(stack) -1]
+		}
+	}
+	if len(popped) == 0 {
+		return true
+	}
+	return false
 }
 ```
