@@ -166,11 +166,8 @@ T childValue(T parentValue) {
 
 #### 内部类ThreadLocalMap
 
-该类是一种定制的哈希映射，仅适用于维护线程本地值,类是包私有的，以允许在`Thread` 中声明字段。 为了处理非常大和长期存在的值，map的entity使用 WeakReferences 作为键。 但是，由于不使用reference queue，因此只有在表开始耗尽空间时才能保证删除旧有值
+该类是一种定制的哈希映射，仅适用于维护线程本地值,类是包私有的，以允许在`Thread` 中声明字段。 为了处理非常大和长期存在的值，map的entity使用 WeakReferences 作为键。 但是由于不是使用的refrenceQueue维护,因为用的map, map的key是weakReference 但是value不会被随时回收,就会生成threadLocal的陈旧值, 只有在full gc 或者是在 repalce方法的时候 才会被回收掉,造成内存泄漏风险. 
 
-```java
-
-```
 
 ##### ThreadLocalMap的构造方法
 
