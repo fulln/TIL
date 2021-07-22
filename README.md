@@ -4,25 +4,25 @@ today i learn
 
 <!-- toc -->
 
-- [react](#react)
-- [redis](#redis)
+- [vim](#vim)
+- [algorithm](#algorithm)
+- [windows](#windows)
+- [git](#git)
+- [maven](#maven)
 - [leetcode](#leetcode)
   * [hard](#hard)
   * [easy](#easy)
   * [middle](#middle)
-- [maven](#maven)
-- [git](#git)
-- [windows](#windows)
-- [shell](#shell)
+- [react](#react)
 - [java](#java)
   * [mysql](#mysql)
   * [jvm](#jvm)
   * [spring](#spring)
   * [basic](#basic)
   * [plug](#plug)
-- [algorithm](#algorithm)
-- [vim](#vim)
+- [redis](#redis)
 - [sql](#sql)
+- [shell](#shell)
 
 <!-- tocstop -->
 
@@ -32,12 +32,22 @@ there is total <!-- count starts -->297<!-- count ends --> TILs . keep on
 ---
 
 <!-- index starts -->
-## react
+## vim
 
-* [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
-## redis
+* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
+## algorithm
 
-* [redis setnx setex](https://github.com/fulln/TIL/blob/master/redis/redisCommand.md) - 2021-03-25
+* [动态规划](https://github.com/fulln/TIL/blob/master/algorithm/dpIntroduce.md) - 2021-06-12
+## windows
+
+* [windows 中cmd 相关的操作](https://github.com/fulln/TIL/blob/master/windows/shellOption.md) - 2020-11-14
+* [合并多个sheet](https://github.com/fulln/TIL/blob/master/windows/ExcelCopy.md) - 2020-11-17
+## git
+
+* [git 版本的回滚](https://github.com/fulln/TIL/blob/master/git/gitreset.md) - 2020-09-23
+## maven
+
+* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
 ## leetcode
 
 ### hard
@@ -314,19 +324,9 @@ there is total <!-- count starts -->297<!-- count ends --> TILs . keep on
 * [栈的压入,弹出](https://github.com/fulln/TIL/blob/master/leetcode/middle/validateStackSequences.md) - 2021-07-19
 * [输出stirng的所有排序](https://github.com/fulln/TIL/blob/master/leetcode/middle/permutation.md) - 2021-07-20
 * [剑指 Offer 44. 数字序列中某一位的数字](https://github.com/fulln/TIL/blob/master/leetcode/middle/findNthDigit.md) - 2021-07-21
-## maven
+## react
 
-* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
-## git
-
-* [git 版本的回滚](https://github.com/fulln/TIL/blob/master/git/gitreset.md) - 2020-09-23
-## windows
-
-* [windows 中cmd 相关的操作](https://github.com/fulln/TIL/blob/master/windows/shellOption.md) - 2020-11-14
-* [合并多个sheet](https://github.com/fulln/TIL/blob/master/windows/ExcelCopy.md) - 2020-11-17
-## shell
-
-* [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
+* [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
 ## java
 
 ### mysql
@@ -355,18 +355,18 @@ there is total <!-- count starts -->297<!-- count ends --> TILs . keep on
 
 * [mapStruct 开发使用](https://github.com/fulln/TIL/blob/master/java/plug/mapStructInUse.md) - 2021-01-23
 * [mybatis-plus 通过lambda 获取属性名](https://github.com/fulln/TIL/blob/master/java/plug/mybatisPlus.md) - 2021-07-21
-## algorithm
+## redis
 
-* [动态规划](https://github.com/fulln/TIL/blob/master/algorithm/dpIntroduce.md) - 2021-06-12
-## vim
-
-* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
+* [redis setnx setex](https://github.com/fulln/TIL/blob/master/redis/redisCommand.md) - 2021-03-25
 ## sql
 
 * [mysql 事务锁相关查看](https://github.com/fulln/TIL/blob/master/sql/qeury_transaction.md) - 2020-09-16
 * [Transaction resolution unknown 异常分析](https://github.com/fulln/TIL/blob/master/sql/transactions-unkonw.md) - 2021-01-08
 * [Alter Table 操作执行过程](https://github.com/fulln/TIL/blob/master/sql/alterTable.md) - 2021-01-20
 * [mysql的JSON字段类型](https://github.com/fulln/TIL/blob/master/sql/mysqlJSON.md) - 2021-06-28
+## shell
+
+* [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
 <!-- index ends -->
 
 
