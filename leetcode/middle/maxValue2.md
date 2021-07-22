@@ -20,6 +20,43 @@
 
 ```go
 
+func maxValue(grid [][]int) int {
+    x := len(grid)
+    y := len(grid[0])
+    dp :=make([][]int,x)
+    
+    for m:=0;m<len(dp);m++{
+        dp[m] = make([]int,y+1)
+    }
+
+    dp[0][0] = grid[0][0]
+    
+    for i :=1;i< x;i++{
+        dp[i][0] = dp[i-1][0]+grid[i][0]
+    }
+
+    for j :=1;j< y;j++{
+        dp[0][j] = dp[0][j-1]+grid[0][j]
+    }
+
+
+    for i:=1;i< x;i++{
+        for j:=1;j< y;j++{
+            dp[i][j] = Max(dp[i-1][j],dp[i][j-1]) + grid[i][j]
+        } 
+    }
+
+    return dp[x-1][y-1]
+}
+
+
+func Max (a,b int)int{
+    if a > b{
+        return a
+    }else{
+        return b
+    }
+}
 
 
 ```
