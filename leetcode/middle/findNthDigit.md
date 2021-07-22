@@ -19,7 +19,17 @@
 ```go
 
 func findNthDigit(n int) int {
-
+digit := 1
+    start := 1
+    count := 9
+    for n > count{
+        n -= count;
+        digit++;
+        start *= 10
+        count =digit * start * 9
+    }
+    numStr := strconv.Itoa(start + (n-1)/digit)
+    return int(numStr[(n-1)%digit]-'0')
 
 }
 
