@@ -15,8 +15,43 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
-func nthUglyNumber(n int) int {
+[200~func nthUglyNumber(n int) int {
+	if n <= 0{
+        return 0
+    
+	}
+    dp := make([]int,n)
+    dp[0] = 1
+    m,s,k := 0,0,0
+    for i:=1;i< n;i++{
+        dp[i] =min(min(dp[m]*2,dp[s]*3),dp[k]*5)
+		if dp[i] == dp[m]*2{
+            m++
+        
+		}
+	if dp[i]  == dp[s]*3{
+            s++
+        
+	}
+	if dp[i] == dp[k]*5{
+            k++
+        
+	}
+    
+    }
+    return dp[n-1]
 
 }
+
+func min(a,b int)int{
+	if a > b{
+        return b
+    
+	}else{
+        return a
+    
+	}
+
+}]
 
 ```
