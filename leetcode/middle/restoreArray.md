@@ -31,4 +31,45 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+func restoreArray(adjacentPairs [][]int) []int {
+
+    // 首先用一个数组装对应的[]int
+    // 遍历下  用个map指向他出现的另外一个int
+    ret := make([]int,len(adjacentPairs) + 1)
+    maps := make(map[int][]int, len(ret) )
+    for _, val := range adjacentPairs {
+        maps[val[0]] = append(maps[val[0]], val[1])
+        maps[val[1]] = append(maps[val[1]], val[0])
+    }
+    
+    for key,_ := range maps{
+        level := maps[key]
+        if len(level) == 1{
+                ret[0] = key
+                ret[1] = level[0]
+                break
+        }
+    }
+
+    index := 1
+
+    for index < len(ret)-1 {
+        lv := maps[ret[index]] 
+        if len(lv) == 1{
+            ret[len(ret)-1] = lv[0]
+            continue
+        }
+        if lv[0] == ret[index-1] {
+            ret[index+1] = lv[1]
+        }else{
+            ret[index+1] = lv[0]
+        }
+        index ++
+    }
+
+    return ret
+    
+
+}
+
 ```
