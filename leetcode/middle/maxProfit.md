@@ -20,5 +20,35 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+func maxProfit(prices []int) int {
 
+    if len(prices) == 0{
+        return 0
+    }
+
+    dp :=make([]int,len(prices))
+    min := prices[0]
+    for i:=1;i< len(prices);i++{
+        min =  Min(min,prices[i])
+        dp[i] =  max(dp[i-1],prices[i]-min)  
+    }
+    return dp[len(dp)-1]
+
+}
+
+func  max(a,b int)int{
+    if a > b{
+        return a
+    }else{
+        return b
+    }
+}
+
+func Min(a,b int)int{
+    if a > b{
+        return b
+    }else{
+        return a
+    }
+}
 ```
