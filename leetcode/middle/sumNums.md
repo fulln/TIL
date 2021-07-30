@@ -14,14 +14,22 @@
 
 ```go
 func sumNums(n int) int {
-    var sum func(s int)bool
-    m := 0
+    ret :=0
+    var add func(a,b int)bool
+    add = func(a,b int)bool{
+        sum ,arr := a^b, a&b
+        ret = sum
+        return arr > 0 && add(sum,arr << 1)  
+    }
+    var sum func(s int)bool    
     sum = func(s int)bool{
-        m = m + s
+        add(ret,s)
         return s >0 && sum(s-1)
     }
     sum(n)
-    return m  
+    return ret  
 }
+
+
 
 ```
