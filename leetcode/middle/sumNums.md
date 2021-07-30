@@ -17,17 +17,11 @@ func sumNums(n int) int {
     var sum func(s int)bool
     m := 0
     sum = func(s int)bool{
-        add(m,s)
+        m = m + s
         return s >0 && sum(s-1)
     }
     sum(n)
     return m  
 }
 
-func add(a,b int)bool{
-    sum ,arr := a^b, a&b
-    fmt.Println(sum)
-    fmt.Println(arr) 
-    return arr > 0 && add(sum,arr << 1)  
-}
 ```
