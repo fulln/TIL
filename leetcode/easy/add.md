@@ -11,4 +11,16 @@
 输出: 2
 
 ```go
+func add(a int, b int) int {
+    var sum int
+    var addFunc func(a,b int)bool
+    addFunc  = func(a,b int)bool{
+        sum = a^b
+        total := a & b
+        return total > 0 && addFunc(sum,total << 1)
+    }
+    addFunc(a,b)
+    return sum
+}
+
 ```
