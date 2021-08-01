@@ -17,7 +17,7 @@ func add(a int, b int) int {
     addFunc  = func(a,b int)bool{
         sum = a^b
         total := a & b
-        return total > 0 && addFunc(sum,total << 1)
+        return total != 0 && addFunc(sum,total << 1)
     }
     addFunc(a,b)
     return sum
