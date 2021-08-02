@@ -1,4 +1,5 @@
 ## 按递增顺序显示卡牌
+
 牌组中的每张卡牌都对应有一个唯一的整数。你可以按你想要的顺序对这套卡片进行排序。
 
 最初，这些卡牌在牌组里是正面朝下的（即，未显示状态）。
@@ -18,18 +19,3 @@
 链接：https://leetcode-cn.com/problems/reveal-cards-in-increasing-order
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
-```go
-func deckRevealedIncreasing(deck []int) []int {
-	sort.Ints(deck[:]) //从小到大排序
-	ret := deck[len(deck)-1:]
-	deck = deck[:len(deck)-1]
-	for len(deck) > 0 {
-		//ret前后换
-		ret = append(ret[len(ret)-1:], ret[:len(ret)-1]...)
-		ret = append(deck[len(deck)-1:], ret[:]...)
-		deck = deck[:len(deck)-1]
-	}
-	return ret
-}
-
-```
