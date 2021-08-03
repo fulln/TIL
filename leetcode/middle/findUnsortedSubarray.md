@@ -25,6 +25,24 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
-
+func findUnsortedSubarray(nums []int) int {
+    newOne := []int{}
+    newOne = append(newOne,nums...)
+    sort.Ints(newOne)
+    from := 0
+    end := len(nums) -1
+    for ;from <= end;{
+        if nums[from] == newOne[from]{
+            from ++
+            continue
+        }
+        if nums[end] == newOne[end]{
+            end --
+        }else{
+            break
+        }
+    }
+    return end - from + 1
+}
 
 ```
