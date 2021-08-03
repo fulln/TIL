@@ -201,102 +201,13 @@ kafka 消息保证是老生常谈的事情, 总结都做了n遍, 现在结合源
        
   ```
   
-  然后在`kafka.cluster.Partition`用作了校验
-  
-  ```scala
-  def appendRecordsToLeader(records: MemoryRecords, origin: AppendOrigin, requiredAcks: Int): LogAppendInfo = {
-      val (info, leaderHWIncremented) = inReadLock(leaderIsrUpdateLock) {
-        leaderLogIfLocal match {
-          case Some(leaderLog) =>
-           // 最小同步分片数量
-            val minIsr = leaderLog.config.minInSyncReplicas
-           // 当前同步分片数量
-            val inSyncSize = inSyncReplicaIds.size
-  					//如果上面2个参数不等又设置了ack  = -1 直接报错出去
-            // Avoid writing to leader if there are not enough insync replicas to make it safe
-            if (inSyncSize < minIsr && requiredAcks == -1) {
-              throw new NotEnoughReplicasException(s"The size of the current ISR $inSyncReplicaIds " +
-                s"is insufficient to satisfy the min.isr requirement of $minIsr for partition $topicPartition")
-            }
-  
-            val info = leaderLog.appendAsLeader(records, leaderEpoch = this.leaderEpoch, origin,
-              interBrokerProtocolVersion)
-  
-            // we may need to increment high watermark since ISR could be down to 1
-            (info, maybeIncrementLeaderHW(leaderLog))
-  
-          case None =>
-            throw new NotLeaderOrFollowerException("Leader not local for partition %s on broker %d"
-              .format(topicPartition, localBrokerId))
-        }
-      }
-  ```
-  
 
 #### 生产者的CP保证
 
-* **ack设置为-1**
-
-  在初始化sender的时候将act参数加入,确保开通的是强一致性的-1
-
-```java
-/*处理向 Kafka 集群发送生产请求的后台线程。 该线程发出元数据请求以更新其集群视图，然后将生产请求发送到适当的节点
- */
-Sender newSender(LogContext logContext, //消息上下文,封装一些消息之外的信息,如groupid
-                 KafkaClient kafkaClient,//client
-                 ProducerMetadata metadata// 生产者对应启动jvm参数
-                ) {
-       				// ...
-        short acks = configureAcks(producerConfig, log);
-        return new Sender(logContext,
-                client,
-                metadata,
-                this.accumulator,
-                maxInflightRequests == 1,
-                producerConfig.getInt(ProducerConfig.MAX_REQUEST_SIZE_CONFIG),
-                acks, // 将该参数放入 生产者成员变量中,
-                producerConfig.getInt(ProducerConfig.RETRIES_CONFIG),
-                metricsRegistry.senderMetrics,
-                time,
-                requestTimeoutMs,
-                producerConfig.getLong(ProducerConfig.RETRY_BACKOFF_MS_CONFIG),
-                this.transactionManager,
-                apiVersions);
-    }
-
-/**
-		生产者的消息强一致性(CP)保证:参数方面
- *  会去校验ack的设置
- 		发送消息的时候幂等 -> ack 机制需要设置为-1,即消息需要所有的broker 确认收到后才能确定为已发送.
- */
-private static short configureAcks(ProducerConfig config, Logger log) {
-  		 // 是不是用户自定义的ack参数
-        boolean userConfiguredAcks = config.originals().containsKey(ProducerConfig.ACKS_CONFIG);
-
-  			short acks = Short.parseShort(config.getString(ProducerConfig.ACKS_CONFIG));
-
-        if (config.idempotenceEnabled()) {
-          
-            if (!userConfiguredAcks)
-                log.info("Overriding the default {} to all since idempotence is enabled.", ProducerConfig.ACKS_CONFIG);
-            else if (acks != -1)
-                throw new ConfigException("Must set " + ProducerConfig.ACKS_CONFIG + " to all in order to use the idempotent " +
-                        "producer. Otherwise we cannot guarantee idempotence.");
-        }
-        return acks;
-    }
-```
-
-* **最小同步副本数量**
-
-   min.insync.replicas ,全部副本N中,同步副本数量要占${N/2 + 1}个,小于该数量,便无法服务于强一致性
-
-* **不允许非同步leader** 
-
-  unclean.leader.election.enable,如果boker当前不是最新的同步的节点, 不允许担任leader
-
 ```scala
-// 上面2个配置都是在对应的KafkaConfig中
+// 2个配置都是在对应的KafkaConfig中
+// ack配置是在produceCondfig中,
+// 下面的是kafkaconfig
 private val configDef = {
 
     new ConfigDef()
@@ -314,11 +225,174 @@ private val configDef = {
   }
 ```
 
+这2个参数都主要在broker中对应使用
 
+* **ack设置为-1**
+
+  在初始化sender的时候将act参数加入,确保开通的是强一致性的-1
+
+  ```scala
+  /*处理向 Kafka 集群发送生产请求的后台线程。 该线程发出元数据请求以更新其集群视图，然后将生产请求发送到适当的节点
+   */
+  Sender newSender(LogContext logContext, //消息上下文,封装一些消息之外的信息,如groupid
+                   KafkaClient kafkaClient,//client
+                   ProducerMetadata metadata// 生产者对应启动jvm参数
+                  ) {
+         				// ...
+          short acks = configureAcks(producerConfig, log);
+          return new Sender(logContext,
+                  client,
+                  metadata,
+                  this.accumulator,
+                  maxInflightRequests == 1,
+                  producerConfig.getInt(ProducerConfig.MAX_REQUEST_SIZE_CONFIG),
+                  acks, // 将该参数放入 生产者成员变量中,
+                  producerConfig.getInt(ProducerConfig.RETRIES_CONFIG),
+                  metricsRegistry.senderMetrics,
+                  time,
+                  requestTimeoutMs,
+                  producerConfig.getLong(ProducerConfig.RETRY_BACKOFF_MS_CONFIG),
+                  this.transactionManager,
+                  apiVersions);
+      }
+  
+  /**
+  		生产者的消息强一致性(CP)保证:参数方面
+   *  会去校验ack的设置
+   		发送消息的时候幂等 -> ack 机制需要设置为-1,即消息需要所有的broker 确认收到后才能确定为已发送.
+   */
+  private static short configureAcks(ProducerConfig config, Logger log) {
+    		 // 是不是用户自定义的ack参数
+          boolean userConfiguredAcks = config.originals().containsKey(ProducerConfig.ACKS_CONFIG);
+  
+    			short acks = Short.parseShort(config.getString(ProducerConfig.ACKS_CONFIG));
+  
+          if (config.idempotenceEnabled()) {
+            
+              if (!userConfiguredAcks)
+                  log.info("Overriding the default {} to all since idempotence is enabled.", ProducerConfig.ACKS_CONFIG);
+              else if (acks != -1)
+                  throw new ConfigException("Must set " + ProducerConfig.ACKS_CONFIG + " to all in order to use the idempotent " +
+                          "producer. Otherwise we cannot guarantee idempotence.");
+          }
+          return acks;
+      }
+  ```
+
+  
+
+* **最小同步副本数量**
+
+   min.insync.replicas ,全部副本N中,同步副本数量要占${N/2 + 1}个,小于该数量,便无法服务于强一致性,详细可见,`org.apache.kafka.common.config.TopicConfig#MIN_IN_SYNC_REPLICAS_DOC`文档说明
+
+  ```scala
+  def appendRecordsToLeader(records: MemoryRecords, origin: AppendOrigin, requiredAcks: Int): LogAppendInfo = {
+    val (info, leaderHWIncremented) = inReadLock(leaderIsrUpdateLock) {
+      leaderLogIfLocal match {
+        case Some(leaderLog) =>
+          val minIsr = leaderLog.config.minInSyncReplicas
+          val inSyncSize = inSyncReplicaIds.size
+  
+          // 如果没有足够的同步副本来确保安全，请避免写入领导者
+          if (inSyncSize < minIsr && requiredAcks == -1) {
+            throw new NotEnoughReplicasException(s"The size of the current ISR $inSyncReplicaIds " +
+              s"is insufficient to satisfy the min.isr requirement of $minIsr for partition $topicPartition")
+          }
+  
+          val info = leaderLog.appendAsLeader(records, leaderEpoch = this.leaderEpoch, origin,
+            interBrokerProtocolVersion)
+  
+          // we may need to increment high watermark since ISR could be down to 1
+          (info, maybeIncrementLeaderHW(leaderLog))
+  
+        case None =>
+          throw new NotLeaderOrFollowerException("Leader not local for partition %s on broker %d"
+            .format(topicPartition, localBrokerId))
+      }
+    }
+  
+    // some delayed operations may be unblocked after HW changed
+    if (leaderHWIncremented)
+      tryCompleteDelayedRequests()
+    else {
+      // probably unblock some follower fetch requests since log end offset has been updated
+      delayedOperations.checkAndCompleteFetch()
+    }
+  
+    info
+  }
+  ```
+
+  
+
+* **不允许非同步leader** 
+
+  unclean.leader.election.enable,如果leader当前水位不是最新的同步的节点, 不允许担任leader
+
+  ```scala
+  /*
+     * 返回一个元组，其中第一个元素是一个布尔值，指示是否有足够的副本达到 `requiredOffset`
+     * 第二个元素是一个错误（如果没有错误，它将是 `Errors.NONE`）。
+     *
+     * Returns a tuple where the first element is a boolean indicating whether enough replicas reached `requiredOffset`
+     * and the second element is an error (which would be `Errors.NONE` for no error).
+     *
+     * Note that this method will only be called if requiredAcks = -1 and we are waiting for all replicas in ISR to be
+     * fully caught up to the (local) leader's offset corresponding to this produce request before we acknowledge the
+     * produce request.
+     * 请注意，只有当 requiredAcks = -1 并且我们正在等待 ISR 中的所有副本
+     *  完全赶上与此生产请求对应的（本地）领导者的偏移量时，才会调用此方法，然后才确认 *生产请求。
+     */
+    def checkEnoughReplicasReachOffset(requiredOffset: Long): (Boolean, Errors) = {
+      leaderLogIfLocal match {
+        case Some(leaderLog) =>
+          // 保持当前不可变副本列表引用
+          val curInSyncReplicaIds = inSyncReplicaIds
+  
+          if (isTraceEnabled) {
+            def logEndOffsetString: ((Int, Long)) => String = {
+              case (brokerId, logEndOffset) => s"broker $brokerId: $logEndOffset"
+            }
+  
+            val curInSyncReplicaObjects = (curInSyncReplicaIds - localBrokerId).map(getReplicaOrException)
+            val replicaInfo = curInSyncReplicaObjects.map(replica => (replica.brokerId, replica.logEndOffset))
+            val localLogInfo = (localBrokerId, localLogOrException.logEndOffset)
+            val (ackedReplicas, awaitingReplicas) = (replicaInfo + localLogInfo).partition { _._2 >= requiredOffset}
+  
+            trace(s"Progress awaiting ISR acks for offset $requiredOffset: " +
+              s"acked: ${ackedReplicas.map(logEndOffsetString)}, " +
+              s"awaiting ${awaitingReplicas.map(logEndOffsetString)}")
+          }
+  
+          val minIsr = leaderLog.config.minInSyncReplicas
+    			// 如果leader的高水位偏移量 小于了当前请求的偏移量
+        	if (leaderLog.highWatermark >= requiredOffset) {
+            /*
+             * The topic may be configured not to accept messages if there are not enough replicas in ISR
+             * in this scenario the request was already appended locally and then added to the purgatory before the ISR was shrunk
+             * 如果 ISR 中没有足够的副本，主题可能被配置为不接受消息 
+             * 在这种情况下，请求已经在本地附加，然后在 ISR 收缩之前添加到炼狱
+             */
+            if (minIsr <= curInSyncReplicaIds.size)
+              (true, Errors.NONE)
+            else
+            // 最小同步副本数,大于当前同步部分数,抛出添加之后没有足够的副本异常
+              (true, Errors.NOT_ENOUGH_REPLICAS_AFTER_APPEND)
+          } else
+        		//告知不可用
+            (false, Errors.NONE)
+        case None =>
+          (false, Errors.NOT_LEADER_OR_FOLLOWER)
+      }
+    }
+  ```
 
 #### 生产者AP保证
 
+* **ack设置为-1**
 
+* **最小同步副本数量=1** 
 
-> 写下来发现太多,分p发送吧
+  保证可用,在这种情况下follow在重启后消息被截断的概率大大增加,容易造成消息的不一致
 
+* **不允许非同步副本担任leader** 
