@@ -18,4 +18,22 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+func singleNumbers(nums []int) []int {
+    sort.Ints(nums)
+    ret := []int{}
+
+    for i := 0;i< len(nums);i++{
+        if i-1 >= 0  && nums[i] ^ nums[i-1] == 0{
+           continue 
+        } 
+        if i+1 < len(nums) && nums[i] ^ nums[i+1] ==0{
+            continue
+        }
+        ret =append(ret,nums[i])
+    }
+
+
+    return ret
+
+}
 ```
