@@ -17,7 +17,12 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 ```go
 func singleNumber(nums []int) int {
-    
+   var one, two int
+	for _, v := range nums {
+		one = one ^ v & ^two
+		two = two ^ v & ^one
+	}
+	return one
 
 }
 ```
