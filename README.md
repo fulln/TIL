@@ -4,100 +4,36 @@ today i learn
 
 <!-- toc -->
 
-- [git](#git)
-- [react](#react)
-- [redis](#redis)
-- [design](#design)
-- [maven](#maven)
-- [algorithm](#algorithm)
-- [java](#java)
-  * [mysql](#mysql)
-  * [jvm](#jvm)
-  * [plug](#plug)
-  * [basic](#basic)
-  * [spring](#spring)
-- [windows](#windows)
-- [kafka](#kafka)
-- [sql](#sql)
-- [vim](#vim)
 - [shell](#shell)
 - [leetcode](#leetcode)
   * [easy](#easy)
   * [hard](#hard)
   * [middle](#middle)
+- [sql](#sql)
+- [algorithm](#algorithm)
+- [maven](#maven)
+- [windows](#windows)
+- [redis](#redis)
+- [java](#java)
+  * [plug](#plug)
+  * [basic](#basic)
+  * [mysql](#mysql)
+  * [jvm](#jvm)
+  * [spring](#spring)
+- [design](#design)
+- [react](#react)
+- [kafka](#kafka)
+- [vim](#vim)
+- [git](#git)
 
 <!-- tocstop -->
 
 ---
-there is total <!-- count starts -->315<!-- count ends --> TILs . keep on 
+there is total <!-- count starts -->316<!-- count ends --> TILs . keep on 
 
 ---
 
 <!-- index starts -->
-## git
-
-* [git 版本的回滚](https://github.com/fulln/TIL/blob/master/git/gitreset.md) - 2020-09-23
-## react
-
-* [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
-## redis
-
-* [redis setnx setex](https://github.com/fulln/TIL/blob/master/redis/redisCommand.md) - 2021-03-25
-## design
-
-* [领域驱动设计](https://github.com/fulln/TIL/blob/master/design/DDD.md) - 2021-08-05
-## maven
-
-* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
-## algorithm
-
-* [动态规划](https://github.com/fulln/TIL/blob/master/algorithm/dpIntroduce.md) - 2021-06-12
-## java
-
-### mysql
-
-* [使用mybatis 自动执行脚本](https://github.com/fulln/TIL/blob/master/java/mysql/MysqlInit.md) - 2021-06-02
-### jvm
-
-* [JVM调优与GC](https://github.com/fulln/TIL/blob/master/java/jvm/JvmDaily1.md) - 2020-10-28
-### plug
-
-* [mapStruct 开发使用](https://github.com/fulln/TIL/blob/master/java/plug/mapStructInUse.md) - 2021-01-23
-* [mybatis-plus 通过lambda 获取属性名](https://github.com/fulln/TIL/blob/master/java/plug/mybatisPlus.md) - 2021-07-21
-### basic
-
-* [java为啥会有static main?](https://github.com/fulln/TIL/blob/master/java/basic/staticMain.md) - 2020-08-06
-* [jvm的大图流整理](https://github.com/fulln/TIL/blob/master/java/basic/jvmArrange.md) - 2020-08-22
-* [通过BTrace进行分析](https://github.com/fulln/TIL/blob/master/java/basic/BTrace.md) - 2020-08-26
-* [JDK15视频发布会及新特性](https://github.com/fulln/TIL/blob/master/java/basic/JDK15.md) - 2020-11-01
-* [java 看加载的class 的来源](https://github.com/fulln/TIL/blob/master/java/basic/getsourceFile.md) - 2021-03-25
-* [ThreadLocal 解析](https://github.com/fulln/TIL/blob/master/java/basic/threadLocal.md) - 2021-07-16
-### spring
-
-* [CVE-2020-5421漏洞 spring相关代码探寻](https://github.com/fulln/TIL/blob/master/java/spring/CVE-2020-5421.md) - 2020-10-19
-* [spring-quartz 使用](https://github.com/fulln/TIL/blob/master/java/spring/spring-quartz.md) - 2020-11-14
-* [spring-data-redis](https://github.com/fulln/TIL/blob/master/java/spring/springDataRedis.md) - 2020-11-14
-* [springMvc升级springBoot](https://github.com/fulln/TIL/blob/master/java/spring/upgradeMvc.md) - 2021-01-15
-* [spring Enviroment 初始化及@value加载](https://github.com/fulln/TIL/blob/master/java/spring/envirment.md) - 2021-02-05
-* [SpringMVC全局日志](https://github.com/fulln/TIL/blob/master/java/spring/RequestBodyAdviceAdapter.md) - 2021-07-04
-* [springCloudConfig 设置说明](https://github.com/fulln/TIL/blob/master/java/spring/springCloudConfig.md) - 2021-08-02
-## windows
-
-* [windows 中cmd 相关的操作](https://github.com/fulln/TIL/blob/master/windows/shellOption.md) - 2020-11-14
-* [合并多个sheet](https://github.com/fulln/TIL/blob/master/windows/ExcelCopy.md) - 2020-11-17
-## kafka
-
-* [kafka消息可靠性保证(一)](https://github.com/fulln/TIL/blob/master/kafka/kafkaReliability.md) - 2021-08-02
-* [kafka消息可靠性保证(二)](https://github.com/fulln/TIL/blob/master/kafka/kafkaReliability2.md) - 2021-08-02
-## sql
-
-* [mysql 事务锁相关查看](https://github.com/fulln/TIL/blob/master/sql/qeury_transaction.md) - 2020-09-16
-* [Transaction resolution unknown 异常分析](https://github.com/fulln/TIL/blob/master/sql/transactions-unkonw.md) - 2021-01-08
-* [Alter Table 操作执行过程](https://github.com/fulln/TIL/blob/master/sql/alterTable.md) - 2021-01-20
-* [mysql的JSON字段类型](https://github.com/fulln/TIL/blob/master/sql/mysqlJSON.md) - 2021-06-28
-## vim
-
-* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
 ## shell
 
 * [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
@@ -250,6 +186,7 @@ there is total <!-- count starts -->315<!-- count ends --> TILs . keep on
 * [最少操作使数组递增](https://github.com/fulln/TIL/blob/master/leetcode/easy/minOperations.md) - 2021-05-29
 * [剑指 Offer 28. 对称的二叉树](https://github.com/fulln/TIL/blob/master/leetcode/easy/isSymmetric.md) - 2021-07-15
 * [不用加减乘除做加法](https://github.com/fulln/TIL/blob/master/leetcode/easy/add.md) - 2021-08-01
+* [第 N 个泰波那契数](https://github.com/fulln/TIL/blob/master/leetcode/easy/tribonacci.md) - 2021-08-08
 ### hard
 
 * [鸡蛋掉落](https://github.com/fulln/TIL/blob/master/leetcode/hard/superEggDrop.md) - 2021-02-28
@@ -391,6 +328,70 @@ there is total <!-- count starts -->315<!-- count ends --> TILs . keep on
 * [有效三角形的个数](https://github.com/fulln/TIL/blob/master/leetcode/middle/triangleNumber.md) - 2021-08-04
 * [数组中数字出现的次数](https://github.com/fulln/TIL/blob/master/leetcode/middle/singleNumbers.md) - 2021-08-07
 * [数组中数字出现的次数 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/singleNumber2.md) - 2021-08-07
+## sql
+
+* [mysql 事务锁相关查看](https://github.com/fulln/TIL/blob/master/sql/qeury_transaction.md) - 2020-09-16
+* [Transaction resolution unknown 异常分析](https://github.com/fulln/TIL/blob/master/sql/transactions-unkonw.md) - 2021-01-08
+* [Alter Table 操作执行过程](https://github.com/fulln/TIL/blob/master/sql/alterTable.md) - 2021-01-20
+* [mysql的JSON字段类型](https://github.com/fulln/TIL/blob/master/sql/mysqlJSON.md) - 2021-06-28
+## algorithm
+
+* [动态规划](https://github.com/fulln/TIL/blob/master/algorithm/dpIntroduce.md) - 2021-06-12
+## maven
+
+* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
+## windows
+
+* [windows 中cmd 相关的操作](https://github.com/fulln/TIL/blob/master/windows/shellOption.md) - 2020-11-14
+* [合并多个sheet](https://github.com/fulln/TIL/blob/master/windows/ExcelCopy.md) - 2020-11-17
+## redis
+
+* [redis setnx setex](https://github.com/fulln/TIL/blob/master/redis/redisCommand.md) - 2021-03-25
+## java
+
+### plug
+
+* [mapStruct 开发使用](https://github.com/fulln/TIL/blob/master/java/plug/mapStructInUse.md) - 2021-01-23
+* [mybatis-plus 通过lambda 获取属性名](https://github.com/fulln/TIL/blob/master/java/plug/mybatisPlus.md) - 2021-07-21
+### basic
+
+* [java为啥会有static main?](https://github.com/fulln/TIL/blob/master/java/basic/staticMain.md) - 2020-08-06
+* [jvm的大图流整理](https://github.com/fulln/TIL/blob/master/java/basic/jvmArrange.md) - 2020-08-22
+* [通过BTrace进行分析](https://github.com/fulln/TIL/blob/master/java/basic/BTrace.md) - 2020-08-26
+* [JDK15视频发布会及新特性](https://github.com/fulln/TIL/blob/master/java/basic/JDK15.md) - 2020-11-01
+* [java 看加载的class 的来源](https://github.com/fulln/TIL/blob/master/java/basic/getsourceFile.md) - 2021-03-25
+* [ThreadLocal 解析](https://github.com/fulln/TIL/blob/master/java/basic/threadLocal.md) - 2021-07-16
+### mysql
+
+* [使用mybatis 自动执行脚本](https://github.com/fulln/TIL/blob/master/java/mysql/MysqlInit.md) - 2021-06-02
+### jvm
+
+* [JVM调优与GC](https://github.com/fulln/TIL/blob/master/java/jvm/JvmDaily1.md) - 2020-10-28
+### spring
+
+* [CVE-2020-5421漏洞 spring相关代码探寻](https://github.com/fulln/TIL/blob/master/java/spring/CVE-2020-5421.md) - 2020-10-19
+* [spring-quartz 使用](https://github.com/fulln/TIL/blob/master/java/spring/spring-quartz.md) - 2020-11-14
+* [spring-data-redis](https://github.com/fulln/TIL/blob/master/java/spring/springDataRedis.md) - 2020-11-14
+* [springMvc升级springBoot](https://github.com/fulln/TIL/blob/master/java/spring/upgradeMvc.md) - 2021-01-15
+* [spring Enviroment 初始化及@value加载](https://github.com/fulln/TIL/blob/master/java/spring/envirment.md) - 2021-02-05
+* [SpringMVC全局日志](https://github.com/fulln/TIL/blob/master/java/spring/RequestBodyAdviceAdapter.md) - 2021-07-04
+* [springCloudConfig 设置说明](https://github.com/fulln/TIL/blob/master/java/spring/springCloudConfig.md) - 2021-08-02
+## design
+
+* [领域驱动设计](https://github.com/fulln/TIL/blob/master/design/DDD.md) - 2021-08-05
+## react
+
+* [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
+## kafka
+
+* [kafka消息可靠性保证(一)](https://github.com/fulln/TIL/blob/master/kafka/kafkaReliability.md) - 2021-08-02
+* [kafka消息可靠性保证(二)](https://github.com/fulln/TIL/blob/master/kafka/kafkaReliability2.md) - 2021-08-02
+## vim
+
+* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
+## git
+
+* [git 版本的回滚](https://github.com/fulln/TIL/blob/master/git/gitreset.md) - 2020-09-23
 <!-- index ends -->
 
 
