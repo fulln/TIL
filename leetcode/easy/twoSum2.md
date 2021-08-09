@@ -27,4 +27,16 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+func twoSum(numbers []int, target int) []int {
+    for from,end:=0,len(numbers)-1;from < end;{
+        if numbers[from]+ numbers[end] == target{
+            return []int{from,end}
+        }else if numbers[from]+ numbers[end] > target{
+            end --
+        }else{
+            from ++
+        }
+    }
+    return nil
+}
 ```
