@@ -25,6 +25,18 @@
 
 
 ```go
-
+func numberOfArithmeticSlices(nums []int) int {
+    ret := 0
+    dp := 0 
+    for i:=2;i< len(nums);i++{
+            if nums[i] - nums[i-1] == nums[i-1] - nums[i-2]{
+                dp++
+                ret += dp
+            }else{
+                dp = 0
+            }
+    }
+    return ret
+}
 ```
 
