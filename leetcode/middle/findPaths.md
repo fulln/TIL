@@ -45,3 +45,52 @@ func findPaths(m int, n int, maxMove int, startRow int, startColumn int) int {
 }
 //dp
 ```
+func findPaths(m int, n int, maxMove int, startRow int, startColumn int) int {
+    ret := 0
+    dp := make([][][]int, maxMove+1)
+    for i := range dp {
+        dp[i] = make([][]int, m+2) 
+        for j := range dp[i] {
+            dp[i][j] = make([]int, n+2)
+        }
+    }
+    
+    dp[0][startRow+1][startColumn+1] = 1
+    for k:=1; k <= maxMove; k++ { 
+        for i:=0; i <= m+1 ; i++ {
+            for j:=0; j <= n+1; j++ { 
+                if !ok(m,n,i,j) {
+                    dp[k][i][j] = dp[k-1][i][j]
+                }              
+                if ok(m,n,i-1,j) {
+                    dp[k][i][j] += dp[k-1][i-1][j]
+                }
+                if ok(m,n,i+1,j) {
+                    dp[k][i][j] += dp[k-1][i+1][j]
+                }
+                if ok(m,n,i,j-1) {
+                    dp[k][i][j] += dp[k-1][i][j-1]
+                }
+                if ok(m,n,i,j+1) {
+                    dp[k][i][j] += dp[k-1][i][j+1]
+                }
+                dp[k][i][j] %= 1000000007
+                // sum 
+                if k == maxMove && !ok(m,n,i,j) {                
+                    ret += dp[k][i][j]     
+                    ret = ret % 1000000007  
+                }
+            }
+        }
+       
+    } 
+   
+    return ret
+} 
+
+func ok(m,n, i,j int) bool { // 在方格內
+    if i>=1 && i <= m && j >=1 && j <= n {
+        return true
+    }
+    return false
+}
