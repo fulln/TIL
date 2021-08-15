@@ -44,7 +44,6 @@ func findPaths(m int, n int, maxMove int, startRow int, startColumn int) int {
     return ret 
 }
 //dp
-```
 func findPaths(m int, n int, maxMove int, startRow int, startColumn int) int {
     ret := 0
     dp := make([][][]int, maxMove+1)
@@ -94,3 +93,6 @@ func ok(m,n, i,j int) bool { // 在方格內
     }
     return false
 }
+
+```
+
