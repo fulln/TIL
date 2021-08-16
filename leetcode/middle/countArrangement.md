@@ -25,4 +25,34 @@ i 能被第 i 位上的数字整除
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+func countArrangement(n int) int {
+    check := make([]bool,n+1)
+    ret :=make([][]int,n+1)
+    for i := 1; i <= n; i++ {
+        for j := 1; j <= n; j++ {
+            if i%j == 0 || j%i == 0 {
+                ret[i] = append(ret[i], j)
+            }
+        }
+    }
+    var ack int
+    var dfs func(curr int)
+    dfs =func(curr int){
+        if curr > n{
+            ack ++
+            return
+        }
+        for _,val := range ret[curr]{
+            if !check[val]{
+                check[val] = true
+                dfs(curr+1)
+                check[val] = false 
+            }
+        }
+    } 
+    dfs(1)
+    return ack
+
+}
+
 ```
