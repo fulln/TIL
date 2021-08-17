@@ -28,4 +28,27 @@
 链接：https://leetcode-cn.com/problems/student-attendance-record-i
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 ```go
+func checkRecord(s string) bool {
+        aindex :=0
+        lindex :=0
+    for i:=0;i< len(s);i++{
+        if s[i] == 'A'{
+            aindex ++
+            if aindex ==2{
+                return false
+            }
+        }
+
+        if s[i] == 'L'{
+            lindex++
+            if lindex ==3{
+                return false
+            }
+        }else{
+            lindex = 0
+        }
+    }    
+    return true
+
+}
 ```
