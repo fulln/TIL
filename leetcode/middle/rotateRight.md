@@ -19,4 +19,38 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+/**
+ * Definition for singly-linked list.
+ * type ListNode struct {
+ *     Val int
+ *     Next *ListNode
+ * }
+ */
+func rotateRight(head *ListNode, k int) *ListNode {
+    if head ==nil || head.Next == nil ||k ==0{
+        return head
+    }
+    
+    count := 1
+
+    tmp := head
+    for tmp.Next != nil{
+        tmp =tmp.Next
+        count ++
+    }
+
+    k %=  count
+
+    if k == 0{
+        return head
+    }
+
+    tmp.Next = head
+
+    for i:=0;i< count - k;i++{
+        tmp =tmp.Next
+    }
+    head ,tmp.Next =tmp.Next,nil
+    return head
+}
 ```
