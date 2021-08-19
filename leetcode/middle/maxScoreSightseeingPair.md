@@ -21,9 +21,25 @@
 链接：https://leetcode-cn.com/problems/best-sightseeing-pair
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 ```go
-
-
 func maxScoreSightseeingPair(values []int) int {
+	func maxScoreSightseeingPair(values []int) int {
 
+    ret := 0
+    maxi := values[0]
+    for i:=1;i< len(values);i++{
+        ret =max(ret,maxi + values[i] - i)
+        maxi = max(maxi,values[i]+i) 
+    }
+    return ret
+}
+
+func max(a,b int)int{
+    if a > b{
+        return a
+    }else{
+        return b
+    }
+}
 }
 ```
+
