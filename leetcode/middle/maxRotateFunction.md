@@ -25,4 +25,28 @@ F(3) = (0 * 3) + (1 * 2) + (2 * 6) + (3 * 4) = 0 + 2 + 12 + 12 = 26
 链接：https://leetcode-cn.com/problems/rotate-function
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 ```go
+func maxRotateFunction(nums []int) int {
+    l := len(nums)
+    sum := 0
+    curr := 0
+    for i,val := range nums{
+        sum += val
+        curr += i * val 
+    }
+    ret := curr
+    for i:=1;i< l;i++{
+        curr = curr - sum + l * nums[i-1]
+        ret = max(ret,curr)
+    }
+    return ret
+
+}
+
+func max(a,b int)int{
+    if a > b{
+        return a
+    }else{
+        return b
+    }
+}
 ```
