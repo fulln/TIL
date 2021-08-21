@@ -36,3 +36,24 @@
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/string-compression
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+```go
+func compress(chars []byte) int {
+    last,curr :=0,0 
+    for i:=0;i<len(chars);i++{
+       if i+1 == len(chars) || chars[i] != chars[i+1] {
+           chars[last] = chars[curr]
+           last++
+           if i > curr{
+               num := strconv.Itoa(i+1 -curr)
+               for _,val := range num{
+                   chars[last] = byte(val)
+                   last ++
+               }
+           }
+           curr = i + 1
+       }
+    }
+    return last
+}
+
+```
