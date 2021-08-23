@@ -26,7 +26,32 @@
 链接：https://leetcode-cn.com/problems/robot-in-a-grid-lcci
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 ```go
+func pathWithObstacles(obstacleGrid [][]int) [][]int {
+    if len(obstacleGrid) == 0 || len(obstacleGrid[0]) == 0 {
+        return nil
+    }
+    ly,lx := len(obstacleGrid),len(obstacleGrid[0]) 
+    var dfs func(x,y int)bool
+    var ret  [][]int
+    dfs = func(x,y int)bool{
+        if  x == lx || y == ly || obstacleGrid[y][x] == 1 {
+            return false
+        }
+        obstacleGrid[y][x] = 1
+        ret = append(ret,[]int{y,x})
 
+        if x == lx -1 && y == ly -1{
+            return true
+        }
 
-1
+        if dfs(x+1,y) || dfs(x,y+1){
+            return true
+        }
+        ret = ret[:len(ret)-1]
+        return false
+    }
+    dfs(0,0)
+    return ret
+}
+
 ```
