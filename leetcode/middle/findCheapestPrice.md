@@ -33,6 +33,40 @@ src = 0, dst = 2, k = 0
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 ```go
 func findCheapestPrice(n int, flights [][]int, src int, dst int, k int) int {
-
+    const inf = 10000*101 + 1
+    f := make([][]int, k+2)
+    for i := range f {
+        f[i] = make([]int, n)
+        for j := range f[i] {
+            f[i][j] = inf
+        }
+    }
+    f[0][src] = 0
+    for t := 1; t <= k+1; t++ {
+        for _, flight := range flights {
+            j, i, cost := flight[0], flight[1], flight[2]
+            f[t][i] = min(f[t][i], f[t-1][j]+cost)
+        }
+    }
+    ans := inf
+    for t := 1; t <= k+1; t++ {
+        ans = min(ans, f[t][dst])
+    }
+    if ans == inf {
+        ans = -1
+    }
+    return ans
 }
+
+func min(a, b int) int {
+    if a < b {
+        return a
+    }
+    return b
+}
+
+作者：LeetCode-Solution
+链接：https://leetcode-cn.com/problems/cheapest-flights-within-k-stops/solution/k-zhan-zhong-zhuan-nei-zui-bian-yi-de-ha-abzi/
+来源：力扣（LeetCode）
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 ```
