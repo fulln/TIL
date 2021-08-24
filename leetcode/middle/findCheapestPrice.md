@@ -32,6 +32,7 @@ src = 0, dst = 2, k = 0
 链接：https://leetcode-cn.com/problems/cheapest-flights-within-k-stops
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 ```go
+// 这个题比较难懂, 后面再弄下把
 func findCheapestPrice(n int, flights [][]int, src int, dst int, k int) int {
     const inf = 10000*101 + 1
     f := make([][]int, k+2)
