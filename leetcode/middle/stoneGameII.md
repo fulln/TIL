@@ -25,4 +25,34 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+func stoneGameII(piles []int) int {
+
+    dp:=make([][]int,len(piles))
+	for k,_:=range dp{
+		dp[k]=make([]int,len(piles)+1)
+	}
+    sum := 0
+    for i:=len(piles)-1;i>=0;i--{
+        sum +=piles[i]
+        for m := 1;m <= len(piles); m++{
+            if i + 2*m >= len(piles){
+                dp[i][m] = sum
+            } else{
+                for x:=1;i+x<=len(piles)&&x<=2*m;x++{
+					dp[i][m]=max(dp[i][m],sum-dp[i+x][max(m,x)])
+				}
+            }
+        }
+    }
+    return dp[0][1]
+
+}
+
+func max(i int, j int) int {
+	if i > j {
+		return i
+	} else {
+		return j
+	}
+}
 ```
