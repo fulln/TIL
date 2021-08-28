@@ -21,5 +21,26 @@
 输入：nums = [0]
 输出：0
 ```go
+func rob(nums []int) int {
+    last ,curr,last1 ,curr1 := 0,0,0,0
+    for i:= 0 ;i< len(nums);i++{
+        if i == 0{
+            last,curr = curr,max(last+nums[i],curr)
+        }else if i ==  len(nums) -1{
+            last1,curr1 = curr1,max(last1+nums[i],curr1)
+        }else{
+            last,curr = curr,max(last+nums[i],curr)
+            last1,curr1 = curr1,max(last1+nums[i],curr1)
+        }
+    }
+    return max(curr,curr1)
+}
 
+func max(a,b int)int{
+    if a > b{
+        return a
+    }else{
+        return b
+    }
+}
 ```
