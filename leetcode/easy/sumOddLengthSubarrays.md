@@ -35,3 +35,21 @@
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/sum-of-all-odd-length-subarrays
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+```go
+func sumOddLengthSubarrays(arr []int) int {
+    length:=len(arr)
+    var sum int
+    var new []int
+    for d :=1;d<=length;d=d+2{
+        for k,_:= range arr{
+            if (k+d)<=length{
+                new=arr[k:k+d]
+                for _,f:=range new{
+                    sum=sum+f
+                }
+            }
+        }
+    }
+    return sum
+}
+```
