@@ -29,4 +29,17 @@
 链接：https://leetcode-cn.com/problems/two-city-scheduling
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 ```go
+func twoCitySchedCost(costs [][]int) int {
+    sort.Slice(costs, func(i, j int) bool {
+		return costs[i][0]-costs[i][1] < costs[j][0]-costs[j][1]
+	})
+    n := len(costs) / 2
+    cost := 0
+	for i := 0; i < n; i++ {
+		cost += costs[i][0] + costs[n+i][1]
+	}
+	return cost
+}
+
+
 ```
