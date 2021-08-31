@@ -17,5 +17,24 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+func integerBreak(n int) int {
+    dp :=make([]int,n+1)
+    dp[1] = 1
+    for i:=2; i <= n;i++{
+        for j:= i-1;j>= 1;j--{
+            dp[i] = max(max(dp[i],dp[j]*(i-j)),j*(i-j))
+                
+        }
+    }
+    return dp[n]
 
+}
+
+func max(a,b int)int{
+    if a> b{
+        return a
+    }else{
+        return  b
+    }
+}
 ```
