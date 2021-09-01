@@ -4,27 +4,27 @@ today i learn
 
 <!-- toc -->
 
-- [kafka](#kafka)
-- [git](#git)
-- [maven](#maven)
-- [redis](#redis)
-- [sql](#sql)
+- [windows](#windows)
 - [leetcode](#leetcode)
-  * [middle](#middle)
   * [easy](#easy)
   * [hard](#hard)
-- [windows](#windows)
+  * [middle](#middle)
 - [shell](#shell)
+- [git](#git)
+- [redis](#redis)
+- [sql](#sql)
+- [algorithm](#algorithm)
+- [vim](#vim)
 - [react](#react)
 - [java](#java)
+  * [jvm](#jvm)
+  * [basic](#basic)
   * [mysql](#mysql)
   * [spring](#spring)
-  * [basic](#basic)
-  * [jvm](#jvm)
   * [plug](#plug)
-- [algorithm](#algorithm)
 - [design](#design)
-- [vim](#vim)
+- [maven](#maven)
+- [kafka](#kafka)
 
 <!-- tocstop -->
 
@@ -34,179 +34,12 @@ there is total <!-- count starts -->338<!-- count ends --> TILs . keep on
 ---
 
 <!-- index starts -->
-## kafka
+## windows
 
-* [kafka消息可靠性保证(一)](https://github.com/fulln/TIL/blob/master/kafka/kafkaReliability.md) - 2021-08-02
-* [kafka消息可靠性保证(二)](https://github.com/fulln/TIL/blob/master/kafka/kafkaReliability2.md) - 2021-08-02
-* [kafka消息可靠性保证(三)](https://github.com/fulln/TIL/blob/master/kafka/kafkaReliability3.md) - 2021-08-09
-## git
-
-* [git 版本的回滚](https://github.com/fulln/TIL/blob/master/git/gitreset.md) - 2020-09-23
-## maven
-
-* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
-## redis
-
-* [redis setnx setex](https://github.com/fulln/TIL/blob/master/redis/redisCommand.md) - 2021-03-25
-## sql
-
-* [mysql 事务锁相关查看](https://github.com/fulln/TIL/blob/master/sql/qeury_transaction.md) - 2020-09-16
-* [Transaction resolution unknown 异常分析](https://github.com/fulln/TIL/blob/master/sql/transactions-unkonw.md) - 2021-01-08
-* [Alter Table 操作执行过程](https://github.com/fulln/TIL/blob/master/sql/alterTable.md) - 2021-01-20
-* [mysql的JSON字段类型](https://github.com/fulln/TIL/blob/master/sql/mysqlJSON.md) - 2021-06-28
+* [windows 中cmd 相关的操作](https://github.com/fulln/TIL/blob/master/windows/shellOption.md) - 2020-11-14
+* [合并多个sheet](https://github.com/fulln/TIL/blob/master/windows/ExcelCopy.md) - 2020-11-17
 ## leetcode
 
-### middle
-
-* [钥匙和房间](https://github.com/fulln/TIL/blob/master/leetcode/middle/canVisitAllRooms.md) - 2020-09-11
-* [二叉树的中序遍历](https://github.com/fulln/TIL/blob/master/leetcode/middle/inorderTraversal.md) - 2020-09-14
-* [子集](https://github.com/fulln/TIL/blob/master/leetcode/middle/subsets.md) - 2020-09-20
-* [剑指 Offer 46. 把数字翻译成字符串](https://github.com/fulln/TIL/blob/master/leetcode/middle/translateNum.md) - 2020-09-21
-* [二叉搜索树中的众数](https://github.com/fulln/TIL/blob/master/leetcode/middle/findMode.md) - 2020-09-25
-* [路径总和 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/pathSum.md) - 2020-09-26
-* [填充每个节点的下一个右侧节点指针 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/connect.md) - 2020-09-28
-* [144. 二叉树的前序遍历](https://github.com/fulln/TIL/blob/master/leetcode/middle/preorderTraversal.md) - 2020-10-28
-* [5603. 确定两个字符串是否接近](https://github.com/fulln/TIL/blob/master/leetcode/middle/closeStrings.md) - 2020-11-15
-* [5606. 具有给定数值的最小字符串](https://github.com/fulln/TIL/blob/master/leetcode/middle/getSmallestString.md) - 2020-11-22
-* [二叉树的层序遍历](https://github.com/fulln/TIL/blob/master/leetcode/middle/levelOrder.md) - 2020-11-24
-* [把字符串转换成整数](https://github.com/fulln/TIL/blob/master/leetcode/middle/strToInt.md) - 2020-11-30
-* [第一个错误的版本](https://github.com/fulln/TIL/blob/master/leetcode/middle/firstBadVersion.md) - 2020-12-05
-* [K 和数对的最大数目](https://github.com/fulln/TIL/blob/master/leetcode/middle/maxOperations.md) - 2020-12-06
-* [三数之和](https://github.com/fulln/TIL/blob/master/leetcode/middle/threeSum.md) - 2020-12-07
-* [字母异位词分组](https://github.com/fulln/TIL/blob/master/leetcode/middle/groupAnagrams.md) - 2020-12-08
-* [最长回文子串](https://github.com/fulln/TIL/blob/master/leetcode/middle/longestPalindrome.md) - 2020-12-14
-* [删除子数组的最大得分](https://github.com/fulln/TIL/blob/master/leetcode/middle/maximumUniqueSubarray.md) - 2020-12-20
-* [奇偶链表](https://github.com/fulln/TIL/blob/master/leetcode/middle/oddEvenList.md) - 2020-12-23
-* [吃苹果的最大数目](https://github.com/fulln/TIL/blob/master/leetcode/middle/eatenApples.md) - 2020-12-27
-* [二叉树的锯齿形层次遍历](https://github.com/fulln/TIL/blob/master/leetcode/middle/zigzagLevelOrder.md) - 2020-12-30
-* [从前序与中序遍历序列构造二叉树](https://github.com/fulln/TIL/blob/master/leetcode/middle/buildTree.md) - 2021-01-06
-* [二叉搜索树中第K小的元素](https://github.com/fulln/TIL/blob/master/leetcode/middle/kthSmallest.md) - 2021-01-07
-* [电话号码的字母组合](https://github.com/fulln/TIL/blob/master/leetcode/middle/letterCombinations.md) - 2021-01-09
-* [括号生成](https://github.com/fulln/TIL/blob/master/leetcode/middle/generateParenthesis.md) - 2021-01-10
-* [全排列](https://github.com/fulln/TIL/blob/master/leetcode/middle/permute.md) - 2021-01-11
-* [单词搜索](https://github.com/fulln/TIL/blob/master/leetcode/middle/exist.md) - 2021-01-12
-* [颜色分类](https://github.com/fulln/TIL/blob/master/leetcode/middle/sortColors.md) - 2021-01-13
-* [前 K 个高频元素](https://github.com/fulln/TIL/blob/master/leetcode/middle/topKFrequent.md) - 2021-01-16
-* [数组中的第K个最大元素](https://github.com/fulln/TIL/blob/master/leetcode/middle/findKthLargest.md) - 2021-01-18
-* [寻找峰值](https://github.com/fulln/TIL/blob/master/leetcode/middle/findPeakElement.md) - 2021-01-24
-* [在排序数组中查找元素的第一个和最后一个位置](https://github.com/fulln/TIL/blob/master/leetcode/middle/searchRange.md) - 2021-01-26
-* [合并区间](https://github.com/fulln/TIL/blob/master/leetcode/middle/merge.md) - 2021-01-31
-* [搜索旋转排序数组](https://github.com/fulln/TIL/blob/master/leetcode/middle/search.md) - 2021-02-02
-* [搜索二维矩阵 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/searchMatrix.md) - 2021-02-04
-* [## 跳跃游戏](https://github.com/fulln/TIL/blob/master/leetcode/middle/canJump.md) - 2021-02-07
-* [两数相加](https://github.com/fulln/TIL/blob/master/leetcode/middle/addTwoNumbers.md) - 2021-02-08
-* [不同路径](https://github.com/fulln/TIL/blob/master/leetcode/middle/uniquePaths.md) - 2021-02-19
-* [零钱兑换](https://github.com/fulln/TIL/blob/master/leetcode/middle/coinChange.md) - 2021-02-22
-* [最长上升子序列](https://github.com/fulln/TIL/blob/master/leetcode/middle/lengthOfLIS.md) - 2021-02-23
-* [分割回文串](https://github.com/fulln/TIL/blob/master/leetcode/middle/partition.md) - 2021-03-01
-* [单词拆分](https://github.com/fulln/TIL/blob/master/leetcode/middle/wordBreak.md) - 2021-03-02
-* [乘积最大子数组](https://github.com/fulln/TIL/blob/master/leetcode/middle/maxProduct.md) - 2021-03-03
-* [递增的三元子序列](https://github.com/fulln/TIL/blob/master/leetcode/middle/increasingTriplet.md) - 2021-03-04
-* [除自身以外数组的乘积](https://github.com/fulln/TIL/blob/master/leetcode/middle/productExceptSelf.md) - 2021-03-09
-* [复制带随机指针的链表](https://github.com/fulln/TIL/blob/master/leetcode/middle/copyRandomList.md) - 2021-03-11
-* [排序链表](https://github.com/fulln/TIL/blob/master/leetcode/middle/sortList.md) - 2021-03-15
-* [盛最多水的容器](https://github.com/fulln/TIL/blob/master/leetcode/middle/maxArea.md) - 2021-03-17
-* [四数相加 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/fourSumCount.md) - 2021-03-18
-* [至少有K个重复字符的最长子串](https://github.com/fulln/TIL/blob/master/leetcode/middle/longestSubstring.md) - 2021-03-19
-* [二叉树中的最大路径和](https://github.com/fulln/TIL/blob/master/leetcode/middle/maxPathSum.md) - 2021-03-21
-* [最长连续序列](https://github.com/fulln/TIL/blob/master/leetcode/middle/longestConsecutive.md) - 2021-03-22
-* [打家劫舍](https://github.com/fulln/TIL/blob/master/leetcode/middle/rob.md) - 2021-03-24
-* [二叉搜索树中的插入操作](https://github.com/fulln/TIL/blob/master/leetcode/middle/insertIntoBST.md) - 2021-03-25
-* [直线上最多的点数](https://github.com/fulln/TIL/blob/master/leetcode/middle/maxPoints.md) - 2021-03-29
-* [3的幂](https://github.com/fulln/TIL/blob/master/leetcode/middle/isPowerOfThree.md) - 2021-03-31
-* [加油站](https://github.com/fulln/TIL/blob/master/leetcode/middle/canCompleteCircuit.md) - 2021-04-01
-* [删除有序数组中的重复项 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/removeDuplicates.md) - 2021-04-07
-* [搜索旋转排序数组 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/search2.md) - 2021-04-07
-* [构成特定和需要添加的最少元素](https://github.com/fulln/TIL/blob/master/leetcode/middle/minElements.md) - 2021-04-09
-* [数值的整数次方](https://github.com/fulln/TIL/blob/master/leetcode/middle/myPow.md) - 2021-04-10
-* [负二进制数相加](https://github.com/fulln/TIL/blob/master/leetcode/middle/addNegabinary.md) - 2021-04-12
-* [环形子数组的最大和](https://github.com/fulln/TIL/blob/master/leetcode/middle/maxSubarraySumCircular.md) - 2021-04-14
-* [使数组互补的最少操作次数](https://github.com/fulln/TIL/blob/master/leetcode/middle/minMoves.md) - 2021-04-19
-* [复原 IP 地址](https://github.com/fulln/TIL/blob/master/leetcode/middle/restoreIpAddresses.md) - 2021-04-21
-* [最大整除子集](https://github.com/fulln/TIL/blob/master/leetcode/middle/largestDivisibleSubset.md) - 2021-04-23
-* [二叉树展开为链表](https://github.com/fulln/TIL/blob/master/leetcode/middle/flatten.md) - 2021-04-24
-* [Z 字形变换](https://github.com/fulln/TIL/blob/master/leetcode/middle/convert.md) - 2021-04-25
-* [在 D 天内送达包裹的能力](https://github.com/fulln/TIL/blob/master/leetcode/middle/shipWithinDays.md) - 2021-04-26
-* [组合总和 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/combinationSum2.md) - 2021-04-28
-* [寻找重复数](https://github.com/fulln/TIL/blob/master/leetcode/middle/findDuplicate.md) - 2021-04-30
-* [分发饼干](https://github.com/fulln/TIL/blob/master/leetcode/middle/findContentChildren.md) - 2021-04-30
-* [删除并获得点数](https://github.com/fulln/TIL/blob/master/leetcode/middle/deleteAndEarn.md) - 2021-05-05
-* [汉明距离总和](https://github.com/fulln/TIL/blob/master/leetcode/middle/totalHammingDistance.md) - 2021-05-07
-* [全排列 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/permuteUnique.md) - 2021-05-08
-* [超级丑数](https://github.com/fulln/TIL/blob/master/leetcode/middle/nthSuperUglyNumber.md) - 2021-05-10
-* [解码异或后的排列](https://github.com/fulln/TIL/blob/master/leetcode/middle/decodeArray.md) - 2021-05-11
-* [排布二进制网格的最少交换次数](https://github.com/fulln/TIL/blob/master/leetcode/middle/minSwaps.md) - 2021-05-12
-* [两数相除](https://github.com/fulln/TIL/blob/master/leetcode/middle/divide.md) - 2021-05-17
-* [连续数组](https://github.com/fulln/TIL/blob/master/leetcode/middle/findMaxLength.md) - 2021-05-18
-* [顺次数](https://github.com/fulln/TIL/blob/master/leetcode/middle/sequentialDigits.md) - 2021-05-19
-* [不相交的线](https://github.com/fulln/TIL/blob/master/leetcode/middle/maxUncrossedLines.md) - 2021-05-21
-* [剧情触发时间](https://github.com/fulln/TIL/blob/master/leetcode/middle/getTriggerTime.md) - 2021-05-24
-* [字典序排数](https://github.com/fulln/TIL/blob/master/leetcode/middle/lexicalOrder.md) - 2021-05-25
-* [反转每对括号间的子串](https://github.com/fulln/TIL/blob/master/leetcode/middle/reverseParentheses.md) - 2021-05-26
-* [组合总和](https://github.com/fulln/TIL/blob/master/leetcode/middle/combinationSum.md) - 2021-05-28
-* [完全平方数](https://github.com/fulln/TIL/blob/master/leetcode/middle/numSquares.md) - 2021-05-30
-* [区间子数组个数](https://github.com/fulln/TIL/blob/master/leetcode/middle/numSubarrayBoundedMax.md) - 2021-05-31
-* [连续的子数组和](https://github.com/fulln/TIL/blob/master/leetcode/middle/checkSubarraySum.md) - 2021-06-02
-* [最深叶节点的最近公共祖先](https://github.com/fulln/TIL/blob/master/leetcode/middle/lcaDeepestLeaves.md) - 2021-06-03
-* [比较字符串最小字母出现频次](https://github.com/fulln/TIL/blob/master/leetcode/middle/numSmallerByFrequency.md) - 2021-06-04
-* [一和零](https://github.com/fulln/TIL/blob/master/leetcode/middle/findMaxForm.md) - 2021-06-06
-* [目标和](https://github.com/fulln/TIL/blob/master/leetcode/middle/findTargetSumWays.md) - 2021-06-07
-* [最后一块石头的重量 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/lastStoneWeightII.md) - 2021-06-08
-* [课程表 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/findOrder.md) - 2021-06-09
-* [比较版本号](https://github.com/fulln/TIL/blob/master/leetcode/middle/compareVersion.md) - 2021-06-10
-* [翻转矩阵后的得分](https://github.com/fulln/TIL/blob/master/leetcode/middle/matrixScore.md) - 2021-06-12
-* [打家劫舍 III](https://github.com/fulln/TIL/blob/master/leetcode/middle/robIII.md) - 2021-06-14
-* [减小和重新排列数组后的最大元素](https://github.com/fulln/TIL/blob/master/leetcode/middle/maximumElementAfterDecrementingAndRearranging.md) - 2021-06-15
-* [石子游戏](https://github.com/fulln/TIL/blob/master/leetcode/middle/stoneGame.md) - 2021-06-16
-* [队列的最大值](https://github.com/fulln/TIL/blob/master/leetcode/middle/MaxQueue.md) - 2021-06-17
-* [按递增顺序显示卡牌](https://github.com/fulln/TIL/blob/master/leetcode/middle/deckRevealedIncreasing.md) - 2021-06-19
-* [划分为k个相等的子集](https://github.com/fulln/TIL/blob/master/leetcode/middle/canPartitionKSubsets.md) - 2021-06-23
-* [安排电影院座位](https://github.com/fulln/TIL/blob/master/leetcode/middle/maxNumberOfFamilies.md) - 2021-06-24
-* [二叉树染色](https://github.com/fulln/TIL/blob/master/leetcode/middle/maxValue.md) - 2021-06-29
-* [恢复空格](https://github.com/fulln/TIL/blob/master/leetcode/middle/respace.md) - 2021-07-01
-* [根据字符出现频率排序](https://github.com/fulln/TIL/blob/master/leetcode/middle/frequencySort.md) - 2021-07-03
-* [保持城市天际线](https://github.com/fulln/TIL/blob/master/leetcode/middle/maxIncreaseKeepingSkyline.md) - 2021-07-05
-* [点菜展示表](https://github.com/fulln/TIL/blob/master/leetcode/middle/displayTable.md) - 2021-07-06
-* [字符串的排列](https://github.com/fulln/TIL/blob/master/leetcode/middle/checkInclusion.md) - 2021-07-07
-* [从中序与后序遍历序列构造二叉树](https://github.com/fulln/TIL/blob/master/leetcode/middle/buildTreeAfter.md) - 2021-07-08
-* [剑指 Offer 13. 机器人的运动范围](https://github.com/fulln/TIL/blob/master/leetcode/middle/movingCount.md) - 2021-07-09
-* [困于环中的机器人](https://github.com/fulln/TIL/blob/master/leetcode/middle/isRobotBounded.md) - 2021-07-11
-* [H 指数 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/hindex.md) - 2021-07-12
-* [剑指 Offer 26. 树的子结构](https://github.com/fulln/TIL/blob/master/leetcode/middle/isSubStructure.md) - 2021-07-13
-* [剪绳子](https://github.com/fulln/TIL/blob/master/leetcode/middle/cuttingRope.md) - 2021-07-14
-* [剑指 Offer 36. 二叉搜索树与双向链表](https://github.com/fulln/TIL/blob/master/leetcode/middle/treeToDoublyList.md) - 2021-07-17
-* [把数组排成最小的数](https://github.com/fulln/TIL/blob/master/leetcode/middle/minNumber.md) - 2021-07-18
-* [栈的压入,弹出](https://github.com/fulln/TIL/blob/master/leetcode/middle/validateStackSequences.md) - 2021-07-19
-* [输出stirng的所有排序](https://github.com/fulln/TIL/blob/master/leetcode/middle/permutation.md) - 2021-07-20
-* [剑指 Offer 44. 数字序列中某一位的数字](https://github.com/fulln/TIL/blob/master/leetcode/middle/findNthDigit.md) - 2021-07-21
-* [剑指 Offer 47. 礼物的最大价值](https://github.com/fulln/TIL/blob/master/leetcode/middle/maxValue2.md) - 2021-07-22
-* [剑指 Offer 49. 丑数](https://github.com/fulln/TIL/blob/master/leetcode/middle/nthUglyNumber.md) - 2021-07-23
-* [从相邻元素对还原数组](https://github.com/fulln/TIL/blob/master/leetcode/middle/restoreArray.md) - 2021-07-25
-* [剑指 Offer 60. n个骰子的点数](https://github.com/fulln/TIL/blob/master/leetcode/middle/dicesProbability.md) - 2021-07-27
-* [剑指 Offer 63. 股票的最大利润](https://github.com/fulln/TIL/blob/master/leetcode/middle/maxProfit.md) - 2021-07-28
-* [二叉树寻路](https://github.com/fulln/TIL/blob/master/leetcode/middle/pathInZigZagTree.md) - 2021-07-30
-* [求1+2+…+n](https://github.com/fulln/TIL/blob/master/leetcode/middle/sumNums.md) - 2021-07-30
-* [下一个排列](https://github.com/fulln/TIL/blob/master/leetcode/middle/nextPermutation.md) - 2021-07-31
-* [. 最短无序连续子数组](https://github.com/fulln/TIL/blob/master/leetcode/middle/findUnsortedSubarray.md) - 2021-08-03
-* [有效三角形的个数](https://github.com/fulln/TIL/blob/master/leetcode/middle/triangleNumber.md) - 2021-08-04
-* [数组中数字出现的次数](https://github.com/fulln/TIL/blob/master/leetcode/middle/singleNumbers.md) - 2021-08-07
-* [数组中数字出现的次数 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/singleNumber2.md) - 2021-08-07
-* [等差数列划分](https://github.com/fulln/TIL/blob/master/leetcode/middle/numberOfArithmeticSlices.md) - 2021-08-10
-* [到最近的人的最大距离](https://github.com/fulln/TIL/blob/master/leetcode/middle/maxDistToClosest.md) - 2021-08-11
-* [最长回文子序列](https://github.com/fulln/TIL/blob/master/leetcode/middle/longestPalindromeSubseq.md) - 2021-08-12
-* [出界的路径数](https://github.com/fulln/TIL/blob/master/leetcode/middle/findPaths.md) - 2021-08-15
-* [优美的排列](https://github.com/fulln/TIL/blob/master/leetcode/middle/countArrangement.md) - 2021-08-16
-* [最佳观光组合](https://github.com/fulln/TIL/blob/master/leetcode/middle/maxScoreSightseeingPair.md) - 2021-08-18
-* [旋转链表](https://github.com/fulln/TIL/blob/master/leetcode/middle/rotateRight.md) - 2021-08-19
-* [旋转函数](https://github.com/fulln/TIL/blob/master/leetcode/middle/maxRotateFunction.md) - 2021-08-21
-* [压缩字符串](https://github.com/fulln/TIL/blob/master/leetcode/middle/compress.md) - 2021-08-21
-* [面试题 08.02. 迷路的机器人](https://github.com/fulln/TIL/blob/master/leetcode/middle/pathWithObstacles.md) - 2021-08-23
-* [K 站中转内最便宜的航班](https://github.com/fulln/TIL/blob/master/leetcode/middle/findCheapestPrice.md) - 2021-08-24
-* [石子游戏 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/stoneGameII.md) - 2021-08-26
-* [打家劫舍2](https://github.com/fulln/TIL/blob/master/leetcode/middle/robII.md) - 2021-08-28
-* [两地调度](https://github.com/fulln/TIL/blob/master/leetcode/middle/twoCitySchedCost.md) - 2021-08-30
-* [整数拆分](https://github.com/fulln/TIL/blob/master/leetcode/middle/integerBreak.md) - 2021-08-31
-* [划分数组为连续数字的集合](https://github.com/fulln/TIL/blob/master/leetcode/middle/isPossibleDivide.md) - 2021-09-02
 ### easy
 
 * [删除有序数组中的重复项](https://github.com/fulln/TIL/blob/master/leetcode/easy/removeDuplicates.md) - 2020-07-28
@@ -365,18 +198,195 @@ there is total <!-- count starts -->338<!-- count ends --> TILs . keep on
 * [基本计算器](https://github.com/fulln/TIL/blob/master/leetcode/hard/calculate.md) - 2021-06-21
 * [1713. 得到子序列的最少操作次数](https://github.com/fulln/TIL/blob/master/leetcode/hard/minOperations.md) - 2021-07-26
 * [数字 1 的个数](https://github.com/fulln/TIL/blob/master/leetcode/hard/countDigitOne.md) - 2021-08-13
-## windows
+### middle
 
-* [windows 中cmd 相关的操作](https://github.com/fulln/TIL/blob/master/windows/shellOption.md) - 2020-11-14
-* [合并多个sheet](https://github.com/fulln/TIL/blob/master/windows/ExcelCopy.md) - 2020-11-17
+* [钥匙和房间](https://github.com/fulln/TIL/blob/master/leetcode/middle/canVisitAllRooms.md) - 2020-09-11
+* [二叉树的中序遍历](https://github.com/fulln/TIL/blob/master/leetcode/middle/inorderTraversal.md) - 2020-09-14
+* [子集](https://github.com/fulln/TIL/blob/master/leetcode/middle/subsets.md) - 2020-09-20
+* [剑指 Offer 46. 把数字翻译成字符串](https://github.com/fulln/TIL/blob/master/leetcode/middle/translateNum.md) - 2020-09-21
+* [二叉搜索树中的众数](https://github.com/fulln/TIL/blob/master/leetcode/middle/findMode.md) - 2020-09-25
+* [路径总和 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/pathSum.md) - 2020-09-26
+* [填充每个节点的下一个右侧节点指针 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/connect.md) - 2020-09-28
+* [144. 二叉树的前序遍历](https://github.com/fulln/TIL/blob/master/leetcode/middle/preorderTraversal.md) - 2020-10-28
+* [5603. 确定两个字符串是否接近](https://github.com/fulln/TIL/blob/master/leetcode/middle/closeStrings.md) - 2020-11-15
+* [5606. 具有给定数值的最小字符串](https://github.com/fulln/TIL/blob/master/leetcode/middle/getSmallestString.md) - 2020-11-22
+* [二叉树的层序遍历](https://github.com/fulln/TIL/blob/master/leetcode/middle/levelOrder.md) - 2020-11-24
+* [把字符串转换成整数](https://github.com/fulln/TIL/blob/master/leetcode/middle/strToInt.md) - 2020-11-30
+* [第一个错误的版本](https://github.com/fulln/TIL/blob/master/leetcode/middle/firstBadVersion.md) - 2020-12-05
+* [K 和数对的最大数目](https://github.com/fulln/TIL/blob/master/leetcode/middle/maxOperations.md) - 2020-12-06
+* [三数之和](https://github.com/fulln/TIL/blob/master/leetcode/middle/threeSum.md) - 2020-12-07
+* [字母异位词分组](https://github.com/fulln/TIL/blob/master/leetcode/middle/groupAnagrams.md) - 2020-12-08
+* [最长回文子串](https://github.com/fulln/TIL/blob/master/leetcode/middle/longestPalindrome.md) - 2020-12-14
+* [删除子数组的最大得分](https://github.com/fulln/TIL/blob/master/leetcode/middle/maximumUniqueSubarray.md) - 2020-12-20
+* [奇偶链表](https://github.com/fulln/TIL/blob/master/leetcode/middle/oddEvenList.md) - 2020-12-23
+* [吃苹果的最大数目](https://github.com/fulln/TIL/blob/master/leetcode/middle/eatenApples.md) - 2020-12-27
+* [二叉树的锯齿形层次遍历](https://github.com/fulln/TIL/blob/master/leetcode/middle/zigzagLevelOrder.md) - 2020-12-30
+* [从前序与中序遍历序列构造二叉树](https://github.com/fulln/TIL/blob/master/leetcode/middle/buildTree.md) - 2021-01-06
+* [二叉搜索树中第K小的元素](https://github.com/fulln/TIL/blob/master/leetcode/middle/kthSmallest.md) - 2021-01-07
+* [电话号码的字母组合](https://github.com/fulln/TIL/blob/master/leetcode/middle/letterCombinations.md) - 2021-01-09
+* [括号生成](https://github.com/fulln/TIL/blob/master/leetcode/middle/generateParenthesis.md) - 2021-01-10
+* [全排列](https://github.com/fulln/TIL/blob/master/leetcode/middle/permute.md) - 2021-01-11
+* [单词搜索](https://github.com/fulln/TIL/blob/master/leetcode/middle/exist.md) - 2021-01-12
+* [颜色分类](https://github.com/fulln/TIL/blob/master/leetcode/middle/sortColors.md) - 2021-01-13
+* [前 K 个高频元素](https://github.com/fulln/TIL/blob/master/leetcode/middle/topKFrequent.md) - 2021-01-16
+* [数组中的第K个最大元素](https://github.com/fulln/TIL/blob/master/leetcode/middle/findKthLargest.md) - 2021-01-18
+* [寻找峰值](https://github.com/fulln/TIL/blob/master/leetcode/middle/findPeakElement.md) - 2021-01-24
+* [在排序数组中查找元素的第一个和最后一个位置](https://github.com/fulln/TIL/blob/master/leetcode/middle/searchRange.md) - 2021-01-26
+* [合并区间](https://github.com/fulln/TIL/blob/master/leetcode/middle/merge.md) - 2021-01-31
+* [搜索旋转排序数组](https://github.com/fulln/TIL/blob/master/leetcode/middle/search.md) - 2021-02-02
+* [搜索二维矩阵 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/searchMatrix.md) - 2021-02-04
+* [## 跳跃游戏](https://github.com/fulln/TIL/blob/master/leetcode/middle/canJump.md) - 2021-02-07
+* [两数相加](https://github.com/fulln/TIL/blob/master/leetcode/middle/addTwoNumbers.md) - 2021-02-08
+* [不同路径](https://github.com/fulln/TIL/blob/master/leetcode/middle/uniquePaths.md) - 2021-02-19
+* [零钱兑换](https://github.com/fulln/TIL/blob/master/leetcode/middle/coinChange.md) - 2021-02-22
+* [最长上升子序列](https://github.com/fulln/TIL/blob/master/leetcode/middle/lengthOfLIS.md) - 2021-02-23
+* [分割回文串](https://github.com/fulln/TIL/blob/master/leetcode/middle/partition.md) - 2021-03-01
+* [单词拆分](https://github.com/fulln/TIL/blob/master/leetcode/middle/wordBreak.md) - 2021-03-02
+* [乘积最大子数组](https://github.com/fulln/TIL/blob/master/leetcode/middle/maxProduct.md) - 2021-03-03
+* [递增的三元子序列](https://github.com/fulln/TIL/blob/master/leetcode/middle/increasingTriplet.md) - 2021-03-04
+* [除自身以外数组的乘积](https://github.com/fulln/TIL/blob/master/leetcode/middle/productExceptSelf.md) - 2021-03-09
+* [复制带随机指针的链表](https://github.com/fulln/TIL/blob/master/leetcode/middle/copyRandomList.md) - 2021-03-11
+* [排序链表](https://github.com/fulln/TIL/blob/master/leetcode/middle/sortList.md) - 2021-03-15
+* [盛最多水的容器](https://github.com/fulln/TIL/blob/master/leetcode/middle/maxArea.md) - 2021-03-17
+* [四数相加 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/fourSumCount.md) - 2021-03-18
+* [至少有K个重复字符的最长子串](https://github.com/fulln/TIL/blob/master/leetcode/middle/longestSubstring.md) - 2021-03-19
+* [二叉树中的最大路径和](https://github.com/fulln/TIL/blob/master/leetcode/middle/maxPathSum.md) - 2021-03-21
+* [最长连续序列](https://github.com/fulln/TIL/blob/master/leetcode/middle/longestConsecutive.md) - 2021-03-22
+* [打家劫舍](https://github.com/fulln/TIL/blob/master/leetcode/middle/rob.md) - 2021-03-24
+* [二叉搜索树中的插入操作](https://github.com/fulln/TIL/blob/master/leetcode/middle/insertIntoBST.md) - 2021-03-25
+* [直线上最多的点数](https://github.com/fulln/TIL/blob/master/leetcode/middle/maxPoints.md) - 2021-03-29
+* [3的幂](https://github.com/fulln/TIL/blob/master/leetcode/middle/isPowerOfThree.md) - 2021-03-31
+* [加油站](https://github.com/fulln/TIL/blob/master/leetcode/middle/canCompleteCircuit.md) - 2021-04-01
+* [删除有序数组中的重复项 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/removeDuplicates.md) - 2021-04-07
+* [搜索旋转排序数组 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/search2.md) - 2021-04-07
+* [构成特定和需要添加的最少元素](https://github.com/fulln/TIL/blob/master/leetcode/middle/minElements.md) - 2021-04-09
+* [数值的整数次方](https://github.com/fulln/TIL/blob/master/leetcode/middle/myPow.md) - 2021-04-10
+* [负二进制数相加](https://github.com/fulln/TIL/blob/master/leetcode/middle/addNegabinary.md) - 2021-04-12
+* [环形子数组的最大和](https://github.com/fulln/TIL/blob/master/leetcode/middle/maxSubarraySumCircular.md) - 2021-04-14
+* [使数组互补的最少操作次数](https://github.com/fulln/TIL/blob/master/leetcode/middle/minMoves.md) - 2021-04-19
+* [复原 IP 地址](https://github.com/fulln/TIL/blob/master/leetcode/middle/restoreIpAddresses.md) - 2021-04-21
+* [最大整除子集](https://github.com/fulln/TIL/blob/master/leetcode/middle/largestDivisibleSubset.md) - 2021-04-23
+* [二叉树展开为链表](https://github.com/fulln/TIL/blob/master/leetcode/middle/flatten.md) - 2021-04-24
+* [Z 字形变换](https://github.com/fulln/TIL/blob/master/leetcode/middle/convert.md) - 2021-04-25
+* [在 D 天内送达包裹的能力](https://github.com/fulln/TIL/blob/master/leetcode/middle/shipWithinDays.md) - 2021-04-26
+* [组合总和 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/combinationSum2.md) - 2021-04-28
+* [寻找重复数](https://github.com/fulln/TIL/blob/master/leetcode/middle/findDuplicate.md) - 2021-04-30
+* [分发饼干](https://github.com/fulln/TIL/blob/master/leetcode/middle/findContentChildren.md) - 2021-04-30
+* [删除并获得点数](https://github.com/fulln/TIL/blob/master/leetcode/middle/deleteAndEarn.md) - 2021-05-05
+* [汉明距离总和](https://github.com/fulln/TIL/blob/master/leetcode/middle/totalHammingDistance.md) - 2021-05-07
+* [全排列 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/permuteUnique.md) - 2021-05-08
+* [超级丑数](https://github.com/fulln/TIL/blob/master/leetcode/middle/nthSuperUglyNumber.md) - 2021-05-10
+* [解码异或后的排列](https://github.com/fulln/TIL/blob/master/leetcode/middle/decodeArray.md) - 2021-05-11
+* [排布二进制网格的最少交换次数](https://github.com/fulln/TIL/blob/master/leetcode/middle/minSwaps.md) - 2021-05-12
+* [两数相除](https://github.com/fulln/TIL/blob/master/leetcode/middle/divide.md) - 2021-05-17
+* [连续数组](https://github.com/fulln/TIL/blob/master/leetcode/middle/findMaxLength.md) - 2021-05-18
+* [顺次数](https://github.com/fulln/TIL/blob/master/leetcode/middle/sequentialDigits.md) - 2021-05-19
+* [不相交的线](https://github.com/fulln/TIL/blob/master/leetcode/middle/maxUncrossedLines.md) - 2021-05-21
+* [剧情触发时间](https://github.com/fulln/TIL/blob/master/leetcode/middle/getTriggerTime.md) - 2021-05-24
+* [字典序排数](https://github.com/fulln/TIL/blob/master/leetcode/middle/lexicalOrder.md) - 2021-05-25
+* [反转每对括号间的子串](https://github.com/fulln/TIL/blob/master/leetcode/middle/reverseParentheses.md) - 2021-05-26
+* [组合总和](https://github.com/fulln/TIL/blob/master/leetcode/middle/combinationSum.md) - 2021-05-28
+* [完全平方数](https://github.com/fulln/TIL/blob/master/leetcode/middle/numSquares.md) - 2021-05-30
+* [区间子数组个数](https://github.com/fulln/TIL/blob/master/leetcode/middle/numSubarrayBoundedMax.md) - 2021-05-31
+* [连续的子数组和](https://github.com/fulln/TIL/blob/master/leetcode/middle/checkSubarraySum.md) - 2021-06-02
+* [最深叶节点的最近公共祖先](https://github.com/fulln/TIL/blob/master/leetcode/middle/lcaDeepestLeaves.md) - 2021-06-03
+* [比较字符串最小字母出现频次](https://github.com/fulln/TIL/blob/master/leetcode/middle/numSmallerByFrequency.md) - 2021-06-04
+* [一和零](https://github.com/fulln/TIL/blob/master/leetcode/middle/findMaxForm.md) - 2021-06-06
+* [目标和](https://github.com/fulln/TIL/blob/master/leetcode/middle/findTargetSumWays.md) - 2021-06-07
+* [最后一块石头的重量 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/lastStoneWeightII.md) - 2021-06-08
+* [课程表 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/findOrder.md) - 2021-06-09
+* [比较版本号](https://github.com/fulln/TIL/blob/master/leetcode/middle/compareVersion.md) - 2021-06-10
+* [翻转矩阵后的得分](https://github.com/fulln/TIL/blob/master/leetcode/middle/matrixScore.md) - 2021-06-12
+* [打家劫舍 III](https://github.com/fulln/TIL/blob/master/leetcode/middle/robIII.md) - 2021-06-14
+* [减小和重新排列数组后的最大元素](https://github.com/fulln/TIL/blob/master/leetcode/middle/maximumElementAfterDecrementingAndRearranging.md) - 2021-06-15
+* [石子游戏](https://github.com/fulln/TIL/blob/master/leetcode/middle/stoneGame.md) - 2021-06-16
+* [队列的最大值](https://github.com/fulln/TIL/blob/master/leetcode/middle/MaxQueue.md) - 2021-06-17
+* [按递增顺序显示卡牌](https://github.com/fulln/TIL/blob/master/leetcode/middle/deckRevealedIncreasing.md) - 2021-06-19
+* [划分为k个相等的子集](https://github.com/fulln/TIL/blob/master/leetcode/middle/canPartitionKSubsets.md) - 2021-06-23
+* [安排电影院座位](https://github.com/fulln/TIL/blob/master/leetcode/middle/maxNumberOfFamilies.md) - 2021-06-24
+* [二叉树染色](https://github.com/fulln/TIL/blob/master/leetcode/middle/maxValue.md) - 2021-06-29
+* [恢复空格](https://github.com/fulln/TIL/blob/master/leetcode/middle/respace.md) - 2021-07-01
+* [根据字符出现频率排序](https://github.com/fulln/TIL/blob/master/leetcode/middle/frequencySort.md) - 2021-07-03
+* [保持城市天际线](https://github.com/fulln/TIL/blob/master/leetcode/middle/maxIncreaseKeepingSkyline.md) - 2021-07-05
+* [点菜展示表](https://github.com/fulln/TIL/blob/master/leetcode/middle/displayTable.md) - 2021-07-06
+* [字符串的排列](https://github.com/fulln/TIL/blob/master/leetcode/middle/checkInclusion.md) - 2021-07-07
+* [从中序与后序遍历序列构造二叉树](https://github.com/fulln/TIL/blob/master/leetcode/middle/buildTreeAfter.md) - 2021-07-08
+* [剑指 Offer 13. 机器人的运动范围](https://github.com/fulln/TIL/blob/master/leetcode/middle/movingCount.md) - 2021-07-09
+* [困于环中的机器人](https://github.com/fulln/TIL/blob/master/leetcode/middle/isRobotBounded.md) - 2021-07-11
+* [H 指数 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/hindex.md) - 2021-07-12
+* [剑指 Offer 26. 树的子结构](https://github.com/fulln/TIL/blob/master/leetcode/middle/isSubStructure.md) - 2021-07-13
+* [剪绳子](https://github.com/fulln/TIL/blob/master/leetcode/middle/cuttingRope.md) - 2021-07-14
+* [剑指 Offer 36. 二叉搜索树与双向链表](https://github.com/fulln/TIL/blob/master/leetcode/middle/treeToDoublyList.md) - 2021-07-17
+* [把数组排成最小的数](https://github.com/fulln/TIL/blob/master/leetcode/middle/minNumber.md) - 2021-07-18
+* [栈的压入,弹出](https://github.com/fulln/TIL/blob/master/leetcode/middle/validateStackSequences.md) - 2021-07-19
+* [输出stirng的所有排序](https://github.com/fulln/TIL/blob/master/leetcode/middle/permutation.md) - 2021-07-20
+* [剑指 Offer 44. 数字序列中某一位的数字](https://github.com/fulln/TIL/blob/master/leetcode/middle/findNthDigit.md) - 2021-07-21
+* [剑指 Offer 47. 礼物的最大价值](https://github.com/fulln/TIL/blob/master/leetcode/middle/maxValue2.md) - 2021-07-22
+* [剑指 Offer 49. 丑数](https://github.com/fulln/TIL/blob/master/leetcode/middle/nthUglyNumber.md) - 2021-07-23
+* [从相邻元素对还原数组](https://github.com/fulln/TIL/blob/master/leetcode/middle/restoreArray.md) - 2021-07-25
+* [剑指 Offer 60. n个骰子的点数](https://github.com/fulln/TIL/blob/master/leetcode/middle/dicesProbability.md) - 2021-07-27
+* [剑指 Offer 63. 股票的最大利润](https://github.com/fulln/TIL/blob/master/leetcode/middle/maxProfit.md) - 2021-07-28
+* [二叉树寻路](https://github.com/fulln/TIL/blob/master/leetcode/middle/pathInZigZagTree.md) - 2021-07-30
+* [求1+2+…+n](https://github.com/fulln/TIL/blob/master/leetcode/middle/sumNums.md) - 2021-07-30
+* [下一个排列](https://github.com/fulln/TIL/blob/master/leetcode/middle/nextPermutation.md) - 2021-07-31
+* [. 最短无序连续子数组](https://github.com/fulln/TIL/blob/master/leetcode/middle/findUnsortedSubarray.md) - 2021-08-03
+* [有效三角形的个数](https://github.com/fulln/TIL/blob/master/leetcode/middle/triangleNumber.md) - 2021-08-04
+* [数组中数字出现的次数](https://github.com/fulln/TIL/blob/master/leetcode/middle/singleNumbers.md) - 2021-08-07
+* [数组中数字出现的次数 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/singleNumber2.md) - 2021-08-07
+* [等差数列划分](https://github.com/fulln/TIL/blob/master/leetcode/middle/numberOfArithmeticSlices.md) - 2021-08-10
+* [到最近的人的最大距离](https://github.com/fulln/TIL/blob/master/leetcode/middle/maxDistToClosest.md) - 2021-08-11
+* [最长回文子序列](https://github.com/fulln/TIL/blob/master/leetcode/middle/longestPalindromeSubseq.md) - 2021-08-12
+* [出界的路径数](https://github.com/fulln/TIL/blob/master/leetcode/middle/findPaths.md) - 2021-08-15
+* [优美的排列](https://github.com/fulln/TIL/blob/master/leetcode/middle/countArrangement.md) - 2021-08-16
+* [最佳观光组合](https://github.com/fulln/TIL/blob/master/leetcode/middle/maxScoreSightseeingPair.md) - 2021-08-18
+* [旋转链表](https://github.com/fulln/TIL/blob/master/leetcode/middle/rotateRight.md) - 2021-08-19
+* [旋转函数](https://github.com/fulln/TIL/blob/master/leetcode/middle/maxRotateFunction.md) - 2021-08-21
+* [压缩字符串](https://github.com/fulln/TIL/blob/master/leetcode/middle/compress.md) - 2021-08-21
+* [面试题 08.02. 迷路的机器人](https://github.com/fulln/TIL/blob/master/leetcode/middle/pathWithObstacles.md) - 2021-08-23
+* [K 站中转内最便宜的航班](https://github.com/fulln/TIL/blob/master/leetcode/middle/findCheapestPrice.md) - 2021-08-24
+* [石子游戏 II](https://github.com/fulln/TIL/blob/master/leetcode/middle/stoneGameII.md) - 2021-08-26
+* [打家劫舍2](https://github.com/fulln/TIL/blob/master/leetcode/middle/robII.md) - 2021-08-28
+* [两地调度](https://github.com/fulln/TIL/blob/master/leetcode/middle/twoCitySchedCost.md) - 2021-08-30
+* [整数拆分](https://github.com/fulln/TIL/blob/master/leetcode/middle/integerBreak.md) - 2021-08-31
+* [划分数组为连续数字的集合](https://github.com/fulln/TIL/blob/master/leetcode/middle/isPossibleDivide.md) - 2021-09-02
 ## shell
 
 * [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
+## git
+
+* [git 版本的回滚](https://github.com/fulln/TIL/blob/master/git/gitreset.md) - 2020-09-23
+## redis
+
+* [redis setnx setex](https://github.com/fulln/TIL/blob/master/redis/redisCommand.md) - 2021-03-25
+## sql
+
+* [mysql 事务锁相关查看](https://github.com/fulln/TIL/blob/master/sql/qeury_transaction.md) - 2020-09-16
+* [Transaction resolution unknown 异常分析](https://github.com/fulln/TIL/blob/master/sql/transactions-unkonw.md) - 2021-01-08
+* [Alter Table 操作执行过程](https://github.com/fulln/TIL/blob/master/sql/alterTable.md) - 2021-01-20
+* [mysql的JSON字段类型](https://github.com/fulln/TIL/blob/master/sql/mysqlJSON.md) - 2021-06-28
+## algorithm
+
+* [动态规划](https://github.com/fulln/TIL/blob/master/algorithm/dpIntroduce.md) - 2021-06-12
+## vim
+
+* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
 ## react
 
 * [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
 ## java
 
+### jvm
+
+* [JVM调优与GC](https://github.com/fulln/TIL/blob/master/java/jvm/JvmDaily1.md) - 2020-10-28
+### basic
+
+* [java为啥会有static main?](https://github.com/fulln/TIL/blob/master/java/basic/staticMain.md) - 2020-08-06
+* [jvm的大图流整理](https://github.com/fulln/TIL/blob/master/java/basic/jvmArrange.md) - 2020-08-22
+* [通过BTrace进行分析](https://github.com/fulln/TIL/blob/master/java/basic/BTrace.md) - 2020-08-26
+* [JDK15视频发布会及新特性](https://github.com/fulln/TIL/blob/master/java/basic/JDK15.md) - 2020-11-01
+* [java 看加载的class 的来源](https://github.com/fulln/TIL/blob/master/java/basic/getsourceFile.md) - 2021-03-25
+* [ThreadLocal 解析](https://github.com/fulln/TIL/blob/master/java/basic/threadLocal.md) - 2021-07-16
+* [java反射使用getDeclaredMethods](https://github.com/fulln/TIL/blob/master/java/basic/DeclaredMethod.md) - 2021-08-17
 ### mysql
 
 * [使用mybatis 自动执行脚本](https://github.com/fulln/TIL/blob/master/java/mysql/MysqlInit.md) - 2021-06-02
@@ -389,31 +399,21 @@ there is total <!-- count starts -->338<!-- count ends --> TILs . keep on
 * [spring Enviroment 初始化及@value加载](https://github.com/fulln/TIL/blob/master/java/spring/envirment.md) - 2021-02-05
 * [SpringMVC全局日志](https://github.com/fulln/TIL/blob/master/java/spring/RequestBodyAdviceAdapter.md) - 2021-07-04
 * [springCloudConfig 设置说明](https://github.com/fulln/TIL/blob/master/java/spring/springCloudConfig.md) - 2021-08-02
-### basic
-
-* [java为啥会有static main?](https://github.com/fulln/TIL/blob/master/java/basic/staticMain.md) - 2020-08-06
-* [jvm的大图流整理](https://github.com/fulln/TIL/blob/master/java/basic/jvmArrange.md) - 2020-08-22
-* [通过BTrace进行分析](https://github.com/fulln/TIL/blob/master/java/basic/BTrace.md) - 2020-08-26
-* [JDK15视频发布会及新特性](https://github.com/fulln/TIL/blob/master/java/basic/JDK15.md) - 2020-11-01
-* [java 看加载的class 的来源](https://github.com/fulln/TIL/blob/master/java/basic/getsourceFile.md) - 2021-03-25
-* [ThreadLocal 解析](https://github.com/fulln/TIL/blob/master/java/basic/threadLocal.md) - 2021-07-16
-* [java反射使用getDeclaredMethods](https://github.com/fulln/TIL/blob/master/java/basic/DeclaredMethod.md) - 2021-08-17
-### jvm
-
-* [JVM调优与GC](https://github.com/fulln/TIL/blob/master/java/jvm/JvmDaily1.md) - 2020-10-28
 ### plug
 
 * [mapStruct 开发使用](https://github.com/fulln/TIL/blob/master/java/plug/mapStructInUse.md) - 2021-01-23
 * [mybatis-plus 通过lambda 获取属性名](https://github.com/fulln/TIL/blob/master/java/plug/mybatisPlus.md) - 2021-07-21
-## algorithm
-
-* [动态规划](https://github.com/fulln/TIL/blob/master/algorithm/dpIntroduce.md) - 2021-06-12
 ## design
 
 * [领域驱动设计](https://github.com/fulln/TIL/blob/master/design/DDD.md) - 2021-08-05
-## vim
+## maven
 
-* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
+* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
+## kafka
+
+* [kafka消息可靠性保证(一)](https://github.com/fulln/TIL/blob/master/kafka/kafkaReliability.md) - 2021-08-02
+* [kafka消息可靠性保证(二)](https://github.com/fulln/TIL/blob/master/kafka/kafkaReliability2.md) - 2021-08-02
+* [kafka消息可靠性保证(三)](https://github.com/fulln/TIL/blob/master/kafka/kafkaReliability3.md) - 2021-08-09
 <!-- index ends -->
 
 
