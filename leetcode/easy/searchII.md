@@ -24,4 +24,22 @@ nums 的每个元素都将在 [-9999, 9999]之间。
 链接：https://leetcode-cn.com/problems/binary-search
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 ```go
+func search(nums []int, target int) int {
+
+    first := 0
+    last := len(nums)-1
+    for first <= last{
+        middle := (first + last)/2
+        if nums[middle] > target {
+            last = middle -1
+        }else if nums[middle] < target{
+            first = middle +1
+        }else {
+            return middle 
+        }
+    }
+    return -1
+
+
+}
 ```
