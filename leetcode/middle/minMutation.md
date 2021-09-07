@@ -41,3 +41,44 @@ bank: ["AAAACCCC", "AAACCCCC", "AACCCCCC"]
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/minimum-genetic-mutation
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+```go
+func minMutation(start string, end string, bank []string) int {
+    maps :=make(map[string]bool)
+    for _,val := range bank{
+        maps[val] =true
+    }
+    if maps[end] == false{
+        return -1
+    }
+    step := 0
+    chars :=[]byte{'A','C','T','G'}
+    list :=[]string{start}
+    for len(list) >0 {
+        step ++
+        ln := len(list)
+        for i:=0;i< ln; i++{
+			v := []byte(list[i])
+            for key,val := range v{
+                for _,by := range chars{
+                    if val == by{
+                        continue
+                    }
+                    v[key] = by
+                    newst  := string(v)
+                    if newst == end{
+                        return step 
+                    }
+                    if maps[newst]{
+                        list = append(list,newst)
+                    }
+                }
+                v[key] = val
+            }
+        }
+        list =list[ln:]
+    }
+
+    return -1
+
+}
+```
