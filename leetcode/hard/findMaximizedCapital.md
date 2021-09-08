@@ -30,4 +30,48 @@
 链接：https://leetcode-cn.com/problems/ipo
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 ```go
+func findMaximizedCapital(k int, w int, profits []int, capital []int) int {
+    
+    type pair struct{ c, p int }
+    stack := make([]pair,len(profits))
+    for i:=0;i< len(stack);i++{
+            stack[i] =pair{capital[i],profits[i]}
+    }
+    sort.Slice(stack, func(i, j int) bool { return stack[i].c < stack[j].c })
+
+	// nums := make(sort.IntSlice, 0)
+    // i := 0
+    // for j:=0;j<k;j++{
+    //     for ;i< len(stack) && stack[i].c <= w;i++{
+    //         nums = append(nums,stack[i].p)
+    //     }
+    //     if len(nums) == 0 {
+	// 		continue
+	// 	}
+    //     nums.Sort()
+	// 	w += nums[len(nums)-1]
+	// 	nums = nums[:len(nums)-1]
+    // }
+    
+    h := &hp{}
+    for cur := 0; k > 0; k-- {
+        for cur < len(stack) && stack[cur].c <= w {
+            heap.Push(h, stack[cur].p)
+            cur++
+        }
+        if h.Len() == 0 {
+            break
+        }
+        w += heap.Pop(h).(int)
+    }
+    return w
+
+
+}
+type hp struct{ sort.IntSlice }
+func (h hp) Len() int {return len(h.IntSlice)}
+func (h hp) Less(i, j int) bool  { return h.IntSlice[i] > h.IntSlice[j] }
+func (h *hp) Push(v interface{}) { h.IntSlice = append(h.IntSlice, v.(int)) }
+func (h *hp) Pop() interface{}   { a := h.IntSlice; v := a[len(a)-1]; h.IntSlice = a[:len(a)-1]; return v }
+
 ```
