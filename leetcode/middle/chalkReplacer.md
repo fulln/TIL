@@ -38,3 +38,22 @@
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/find-the-student-that-will-replace-the-chalk
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+```go
+func chalkReplacer(chalk []int, k int) int {
+
+    sum := 0
+    for _, v := range chalk {
+        sum += v
+    }
+     k %= sum
+    for i, c := range chalk {
+        if k < c {
+            return i
+        }
+        k -= c
+    }
+
+    return 0
+
+}
+```
