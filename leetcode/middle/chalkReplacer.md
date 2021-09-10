@@ -56,4 +56,23 @@ func chalkReplacer(chalk []int, k int) int {
     return 0
 
 }
+func chalkReplacer(chalk []int, k int) int {
+
+    sum := 0
+    for key, v := range chalk {
+        chalk[key] += sum
+        sum += v
+    }
+
+    k %= sum
+
+    for i, c := range chalk {
+        if k < c {
+            return i  
+        }
+    }
+
+    return 0
+
+}
 ```
