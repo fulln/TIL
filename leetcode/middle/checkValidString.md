@@ -1,3 +1,4 @@
+## 有效的括号字符串
 给定一个只包含三种字符的字符串：（ ，） 和 *，写一个函数来检验这个字符串是否为有效字符串。有效字符串具有如下规则：
 
 任何左括号 ( 必须有相应的右括号 )。
@@ -21,4 +22,32 @@
 
 字符串大小将在 [1，100] 范围内。
 ```go
+func checkValidString(s string) bool {
+    low := 0
+    hight := 0 
+    for i:=0;i< len(s);i++{
+        if s[i] == '('{
+            low ++
+            hight ++
+        }else if s[i] == ')'{
+            low = max(0,low -1)
+            hight -- 
+            if hight < 0{
+                return false
+            }
+        }else{
+            low = max(0,low -1)
+            hight ++
+        }
+    }
+    return low <= 0;
+}
+
+func max(a,b int)int{
+    if a > b{
+        return a
+    }else{
+        return b
+    }
+}
 ```
