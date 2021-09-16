@@ -26,4 +26,34 @@
 链接：https://leetcode-cn.com/problems/reconstruct-itinerary
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 ```go
+func findItinerary(tickets [][]string) []string {
+    maps := make(map[string][]string)
+    res :=[]string{}
+    for _,val := range tickets{
+        maps[val[0]]=append(maps[val[0]],val[1])
+    }
+     for key := range maps {
+        sort.Strings(maps[key])
+     }
+    
+    var dfs func(s string)
+    dfs = func(s string){
+        for {
+            if v, ok := maps[s]; !ok || len(v) == 0 {
+                break
+            }
+            tmp := maps[s][0]
+            maps[s] = maps[s][1:]
+            dfs(tmp)
+        }
+        res = append(res, s)
+    }
+    dfs("JFK")
+    for i := 0; i < len(res)/2; i++ {
+        res[i], res[len(res) - 1 - i] = res[len(res) - 1 - i], res[i]
+    }
+
+    return res
+
+}
 ```
