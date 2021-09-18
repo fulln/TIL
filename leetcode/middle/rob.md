@@ -24,3 +24,21 @@
 链接：https://leetcode-cn.com/leetbook/read/top-interview-questions/x25oeg/
 来源：力扣（LeetCode）
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+```go
+func rob(nums []int) int {
+    curr,last := 0,0
+    for i:= 0;i< len(nums);i++ {
+        curr,last = max(curr, last+nums[i]),curr 
+    }
+
+    return curr
+}
+
+func max(a,b int)int{
+    if a > b{
+        return a
+    }else{
+        return b
+    }
+}
+```
