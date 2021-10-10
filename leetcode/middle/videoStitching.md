@@ -41,15 +41,33 @@
 ```go
 func videoStitching(clips [][]int, time int) int {
     // 贪心
-    // 先找到包含time的 然后找到包含的 
-    //dfs OR  动态规划
-    maps := make(map[int]int)
-    last  := 0
-    //首先判断是不是连贯
-    for i:=0;i < len(clips);i++{
-        maps[clips[i][1]] = clips[i][0]
-        if time  
+    maxs := make([]int,time)
+    for i:=0;i< len(clips);i++{
+        curr := clips[i]
+        l,r := curr[0],curr[1]
+        if l < time && r > maxs[l]{
+            maxs[l] = r
+        }
     }
+    ret,cmax,pre := 0,0,0
+    for k,v :=range maxs{
+        if v > cmax{
+            cmax  =  v
+        }
+
+        if k == cmax{
+            return -1
+        }
+
+        if k == pre{
+            ret ++
+            pre = cmax
+        }
+
+    }
+    
+    return ret
 
 }
+
 ```
