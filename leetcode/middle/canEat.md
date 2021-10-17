@@ -34,4 +34,35 @@ answer[i] 为 true 的条件是：在每天吃 不超过 dailyCapi 颗糖果�
 链接：https://leetcode-cn.com/problems/can-you-eat-your-favorite-candy-on-your-favorite-day
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 ```go
+func canEat(candiesCount []int, queries [][]int) []bool {
+    n := len(candiesCount)
+
+    // 前缀和
+    sum := make([]int, n)
+    sum[0] = candiesCount[0]
+    for i := 1; i < n; i++ {
+        sum[i] = sum[i-1] + candiesCount[i]
+    }
+
+    ans := make([]bool, len(queries))
+    for i, q := range queries {
+        favoriteType, favoriteDay, dailyCap := q[0], q[1], q[2]
+
+        x1 := favoriteDay + 1
+        y1 := (favoriteDay + 1) * dailyCap
+        x2 := 1
+        if favoriteType > 0 {
+            x2 = sum[favoriteType-1] + 1
+        }
+        y2 := sum[favoriteType]
+
+        ans[i] = !(x1 > y2 || y1 < x2)
+    }
+    return ans
+}
+
+作者：LeetCode-Solution
+链接：https://leetcode-cn.com/problems/can-you-eat-your-favorite-candy-on-your-favorite-day/solution/ni-neng-zai-ni-zui-xi-huan-de-na-tian-ch-boa0/
+来源：力扣（LeetCode）
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 ```
