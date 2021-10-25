@@ -33,4 +33,29 @@
 链接：https://leetcode-cn.com/problems/asteroid-collision
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 ```go
+func asteroidCollision(asteroids []int) []int {
+    resp := []int{asteroids[0]}
+    added := true
+    for i:=1;i< len(asteroids);i++{
+        added = true 
+                for  len(resp) > 0 &&  resp[len(resp)-1] > 0 && asteroids[i] < 0{                
+                    if resp[len(resp)-1]  == asteroids[i] * -1{
+                        resp = resp[:len(resp)-1]
+                        added =false
+                        break
+                    }else if resp[len(resp)-1]  > asteroids[i] * -1{
+                        added =false
+                        break
+                    } else{
+                        resp = resp[:len(resp)-1]    
+                    }
+                }
+                
+        if added{
+            resp = append(resp,asteroids[i])
+        }
+    }
+    return resp
+
+}
 ```
