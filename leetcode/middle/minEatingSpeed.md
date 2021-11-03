@@ -26,4 +26,32 @@
 链接：https://leetcode-cn.com/problems/koko-eating-bananas
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 ```go
+func minEatingSpeed(piles []int, h int) int {
+    sort.Ints(piles)
+    min := 1
+    max := piles[len(piles)-1]
+    
+    for min < max {
+        middle := (min + max) / 2
+
+        if canEat(piles,middle,h){
+            min = middle + 1
+        } else{
+            max = middle 
+        }
+    }
+
+    return min
+ 
+
+}
+
+func canEat(piles []int, speed, h int) bool {
+	sum := 0.00
+	for _, v := range piles {
+		sum += math.Ceil(float64(v) * 1.0 / float64(speed))
+	}
+	return sum > float64(h)
+}
+
 ```
