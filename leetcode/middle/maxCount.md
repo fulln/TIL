@@ -38,4 +38,20 @@ a 的范围是 [1,m]，b 的范围是 [1,n]。
 链接：https://leetcode-cn.com/problems/range-addition-ii
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 ```go
+func maxCount(m int, n int, ops [][]int) int {
+    for _,val := range ops{
+        m = min(val[0],m)
+        n = min(val[1],n)
+    }
+    return m * n 
+
+}
+
+func min(a,b int)int{
+    if a > b{
+        return b
+    }else{
+        return a
+    }
+}
 ```
