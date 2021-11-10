@@ -31,4 +31,24 @@
 链接：https://leetcode-cn.com/problems/teemo-attacking
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 ```go
+func findPoisonedDuration(timeSeries []int, duration int) int {
+
+    max := 0
+    last := timeSeries[0]
+    for  i:= 1;i< len(timeSeries) ;i++{
+
+       curr := timeSeries[i] - last
+       if curr >= duration {
+           max  += duration
+       }else if curr < duration {
+           max  += curr
+       }
+        last = timeSeries[i]
+    }
+
+    return max+duration
+
+
+}
+
 ```
