@@ -31,6 +31,24 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 ```go
 func beautifulArray(n int) []int {
+    if n == 1 {
+        return []int{1}
+    }
 
+    array := make([]int, 0, n)
+
+    odds := beautifulArray((n+1)>>1)
+    evens := beautifulArray(n>>1)
+
+    for _, o := range odds {
+        array = append(array, 2*o-1)
+    }
+
+    for _, e := range evens {
+        array = append(array, 2*e)
+    }
+
+    return array
 }
+
 ```
