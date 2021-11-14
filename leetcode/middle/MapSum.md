@@ -58,28 +58,28 @@ func (this *MapSum) Insert(key string, val int)  {
 }
 
 func (this *MapSum)SearchPrefix(key string) *MapSum {
+    node := this
     for _, ch := range key {
         ch -= 'a'
-        if this.child[ch] == nil {
+        if node.child[ch] == nil {
             return nil
         }
-        this = this.child[ch]
+        node = node.child[ch]
     }
-    return this
+    return node
 }
 
 func (this *MapSum)SumSingle()int{
-    
-    if this.isEnd {
-        return this.va
+
+    if this == nil{
+        return 0
     }
+    
     sum := this.va
 
     for _,val := range this.child{
         if val != nil{
-            fmt.Println("before",sum)
             sum += val.SumSingle()
-            fmt.Println("after",sum)
         }
     }
     return sum
