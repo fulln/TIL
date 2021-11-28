@@ -46,7 +46,7 @@ kafka 消息保证是老生常谈的事情, 总结都做了n遍, 现在结合源
   > org.apache.kafka.clients.consumer.ConsumerConfig#AUTO_COMMIT_INTERVAL_MS_DOC
 
   ```java
-      	//默认值为5000
+      	//默认值为5000 
      .define(AUTO_COMMIT_INTERVAL_MS_CONFIG,
                                              Type.INT,
                                              5000,
@@ -56,138 +56,112 @@ kafka 消息保证是老生常谈的事情, 总结都做了n遍, 现在结合源
        //
   ```
 
-  3. 使用场景
+  3. 偏移量提交
 
-      这个自动提交的参数属性在构建`ConsumerCoordinator`即consumer的管理器中使用,具体有下面使用场景
+  > org.apache.kafka.clients.consumer.KafkaConsumer#poll(org.apache.kafka.common.utils.Timer, boolean)
 
-     - rebalance,当有新的consumer加入ConsumerCoordinator管理时
+     在consumer`poll` 拉取数据的时候,会有`coordinator.poll()`
 
-       ```java
-       @Override
-           protected void onJoinComplete(int generation,
-                                         String memberId,
-                                         String assignmentStrategy,
-                                         ByteBuffer assignmentBuffer) {
-               log.debug("Executing onJoinComplete with generation {} and memberId {}", generation, memberId);
-       
-               // Only the leader is responsible for monitoring for metadata changes (i.e. partition changes)
-               if (!isLeader)
-                   assignmentSnapshot = null;
-       
-               ConsumerPartitionAssignor assignor = lookupAssignor(assignmentStrategy);
-               if (assignor == null)
-                   throw new IllegalStateException("Coordinator selected invalid assignment protocol: " + assignmentStrategy);
-       
-               // Give the assignor a chance to update internal state based on the received assignment
-               groupMetadata = new ConsumerGroupMetadata(rebalanceConfig.groupId, generation, memberId, rebalanceConfig.groupInstanceId);
-       
-               Set<TopicPartition> ownedPartitions = new HashSet<>(subscriptions.assignedPartitions());
-       
-               // should at least encode the short version
-               if (assignmentBuffer.remaining() < 2)
-                   throw new IllegalStateException("There are insufficient bytes available to read assignment from the sync-group response (" +
-                       "actual byte size " + assignmentBuffer.remaining() + ") , this is not expected; " +
-                       "it is possible that the leader's assign function is buggy and did not return any assignment for this member, " +
-                       "or because static member is configured and the protocol is buggy hence did not get the assignment for this member");
-       
-               Assignment assignment = ConsumerProtocol.deserializeAssignment(assignmentBuffer);
-       
-               Set<TopicPartition> assignedPartitions = new HashSet<>(assignment.partitions());
-       
-               if (!subscriptions.checkAssignmentMatchedSubscription(assignedPartitions)) {
-                   log.warn("We received an assignment {} that doesn't match our current subscription {}; it is likely " +
-                       "that the subscription has changed since we joined the group. Will try re-join the group with current subscription",
-                       assignment.partitions(), subscriptions.prettyString());
-       
-                   requestRejoin();
-       
-                   return;
-               }
-       
-               final AtomicReference<Exception> firstException = new AtomicReference<>(null);
-               Set<TopicPartition> addedPartitions = new HashSet<>(assignedPartitions);
-               addedPartitions.removeAll(ownedPartitions);
-       
-               if (protocol == RebalanceProtocol.COOPERATIVE) {
-                   Set<TopicPartition> revokedPartitions = new HashSet<>(ownedPartitions);
-                   revokedPartitions.removeAll(assignedPartitions);
-       
-                   log.info("Updating assignment with\n" +
-                           "\tAssigned partitions:                       {}\n" +
-                           "\tCurrent owned partitions:                  {}\n" +
-                           "\tAdded partitions (assigned - owned):       {}\n" +
-                           "\tRevoked partitions (owned - assigned):     {}\n",
-                       assignedPartitions,
-                       ownedPartitions,
-                       addedPartitions,
-                       revokedPartitions
-                   );
-       
-                   if (!revokedPartitions.isEmpty()) {
-                       // Revoke partitions that were previously owned but no longer assigned;
-                       // note that we should only change the assignment (or update the assignor's state)
-                       // AFTER we've triggered  the revoke callback
-                       firstException.compareAndSet(null, invokePartitionsRevoked(revokedPartitions));
-       
-                       // If revoked any partitions, need to re-join the group afterwards
-                       log.debug("Need to revoke partitions {} and re-join the group", revokedPartitions);
-                       requestRejoin();
-                   }
-               }
-       
-               // The leader may have assigned partitions which match our subscription pattern, but which
-               // were not explicitly requested, so we update the joined subscription here.
-               maybeUpdateJoinedSubscription(assignedPartitions);
-       
-               // Catch any exception here to make sure we could complete the user callback.
-               firstException.compareAndSet(null, invokeOnAssignment(assignor, assignment));
-       
-               // Reschedule the auto commit starting from now
-               // 可以看到在这里的时候,如果是自动更新的, 会将ConsumerCoordinator
-               // 中的自动更新的时间设置到下次更新的时间中
-             	// 同样的方法在new ConsumerCoordinator 时也有对应逻辑
-             	//        if (autoCommitEnabled)
-               //    this.nextAutoCommitTimer = time.timer(autoCommitIntervalMs);
-       
-               if (autoCommitEnabled)
-                   this.nextAutoCommitTimer.updateAndReset(autoCommitIntervalMs);
-       
-               subscriptions.assignFromSubscribed(assignedPartitions);
-       
-               // Add partitions that were not previously owned but are now assigned
-               firstException.compareAndSet(null, invokePartitionsAssigned(addedPartitions));
-       
-               if (firstException.get() != null) {
-                   if (firstException.get() instanceof KafkaException) {
-                       throw (KafkaException) firstException.get();
-                   } else {
-                       throw new KafkaException("User rebalance callback throws an error", firstException.get());
-                   }
-               }
-           }
-       ```
-
+  ```java
+     private ConsumerRecords<K, V> poll(final Timer timer, final boolean includeMetadataInTimeout) {
+             // 控制是当前线程消费的,非当前线程消费直接抛出异常
+             acquireAndEnsureOpen();
+             try {
+                 // 消费者记录下消息消费的开始时间
+                 this.kafkaConsumerMetrics.recordPollStart(timer.currentTimeMs());
      
+                 if (this.subscriptions.hasNoSubscriptionOrUserAssignment()) {
+                     throw new IllegalStateException("Consumer is not subscribed to any topics or assigned any partitions");
+                 }
+     
+                 do {
+                     // 消费者触发唤醒，看有没有唤醒，没有直接抛出异常
+                     client.maybeTriggerWakeup();
+     
+                     if (includeMetadataInTimeout) {
+                         // try to update assignment metadata BUT do not need to block on the timer for join group
+                         updateAssignmentMetadataIfNeeded(timer, false);
+                     } else {
+                         // 同步消费者元数据，这里要通过coordinator 去同步出去
+                        // 要是没有就 rebalance 加到这个group里面去
+                         while (!updateAssignmentMetadataIfNeeded(time.timer(Long.MAX_VALUE), true)) {
+                             log.warn("Still waiting for metadata");
+                         }
+                     }
+     
+                     final Map<TopicPartition, List<ConsumerRecord<K, V>>> records = pollForFetches(timer);
+                     if (!records.isEmpty()) {
+                         // before returning the fetched records, we can send off the next round of fetches
+                         // and avoid block waiting for their responses to enable pipelining while the user
+                         // is handling the fetched records.
+                         //
+                         // NOTE: since the consumed position has already been updated, we must not allow
+                         // wakeups or any other errors to be triggered prior to returning the fetched records.
+                         if (fetcher.sendFetches() > 0 || client.hasPendingRequests()) {
+                             client.transmitSends();
+                         }
+     
+                         return this.interceptors.onConsume(new ConsumerRecords<>(records));
+                     }
+                 } while (timer.notExpired());
+     
+                 return ConsumerRecords.empty();
+             } finally {
+                 release();
+                 this.kafkaConsumerMetrics.recordPollEnd(timer.currentTimeMs());
+             }
+         }
+     
+     
+     // coordinator.poll调用
+     public boolean poll(Timer timer, boolean waitForJoinGroup) {
+            ...
+              // 先不管上面的逻辑
+              // 在这里就回自动提交当前的消费的offset 
+              //。具体就是掉send
+             maybeAutoCommitOffsetsAsync(timer.currentTimeMs());
+             return true;
+         }
+     
+     // 异步提交偏移量
+     private void doAutoCommitOffsetsAsync() {
+             // 偏移量提交
+             Map<TopicPartition, OffsetAndMetadata> allConsumedOffsets = subscriptions.allConsumed();
+             log.debug("Sending asynchronous auto-commit of offsets {}", allConsumedOffsets);
+     
+             commitOffsetsAsync(allConsumedOffsets, (offsets, exception) -> {
+                 if (exception != null) {
+                     if (exception instanceof RetriableCommitFailedException) {
+                         log.debug("Asynchronous auto-commit of offsets {} failed due to retriable error: {}", offsets,
+                             exception);
+                         nextAutoCommitTimer.updateAndReset(rebalanceConfig.retryBackoffMs);
+                     } else {
+                         log.warn("Asynchronous auto-commit of offsets {} failed: {}", offsets, exception.getMessage());
+                     }
+                 } else {
+                     log.debug("Completed asynchronous auto-commit of offsets {}", offsets);
+                 }
+             });
+         }
+  ```
 
-* **Rebalance**
-
-   * coordinator
-
+  4. rebalance 
+     
      Kafka提供了一个角色：coordinator来执行对于consumer group的管理。坦率说kafka对于coordinator的设计与修改是一个很长的故事。最新版本的coordinator也与最初的设计有了很大的不同。这里我只想提及两次比较大的改变。
-
+     
      首先是0.8版本的coordinator，那时候的coordinator是依赖zookeeper来实现对于consumer group的管理的。Coordinator监听zookeeper的`/consumers/<group>/ids`的子节点变化以及`/brokers/topics/<topic>`数据变化来判断是否需要进行rebalance。group下的每个consumer都自己决定要消费哪些分区，并把自己的决定抢先在zookeeper中的`/consumers/<group>/offsets/<topic>/<partition>`下注册。很明显，这种方案要依赖于zookeeper的帮助，而且每个consumer是单独做决定的，没有那种“大家属于一个组，要协商做事情”的精神。
-
+     
      ```scala
      // 老版本和测试代码可以看到对应的定义,可见是在zookeeper上注册offsets
      def getConsumersOffsetsZkPath(consumerGroup: String, topic: String, partition: Int): String = {
            s"/consumers/$consumerGroup/offsets/$topic/$partition"
      }
      ```
-
+     
      基于这些潜在的弊端，0.9版本的kafka改进了coordinator的设计，提出了group coordinator——每个consumer group都会被分配一个这样的coordinator用于组管理和位移管理。这个group coordinator比原来承担了更多的责任，比如组成员管理、位移提交保护机制等。当新版本consumer group的第一个consumer启动的时候，它会去和kafka server确定谁是它们组的coordinator。之后该group内的所有成员都会和该coordinator进行协调通信。显而易见，这种coordinator设计不再需要zookeeper了，性能上可以得到很大的提升。后面的所有部分我们都将讨论最新版本的coordinator设计。
-
+     
      - 初始化
-
+     
        ```java
        new ConsumerCoordinator(groupRebalanceConfig,
                                logContext,
@@ -202,229 +176,224 @@ kafka 消息保证是老生常谈的事情, 总结都做了n遍, 现在结合源
                                config.getInt(ConsumerConfig.AUTO_COMMIT_INTERVAL_MS_CONFIG),
                                this.interceptors,
                                config.getBoolean(ConsumerConfig.THROW_ON_FETCH_STABLE_OFFSET_UNSUPPORTED));
-       ```
-
        
+       
+       // 这里注重看下groupRebalanceConfig  这个属性
+       public GroupRebalanceConfig(AbstractConfig config, ProtocolType protocolType) {
+         		//。
+               this.sessionTimeoutMs = config.getInt(CommonClientConfigs.SESSION_TIMEOUT_MS_CONFIG);
+       
+               // Consumer and Connect use different config names for defining rebalance timeout
+         // 消费者和连接的使用的不同的rebalance timeout
+               if (protocolType == ProtocolType.CONSUMER) {
+                 // 使用的是max.poll.interval.ms 默认是5分钟
+                   this.rebalanceTimeoutMs = config.getInt(CommonClientConfigs.MAX_POLL_INTERVAL_MS_CONFIG);
+               } else {
+                 //
+                   this.rebalanceTimeoutMs = config.getInt(CommonClientConfigs.REBALANCE_TIMEOUT_MS_CONFIG);
+               }
+       
+               ...
+           }
+       ```
+     
+     rebalance 触发条件一共有3种
+     
+      - 组成员发生变更(新consumer加入组、已有consumer主动离开组或已有consumer崩溃了)
+      - 订阅主题数发生变更——这当然是可能的，如果你使用了正则表达式的方式进行订阅，那么新建匹配正则表达式的topic就会触发rebalance
+      - 订阅主题的分区数发生变更     
+     
+     下面以加入组为例子看下rebalance的触发
+     ```java
+      @Override
+         protected void onJoinPrepare(int generation, String memberId) {
+             log.debug("Executing onJoinPrepare with generation {} and memberId {}", generation, memberId);
+             // commit offsets prior to rebalance if auto-commit enabled
+           // 该处的timeout 就是在上面设置好的 max.poll.interval.ms 
+           // 如果还是在这个时间有效期内, 就一步自动提交一次offset
+           // 校验 超时时间
+             maybeAutoCommitOffsetsSync(time.timer(rebalanceConfig.rebalanceTimeoutMs));
+     
+             //出现错误或心跳超时时；在这种情况下，无论以前是什么
+             //拥有的分区将丢失，我们应该触发回调并清理分配；
+             //否则我们可以正常进行并根据协议撤销分区，
+             //在这种情况下，我们应该仅在触发撤销回调后更改分配
+             //因此用户仍然可以访问先前拥有的分区来提交偏移等。
+     
+             // the generation / member-id can possibly be reset by the heartbeat thread
+             // upon getting errors or heartbeat timeouts; in this case whatever is previously
+             // owned partitions would be lost, we should trigger the callback and cleanup the assignment;
+             // otherwise we can proceed normally and revoke the partitions depending on the protocol,
+             // and in that case we should only change the assignment AFTER the revoke callback is triggered
+             // so that users can still access the previously owned partitions to commit offsets etc.
+             Exception exception = null;
+             final Set<TopicPartition> revokedPartitions;
+             if (generation == Generation.NO_GENERATION.generationId &&
+                 memberId.equals(Generation.NO_GENERATION.memberId)) {
+                 revokedPartitions = new HashSet<>(subscriptions.assignedPartitions());
+     
+                 if (!revokedPartitions.isEmpty()) {
+                     log.info("Giving away all assigned partitions as lost since generation has been reset," +
+                         "indicating that consumer is no longer part of the group");
+                     exception = invokePartitionsLost(revokedPartitions);
+     
+                     subscriptions.assignFromSubscribed(Collections.emptySet());
+                 }
+             } else {
+               //在eager 的情况下直接重分配所有的分区
+                 switch (protocol) {
+                     case EAGER:
+                         // revoke all partitions
+                         revokedPartitions = new HashSet<>(subscriptions.assignedPartitions());
+                         exception = invokePartitionsRevoked(revokedPartitions);
+     
+                         subscriptions.assignFromSubscribed(Collections.emptySet());
+     
+                         break;
+     
+                     case COOPERATIVE:
+                     //在这种情况下,只处理不再订阅的分区
+                         // only revoke those partitions that are not in the subscription any more.
+                         Set<TopicPartition> ownedPartitions = new HashSet<>(subscriptions.assignedPartitions());
+                         revokedPartitions = ownedPartitions.stream()
+                             .filter(tp -> !subscriptions.subscription().contains(tp.topic()))
+                             .collect(Collectors.toSet());
+     
+                         if (!revokedPartitions.isEmpty()) {
+                             exception = invokePartitionsRevoked(revokedPartitions);
+     
+                             ownedPartitions.removeAll(revokedPartitions);
+                             subscriptions.assignFromSubscribed(ownedPartitions);
+                         }
+     
+                         break;
+                 }
+             }
+     
+             isLeader = false;
+             subscriptions.resetGroupSubscription();
+     
+             if (exception != null) {
+                 throw new KafkaException("User rebalance callback throws an error", exception);
+             }
+         }
+     
+     @Override
+     protected void onJoinComplete(int generation,
+                                       String memberId,
+                                       String assignmentStrategy,
+                                       ByteBuffer assignmentBuffer) {
+             log.debug("Executing onJoinComplete with generation {} and memberId {}", generation, memberId);
+     
+             // Only the leader is responsible for monitoring for metadata changes (i.e. partition changes)
+             // 只有leader 才可以修改元数据
+             if (!isLeader)
+                 assignmentSnapshot = null;
+             // 查询Coordinator给消费者的分配策略 就是几个分区怎么分给几个消费者的
+             //  如果没有，则提示策略异常
+             ConsumerPartitionAssignor assignor = lookupAssignor(assignmentStrategy);
+             if (assignor == null)
+                 throw new IllegalStateException("Coordinator selected invalid assignment protocol: " + assignmentStrategy);
+     
+             // Give the assignor a chance to update internal state based on the received assignment
+             // 获取消费者组内最新的元数据（包含几个消费者 offset到哪里了）
+             groupMetadata = new ConsumerGroupMetadata(rebalanceConfig.groupId, generation, memberId, rebalanceConfig.groupInstanceId);
+             // 这个消费者订阅的分区set
+             Set<TopicPartition> ownedPartitions = new HashSet<>(subscriptions.assignedPartitions());
+     
+             // should at least encode the short version
+             // 内容长度一看就不对
+             if (assignmentBuffer.remaining() < 2)
+                 throw new IllegalStateException("There are insufficient bytes available to read assignment from the sync-group response (" +
+                     "actual byte size " + assignmentBuffer.remaining() + ") , this is not expected; " +
+                     "it is possible that the leader's assign function is buggy and did not return any assignment for this member, " +
+                     "or because static member is configured and the protocol is buggy hence did not get the assignment for this member");
+             // 内容buffer转成对应实体
+             Assignment assignment = ConsumerProtocol.deserializeAssignment(assignmentBuffer);
+             //coordinator传过来的 订阅的分区set
+             Set<TopicPartition> assignedPartitions = new HashSet<>(assignment.partitions());
+             // 对比下 发现现在的订阅的分区 和 传过来的对不上， 就重新加入消费者组
+             if (!subscriptions.checkAssignmentMatchedSubscription(assignedPartitions)) {
+                 log.warn("We received an assignment {} that doesn't match our current subscription {}; it is likely " +
+                     "that the subscription has changed since we joined the group. Will try re-join the group with current subscription",
+                     assignment.partitions(), subscriptions.prettyString());
+                 // 重新加入- 这里只是改值，后续有个
+                 requestRejoin();
+                 // 终止
+                 return;
+             }
+     
+     
+             final AtomicReference<Exception> firstException = new AtomicReference<>(null);
+             Set<TopicPartition> addedPartitions = new HashSet<>(assignedPartitions);
+             addedPartitions.removeAll(ownedPartitions);
+     
+             // rebalance 协议
+             //  EAGER  完全重新分配分区
+             //  COOPERATIVE 消费者在下次rebalance之前保留其当前拥有的分区
+             if (protocol == RebalanceProtocol.COOPERATIVE) {
+                 Set<TopicPartition> revokedPartitions = new HashSet<>(ownedPartitions);
+                 revokedPartitions.removeAll(assignedPartitions);
+     
+                 log.info("Updating assignment with\n" +
+                         "\tAssigned partitions:                       {}\n" +
+                         "\tCurrent owned partitions:                  {}\n" +
+                         "\tAdded partitions (assigned - owned):       {}\n" +
+                         "\tRevoked partitions (owned - assigned):     {}\n",
+                     assignedPartitions,
+                     ownedPartitions,
+                     addedPartitions,
+                     revokedPartitions
+                 );
+     
+                 if (!revokedPartitions.isEmpty()) {
+                     // Revoke partitions that were previously owned but no longer assigned;
+                     // note that we should only change the assignment (or update the assignor's state)
+                     // AFTER we've triggered  the revoke callback
+                     firstException.compareAndSet(null, invokePartitionsRevoked(revokedPartitions));
+     
+                     // If revoked any partitions, need to re-join the group afterwards
+                     log.debug("Need to revoke partitions {} and re-join the group", revokedPartitions);
+                     // 重新加入消费组
+                     requestRejoin();
+                 }
+             }
+     
+             // The leader may have assigned partitions which match our subscription pattern, but which
+             // were not explicitly requested, so we update the joined subscription here.
+             //在这边又同步下本地存的订阅信息
+             maybeUpdateJoinedSubscription(assignedPartitions);
+     
+             // Catch any exception here to make sure we could complete the user callback.
+             // 更新指定的信息
+             firstException.compareAndSet(null, invokeOnAssignment(assignor, assignment));
+     
+             // Reschedule the auto commit starting from now
+             // 自动提交 下次的自动提交时间
+             if (autoCommitEnabled)
+                 this.nextAutoCommitTimer.updateAndReset(autoCommitIntervalMs);
+     
+             subscriptions.assignFromSubscribed(assignedPartitions);
+     
+             // Add partitions that were not previously owned but are now assigned
+             firstException.compareAndSet(null, invokePartitionsAssigned(addedPartitions));
+     
+             // 期间有报错没
+             if (firstException.get() != null) {
+                 if (firstException.get() instanceof KafkaException) {
+                     throw (KafkaException) firstException.get();
+                 } else {
+                     throw new KafkaException("User rebalance callback throws an error", firstException.get());
+                 }
+             }
+         }
+     
+     ```
+     
 
-* **Exactly one**
+  
 
-### broker保证
-
-core项目就是我们常说的对应broker的源码部分,其中比较重点的几个包为 : 
-
-- **log 包**。log 包中定义了 Broker 底层消息和索引保存机制以及物理格式。
-- **controller 包**。controller 包实现的是 Kafka Controller 的所有功能，特别是里面的 KafkaController.scala 文件，它封装了 Controller 的所有事件处理逻辑。
-- **coordinator 包下的 group 包代码。**当前，coordinator 包有两个子 package：group 和 transaction。前者封装的是 Consumer Group 所用的 Coordinator；后者封装的是支持 Kafka 事务的 Transaction Coordinator
-- **network 包代码以及 server 包下的部分代码**。 SocketServer 实现了 Broker 接收外部请求的完整网络流程
-
-#### borker 消息备份与同步
-
-
-
-#### 分区与多副本策略
-
-
-
-
-
-先看request,当前版本的是用scala实现的对应
-
-~~~~scala
-class Request(val processor: Int,//序号，即当前这个process是由哪个线程处理
-                                   //当 Request 被后面的 I/O 线程处理完成后，还要依靠 Processor 线程发送 Response 给请求发送方，
-                                   //因此，Request 中必须记录它之前是被哪个 Processor 线程接收的。
-                val context: RequestContext,
-                                   //请求的内容
-                val startTimeNanos: Long,
-                                   //请求创建的时间
-                memoryPool: MemoryPool,
-                                   //最大内存池是多少，用来限制request 无限用内存池
-                @volatile private var buffer: ByteBuffer, //buffer缓冲区
-                metrics: RequestChannel.Metrics  // metrics 是 Request 相关的各种监控指标的一个管理类。它里面构建了一个 Map，封装了所有的请求 JMX 指标
-             ) extends BaseRequest {
-    // These need to be volatile because the readers are in the network thread and the writers are in the request 全由request写入
-    // handler threads or the purgatory threads
-    @volatile var requestDequeueTimeNanos = -1L
-    @volatile var apiLocalCompleteTimeNanos = -1L
-    @volatile var responseCompleteTimeNanos = -1L
-    @volatile var responseDequeueTimeNanos = -1L
-    @volatile var messageConversionsTimeNanos = 0L
-    @volatile var apiThrottleTimeMs = 0L
-    @volatile var temporaryMemoryBytes = 0L
-    @volatile var recordNetworkThreadTimeCallback: Option[Long => Unit] = None
-		//组header 和 body
-    val session = Session(context.principal, context.clientAddress)
-    private val bodyAndSize: RequestAndSize = context.parseRequest(buffer)
-
-    def header: RequestHeader = context.header
-    def sizeOfBodyInBytes: Int = bodyAndSize.size
-
-    //most request types are parsed entirely into objects at this point. for those we can release the underlying buffer. 大多数请求玩直接释放缓冲区就完事
-    //some (like produce, or any time the schema contains fields of types BYTES or NULLABLE_BYTES) retain a reference
-    //to the buffer. for those requests we cannot release the buffer early, but only when request processing is done.
-    if (!header.apiKey.requiresDelayedAllocation) {
-      releaseBuffer()
-    }
-
-    def requestDesc(details: Boolean): String = s"$header -- ${loggableRequest.toString(details)}"
-
-    def body[T <: AbstractRequest](implicit classTag: ClassTag[T], @nowarn("cat=unused") nn: NotNothing[T]): T = {
-      bodyAndSize.request match {
-        case r: T => r
-        case r =>
-          throw new ClassCastException(s"Expected request with type ${classTag.runtimeClass}, but found ${r.getClass}")
-      }
-    }
-
-    def loggableRequest: AbstractRequest = {
-
-      def loggableValue(resourceType: ConfigResource.Type, name: String, value: String): String = {
-        val maybeSensitive = resourceType match {
-          case ConfigResource.Type.BROKER => KafkaConfig.maybeSensitive(KafkaConfig.configType(name))
-          case ConfigResource.Type.TOPIC => KafkaConfig.maybeSensitive(LogConfig.configType(name))
-          case ConfigResource.Type.BROKER_LOGGER => false
-          case _ => true
-        }
-        if (maybeSensitive) Password.HIDDEN else value
-      }
-
-      bodyAndSize.request match {
-        case alterConfigs: AlterConfigsRequest =>
-          val loggableConfigs = alterConfigs.configs().asScala.map { case (resource, config) =>
-            val loggableEntries = new AlterConfigsRequest.Config(config.entries.asScala.map { entry =>
-                new AlterConfigsRequest.ConfigEntry(entry.name, loggableValue(resource.`type`, entry.name, entry.value))
-            }.asJavaCollection)
-            (resource, loggableEntries)
-          }.asJava
-          new AlterConfigsRequest.Builder(loggableConfigs, alterConfigs.validateOnly).build(alterConfigs.version())
-
-        case alterConfigs: IncrementalAlterConfigsRequest =>
-          val resources = new AlterConfigsResourceCollection(alterConfigs.data.resources.size)
-          alterConfigs.data.resources.forEach { resource =>
-            val newResource = new AlterConfigsResource()
-              .setResourceName(resource.resourceName)
-              .setResourceType(resource.resourceType)
-            resource.configs.forEach { config =>
-              newResource.configs.add(new AlterableConfig()
-                .setName(config.name)
-                .setValue(loggableValue(ConfigResource.Type.forId(resource.resourceType), config.name, config.value))
-                .setConfigOperation(config.configOperation))
-            }
-            resources.add(newResource)
-          }
-          val data = new IncrementalAlterConfigsRequestData()
-            .setValidateOnly(alterConfigs.data().validateOnly())
-            .setResources(resources)
-          new IncrementalAlterConfigsRequest.Builder(data).build(alterConfigs.version)
-
-        case _ =>
-          bodyAndSize.request
-      }
-    }
-
-    trace(s"Processor $processor received request: ${requestDesc(true)}")
-
-    def requestThreadTimeNanos: Long = {
-      if (apiLocalCompleteTimeNanos == -1L) apiLocalCompleteTimeNanos = Time.SYSTEM.nanoseconds
-      math.max(apiLocalCompleteTimeNanos - requestDequeueTimeNanos, 0L)
-    }
-
-    def updateRequestMetrics(networkThreadTimeNanos: Long, response: Response): Unit = {
-      val endTimeNanos = Time.SYSTEM.nanoseconds
-
-      /**
-       * Converts nanos to millis with micros precision as additional decimal places in the request log have low
-       * signal to noise ratio. When it comes to metrics, there is little difference either way as we round the value
-       * to the nearest long.
-       */
-      def nanosToMs(nanos: Long): Double = {
-        val positiveNanos = math.max(nanos, 0)
-        TimeUnit.NANOSECONDS.toMicros(positiveNanos).toDouble / TimeUnit.MILLISECONDS.toMicros(1)
-      }
-
-      val requestQueueTimeMs = nanosToMs(requestDequeueTimeNanos - startTimeNanos)
-      val apiLocalTimeMs = nanosToMs(apiLocalCompleteTimeNanos - requestDequeueTimeNanos)
-      val apiRemoteTimeMs = nanosToMs(responseCompleteTimeNanos - apiLocalCompleteTimeNanos)
-      val responseQueueTimeMs = nanosToMs(responseDequeueTimeNanos - responseCompleteTimeNanos)
-      val responseSendTimeMs = nanosToMs(endTimeNanos - responseDequeueTimeNanos)
-      val messageConversionsTimeMs = nanosToMs(messageConversionsTimeNanos)
-      val totalTimeMs = nanosToMs(endTimeNanos - startTimeNanos)
-      val fetchMetricNames =
-        if (header.apiKey == ApiKeys.FETCH) {
-          val isFromFollower = body[FetchRequest].isFromFollower
-          Seq(
-            if (isFromFollower) RequestMetrics.followFetchMetricName
-            else RequestMetrics.consumerFetchMetricName
-          )
-        }
-        else Seq.empty
-      val metricNames = fetchMetricNames :+ header.apiKey.name
-      metricNames.foreach { metricName =>
-        val m = metrics(metricName)
-        m.requestRate(header.apiVersion).mark()
-        m.requestQueueTimeHist.update(Math.round(requestQueueTimeMs))
-        m.localTimeHist.update(Math.round(apiLocalTimeMs))
-        m.remoteTimeHist.update(Math.round(apiRemoteTimeMs))
-        m.throttleTimeHist.update(apiThrottleTimeMs)
-        m.responseQueueTimeHist.update(Math.round(responseQueueTimeMs))
-        m.responseSendTimeHist.update(Math.round(responseSendTimeMs))
-        m.totalTimeHist.update(Math.round(totalTimeMs))
-        m.requestBytesHist.update(sizeOfBodyInBytes)
-        m.messageConversionsTimeHist.foreach(_.update(Math.round(messageConversionsTimeMs)))
-        m.tempMemoryBytesHist.foreach(_.update(temporaryMemoryBytes))
-      }
-
-      // Records network handler thread usage. This is included towards the request quota for the
-      // user/client. Throttling is only performed when request handler thread usage
-      // is recorded, just before responses are queued for delivery.
-      // The time recorded here is the time spent on the network thread for receiving this request
-      // and sending the response. Note that for the first request on a connection, the time includes
-      // the total time spent on authentication, which may be significant for SASL/SSL.
-      recordNetworkThreadTimeCallback.foreach(record => record(networkThreadTimeNanos))
-
-      if (isRequestLoggingEnabled) {
-        val detailsEnabled = requestLogger.underlying.isTraceEnabled
-        val responseString = response.responseString.getOrElse(
-          throw new IllegalStateException("responseAsString should always be defined if request logging is enabled"))
-        val builder = new StringBuilder(256)
-        builder.append("Completed request:").append(requestDesc(detailsEnabled))
-          .append(",response:").append(responseString)
-          .append(" from connection ").append(context.connectionId)
-          .append(";totalTime:").append(totalTimeMs)
-          .append(",requestQueueTime:").append(requestQueueTimeMs)
-          .append(",localTime:").append(apiLocalTimeMs)
-          .append(",remoteTime:").append(apiRemoteTimeMs)
-          .append(",throttleTime:").append(apiThrottleTimeMs)
-          .append(",responseQueueTime:").append(responseQueueTimeMs)
-          .append(",sendTime:").append(responseSendTimeMs)
-          .append(",securityProtocol:").append(context.securityProtocol)
-          .append(",principal:").append(session.principal)
-          .append(",listener:").append(context.listenerName.value)
-          .append(",clientInformation:").append(context.clientInformation)
-        if (temporaryMemoryBytes > 0)
-          builder.append(",temporaryMemoryBytes:").append(temporaryMemoryBytes)
-        if (messageConversionsTimeMs > 0)
-          builder.append(",messageConversionsTime:").append(messageConversionsTimeMs)
-        requestLogger.debug(builder.toString)
-      }
-    }
-
-    def releaseBuffer(): Unit = {
-      if (buffer != null) {
-        memoryPool.release(buffer)
-        buffer = null
-      }
-    }
-
-    override def toString = s"Request(processor=$processor, " +
-      s"connectionId=${context.connectionId}, " +
-      s"session=$session, " +
-      s"listenerName=${context.listenerName}, " +
-      s"securityProtocol=${context.securityProtocol}, " +
-      s"buffer=$buffer)"
-
-  }
-~~~~
+  
 
 
 
