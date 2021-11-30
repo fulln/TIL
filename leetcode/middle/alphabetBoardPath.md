@@ -38,4 +38,34 @@ target 仅含有小写英文字母。
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+func alphabetBoardPath(target string) string {
+    i,j := 0,0
+    ret := "" 
+    for _,val := range target{
+        y := int((val - 'a' ) / 5)
+        x := int((val - 'a' ) % 5)
+        for j > x {
+            j --
+            ret += "L" 
+        }
+        for i > y  {
+            i --
+            ret += "U" 
+        }
+        for  j < x{
+            j ++
+            ret +="R"
+        }
+    
+        for i < y  {
+            i ++
+            ret += "D" 
+        }
+
+        ret +="!"
+    }
+    
+    return ret
+
+}
 ```
