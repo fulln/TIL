@@ -25,6 +25,73 @@
 链接：https://leetcode-cn.com/problems/matchsticks-to-square
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 ```go
+func makesquare(matchsticks []int) bool {
+    
+    if len(matchsticks) < 4{
+        return false
+    }
+    a := sort.IntSlice(matchsticks)
+    sort.Reverse(a)
+    sort.Sort(a)
+    matchsticks = a
+
+    sum := 0
+
+    for _,val := range matchsticks{
+        sum +=val
+        
+    }
+
+    if sum < 4 || sum % 4 != 0{
+        return false
+    }
+
+
+
+    avg := sum / 4
+    
+
+    if matchsticks[0] > avg {
+        return false
+    }
+
+    
+
+    barrel := make([]int,4)
+
+
+    var dfs func(curr int)bool
+
+    dfs = func(curr int)bool{
+
+        if curr  == len(matchsticks){            
+            return barrel[0] == barrel[1] &&  barrel[1] == barrel[2] && barrel[2] == barrel[3]
+        }
+
+        for i:= 0;i< 4;i++{
+
+            if barrel[i] + matchsticks[curr] > avg{
+                continue
+            }
+
+            barrel[i]  += matchsticks[curr]
+
+            res := dfs(curr +1)
+
+            if res{
+                return true
+            }
+
+            barrel[i]  -= matchsticks[curr]
+        }
+
+        return false
+    }
+
+    return  dfs(0)
+
+}
+
 
 ```
 
