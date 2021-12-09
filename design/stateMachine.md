@@ -74,7 +74,7 @@
 
 #### 复杂度对比
 
-在github上TOP2 的状态机是 [spirng 状态机](https://github.com/spring-projects/spring-statemachine) 和 [squirrel](https://github.com/hekailiang/squirrel) ,这2个开源框架功能都十分强大, 但是结合自身业务要求 ,其实用不上他们强劲的功能,反而在一些简单场景下,使用的上手难度反而增高,于是把目光投向了[COLA](https://github.com/alibaba/COLA/tree/master/cola-components) state Machine,,在作者博客中有这种说法
+在github上TOP2 的状态机是 [spring 状态机](https://github.com/spring-projects/spring-statemachine) 和 [squirrel](https://github.com/hekailiang/squirrel) ,这2个开源框架功能都十分强大, 但是结合自身业务要求 ,其实用不上他们强劲的功能,反而在一些简单场景下,使用的上手难度反而增高,于是把目光投向了[COLA](https://github.com/alibaba/COLA/tree/master/cola-components) state Machine,,在作者博客中有这种说法
 
 > 在合适的地方用合适的解决方案，不能一招鲜吃遍天。就像最臭名昭著的DSL——流程引擎，就属于那种严重的被滥用和过渡设计的典型，是把简单的问题复杂化的典型。
 >
