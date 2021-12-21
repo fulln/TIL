@@ -474,6 +474,37 @@ public class StateMachineImpl<S, E, C> implements StateMachine<S, E, C> {
 }
 
 ```
+注意一点的是在`4.0.0`中有个坑
+> com.alibaba.cola.statemachine.impl.StateImpl
+
+```java
+public class StateImpl<S,E,C> implements State<S,E,C> {
+    protected final S stateId;
+    //  这里是使用的map ,key对应event,value 对应transition ,则如果from的state是相同的,在addTransition去put的时候新的会覆盖老的transition
+    private HashMap<E, Transition<S, E,C>> transitions = new HashMap<>();
+
+    StateImpl(S stateId){
+        this.stateId = stateId;
+    }
+
+    @Override
+    public Transition<S, E, C> addTransition(E event, State<S,E,C> target, TransitionType transitionType) {
+        Transition<S, E, C> newTransition = new TransitionImpl<>();
+        newTransition.setSource(this);
+        newTransition.setTarget(target);
+        newTransition.setEvent(event);
+        newTransition.setType(transitionType);
+
+        Debugger.debug("Begin to add new transition: "+ newTransition);
+        verify(event, newTransition);
+        transitions.put(event, newTransition);
+        return newTransition;
+    }
+    ...
+}
+
+```
+而在4.1.0 没有使用这种写法,而是使用的list避免了覆盖问题
 
 这样整个流程就执行完了,整体结构比较小巧,也为我们在改编重构上提供了便利, 如结合srping容器,如添加注解形式的state Machine等.
 
