@@ -34,4 +34,22 @@ age[y] > 100 && age[x] < 100
 链接：https://leetcode-cn.com/problems/friends-of-appropriate-ages
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 ```go
+func numFriendRequests(ages []int) (ans int) {
+    sort.Ints(ages)
+    left, right := 0, 0
+    for _, age := range ages {
+        if age < 15 {
+            continue
+        }
+        for ages[left]*2 <= age+14 {
+            left++
+        }
+        for right+1 < len(ages) && ages[right+1] <= age {
+            right++
+        }
+        ans += right - left
+    }
+    return
+}
+
 ```
