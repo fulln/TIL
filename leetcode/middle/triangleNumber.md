@@ -17,21 +17,24 @@
 链接：https://leetcode-cn.com/problems/valid-triangle-number
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 ```go
-func triangleNumber(nums []int) int {
-    l := len(nums) 
+func triangleNumber(nums []int) (ans int) {
     sort.Ints(nums)
-    ret := 0
-    for i:= 0; i < l;i++{
-        for j := i+1;j< l;j++{
-            for z := j+1; z < l;z++{
-                if nums[i] + nums[j] > nums[z]{
-                    ret ++
-                }else{
-                    break
+    for i, _ := range nums {
+        for j := i + 1; j < len(nums); j++ {
+                left,right,k  := j + 1, len(nums)-1, j;
+                for left <= right {
+                    mid := (left + right) / 2;
+                    if  nums[mid] < nums[i] + nums[j] {
+                        k = mid;
+                        left = mid + 1;
+                    } else {
+                        right = mid - 1;
+                    }
                 }
-            }
+                ans += k - j;
         }
     }
-    return ret
+    return ans
 }
+
 ```
