@@ -4,99 +4,38 @@ today i learn
 
 <!-- toc -->
 
-- [shell](#shell)
-- [sql](#sql)
-- [algorithm](#algorithm)
-- [java](#java)
-  * [mysql](#mysql)
-  * [jvm](#jvm)
-  * [basic](#basic)
-  * [spring](#spring)
-  * [plug](#plug)
-  * [tomcat](#tomcat)
-- [design](#design)
-- [react](#react)
-- [redis](#redis)
-- [windows](#windows)
 - [git](#git)
 - [kafka](#kafka)
-- [vim](#vim)
-- [net](#net)
 - [maven](#maven)
+- [net](#net)
+- [algorithm](#algorithm)
+- [design](#design)
+- [redis](#redis)
+- [vim](#vim)
 - [leetcode](#leetcode)
   * [easy](#easy)
-  * [middle](#middle)
   * [hard](#hard)
+  * [middle](#middle)
+- [java](#java)
+  * [mysql](#mysql)
+  * [plug](#plug)
+  * [tomcat](#tomcat)
+  * [basic](#basic)
+  * [spring](#spring)
+  * [jvm](#jvm)
+- [shell](#shell)
+- [react](#react)
+- [windows](#windows)
+- [sql](#sql)
 
 <!-- tocstop -->
 
 ---
-there is total <!-- count starts -->420<!-- count ends --> TILs . keep on 
+there is total <!-- count starts -->421<!-- count ends --> TILs . keep on 
 
 ---
 
 <!-- index starts -->
-## shell
-
-* [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
-## sql
-
-* [mysql 事务锁相关查看](https://github.com/fulln/TIL/blob/master/sql/qeury_transaction.md) - 2020-09-16
-* [Transaction resolution unknown 异常分析](https://github.com/fulln/TIL/blob/master/sql/transactions-unkonw.md) - 2021-01-08
-* [Alter Table 操作执行过程](https://github.com/fulln/TIL/blob/master/sql/alterTable.md) - 2021-01-20
-* [mysql的JSON字段类型](https://github.com/fulln/TIL/blob/master/sql/mysqlJSON.md) - 2021-06-28
-## algorithm
-
-* [动态规划](https://github.com/fulln/TIL/blob/master/algorithm/dpIntroduce.md) - 2021-06-12
-## java
-
-### mysql
-
-* [使用mybatis 自动执行脚本](https://github.com/fulln/TIL/blob/master/java/mysql/MysqlInit.md) - 2021-06-02
-### jvm
-
-* [JVM调优与GC](https://github.com/fulln/TIL/blob/master/java/jvm/JvmDaily1.md) - 2020-10-28
-* [G1相关JVM参数](https://github.com/fulln/TIL/blob/master/java/jvm/JvmParams.md) - 2021-09-14
-### basic
-
-* [java为啥会有static main?](https://github.com/fulln/TIL/blob/master/java/basic/staticMain.md) - 2020-08-06
-* [jvm的大图流整理](https://github.com/fulln/TIL/blob/master/java/basic/jvmArrange.md) - 2020-08-22
-* [通过BTrace进行分析](https://github.com/fulln/TIL/blob/master/java/basic/BTrace.md) - 2020-08-26
-* [JDK15视频发布会及新特性](https://github.com/fulln/TIL/blob/master/java/basic/JDK15.md) - 2020-11-01
-* [java 看加载的class 的来源](https://github.com/fulln/TIL/blob/master/java/basic/getsourceFile.md) - 2021-03-25
-* [ThreadLocal 解析](https://github.com/fulln/TIL/blob/master/java/basic/threadLocal.md) - 2021-07-16
-* [java反射使用getDeclaredMethods](https://github.com/fulln/TIL/blob/master/java/basic/DeclaredMethod.md) - 2021-08-17
-### spring
-
-* [CVE-2020-5421漏洞 spring相关代码探寻](https://github.com/fulln/TIL/blob/master/java/spring/CVE-2020-5421.md) - 2020-10-19
-* [spring-quartz 使用](https://github.com/fulln/TIL/blob/master/java/spring/spring-quartz.md) - 2020-11-14
-* [spring-data-redis](https://github.com/fulln/TIL/blob/master/java/spring/springDataRedis.md) - 2020-11-14
-* [springMvc升级springBoot](https://github.com/fulln/TIL/blob/master/java/spring/upgradeMvc.md) - 2021-01-15
-* [spring Enviroment 初始化及@value加载](https://github.com/fulln/TIL/blob/master/java/spring/envirment.md) - 2021-02-05
-* [SpringMVC全局日志](https://github.com/fulln/TIL/blob/master/java/spring/RequestBodyAdviceAdapter.md) - 2021-07-04
-* [springCloudConfig 设置说明](https://github.com/fulln/TIL/blob/master/java/spring/springCloudConfig.md) - 2021-08-02
-* [SpringCache 源码解析](https://github.com/fulln/TIL/blob/master/java/spring/springcache.md) - 2021-12-30
-### plug
-
-* [mapStruct 开发使用](https://github.com/fulln/TIL/blob/master/java/plug/mapStructInUse.md) - 2021-01-23
-* [mybatis-plus 通过lambda 获取属性名](https://github.com/fulln/TIL/blob/master/java/plug/mybatisPlus.md) - 2021-07-21
-### tomcat
-
-* [Tomcat 加载包导致OOM](https://github.com/fulln/TIL/blob/master/java/tomcat/tomcatError.md) - 2021-12-13
-## design
-
-* [领域驱动设计](https://github.com/fulln/TIL/blob/master/design/DDD.md) - 2021-08-05
-* [状态机介绍](https://github.com/fulln/TIL/blob/master/design/stateMachine.md) - 2021-12-06
-## react
-
-* [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
-## redis
-
-* [redis setnx setex](https://github.com/fulln/TIL/blob/master/redis/redisCommand.md) - 2021-03-25
-## windows
-
-* [windows 中cmd 相关的操作](https://github.com/fulln/TIL/blob/master/windows/shellOption.md) - 2020-11-14
-* [合并多个sheet](https://github.com/fulln/TIL/blob/master/windows/ExcelCopy.md) - 2020-11-17
 ## git
 
 * [git 版本的回滚](https://github.com/fulln/TIL/blob/master/git/gitreset.md) - 2020-09-23
@@ -105,15 +44,25 @@ there is total <!-- count starts -->420<!-- count ends --> TILs . keep on
 * [kafka消息可靠性保证(一)](https://github.com/fulln/TIL/blob/master/kafka/kafkaReliability.md) - 2021-08-02
 * [kafka消息可靠性保证(二)](https://github.com/fulln/TIL/blob/master/kafka/kafkaReliability2.md) - 2021-08-02
 * [kafka消息可靠性保证(三)](https://github.com/fulln/TIL/blob/master/kafka/kafkaReliability3.md) - 2021-08-09
-## vim
-
-* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
-## net
-
-* [Nginx,HAproxy,F5差异与联系](https://github.com/fulln/TIL/blob/master/net/loadBalance.md) - 2021-12-08
 ## maven
 
 * [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
+## net
+
+* [Nginx,HAproxy,F5差异与联系](https://github.com/fulln/TIL/blob/master/net/loadBalance.md) - 2021-12-08
+## algorithm
+
+* [动态规划](https://github.com/fulln/TIL/blob/master/algorithm/dpIntroduce.md) - 2021-06-12
+## design
+
+* [领域驱动设计](https://github.com/fulln/TIL/blob/master/design/DDD.md) - 2021-08-05
+* [状态机介绍](https://github.com/fulln/TIL/blob/master/design/stateMachine.md) - 2021-12-06
+## redis
+
+* [redis setnx setex](https://github.com/fulln/TIL/blob/master/redis/redisCommand.md) - 2021-03-25
+## vim
+
+* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
 ## leetcode
 
 ### easy
@@ -282,6 +231,19 @@ there is total <!-- count starts -->420<!-- count ends --> TILs . keep on
 * [完美数](https://github.com/fulln/TIL/blob/master/leetcode/easy/checkPerfectNumber.md) - 2021-12-31
 * [替换所有的问号](https://github.com/fulln/TIL/blob/master/leetcode/easy/modifyString.md) - 2022-01-05
 * [减小和重新排列数组后的最大元素](https://github.com/fulln/TIL/blob/master/leetcode/easy/Rearranging.md) - 2022-01-07
+### hard
+
+* [鸡蛋掉落](https://github.com/fulln/TIL/blob/master/leetcode/hard/superEggDrop.md) - 2021-02-28
+* [子序列宽度之和](https://github.com/fulln/TIL/blob/master/leetcode/hard/sumSubseqWidths.md) - 2021-06-20
+* [基本计算器](https://github.com/fulln/TIL/blob/master/leetcode/hard/calculate.md) - 2021-06-21
+* [1713. 得到子序列的最少操作次数](https://github.com/fulln/TIL/blob/master/leetcode/hard/minOperations.md) - 2021-07-26
+* [数字 1 的个数](https://github.com/fulln/TIL/blob/master/leetcode/hard/countDigitOne.md) - 2021-08-13
+* [IPO](https://github.com/fulln/TIL/blob/master/leetcode/hard/findMaximizedCapital.md) - 2021-09-08
+* [解码方法 II](https://github.com/fulln/TIL/blob/master/leetcode/hard/numDecodings.md) - 2021-09-27
+* [删除无效的括号](https://github.com/fulln/TIL/blob/master/leetcode/hard/removeInvalidParentheses.md) - 2021-10-27
+* [路径交叉](https://github.com/fulln/TIL/blob/master/leetcode/hard/isSelfCrossing.md) - 2021-10-29
+* [课程表 III](https://github.com/fulln/TIL/blob/master/leetcode/hard/scheduleCourse.md) - 2021-12-14
+* [按位与为零的三元组](https://github.com/fulln/TIL/blob/master/leetcode/hard/countTriplets.md) - 2022-01-04
 ### middle
 
 * [钥匙和房间](https://github.com/fulln/TIL/blob/master/leetcode/middle/canVisitAllRooms.md) - 2020-09-11
@@ -489,19 +451,58 @@ there is total <!-- count starts -->420<!-- count ends --> TILs . keep on
 * [一手顺子](https://github.com/fulln/TIL/blob/master/leetcode/middle/isNStraightHand.md) - 2021-12-30
 * [逃脱阻碍者](https://github.com/fulln/TIL/blob/master/leetcode/middle/escapeGhosts.md) - 2022-01-03
 * [简化路径](https://github.com/fulln/TIL/blob/master/leetcode/middle/simplifyPath.md) - 2022-01-06
-### hard
+* [统计封闭岛屿的数目](https://github.com/fulln/TIL/blob/master/leetcode/middle/closedIsland.md) - 2022-01-11
+## java
 
-* [鸡蛋掉落](https://github.com/fulln/TIL/blob/master/leetcode/hard/superEggDrop.md) - 2021-02-28
-* [子序列宽度之和](https://github.com/fulln/TIL/blob/master/leetcode/hard/sumSubseqWidths.md) - 2021-06-20
-* [基本计算器](https://github.com/fulln/TIL/blob/master/leetcode/hard/calculate.md) - 2021-06-21
-* [1713. 得到子序列的最少操作次数](https://github.com/fulln/TIL/blob/master/leetcode/hard/minOperations.md) - 2021-07-26
-* [数字 1 的个数](https://github.com/fulln/TIL/blob/master/leetcode/hard/countDigitOne.md) - 2021-08-13
-* [IPO](https://github.com/fulln/TIL/blob/master/leetcode/hard/findMaximizedCapital.md) - 2021-09-08
-* [解码方法 II](https://github.com/fulln/TIL/blob/master/leetcode/hard/numDecodings.md) - 2021-09-27
-* [删除无效的括号](https://github.com/fulln/TIL/blob/master/leetcode/hard/removeInvalidParentheses.md) - 2021-10-27
-* [路径交叉](https://github.com/fulln/TIL/blob/master/leetcode/hard/isSelfCrossing.md) - 2021-10-29
-* [课程表 III](https://github.com/fulln/TIL/blob/master/leetcode/hard/scheduleCourse.md) - 2021-12-14
-* [按位与为零的三元组](https://github.com/fulln/TIL/blob/master/leetcode/hard/countTriplets.md) - 2022-01-04
+### mysql
+
+* [使用mybatis 自动执行脚本](https://github.com/fulln/TIL/blob/master/java/mysql/MysqlInit.md) - 2021-06-02
+### plug
+
+* [mapStruct 开发使用](https://github.com/fulln/TIL/blob/master/java/plug/mapStructInUse.md) - 2021-01-23
+* [mybatis-plus 通过lambda 获取属性名](https://github.com/fulln/TIL/blob/master/java/plug/mybatisPlus.md) - 2021-07-21
+### tomcat
+
+* [Tomcat 加载包导致OOM](https://github.com/fulln/TIL/blob/master/java/tomcat/tomcatError.md) - 2021-12-13
+### basic
+
+* [java为啥会有static main?](https://github.com/fulln/TIL/blob/master/java/basic/staticMain.md) - 2020-08-06
+* [jvm的大图流整理](https://github.com/fulln/TIL/blob/master/java/basic/jvmArrange.md) - 2020-08-22
+* [通过BTrace进行分析](https://github.com/fulln/TIL/blob/master/java/basic/BTrace.md) - 2020-08-26
+* [JDK15视频发布会及新特性](https://github.com/fulln/TIL/blob/master/java/basic/JDK15.md) - 2020-11-01
+* [java 看加载的class 的来源](https://github.com/fulln/TIL/blob/master/java/basic/getsourceFile.md) - 2021-03-25
+* [ThreadLocal 解析](https://github.com/fulln/TIL/blob/master/java/basic/threadLocal.md) - 2021-07-16
+* [java反射使用getDeclaredMethods](https://github.com/fulln/TIL/blob/master/java/basic/DeclaredMethod.md) - 2021-08-17
+### spring
+
+* [CVE-2020-5421漏洞 spring相关代码探寻](https://github.com/fulln/TIL/blob/master/java/spring/CVE-2020-5421.md) - 2020-10-19
+* [spring-quartz 使用](https://github.com/fulln/TIL/blob/master/java/spring/spring-quartz.md) - 2020-11-14
+* [spring-data-redis](https://github.com/fulln/TIL/blob/master/java/spring/springDataRedis.md) - 2020-11-14
+* [springMvc升级springBoot](https://github.com/fulln/TIL/blob/master/java/spring/upgradeMvc.md) - 2021-01-15
+* [spring Enviroment 初始化及@value加载](https://github.com/fulln/TIL/blob/master/java/spring/envirment.md) - 2021-02-05
+* [SpringMVC全局日志](https://github.com/fulln/TIL/blob/master/java/spring/RequestBodyAdviceAdapter.md) - 2021-07-04
+* [springCloudConfig 设置说明](https://github.com/fulln/TIL/blob/master/java/spring/springCloudConfig.md) - 2021-08-02
+* [SpringCache 源码解析](https://github.com/fulln/TIL/blob/master/java/spring/springcache.md) - 2021-12-30
+### jvm
+
+* [JVM调优与GC](https://github.com/fulln/TIL/blob/master/java/jvm/JvmDaily1.md) - 2020-10-28
+* [G1相关JVM参数](https://github.com/fulln/TIL/blob/master/java/jvm/JvmParams.md) - 2021-09-14
+## shell
+
+* [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
+## react
+
+* [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
+## windows
+
+* [windows 中cmd 相关的操作](https://github.com/fulln/TIL/blob/master/windows/shellOption.md) - 2020-11-14
+* [合并多个sheet](https://github.com/fulln/TIL/blob/master/windows/ExcelCopy.md) - 2020-11-17
+## sql
+
+* [mysql 事务锁相关查看](https://github.com/fulln/TIL/blob/master/sql/qeury_transaction.md) - 2020-09-16
+* [Transaction resolution unknown 异常分析](https://github.com/fulln/TIL/blob/master/sql/transactions-unkonw.md) - 2021-01-08
+* [Alter Table 操作执行过程](https://github.com/fulln/TIL/blob/master/sql/alterTable.md) - 2021-01-20
+* [mysql的JSON字段类型](https://github.com/fulln/TIL/blob/master/sql/mysqlJSON.md) - 2021-06-28
 <!-- index ends -->
 
 
