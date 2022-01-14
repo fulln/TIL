@@ -30,4 +30,21 @@
 链接：https://leetcode-cn.com/problems/find-k-pairs-with-smallest-sums
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 ```go
+func kSmallestPairs(nums1 []int, nums2 []int, k int) [][]int {
+    ans:=[][]int{} 
+    for i:=0;i<len(nums1)&&i<k;i++{
+        for j:=0;j<len(nums2)&&j<k;j++{
+            ans=append(ans,[]int{nums1[i],nums2[j]})
+        }
+    }
+
+    sort.Slice(ans,func(i,j int)bool{
+        return ans[i][0]+ans[i][1]<ans[j][0]+ans[j][1]
+    })
+    if k<len(ans){
+        return ans[:k]
+    }
+    return ans 
+    
+}
 ```
