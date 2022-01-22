@@ -34,5 +34,49 @@
 链接：https://leetcode-cn.com/problems/leaf-similar-trees
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 ```go
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func leafSimilar(root1 *TreeNode, root2 *TreeNode) bool {
+    val1 := before(root1) 
+    val2 := before(root2)
 
+    if len(val1) != len(val2){
+        return false
+    }
+    
+    for i:=0;i< len(val1);i++{
+        if val1[i] != val2[i]{
+            return false
+        }
+    } 
+    return true
+
+}
+
+func before(root *TreeNode)[]int{
+
+    if root == nil{
+        return nil
+    }
+
+    ret:= []int{}
+
+    if root.Left == nil && root.Right == nil  {
+        ret = append(ret,root.Val)
+    }else{
+        val1 :=before(root.Left)
+        val2 := before(root.Right)
+
+        ret =append(ret, val1...) 
+        ret =append(ret,val2...)
+    }
+
+    return ret
+}
 ```
