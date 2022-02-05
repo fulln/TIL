@@ -36,4 +36,71 @@
 链接：https://leetcode-cn.com/problems/path-with-maximum-gold
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 ```go
+func getMaximumGold(grid [][]int) int {
+
+    memory := make([][]bool,len(grid))
+    for i:= 0;i< len(memory);i++{
+        memory[i] =make([]bool,len(grid[i]))
+    }
+
+
+    var dfs func(x,y int)int
+
+    dfs = func(x,y int)int{
+        
+        if x < 0 || x >= len(grid[0]){
+            return 0
+        }
+
+        if y < 0 || y >= len(grid){
+            return 0
+        }
+
+        if memory[y][x] {
+            return 0
+        }
+
+        if grid[y][x] == 0{
+            return 0
+        }
+
+        
+        memory[y][x] = true
+
+        left := dfs(x+1,y)
+
+        right :=dfs(x-1,y)
+
+        up := dfs(x,y+1)
+
+        down := dfs(x,y-1)
+
+        memory[y][x] = false
+
+        return grid[y][x] + max(max(left,right),max(up,down))   
+    }
+
+    maxs := 0
+
+    for i:= 0;i <len(grid);i++{
+        for j:=0;j < len(grid[0]);j++{
+            if grid[i][j] == 0{
+                continue
+            }
+            res := dfs(j,i)
+            maxs = max(res,maxs)
+        }
+    }
+
+    return maxs
+
+}
+
+func  max(a,b int)int{
+    if a > b {
+        return a
+    }else{
+        return b
+    }
+}
 ```
