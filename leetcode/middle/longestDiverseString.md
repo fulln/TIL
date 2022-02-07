@@ -29,4 +29,18 @@ s 中只含有 'a'、'b' 、'c' 三种字母。
 链接：https://leetcode-cn.com/problems/longest-happy-string
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 ```go
+func longestDiverseString(a int, b int, c int) (ret string) {
+	A, B, C, total := 0, 0, 0, a+b+c
+	for i := 0; i < total; i++ {
+		if (a >= b && a >= c && A != 2) || (B == 2 && a > 0) || (C == 2 && a > 0) {
+			ret, a, A, B, C = ret+"a", a-1, A+1, 0, 0
+		} else if (b >= a && b >= c && B != 2) || (A == 2 && b > 0) || (C == 2 && b > 0) {
+			ret, b, A, B, C = ret+"b", b-1, 0, B+1, 0
+		} else if (c >= a && c >= b && C != 2) || (A == 2 && c > 0) || (B == 2 && c > 0) {
+			ret, c, A, B, C = ret+"c", c-1, 0, 0, C+1
+		}
+	}
+	return
+}
+
 ```
