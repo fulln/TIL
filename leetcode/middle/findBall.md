@@ -38,4 +38,22 @@ b4 球开始放在第 4 列上，会卡在第 2、3 列和第 1 行之间的 "V"
 链接：https://leetcode-cn.com/problems/where-will-the-ball-fall
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 ```go
+func findBall(grid [][]int) []int {
+    n := len(grid[0])
+    ans := make([]int, n)
+    for j := range ans {
+        col := j // 球的初始列
+        for _, row := range grid {
+            dir := row[col]
+            col += dir // 移动球
+            if col < 0 || col == n || row[col] != dir { // 到达侧边或 V 形
+                col = -1
+                break
+            }
+        }
+        ans[j] = col // col >= 0 为成功到达底部
+    }
+    return ans
+}
+
 ```
