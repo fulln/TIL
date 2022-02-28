@@ -32,30 +32,29 @@ dominoes[i] = '.'，表示没有推动第 i 张多米诺骨牌。
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 ```go
 func pushDominoes(dominoes string) string {
-    dp:=make([]byte,len(dominoes))
-    dp[0] = dominoes[0]
-    for i :=1 ;i< len(dominoes);i++ {
-        for j := i;j< len(dominoes);j++{
-            if '.' == dominoes[j]{
-                if dp[j-1] == 'R'  && dp[j+1] == 'L'{
-                    dp[j] = '.'   
-                    continue
-                }
-                if dp[j-1] == 'R' {
-                    dp[j] = 'R'   
-                    continue
-                }
-                if dp[j+1] == 'L' {
-                    dp[j] = 'L'   
-                    continue
-                }
-                dp[j] = '.'
-            }else{
-                dp[j] = dominoes[j]
-            }
-        }
-    }
-    return string(dp)
-
+	arr := []byte(dominoes)
+	for i, l, r := 0, -1, -1; i <= len(arr); i++ {
+		if i == len(arr) || arr[i] == 'R' {
+			if r > l {
+				for r < i {
+					arr[r], r = 'R', r+1
+				}
+			}
+			r = i
+		} else if arr[i] == 'L' {
+			if l > r || r == -1 {
+				l++
+				for l < i {
+					arr[l], l = 'L', l+1
+				}
+			} else {
+				l = i
+				for lo, hi := r+1, l-1; lo < hi; {
+					arr[lo], lo, arr[hi], hi = 'R', lo+1, 'L', hi-1
+				}
+			}
+		}
+	}
+	return string(arr)
 }
 ```
