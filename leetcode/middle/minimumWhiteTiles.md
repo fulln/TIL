@@ -54,4 +54,49 @@ func min(a,b int)int{
         return a
     }
 }
+
+func minimumWhiteTiles(floor string, numCarpets int, carpetLen int) int {
+       dp :=  make([][]int,len(floor)+1)
+       for i:=0;i< len(dp);i++ {
+           dp[i] = make([]int,numCarpets+1)
+           for j:=0;j< len(dp[i]);j++{
+                dp[i][j] = 1000 
+           }
+       }
+
+        for i:=0;i<= numCarpets;i++{
+            dp[0][i]= 0 
+        }
+
+       for i:= 0;i< len(floor);i++{
+           for j:= 0;j <= numCarpets;j++{
+               dp[i+1][j] =  min(dp[i+1][j],dp[i][j] + int(floor[i]-'0'))
+               if j != numCarpets {
+                   dp[min(i+carpetLen,len(floor))][j+1] = min(dp[min(i+carpetLen,len(floor))][j+1],dp[i][j])
+               }
+           }
+       } 
+
+        return dp[len(floor)][numCarpets]
+
+}
+
+
+
+func max(a,b int)int{
+    if a > b{
+        return a
+    }else{
+        return b
+    }
+}
+
+
+func min(a,b int)int{
+    if a > b{
+        return b
+    }else{
+        return a
+    }
+}
 ```
