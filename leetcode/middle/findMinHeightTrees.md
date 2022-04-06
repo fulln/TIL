@@ -29,4 +29,38 @@
 链接：https://leetcode-cn.com/problems/minimum-height-trees
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 ```go
+func findMinHeightTrees(n int, edges [][]int) []int {
+    maps := make([]int,n)
+    treemaps := make(map[int][]int)
+
+    for _,val := range edges{
+        maps[val[0]] ++
+        maps[val[1]] ++
+        treemaps[val[0]] = append(treemaps[val[0]],val[1])
+        treemaps[val[1]] = append(treemaps[val[1]],val[0])
+    }
+    nodes := []int{}
+    
+    for i := 0; i < n; i++ {
+        if maps[i] < 2 {
+            nodes = append(nodes, i)
+        }
+    }
+
+    for n > 2 {
+        s := len(nodes)
+        n -= s
+        for _, node := range nodes {
+            for _, other := range treemaps[node] {
+                maps[other]--
+                if maps[other] == 1 {
+                    nodes = append(nodes, other)
+                }
+            }
+        }
+        nodes = nodes[s:]
+    }
+
+    return nodes
+}   
 ```
