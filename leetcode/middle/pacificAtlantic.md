@@ -25,4 +25,64 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+var dirs = []struct{ x, y int }{{-1, 0}, {1, 0}, {0, -1}, {0, 1}}
+
+func pacificAtlantic(heights [][]int) [][]int {
+    
+    m := len(heights)
+    n  := len(heights[0])
+
+    p :=make([][]bool,m)
+    q :=make([][]bool,m)
+    for i := range p {
+        p[i] = make([]bool, n)
+        q[i] = make([]bool, n)
+    }
+
+
+    var dfs  func(x,y int,o [][]bool)
+
+    dfs = func(x, y int,o [][]bool){
+        if o[x][y]{
+            return
+        }
+
+        o[x][y] = true
+        for _,d := range dirs{
+            if nx,ny := x+d.x,y+d.y; 0 <= nx && nx < m && 0 <= ny && ny < n && heights[x][y] <= heights[nx][ny] {
+                dfs(nx,ny,o)
+            }
+        } 
+    }
+
+    for i:= 0;i< m;i++{
+        dfs(i,0,p)
+    }
+
+    for j:= 0;j< n;j++{
+        dfs(0,j,p)
+    }
+
+
+    for i:= 0;i< m;i++{
+        dfs(i,n-1,q)
+    }
+
+    for j:= 0;j< n;j++{
+        dfs(m-1,j,q)
+    }
+
+
+    ret := [][]int{}
+
+    for i, row := range p {
+        for j, ok := range row {
+            if ok && q[i][j] {
+                ret = append(ret, []int{i, j})
+            }
+        }
+    }
+
+    return ret
+}   
 ```
