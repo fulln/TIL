@@ -39,7 +39,7 @@
  */
 func findBottomLeftValue(root *TreeNode) int {
     max := -1
-    maps := make(map[int]int)
+    ret := root.Val
     var dfs func(i int,node *TreeNode)
     dfs = func(i int,node *TreeNode){
         if node == nil{
@@ -47,9 +47,7 @@ func findBottomLeftValue(root *TreeNode) int {
         }
         if i > max {
             max = i
-            if maps[i] == 0{
-                maps[i] = node.Val
-            }
+            ret = node.Val
         }
         dfs(i+1,node.Left)
         dfs(i+1,node.Right)
@@ -57,7 +55,8 @@ func findBottomLeftValue(root *TreeNode) int {
 
     dfs(0,root)
 
-    return maps[max]
+    return ret
 
 }
 ```
+
