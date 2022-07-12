@@ -39,89 +39,77 @@ buildDict 仅在 search 之前调用一次
 来源：力扣（LeetCode）
 链接：https://leetcode.cn/problems/implement-magic-dictionary
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
-```go
-type MagicDictionary struct {
-    ints [26]*MagicDictionary
-    ext bool
-}
+```java
 
-func Constructor() MagicDictionary {
-   return MagicDictionary{
-       ints:[26]*MagicDictionary{},
-       ext: false }
-}
 
-func (this *MagicDictionary)update(a string){
-    loops := this
-    for _,val := range a{
-        if loops.ints[val-'a'] == nil{
-            loops.ints[val-'a'] = new(MagicDictionary)
-        }
-        loops = loops.ints[val-'a']
+public class MagicDictionary {
+
+
+    private Boolean exits;
+    private MagicDictionary[] children;
+
+
+    public MagicDictionary() {
+        this.exits = false;
+        this.children = new MagicDictionary[26];
     }
-    loops.ext = true;
-}
 
-func (this *MagicDictionary)find(a string)bool{
-    loops := this
-    for _,val := range a{
-        if loops.ints[val-'a'] == nil{
-            return false
-        }else{
-            loops = loops.ints[val-'a']
-        }
-    }
-    return loops.ext
-}
-
-func (this *MagicDictionary) BuildDict(dictionary []string)  {
-    for _,val := range dictionary{
-        this.update(val)
-    }
-}
-
-
-func (this *MagicDictionary) Search(s string) bool {
-
-    var dfs func(a *MagicDictionary,s string,used bool,index int)bool
-
-    dfs = func(a *MagicDictionary,s string,used bool,index int)bool{
-        if index == len(s)-1{
-            return a.ext && used
-        }
-
-
-        if a == nil{
-            return false
-        }
-        
-        if used{
-            if a.ints[s[index]-'a'] == nil {
-                return false
-            }else{
-                return dfs(a.ints[s[index]-'a'],s,used,index+1)
-            }
-        }else{
-            bools := false
-            for _,val := range a.ints{
-                bools = bools || dfs(val,s,true,index+1)
-                if  bools {
-                    return true;
+    public void buildDict(String[] words) {
+        MagicDictionary root = this;
+        for (String word : words) {
+            MagicDictionary cur = root;
+            for (char c : word.toCharArray()) {
+                int index = c - 'a';
+                if (cur.children == null) {
+                    cur.children = new MagicDictionary[26];
                 }
+                if (cur.children[index] == null) {
+                    cur.children[index] = new MagicDictionary();
+                }
+                cur = cur.children[index];
             }
+            cur.exits = true;
+        }
+    }
 
+    public boolean search( String word) {
+        return dfs(this, word, false, 0);
+    }
+
+    private static boolean dfs(MagicDictionary tree, String s, boolean used, int index) {
+        if (s.length() == index) {
+            return tree.exits && used;
+        }
+
+        if (tree == null) {
             return false;
         }
-    }
+        char[] chars = s.toCharArray();
 
-    return dfs(this,s,false,0)
+        if (used) {
+            if (tree.children == null || tree.children[chars[index] - 'a'] == null) {
+                return false;
+            } else {
+                return dfs(tree.children[chars[index] - 'a'], s, true, index + 1);
+            }
+        } else {
+            boolean bool;
+            MagicDictionary[] children = tree.children;
+            for (int i = 0; i < children.length; i++) {
+                MagicDictionary child = children[i];
+                if (child != null) {
+                    bool = dfs(child, s,chars[index] - 'a' != i , index + 1);
+                    if (bool) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
 }
 
 
-/**
- * Your MagicDictionary object will be instantiated and called as such:
- * obj := Constructor();
- * obj.BuildDict(dictionary);
- * param_2 := obj.Search(searchWord);
- */
+
+
 ```
