@@ -58,4 +58,38 @@ func asteroidCollision(asteroids []int) []int {
     return resp
 
 }
+func asteroidCollision(asteroids []int) []int {
+    
+    ret := []int{}
+    for i := 0;i < len(asteroids);{
+        if len(ret) == 0{
+            ret = append(ret,asteroids[i])
+            i++
+            continue
+        }else{
+            top := ret[len(ret) -1]
+            if top * asteroids[i] > 0{
+                ret = append(ret,asteroids[i])
+                i++
+            }else{
+                if top < 0{
+                    ret = append(ret,asteroids[i])
+                    i++
+                    continue
+                }
+                if top == -asteroids[i]{
+                    ret = ret[:len(ret)-1]
+                    i++
+                }else if top < -asteroids[i]{
+                    ret = ret[:len(ret)-1]
+                }else{
+                    i++
+                }
+            }
+        }
+    }
+    return ret
+}
+
+
 ```
