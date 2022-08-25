@@ -66,4 +66,20 @@ func abs(a,b int)int{
     }else{
         return b -a
     }
-}```
+}
+
+func findClosestElements(arr []int, k int, x int) []int {
+    left,right :=0,len(arr)-k
+    for left < right{
+        middle := (left +right) /2
+        if x - arr[middle] > arr[middle + k] -x {
+            left = middle +1
+        } else{
+            right = middle
+        }
+    }
+
+    return arr[left:left+k]
+}
+
+```
