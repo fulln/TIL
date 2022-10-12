@@ -36,51 +36,30 @@ nums 中所有值 不同
 链接：https://leetcode.cn/problems/linked-list-components
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 ```go
-
-/**
- * Definition for singly-linked list.
- * type ListNode struct {
- *     Val int
- *     Next *ListNode
- * }
- */
 func numComponents(head *ListNode, nums []int) int {    
 
     maps := make([]int,10000)
     for _,val := range nums{
         maps[val]++
     }
-    sum,n := 0,len(nums)
-
-    var dfs func(index int)
-
-    dfs = func(index int){
-        if index >= n{
-            return
+    sum := 0
+    item := head        
+    flag := false               
+    for item != nil {            
+        if maps[item.Val] == 1{                
+            maps[item.Val]--                            
+            flag = true
+        }else{
+            if flag {                                        
+                sum ++                                  
+                flag = false                
+            }                
         }
-        
-        item := head        
-        flag := false               
-        for item != nil {            
-            if maps[item.Val] == 1{                
-                maps[item.Val]--                
-                index++
-                flag = true
-            }else{
-                if flag {                                        
-                    sum ++                                  
-                    flag = false
-                    break
-                }                
-            }
-            item =item.Next            
-        }
-        if flag {         
-            sum++
-        }
-        dfs(index)
+        item =item.Next            
     }
-    dfs(0)
+    if flag {         
+        sum++
+    }
 
     return sum
 }
