@@ -23,12 +23,54 @@
 来源：力扣（LeetCode）
 链接：https://leetcode-cn.com/problems/minimum-operations-to-make-array-equal
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+
 ```go
-func minOperations(n int) int {
-     sum :=0;
-        for i:=n-1;i>0;i=i-2{
-            sum+=i;
-        }
-        return sum;
+func minOperations(nums1 []int, nums2 []int) int {
+    n, m := len(nums1), len(nums2)
+    if 6*n < m || 6*m < n {
+        return -1
+    }
+    var h1, h2 [7]int
+    sum := 0
+    for _,val := range nums1{
+        sum += val
+        h1[val]++
+    }
+
+    for _,val := range nums2{
+        sum -=val
+        h2[val]++
+    }
+    
+    if sum == 0{
+        return 0
+    }else if sum > 0 {
+       return change(h2,h1,sum)
+    }else{
+        return change(h1,h2,-sum)
+    }
 }
+
+func change(h1 [7]int, h2 [7]int ,diff int)(res int){
+    h := [7]int{}
+    for i := 1; i < 7; i++ {
+        h[6-i] += h1[i]
+        h[i-1] += h2[i]
+    }
+    for i := 5; i > 0 && diff > 0; i-- {
+        t := min((diff+i-1)/i, h[i])
+        res += t
+        diff -= t * i
+    }
+    return res
+}
+
+func min(a,b int)int{
+    if a > b{
+        return b
+    }else{
+        return a
+    }
+}
+
 ```
