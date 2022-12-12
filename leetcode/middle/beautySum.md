@@ -27,4 +27,25 @@ s 只包含小写英文字母。
 链接：https://leetcode.cn/problems/sum-of-beauty-of-all-substrings
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 ```java
+class Solution {
+    public int beautySum(String s) {
+        int res = 0;
+        for (int i = 0; i < s.length(); i++) {
+            int[] cnt = new int[26];
+            int maxFreq = 0;
+            for (int j = i; j < s.length(); j++) {
+                cnt[s.charAt(j) - 'a']++;
+                maxFreq = Math.max(maxFreq, cnt[s.charAt(j) - 'a']);
+                int minFreq = s.length();
+                for (int k = 0; k < 26; k++) {
+                    if (cnt[k] > 0) {
+                        minFreq = Math.min(minFreq, cnt[k]);
+                    }
+                }
+                res += maxFreq - minFreq;
+            }
+        }
+        return res;
+    }
+}
 ```
