@@ -66,7 +66,7 @@ def build_database(repo_path):
             try:
                 insert_table(all_times,filepath,table)                
             except Exception:
-                println("文件异常: %s" % filepath)
+                print("文件异常: %s" % filepath)
                 
 #            insert_table(all_times,filepath,table)
         
