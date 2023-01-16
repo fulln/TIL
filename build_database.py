@@ -40,9 +40,11 @@ def created_changed_times(repo_path, ref="master"):
 
 def insert_table(all_times,filepath,table):
     fp = filepath.open()
-    title = fp.readline().lstrip("#").strip()
-    body = fp.read().strip()
     path = str(filepath.relative_to(root))
+  #  title = fp.readline().lstrip("#").strip()
+    title = path.split("/")[:-1]
+    body = fp.read().strip()
+  # path = str(filepath.relative_to(root))
     url = "https://github.com/fulln/TIL/blob/master/{}".format(path)
     record = {
         "path": path.replace("/", "_"),
@@ -51,8 +53,9 @@ def insert_table(all_times,filepath,table):
         "url": url,
         "body": body,
     }
-    record.update(all_times[path])
-    table.insert(record)
+    if path in all_times:
+        record.update(all_times[path])
+        table.insert(record)
 
 
 def build_database(repo_path):
@@ -62,12 +65,8 @@ def build_database(repo_path):
     path = "*.md"
     for i in range(1,5):        
         path = "*/"+path
-        for filepath in root.glob(path):
-            try:
-                insert_table(all_times,filepath,table)                
-            except Exception:
-                println("文件异常: %s" % filepath)
-                
+        for filepath in root.glob(path):            
+            insert_table(all_times,filepath,table)
 #            insert_table(all_times,filepath,table)
         
    # if "til_fts" not in db.table_names():
