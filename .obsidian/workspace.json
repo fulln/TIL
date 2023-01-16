@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "lib/geektime/落地DDD/落地DDD.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "lib/geektime/落地DDD/落地DDD.md",
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "lib/geektime/落地DDD/落地DDD.md",
+                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "lib/geektime/落地DDD/落地DDD.md"
+                "file": "README.md"
               }
             }
           }
@@ -151,11 +151,11 @@
   },
   "active": "a386b7176e4b73bd",
   "lastOpenFiles": [
+    "lib/geektime/落地DDD/落地DDD.md",
     "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day1.md",
     "code/git/gitreset.md",
     "lib/geektime/mysql实战45讲/基础架构.md",
     "lib/geektime/mysql实战45讲/mysql实战45讲.md",
-    "lib/geektime/落地DDD/落地DDD.md",
     "README.md",
     "weread/个人成长/读书是一辈子的事.md",
     "language/english/词根.md",
