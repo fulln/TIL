@@ -63,7 +63,12 @@ def build_database(repo_path):
     for i in range(1,5):        
         path = "*/"+path
         for filepath in root.glob(path):
-            insert_table(all_times,filepath,table)
+            try:
+                insert_table(all_times,filepath,table)                
+            except Exception:
+                println("文件异常: %s" % filepath)
+                
+#            insert_table(all_times,filepath,table)
         
    # if "til_fts" not in db.table_names():
    #     table.enable_fts(["title", "body"])
