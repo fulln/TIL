@@ -4,41 +4,183 @@ today i learn
 
 <!-- toc -->
 
-- [git](#git)
+- [weread](#weread)
+- [code](#code)
+  * [redis](#redis)
+  * [git](#git)
+  * [python](#python)
+  * [tomcat](#tomcat)
+  * [base](#base)
+  * [nginx](#nginx)
+  * [bytes](#bytes)
+  * [plug](#plug)
+  * [spring](#spring)
+  * [tech](#tech)
+    + [ddd](#ddd)
+    + [algorithm](#algorithm)
+  * [react](#react)
+  * [shell](#shell)
+  * [maven](#maven)
+  * [mybatis](#mybatis)
+  * [kafka](#kafka)
+  * [mysql](#mysql)
+  * [vim](#vim)
+  * [windows](#windows)
+- [daily](#daily)
+  * [2022-12](#2022-12)
+  * [2022-11](#2022-11)
+  * [2023-01](#2023-01)
 - [leetcode](#leetcode)
   * [hard](#hard)
   * [middle](#middle)
   * [easy](#easy)
-- [kafka](#kafka)
-- [java](#java)
-  * [plug](#plug)
-  * [mysql](#mysql)
-  * [tomcat](#tomcat)
-  * [spring](#spring)
-  * [basic](#basic)
-  * [jvm](#jvm)
-- [design](#design)
-- [maven](#maven)
-- [sql](#sql)
-- [vim](#vim)
-- [algorithm](#algorithm)
-- [windows](#windows)
-- [redis](#redis)
-- [net](#net)
-- [shell](#shell)
-- [react](#react)
 
 <!-- tocstop -->
 
 ---
-there is total <!-- count starts -->578<!-- count ends --> TILs . keep on 
+there is total <!-- count starts -->624<!-- count ends --> TILs . keep on 
 
 ---
 
 <!-- index starts -->
-## git
+## weread
 
-* [git 版本的回滚](https://github.com/fulln/TIL/blob/master/git/gitreset.md) - 2020-09-23
+* [```dataviewjs](https://github.com/fulln/TIL/blob/master/weread/readme.md) - 2023-01-16
+## code
+
+### redis
+
+* [reds](https://github.com/fulln/TIL/blob/master/code/redis/redisCommand.md) - 2023-01-16
+### git
+
+* [git](https://github.com/fulln/TIL/blob/master/code/git/gitreset.md) - 2023-01-16
+### python
+
+* [python](https://github.com/fulln/TIL/blob/master/code/python/networkx.md) - 2023-01-16
+### tomcat
+
+* [Tomcat 加载包导致OOM](https://github.com/fulln/TIL/blob/master/code/tomcat/tomcatError.md) - 2023-01-16
+### base
+
+* [java #javabasic](https://github.com/fulln/TIL/blob/master/code/base/getsourceFile.md) - 2023-01-16
+* [java #javabasic  #thread](https://github.com/fulln/TIL/blob/master/code/base/threadLocal.md) - 2023-01-16
+* [java #反射](https://github.com/fulln/TIL/blob/master/code/base/DeclaredMethod.md) - 2023-01-16
+* [java  #javabasic](https://github.com/fulln/TIL/blob/master/code/base/staticMain.md) - 2023-01-16
+* [java #jvm](https://github.com/fulln/TIL/blob/master/code/base/JvmParams.md) - 2023-01-16
+* [java #jvm](https://github.com/fulln/TIL/blob/master/code/base/JvmDaily1.md) - 2023-01-16
+* [java #jdk](https://github.com/fulln/TIL/blob/master/code/base/JDK15.md) - 2023-01-16
+* [java #jvm](https://github.com/fulln/TIL/blob/master/code/base/jvmArrange.md) - 2023-01-16
+### nginx
+
+* [nginx](https://github.com/fulln/TIL/blob/master/code/nginx/loadBalance.md) - 2023-01-16
+### bytes
+
+* [字节码增强 #javassist](https://github.com/fulln/TIL/blob/master/code/bytes/Javassist.md) - 2023-01-16
+* [java #字节码增强 #BTrace](https://github.com/fulln/TIL/blob/master/code/bytes/BTrace.md) - 2023-01-16
+### plug
+
+* [java #javabasic](https://github.com/fulln/TIL/blob/master/code/plug/mapStructInUse.md) - 2023-01-16
+### spring
+
+* [java #spring #springboot](https://github.com/fulln/TIL/blob/master/code/spring/upgradeMvc.md) - 2023-01-16
+* [java #spring #log](https://github.com/fulln/TIL/blob/master/code/spring/RequestBodyAdviceAdapter.md) - 2023-01-16
+* [java #spring #CVE](https://github.com/fulln/TIL/blob/master/code/spring/CVE-2020-5421.md) - 2023-01-16
+* [java #spring #cache](https://github.com/fulln/TIL/blob/master/code/spring/springcache.md) - 2023-01-16
+* [java #spring #env](https://github.com/fulln/TIL/blob/master/code/spring/envirment.md) - 2023-01-16
+* [java #spring #redis](https://github.com/fulln/TIL/blob/master/code/spring/springDataRedis.md) - 2023-01-16
+* [java #spring #定时任务](https://github.com/fulln/TIL/blob/master/code/spring/spring-quartz.md) - 2023-01-16
+### tech
+
+* [tech](https://github.com/fulln/TIL/blob/master/code/tech/stateMachine.md) - 2023-01-16
+#### ddd
+
+* [tech](https://github.com/fulln/TIL/blob/master/code/tech/ddd/DDD.md) - 2023-01-16
+#### algorithm
+
+* [算法 #动态规划](https://github.com/fulln/TIL/blob/master/code/tech/algorithm/dpIntroduce.md) - 2023-01-16
+### react
+
+* [react](https://github.com/fulln/TIL/blob/master/code/react/react_next.md) - 2023-01-16
+### shell
+
+* [脚本 #shell #自动化流程](https://github.com/fulln/TIL/blob/master/code/shell/expect.md) - 2023-01-16
+### maven
+
+* [java #maven](https://github.com/fulln/TIL/blob/master/code/maven/mavenDeploy.md) - 2023-01-16
+### mybatis
+
+* [mybatis  #mybatisPlus](https://github.com/fulln/TIL/blob/master/code/mybatis/mybatisPlus.md) - 2023-01-16
+* [mysql  #mybatis #工作开发](https://github.com/fulln/TIL/blob/master/code/mybatis/transactions-unkonw.md) - 2023-01-16
+* [mysql  #mybatis](https://github.com/fulln/TIL/blob/master/code/mybatis/MysqlInit.md) - 2023-01-16
+### kafka
+
+* [kafka](https://github.com/fulln/TIL/blob/master/code/kafka/kafkaReliability3.md) - 2023-01-16
+* [kafka](https://github.com/fulln/TIL/blob/master/code/kafka/kafkaReliability2.md) - 2023-01-16
+* [kafka](https://github.com/fulln/TIL/blob/master/code/kafka/kafkaReliability.md) - 2023-01-16
+### mysql
+
+* [mysql #json](https://github.com/fulln/TIL/blob/master/code/mysql/mysqlJSON.md) - 2023-01-16
+* [msyql #mysql运维](https://github.com/fulln/TIL/blob/master/code/mysql/qeury_transaction.md) - 2023-01-16
+* [mysql #工作开发](https://github.com/fulln/TIL/blob/master/code/mysql/alterTable.md) - 2023-01-16
+### vim
+
+* [脚本 #shell](https://github.com/fulln/TIL/blob/master/code/vim/vim_plugins_fzf.md) - 2023-01-16
+### windows
+
+* [windows #excel](https://github.com/fulln/TIL/blob/master/code/windows/ExcelCopy.md) - 2023-01-16
+* [shell #脚本 #windows](https://github.com/fulln/TIL/blob/master/code/windows/shellOption.md) - 2023-01-16
+## daily
+
+### 2022-12
+
+* [时间:2022/12/27 腊月 初五 星期二](https://github.com/fulln/TIL/blob/master/daily/2022-12/2022-12-27.md) - 2023-01-16
+* [时间:2022/12/9 十一月 十六 星期五](https://github.com/fulln/TIL/blob/master/daily/2022-12/2022-12-09.md) - 2023-01-16
+* [时间:2022/12/8 十一月 十五 星期四](https://github.com/fulln/TIL/blob/master/daily/2022-12/2022-12-08.md) - 2023-01-16
+* [时间:2022/12/2 十一月 初九 星期五](https://github.com/fulln/TIL/blob/master/daily/2022-12/2022-12-02.md) - 2023-01-16
+* [时间:2022/12/28 腊月 初六 星期三](https://github.com/fulln/TIL/blob/master/daily/2022-12/2022-12-28.md) - 2023-01-16
+* [时间:2022/12/15 十一月 廿二 星期四](https://github.com/fulln/TIL/blob/master/daily/2022-12/2022-12-15.md) - 2023-01-16
+* [时间:2022/12/10 十一月 十七 星期六](https://github.com/fulln/TIL/blob/master/daily/2022-12/2022-12-10.md) - 2023-01-16
+* [时间:2022/12/29 腊月 初七 星期四](https://github.com/fulln/TIL/blob/master/daily/2022-12/2022-12-29.md) - 2023-01-16
+* [时间:2022/12/5 十一月 十二 星期一](https://github.com/fulln/TIL/blob/master/daily/2022-12/2022-12-05.md) - 2023-01-16
+* [时间:2022/12/11 十一月 十八 星期日](https://github.com/fulln/TIL/blob/master/daily/2022-12/2022-12-11.md) - 2023-01-16
+* [时间:2022/12/31 腊月 初九 星期六](https://github.com/fulln/TIL/blob/master/daily/2022-12/2022-12-31.md) - 2023-01-16
+* [时间:2022/12/30 腊月 初八 星期五](https://github.com/fulln/TIL/blob/master/daily/2022-12/2022-12-30.md) - 2023-01-16
+* [时间:2022/12/20 十一月 廿七 星期二](https://github.com/fulln/TIL/blob/master/daily/2022-12/2022-12-20.md) - 2023-01-16
+* [时间:2022/12/21 十一月 廿八 星期三](https://github.com/fulln/TIL/blob/master/daily/2022-12/2022-12-21.md) - 2023-01-16
+* [时间:2022/12/25 腊月 初三 星期日](https://github.com/fulln/TIL/blob/master/daily/2022-12/2022-12-25.md) - 2023-01-16
+* [时间:2022/12/12 十一月 十九 星期一](https://github.com/fulln/TIL/blob/master/daily/2022-12/2022-12-12.md) - 2023-01-16
+* [时间:2022/12/6 十一月 十三 星期二](https://github.com/fulln/TIL/blob/master/daily/2022-12/2022-12-06.md) - 2023-01-16
+* [时间:2022/12/26 腊月 初四 星期一](https://github.com/fulln/TIL/blob/master/daily/2022-12/2022-12-26.md) - 2023-01-16
+* [](https://github.com/fulln/TIL/blob/master/daily/2022-12/2022-12-16.md) - 2023-01-16
+* [时间:2022/12/13 十一月 二十 星期二](https://github.com/fulln/TIL/blob/master/daily/2022-12/2022-12-13.md) - 2023-01-16
+* [时间:2022/12/14 十一月 廿一 星期三](https://github.com/fulln/TIL/blob/master/daily/2022-12/2022-12-14.md) - 2023-01-16
+* [时间:2022/12/22 十一月 廿九 星期四](https://github.com/fulln/TIL/blob/master/daily/2022-12/2022-12-22.md) - 2023-01-16
+* [](https://github.com/fulln/TIL/blob/master/daily/2022-12/2022-12-01.md) - 2023-01-16
+* [时间:2022/12/26 腊月 初四 星期一](https://github.com/fulln/TIL/blob/master/daily/2022-12/2022-12-24.md) - 2023-01-16
+### 2022-11
+
+* [<% tp.user.get_date() %>](https://github.com/fulln/TIL/blob/master/daily/2022-11/2022-11-28.md) - 2023-01-16
+* [](https://github.com/fulln/TIL/blob/master/daily/2022-11/2022-11-23.md) - 2023-01-16
+* [](https://github.com/fulln/TIL/blob/master/daily/2022-11/2022-11-24.md) - 2023-01-16
+* [微信阅读](https://github.com/fulln/TIL/blob/master/daily/2022-11/2022-11-22.md) - 2023-01-16
+* [时间:2022/11/30 十一月 初七 星期三](https://github.com/fulln/TIL/blob/master/daily/2022-11/2022-11-30.md) - 2023-01-16
+* [时间:2022/11/25 十一月 初二 星期五](https://github.com/fulln/TIL/blob/master/daily/2022-11/2022-11-25.md) - 2023-01-16
+* [微信阅读](https://github.com/fulln/TIL/blob/master/daily/2022-11/2022-11-21.md) - 2023-01-16
+### 2023-01
+
+* [时间:2023/1/1 腊月 十日 星期日](https://github.com/fulln/TIL/blob/master/daily/2023-01/2023-01-01.md) - 2023-01-16
+* [](https://github.com/fulln/TIL/blob/master/daily/2023-01/2023-01-05.md) - 2023-01-16
+* [](https://github.com/fulln/TIL/blob/master/daily/2023-01/2023-01-07.md) - 2023-01-16
+* [](https://github.com/fulln/TIL/blob/master/daily/2023-01/2023-01-10.md) - 2023-01-16
+* [](https://github.com/fulln/TIL/blob/master/daily/2023-01/2023-01-16.md) - 2023-01-16
+* [](https://github.com/fulln/TIL/blob/master/daily/2023-01/2023-01-08.md) - 2023-01-16
+* [](https://github.com/fulln/TIL/blob/master/daily/2023-01/2023-01-06.md) - 2023-01-16
+* [](https://github.com/fulln/TIL/blob/master/daily/2023-01/2023-01-02.md) - 2023-01-16
+* [](https://github.com/fulln/TIL/blob/master/daily/2023-01/2023-01-11.md) - 2023-01-16
+* [](https://github.com/fulln/TIL/blob/master/daily/2023-01/2023-01-03.md) - 2023-01-16
+* [](https://github.com/fulln/TIL/blob/master/daily/2023-01/2023-01-13.md) - 2023-01-16
+* [](https://github.com/fulln/TIL/blob/master/daily/2023-01/2023-01-09.md) - 2023-01-16
+* [](https://github.com/fulln/TIL/blob/master/daily/2023-01/2023-01-12.md) - 2023-01-16
 ## leetcode
 
 ### hard
@@ -585,81 +727,6 @@ there is total <!-- count starts -->578<!-- count ends --> TILs . keep on
 * [2351. 第一个出现两次的字母](https://github.com/fulln/TIL/blob/master/leetcode/easy/repeatedCharacter.md) - 2023-01-01
 * [2042. 检查句子中的数字是否递增](https://github.com/fulln/TIL/blob/master/leetcode/easy/areNumbersAscending.md) - 2023-01-03
 * [1807. 替换字符串中的括号内容](https://github.com/fulln/TIL/blob/master/leetcode/easy/evaluate.md) - 2023-01-12
-## kafka
-
-* [kafka消息可靠性保证(一)](https://github.com/fulln/TIL/blob/master/kafka/kafkaReliability.md) - 2021-08-02
-* [kafka消息可靠性保证(二)](https://github.com/fulln/TIL/blob/master/kafka/kafkaReliability2.md) - 2021-08-02
-* [kafka消息可靠性保证(三)](https://github.com/fulln/TIL/blob/master/kafka/kafkaReliability3.md) - 2021-08-09
-## java
-
-### plug
-
-* [mapStruct 开发使用](https://github.com/fulln/TIL/blob/master/java/plug/mapStructInUse.md) - 2021-01-23
-* [mybatis-plus 通过lambda 获取属性名](https://github.com/fulln/TIL/blob/master/java/plug/mybatisPlus.md) - 2021-07-21
-### mysql
-
-* [使用mybatis 自动执行脚本](https://github.com/fulln/TIL/blob/master/java/mysql/MysqlInit.md) - 2021-06-02
-### tomcat
-
-* [Tomcat 加载包导致OOM](https://github.com/fulln/TIL/blob/master/java/tomcat/tomcatError.md) - 2021-12-13
-### spring
-
-* [CVE-2020-5421漏洞 spring相关代码探寻](https://github.com/fulln/TIL/blob/master/java/spring/CVE-2020-5421.md) - 2020-10-19
-* [spring-quartz 使用](https://github.com/fulln/TIL/blob/master/java/spring/spring-quartz.md) - 2020-11-14
-* [spring-data-redis](https://github.com/fulln/TIL/blob/master/java/spring/springDataRedis.md) - 2020-11-14
-* [springMvc升级springBoot](https://github.com/fulln/TIL/blob/master/java/spring/upgradeMvc.md) - 2021-01-15
-* [spring Enviroment 初始化及@value加载](https://github.com/fulln/TIL/blob/master/java/spring/envirment.md) - 2021-02-05
-* [SpringMVC全局日志](https://github.com/fulln/TIL/blob/master/java/spring/RequestBodyAdviceAdapter.md) - 2021-07-04
-* [springCloudConfig 设置说明](https://github.com/fulln/TIL/blob/master/java/spring/springCloudConfig.md) - 2021-08-02
-* [SpringCache 源码解析](https://github.com/fulln/TIL/blob/master/java/spring/springcache.md) - 2021-12-30
-### basic
-
-* [java为啥会有static main?](https://github.com/fulln/TIL/blob/master/java/basic/staticMain.md) - 2020-08-06
-* [jvm的大图流整理](https://github.com/fulln/TIL/blob/master/java/basic/jvmArrange.md) - 2020-08-22
-* [通过BTrace进行分析](https://github.com/fulln/TIL/blob/master/java/basic/BTrace.md) - 2020-08-26
-* [JDK15视频发布会及新特性](https://github.com/fulln/TIL/blob/master/java/basic/JDK15.md) - 2020-11-01
-* [java 看加载的class 的来源](https://github.com/fulln/TIL/blob/master/java/basic/getsourceFile.md) - 2021-03-25
-* [ThreadLocal 解析](https://github.com/fulln/TIL/blob/master/java/basic/threadLocal.md) - 2021-07-16
-* [java反射使用getDeclaredMethods](https://github.com/fulln/TIL/blob/master/java/basic/DeclaredMethod.md) - 2021-08-17
-### jvm
-
-* [JVM调优与GC](https://github.com/fulln/TIL/blob/master/java/jvm/JvmDaily1.md) - 2020-10-28
-* [G1相关JVM参数](https://github.com/fulln/TIL/blob/master/java/jvm/JvmParams.md) - 2021-09-14
-## design
-
-* [领域驱动设计](https://github.com/fulln/TIL/blob/master/design/DDD.md) - 2021-08-05
-* [状态机介绍](https://github.com/fulln/TIL/blob/master/design/stateMachine.md) - 2021-12-06
-## maven
-
-* [上传jar包到本地maven库](https://github.com/fulln/TIL/blob/master/maven/mavenDeploy.md) - 2020-08-05
-## sql
-
-* [mysql 事务锁相关查看](https://github.com/fulln/TIL/blob/master/sql/qeury_transaction.md) - 2020-09-16
-* [Transaction resolution unknown 异常分析](https://github.com/fulln/TIL/blob/master/sql/transactions-unkonw.md) - 2021-01-08
-* [Alter Table 操作执行过程](https://github.com/fulln/TIL/blob/master/sql/alterTable.md) - 2021-01-20
-* [mysql的JSON字段类型](https://github.com/fulln/TIL/blob/master/sql/mysqlJSON.md) - 2021-06-28
-## vim
-
-* [vim 安装fzf](https://github.com/fulln/TIL/blob/master/vim/vim_plugins_fzf.md) - 2020-07-28
-## algorithm
-
-* [动态规划](https://github.com/fulln/TIL/blob/master/algorithm/dpIntroduce.md) - 2021-06-12
-## windows
-
-* [windows 中cmd 相关的操作](https://github.com/fulln/TIL/blob/master/windows/shellOption.md) - 2020-11-14
-* [合并多个sheet](https://github.com/fulln/TIL/blob/master/windows/ExcelCopy.md) - 2020-11-17
-## redis
-
-* [redis setnx setex](https://github.com/fulln/TIL/blob/master/redis/redisCommand.md) - 2021-03-25
-## net
-
-* [Nginx,HAproxy,F5差异与联系](https://github.com/fulln/TIL/blob/master/net/loadBalance.md) - 2021-12-08
-## shell
-
-* [shell 脚本流程控制以及登录](https://github.com/fulln/TIL/blob/master/shell/expect.md) - 2020-08-15
-## react
-
-* [使用react+next+material 构建前端](https://github.com/fulln/TIL/blob/master/react/react_next.md) - 2020-07-31
 <!-- index ends -->
 
 
