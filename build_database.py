@@ -42,7 +42,7 @@ def created_changed_times(repo_path, ref="master"):
 def insert_table(all_times, filepath, table):
     fp = filepath.open()
     path = str(filepath.relative_to(root))
-    if 'leetcode' in filepath:
+    if 'leetcode' in path:
         title = fp.readline().lstrip("#").strip()
     else:
         title = path.split('/')[-1].split('.')[0]
