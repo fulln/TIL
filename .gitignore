@@ -2,7 +2,6 @@
 *.class
 *.idea
 til.db
-.obsidian/workspace.json
 .obsidian/plugins/obsidian-weread-plugin
 # Log file
 *.log
@@ -24,3 +23,5 @@ til.db
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+!/.obsidian/workspace.json
