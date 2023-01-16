@@ -15,17 +15,17 @@ def created_changed_times(repo_path, ref="master"):
     for commit in commits:
         dt = commit.committed_datetime
         affected_files = list(commit.stats.files.keys())
-        for filepath in affected_files:        
+        for filepath in affected_files:
             if '=>' in filepath:
-                patt = re.compile(r'=>(.*?)}', re.S)  #最小匹配
-                new_value = re.findall(patt,filepath)
+                patt = re.compile(r'=>(.*?)}', re.S)  # 最小匹配
+                new_value = re.findall(patt, filepath)
                 if len(new_value) != 0:
-                    filepath = re.sub('{(.*?)}',new_value[0].replace(' ', ''),filepath,1)
+                    filepath = re.sub('{(.*?)}', new_value[0].replace(' ', ''), filepath, 1)
             if '=>' in filepath:
-                patt = re.compile(r'=>(.*?)$', re.S)  #最小匹配
-                new_value = re.findall(patt,filepath)
-                filepath = re.sub('^.*$',new_value[0].replace(' ', ''),filepath,1)
-            if filepath not in created_changed_times:                
+                patt = re.compile(r'=>(.*?)$', re.S)  # 最小匹配
+                new_value = re.findall(patt, filepath)
+                filepath = re.sub('^.*$', new_value[0].replace(' ', ''), filepath, 1)
+            if filepath not in created_changed_times:
                 created_changed_times[filepath] = {
                     "created": dt.isoformat(),
                     "created_utc": dt.astimezone(timezone.utc).isoformat(),
@@ -35,16 +35,18 @@ def created_changed_times(repo_path, ref="master"):
                     "updated": dt.isoformat(),
                     "updated_utc": dt.astimezone(timezone.utc).isoformat(),
                 }
-            )           
+            )
     return created_changed_times
 
-def insert_table(all_times,filepath,table):
+
+def insert_table(all_times, filepath, table):
     fp = filepath.open()
     path = str(filepath.relative_to(root))
-  #  title = fp.readline().lstrip("#").strip()
-    title = path.split("/")[:-1]
+    if 'leetcode' in filepath:
+        title = fp.readline().lstrip("#").strip()
+    else:
+        title = path.split('/')[-1].split('.')[0]
     body = fp.read().strip()
-  # path = str(filepath.relative_to(root))
     url = "https://github.com/fulln/TIL/blob/master/{}".format(path)
     record = {
         "path": path.replace("/", "_"),
@@ -63,14 +65,10 @@ def build_database(repo_path):
     db = sqlite_utils.Database(repo_path / "til.db")
     table = db.table("til", pk="path")
     path = "*.md"
-    for i in range(1,5):        
-        path = "*/"+path
-        for filepath in root.glob(path):            
-            insert_table(all_times,filepath,table)
-#            insert_table(all_times,filepath,table)
-        
-   # if "til_fts" not in db.table_names():
-   #     table.enable_fts(["title", "body"])
+    for i in range(1, 5):
+        path = "*/" + path
+        for filepath in root.glob(path):
+            insert_table(all_times, filepath, table)
 
 
 if __name__ == "__main__":
