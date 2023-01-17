@@ -4,22 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "828dbae9a6364f42",
+        "id": "d59f481bacbbc81e",
         "type": "tabs",
         "children": [
           {
-            "id": "a386b7176e4b73bd",
+            "id": "998c9c5fc45e3073",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "daily/2023-01/2023-01-17.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "8132f07784087699",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "leetcode/middle/minFlipsMonoIncr.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "leetcode/middle/minFlipsMonoIncr.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "leetcode/middle/minFlipsMonoIncr.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
+                "file": "leetcode/middle/minFlipsMonoIncr.md"
               }
             }
           }
@@ -149,17 +162,17 @@
       "obsidian-weread-plugin:Weread": false
     }
   },
-  "active": "a386b7176e4b73bd",
+  "active": "8132f07784087699",
   "lastOpenFiles": [
+    "daily/2023-01/2023-01-17.md",
+    "weread/readme.md",
+    "daily/2023-01/2023-01-16.md",
+    "daily/2023-01/2023-01-16 1.md",
+    "README.md",
     "lib/geektime/落地DDD/落地DDD.md",
     "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day1.md",
     "code/git/gitreset.md",
     "lib/geektime/mysql实战45讲/基础架构.md",
-    "lib/geektime/mysql实战45讲/mysql实战45讲.md",
-    "README.md",
-    "weread/个人成长/读书是一辈子的事.md",
-    "language/english/词根.md",
-    "weread/readme.md",
-    "daily/2022-11/2022-11-21.md"
+    "lib/geektime/mysql实战45讲/mysql实战45讲.md"
   ]
 }
