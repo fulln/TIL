@@ -5,7 +5,6 @@ let fileList = []
 let checkDate = tp.file.creation_date("YYYY-MM-DD")
 
 getChildren(li["code"].children,fileList)
-getChildren(li["work"].children,fileList)
 getChildren(li["lib"].children,fileList)
 
 function getChildren(list,fileList){  

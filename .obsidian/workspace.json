@@ -4,35 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "d59f481bacbbc81e",
+        "id": "f461ec61099a94fd",
         "type": "tabs",
         "children": [
           {
-            "id": "998c9c5fc45e3073",
+            "id": "3de8dff76fc7c9df",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily/2023-01/2023-01-17.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "8132f07784087699",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "leetcode/middle/minFlipsMonoIncr.md",
+                "file": "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day2.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -98,8 +85,8 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "leetcode/middle/minFlipsMonoIncr.md",
-                "collapseAll": false,
+                "file": "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day2.md",
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
@@ -115,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "leetcode/middle/minFlipsMonoIncr.md",
+                "file": "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day2.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,16 +125,16 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "leetcode/middle/minFlipsMonoIncr.md"
+                "file": "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day2.md"
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -162,17 +149,17 @@
       "obsidian-weread-plugin:Weread": false
     }
   },
-  "active": "8132f07784087699",
+  "active": "3de8dff76fc7c9df",
   "lastOpenFiles": [
-    "daily/2023-01/2023-01-17.md",
-    "weread/readme.md",
-    "daily/2023-01/2023-01-16.md",
-    "daily/2023-01/2023-01-16 1.md",
-    "README.md",
-    "lib/geektime/落地DDD/落地DDD.md",
     "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day1.md",
-    "code/git/gitreset.md",
-    "lib/geektime/mysql实战45讲/基础架构.md",
-    "lib/geektime/mysql实战45讲/mysql实战45讲.md"
+    "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day2.md",
+    "README.md",
+    "daily/2023-01/2023-01-17.md",
+    "module/leetcode.md",
+    "module/todayWrite.md",
+    "daily/2023-01/2023-01-16.md",
+    "leetcode/middle/minFlipsMonoIncr.md",
+    "weread/readme.md",
+    "daily/2023-01/2023-01-16 1.md"
   ]
 }
