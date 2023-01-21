@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day5.md",
+                "file": "daily/2023-01/2023-01-21.md",
                 "mode": "source",
                 "source": false
               }
@@ -25,14 +25,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day6.md",
+                "file": "language/english/词根.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -98,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day6.md",
+                "file": "daily/2023-01/2023-01-21.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day6.md",
+                "file": "daily/2023-01/2023-01-21.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day6.md"
+                "file": "daily/2023-01/2023-01-21.md"
               }
             }
           }
@@ -163,17 +162,17 @@
       "obsidian-weread-plugin:Weread": false
     }
   },
-  "active": "5c010d2fed40c56f",
+  "active": "aa31b3efc9635116",
   "lastOpenFiles": [
-    "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day5.md",
-    "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day6.md",
-    "daily/2023-01/2023-01-21.md",
-    "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day4.md",
-    "daily/2023-01/2023-01-20.md",
-    "leetcode/middle/findSubsequences.md",
-    "daily/2023-01/未命名.md",
     "language/english/词根.md",
+    "daily/2023-01/2023-01-21.md",
+    "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day5.md",
+    "daily/2023-01/2023-01-20.md",
     "daily/2023-01/2023-01-18.md",
-    "daily/2023-01/2023-01-17.md"
+    "daily/2022-12/2022-12-05.md",
+    "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day6.md",
+    "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day4.md",
+    "leetcode/middle/findSubsequences.md",
+    "daily/2023-01/未命名.md"
   ]
 }
