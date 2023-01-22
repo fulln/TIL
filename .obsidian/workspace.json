@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day6.md",
+                "file": "daily/2023-01/2023-01-22.md",
                 "mode": "source",
                 "source": false
               }
@@ -25,14 +25,13 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily/2023-01/2023-01-22.md",
+                "file": "language/english/词根.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -163,17 +162,17 @@
       "obsidian-weread-plugin:Weread": false
     }
   },
-  "active": "50b044807e59d6a3",
+  "active": "e6f9694ff012ba89",
   "lastOpenFiles": [
-    "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day7.md",
-    "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day6.md",
+    "language/english/词根.md",
     "daily/2023-01/2023-01-22.md",
+    "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day7.md",
+    "lib/geektime/高级java.md",
+    "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day6.md",
     "leetcode/middle/restoreIpAddresses.md",
     "README.md",
     "daily/2023-01/2023-01-21.md",
-    "language/english/词根.md",
     "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day5.md",
-    "daily/2023-01/2023-01-20.md",
-    "daily/2023-01/2023-01-18.md"
+    "daily/2023-01/2023-01-20.md"
   ]
 }
