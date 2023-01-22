@@ -4,34 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "12d8103cab2c3b12",
+        "id": "e25515b3155a0887",
         "type": "tabs",
         "children": [
           {
-            "id": "aa31b3efc9635116",
+            "id": "e6f9694ff012ba89",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily/2023-01/2023-01-21.md",
+                "file": "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day6.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "e7226a269a744a97",
+            "id": "50b044807e59d6a3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "language/english/词根.md",
+                "file": "daily/2023-01/2023-01-22.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -97,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily/2023-01/2023-01-21.md",
+                "file": "daily/2023-01/2023-01-22.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily/2023-01/2023-01-21.md",
+                "file": "daily/2023-01/2023-01-22.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily/2023-01/2023-01-21.md"
+                "file": "daily/2023-01/2023-01-22.md"
               }
             }
           }
@@ -162,17 +163,17 @@
       "obsidian-weread-plugin:Weread": false
     }
   },
-  "active": "aa31b3efc9635116",
+  "active": "50b044807e59d6a3",
   "lastOpenFiles": [
-    "language/english/词根.md",
+    "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day7.md",
+    "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day6.md",
+    "daily/2023-01/2023-01-22.md",
+    "leetcode/middle/restoreIpAddresses.md",
+    "README.md",
     "daily/2023-01/2023-01-21.md",
+    "language/english/词根.md",
     "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day5.md",
     "daily/2023-01/2023-01-20.md",
-    "daily/2023-01/2023-01-18.md",
-    "daily/2022-12/2022-12-05.md",
-    "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day6.md",
-    "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day4.md",
-    "leetcode/middle/findSubsequences.md",
-    "daily/2023-01/未命名.md"
+    "daily/2023-01/2023-01-18.md"
   ]
 }
