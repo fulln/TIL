@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "e25515b3155a0887",
+        "id": "738bc452cdce6242",
         "type": "tabs",
         "children": [
           {
-            "id": "93058a51f452f267",
+            "id": "c67c2bc927a10b79",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -20,18 +20,19 @@
             }
           },
           {
-            "id": "50b044807e59d6a3",
+            "id": "fbbe1faa08309658",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "language/english/词根.md",
+                "file": "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day9.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -97,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day8.md",
+                "file": "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day9.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day8.md",
+                "file": "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day9.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day8.md"
+                "file": "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day9.md"
               }
             }
           }
@@ -162,17 +163,17 @@
       "obsidian-weread-plugin:Weread": false
     }
   },
-  "active": "93058a51f452f267",
+  "active": "fbbe1faa08309658",
   "lastOpenFiles": [
+    "lib/geektime/落地DDD/落地DDD.md",
+    "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day9.md",
+    "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day8.md",
+    "daily/2023-01/2023-01-24.md",
+    "language/english/词根.md",
+    "lib/geektime/落地DDD/pull.md",
     "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day7.md",
     "daily/2023-01/2023-01-23.md",
     "daily/2023-01/2023-01-22.md",
-    "language/english/词根.md",
-    "lib/geektime/高级java.md",
-    "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day6.md",
-    "leetcode/middle/restoreIpAddresses.md",
-    "README.md",
-    "daily/2023-01/2023-01-21.md",
-    "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day5.md"
+    "lib/geektime/高级java.md"
   ]
 }
