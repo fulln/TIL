@@ -5,30 +5,30 @@ today i learn
 <!-- toc -->
 
 - [leetcode](#leetcode)
-  * [hard](#hard)
   * [middle](#middle)
   * [easy](#easy)
+  * [hard](#hard)
 - [code](#code)
-  * [python](#python)
-  * [maven](#maven)
-  * [react](#react)
-  * [tech](#tech)
-    + [ddd](#ddd)
-    + [algorithm](#algorithm)
   * [windows](#windows)
   * [kafka](#kafka)
-  * [vim](#vim)
+  * [redis](#redis)
   * [plug](#plug)
-  * [spring](#spring)
-  * [shell](#shell)
   * [nginx](#nginx)
+  * [spring](#spring)
   * [mysql](#mysql)
-  * [mybatis](#mybatis)
+  * [vim](#vim)
+  * [python](#python)
+  * [maven](#maven)
   * [base](#base)
   * [git](#git)
-  * [redis](#redis)
-  * [bytes](#bytes)
   * [tomcat](#tomcat)
+  * [bytes](#bytes)
+  * [react](#react)
+  * [mybatis](#mybatis)
+  * [shell](#shell)
+  * [tech](#tech)
+    + [algorithm](#algorithm)
+    + [ddd](#ddd)
 - [weread](#weread)
 - [daily](#daily)
   * [2023-01](#2023-01)
@@ -45,29 +45,6 @@ there is total <!-- count starts -->634<!-- count ends --> TILs . keep on
 <!-- index starts -->
 ## leetcode
 
-### hard
-
-* [鸡蛋掉落](https://github.com/fulln/TIL/blob/master/leetcode/hard/superEggDrop.md) - 2021-02-28
-* [子序列宽度之和](https://github.com/fulln/TIL/blob/master/leetcode/hard/sumSubseqWidths.md) - 2021-06-20
-* [基本计算器](https://github.com/fulln/TIL/blob/master/leetcode/hard/calculate.md) - 2021-06-21
-* [1713. 得到子序列的最少操作次数](https://github.com/fulln/TIL/blob/master/leetcode/hard/minOperations.md) - 2021-07-26
-* [数字 1 的个数](https://github.com/fulln/TIL/blob/master/leetcode/hard/countDigitOne.md) - 2021-08-13
-* [IPO](https://github.com/fulln/TIL/blob/master/leetcode/hard/findMaximizedCapital.md) - 2021-09-08
-* [解码方法 II](https://github.com/fulln/TIL/blob/master/leetcode/hard/numDecodings.md) - 2021-09-27
-* [删除无效的括号](https://github.com/fulln/TIL/blob/master/leetcode/hard/removeInvalidParentheses.md) - 2021-10-27
-* [路径交叉](https://github.com/fulln/TIL/blob/master/leetcode/hard/isSelfCrossing.md) - 2021-10-29
-* [课程表 III](https://github.com/fulln/TIL/blob/master/leetcode/hard/scheduleCourse.md) - 2021-12-14
-* [按位与为零的三元组](https://github.com/fulln/TIL/blob/master/leetcode/hard/countTriplets.md) - 2022-01-04
-* [6030. 由单个字符重复的最长子字符串](https://github.com/fulln/TIL/blob/master/leetcode/hard/longestRepeating.md) - 2022-03-20
-* [440. 字典序的第K小数字](https://github.com/fulln/TIL/blob/master/leetcode/hard/findKthNumber.md) - 2022-03-27
-* [单词拆分 II](https://github.com/fulln/TIL/blob/master/leetcode/hard/wordBreak.md) - 2022-03-29
-* [最小覆盖子串](https://github.com/fulln/TIL/blob/master/leetcode/hard/minWindow.md) - 2022-03-31
-* [串联所有单词的子串](https://github.com/fulln/TIL/blob/master/leetcode/hard/findSubstring.md) - 2022-06-23
-* [745. 前缀和后缀搜索](https://github.com/fulln/TIL/blob/master/leetcode/hard/WordFilter.md) - 2022-07-14
-* [设置交集大小至少为2](https://github.com/fulln/TIL/blob/master/leetcode/hard/intersectionSizeTwo.md) - 2022-07-22
-* [最大相等频率](https://github.com/fulln/TIL/blob/master/leetcode/hard/maxEqualFreq.md) - 2022-08-18
-* [862. 和至少为 K 的最短子数组](https://github.com/fulln/TIL/blob/master/leetcode/hard/shortestSubarray.md) - 2022-10-26
-* [最大频率栈](https://github.com/fulln/TIL/blob/master/leetcode/hard/FreqStack.md) - 2022-11-30
 ### middle
 
 * [钥匙和房间](https://github.com/fulln/TIL/blob/master/leetcode/middle/canVisitAllRooms.md) - 2020-09-11
@@ -591,26 +568,31 @@ there is total <!-- count starts -->634<!-- count ends --> TILs . keep on
 * [2351. 第一个出现两次的字母](https://github.com/fulln/TIL/blob/master/leetcode/easy/repeatedCharacter.md) - 2023-01-01
 * [2042. 检查句子中的数字是否递增](https://github.com/fulln/TIL/blob/master/leetcode/easy/areNumbersAscending.md) - 2023-01-03
 * [1807. 替换字符串中的括号内容](https://github.com/fulln/TIL/blob/master/leetcode/easy/evaluate.md) - 2023-01-12
+### hard
+
+* [鸡蛋掉落](https://github.com/fulln/TIL/blob/master/leetcode/hard/superEggDrop.md) - 2021-02-28
+* [子序列宽度之和](https://github.com/fulln/TIL/blob/master/leetcode/hard/sumSubseqWidths.md) - 2021-06-20
+* [基本计算器](https://github.com/fulln/TIL/blob/master/leetcode/hard/calculate.md) - 2021-06-21
+* [1713. 得到子序列的最少操作次数](https://github.com/fulln/TIL/blob/master/leetcode/hard/minOperations.md) - 2021-07-26
+* [数字 1 的个数](https://github.com/fulln/TIL/blob/master/leetcode/hard/countDigitOne.md) - 2021-08-13
+* [IPO](https://github.com/fulln/TIL/blob/master/leetcode/hard/findMaximizedCapital.md) - 2021-09-08
+* [解码方法 II](https://github.com/fulln/TIL/blob/master/leetcode/hard/numDecodings.md) - 2021-09-27
+* [删除无效的括号](https://github.com/fulln/TIL/blob/master/leetcode/hard/removeInvalidParentheses.md) - 2021-10-27
+* [路径交叉](https://github.com/fulln/TIL/blob/master/leetcode/hard/isSelfCrossing.md) - 2021-10-29
+* [课程表 III](https://github.com/fulln/TIL/blob/master/leetcode/hard/scheduleCourse.md) - 2021-12-14
+* [按位与为零的三元组](https://github.com/fulln/TIL/blob/master/leetcode/hard/countTriplets.md) - 2022-01-04
+* [6030. 由单个字符重复的最长子字符串](https://github.com/fulln/TIL/blob/master/leetcode/hard/longestRepeating.md) - 2022-03-20
+* [440. 字典序的第K小数字](https://github.com/fulln/TIL/blob/master/leetcode/hard/findKthNumber.md) - 2022-03-27
+* [单词拆分 II](https://github.com/fulln/TIL/blob/master/leetcode/hard/wordBreak.md) - 2022-03-29
+* [最小覆盖子串](https://github.com/fulln/TIL/blob/master/leetcode/hard/minWindow.md) - 2022-03-31
+* [串联所有单词的子串](https://github.com/fulln/TIL/blob/master/leetcode/hard/findSubstring.md) - 2022-06-23
+* [745. 前缀和后缀搜索](https://github.com/fulln/TIL/blob/master/leetcode/hard/WordFilter.md) - 2022-07-14
+* [设置交集大小至少为2](https://github.com/fulln/TIL/blob/master/leetcode/hard/intersectionSizeTwo.md) - 2022-07-22
+* [最大相等频率](https://github.com/fulln/TIL/blob/master/leetcode/hard/maxEqualFreq.md) - 2022-08-18
+* [862. 和至少为 K 的最短子数组](https://github.com/fulln/TIL/blob/master/leetcode/hard/shortestSubarray.md) - 2022-10-26
+* [最大频率栈](https://github.com/fulln/TIL/blob/master/leetcode/hard/FreqStack.md) - 2022-11-30
 ## code
 
-### python
-
-* [networkx](https://github.com/fulln/TIL/blob/master/code/python/networkx.md) - 2023-01-16
-### maven
-
-* [mavenDeploy](https://github.com/fulln/TIL/blob/master/code/maven/mavenDeploy.md) - 2023-01-16
-### react
-
-* [react_next](https://github.com/fulln/TIL/blob/master/code/react/react_next.md) - 2023-01-16
-### tech
-
-* [stateMachine](https://github.com/fulln/TIL/blob/master/code/tech/stateMachine.md) - 2023-01-16
-#### ddd
-
-* [DDD](https://github.com/fulln/TIL/blob/master/code/tech/ddd/DDD.md) - 2023-01-16
-#### algorithm
-
-* [dpIntroduce](https://github.com/fulln/TIL/blob/master/code/tech/algorithm/dpIntroduce.md) - 2023-01-16
 ### windows
 
 * [ExcelCopy](https://github.com/fulln/TIL/blob/master/code/windows/ExcelCopy.md) - 2023-01-16
@@ -620,12 +602,15 @@ there is total <!-- count starts -->634<!-- count ends --> TILs . keep on
 * [kafkaReliability2](https://github.com/fulln/TIL/blob/master/code/kafka/kafkaReliability2.md) - 2023-01-16
 * [kafkaReliability3](https://github.com/fulln/TIL/blob/master/code/kafka/kafkaReliability3.md) - 2023-01-16
 * [kafkaReliability](https://github.com/fulln/TIL/blob/master/code/kafka/kafkaReliability.md) - 2023-01-16
-### vim
+### redis
 
-* [vim_plugins_fzf](https://github.com/fulln/TIL/blob/master/code/vim/vim_plugins_fzf.md) - 2023-01-16
+* [redisCommand](https://github.com/fulln/TIL/blob/master/code/redis/redisCommand.md) - 2023-01-16
 ### plug
 
 * [mapStructInUse](https://github.com/fulln/TIL/blob/master/code/plug/mapStructInUse.md) - 2023-01-16
+### nginx
+
+* [loadBalance](https://github.com/fulln/TIL/blob/master/code/nginx/loadBalance.md) - 2023-01-16
 ### spring
 
 * [upgradeMvc](https://github.com/fulln/TIL/blob/master/code/spring/upgradeMvc.md) - 2023-01-16
@@ -635,22 +620,20 @@ there is total <!-- count starts -->634<!-- count ends --> TILs . keep on
 * [RequestBodyAdviceAdapter](https://github.com/fulln/TIL/blob/master/code/spring/RequestBodyAdviceAdapter.md) - 2023-01-16
 * [spring-quartz](https://github.com/fulln/TIL/blob/master/code/spring/spring-quartz.md) - 2023-01-16
 * [springcache](https://github.com/fulln/TIL/blob/master/code/spring/springcache.md) - 2023-01-16
-### shell
-
-* [expect](https://github.com/fulln/TIL/blob/master/code/shell/expect.md) - 2023-01-16
-### nginx
-
-* [loadBalance](https://github.com/fulln/TIL/blob/master/code/nginx/loadBalance.md) - 2023-01-16
 ### mysql
 
 * [alterTable](https://github.com/fulln/TIL/blob/master/code/mysql/alterTable.md) - 2023-01-16
 * [mysqlJSON](https://github.com/fulln/TIL/blob/master/code/mysql/mysqlJSON.md) - 2023-01-16
 * [qeury_transaction](https://github.com/fulln/TIL/blob/master/code/mysql/qeury_transaction.md) - 2023-01-16
-### mybatis
+### vim
 
-* [MysqlInit](https://github.com/fulln/TIL/blob/master/code/mybatis/MysqlInit.md) - 2023-01-16
-* [transactions-unkonw](https://github.com/fulln/TIL/blob/master/code/mybatis/transactions-unkonw.md) - 2023-01-16
-* [mybatisPlus](https://github.com/fulln/TIL/blob/master/code/mybatis/mybatisPlus.md) - 2023-01-16
+* [vim_plugins_fzf](https://github.com/fulln/TIL/blob/master/code/vim/vim_plugins_fzf.md) - 2023-01-16
+### python
+
+* [networkx](https://github.com/fulln/TIL/blob/master/code/python/networkx.md) - 2023-01-16
+### maven
+
+* [mavenDeploy](https://github.com/fulln/TIL/blob/master/code/maven/mavenDeploy.md) - 2023-01-16
 ### base
 
 * [DeclaredMethod](https://github.com/fulln/TIL/blob/master/code/base/DeclaredMethod.md) - 2023-01-16
@@ -664,16 +647,33 @@ there is total <!-- count starts -->634<!-- count ends --> TILs . keep on
 ### git
 
 * [gitreset](https://github.com/fulln/TIL/blob/master/code/git/gitreset.md) - 2023-01-16
-### redis
+### tomcat
 
-* [redisCommand](https://github.com/fulln/TIL/blob/master/code/redis/redisCommand.md) - 2023-01-16
+* [tomcatError](https://github.com/fulln/TIL/blob/master/code/tomcat/tomcatError.md) - 2023-01-16
 ### bytes
 
 * [Javassist](https://github.com/fulln/TIL/blob/master/code/bytes/Javassist.md) - 2023-01-16
 * [BTrace](https://github.com/fulln/TIL/blob/master/code/bytes/BTrace.md) - 2023-01-16
-### tomcat
+### react
 
-* [tomcatError](https://github.com/fulln/TIL/blob/master/code/tomcat/tomcatError.md) - 2023-01-16
+* [react_next](https://github.com/fulln/TIL/blob/master/code/react/react_next.md) - 2023-01-16
+### mybatis
+
+* [MysqlInit](https://github.com/fulln/TIL/blob/master/code/mybatis/MysqlInit.md) - 2023-01-16
+* [transactions-unkonw](https://github.com/fulln/TIL/blob/master/code/mybatis/transactions-unkonw.md) - 2023-01-16
+* [mybatisPlus](https://github.com/fulln/TIL/blob/master/code/mybatis/mybatisPlus.md) - 2023-01-16
+### shell
+
+* [expect](https://github.com/fulln/TIL/blob/master/code/shell/expect.md) - 2023-01-16
+### tech
+
+#### algorithm
+
+* [dpIntroduce](https://github.com/fulln/TIL/blob/master/code/tech/algorithm/dpIntroduce.md) - 2023-01-16
+* [stateMachine](https://github.com/fulln/TIL/blob/master/code/tech/stateMachine.md) - 2023-01-16
+#### ddd
+
+* [DDD](https://github.com/fulln/TIL/blob/master/code/tech/ddd/DDD.md) - 2023-01-16
 ## weread
 
 * [readme](https://github.com/fulln/TIL/blob/master/weread/readme.md) - 2023-01-16
