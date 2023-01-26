@@ -30,9 +30,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "c17c55f141fff2a1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "lib/geektime/Dubbo源码剖析与实战/《Dubbo 源码剖析与实战 》学习笔记Day11.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -98,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "lib/geektime/Dubbo源码剖析与实战/《Dubbo 源码剖析与实战 》学习笔记Day10.md",
+                "file": "lib/geektime/Dubbo源码剖析与实战/《Dubbo 源码剖析与实战 》学习笔记Day11.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "lib/geektime/Dubbo源码剖析与实战/《Dubbo 源码剖析与实战 》学习笔记Day10.md",
+                "file": "lib/geektime/Dubbo源码剖析与实战/《Dubbo 源码剖析与实战 》学习笔记Day11.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "lib/geektime/Dubbo源码剖析与实战/《Dubbo 源码剖析与实战 》学习笔记Day10.md"
+                "file": "lib/geektime/Dubbo源码剖析与实战/《Dubbo 源码剖析与实战 》学习笔记Day11.md"
               }
             }
           }
@@ -163,17 +175,17 @@
       "obsidian-weread-plugin:Weread": false
     }
   },
-  "active": "781bec8cc2031960",
+  "active": "c17c55f141fff2a1",
   "lastOpenFiles": [
-    "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day1.md",
+    "daily/2023-01/2023-01-26.md",
     "lib/geektime/Dubbo源码剖析与实战/《Dubbo 源码剖析与实战 》学习笔记Day10.md",
+    "lib/geektime/Dubbo源码剖析与实战/《Dubbo 源码剖析与实战 》学习笔记Day11.md",
+    "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day1.md",
     "daily/2023-01/2023-01-24.md",
     "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day8.md",
     "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day9.md",
     "lib/geektime/落地DDD/落地DDD.md",
     "language/english/词根.md",
-    "lib/geektime/落地DDD/pull.md",
-    "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day7.md",
-    "daily/2023-01/2023-01-23.md"
+    "lib/geektime/落地DDD/pull.md"
   ]
 }
