@@ -1,11 +1,11 @@
 # Compiled class file
+*/workspace.json
 *.class
 *.idea
 til.db
 *.obsidian
 # Log file
 *.log
-*/workspace.json
 # BlueJ files
 *.ctxt
 
