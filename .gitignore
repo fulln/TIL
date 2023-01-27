@@ -5,7 +5,7 @@ til.db
 *.obsidian
 # Log file
 *.log
-
+*/workspace.json
 # BlueJ files
 *.ctxt
 
