@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "daily/2023-01/2023-01-26.md",
+                "file": "daily/2023-01/2023-01-27.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "daily/2023-01/2023-01-26.md",
+                "file": "daily/2023-01/2023-01-27.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "daily/2023-01/2023-01-26.md",
+                "file": "daily/2023-01/2023-01-27.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "daily/2023-01/2023-01-26.md"
+                "file": "daily/2023-01/2023-01-27.md"
               }
             }
           }
@@ -152,15 +152,15 @@
   },
   "active": "a0cc4938c9ff2f07",
   "lastOpenFiles": [
+    "economy/未命名.md",
+    "economy/开通港股.md",
+    "lib/geektime/高级java.md",
+    "lib/bilibili/Glob模式匹配算法分析实现.md",
+    "weread/readme.md",
+    "daily/2023-01/2023-01-27.md",
+    "daily/2023-01/2023-01-26.md",
     "daily/2023-01/2023-01-24.md",
     "lib/geektime/Dubbo源码剖析与实战/《Dubbo 源码剖析与实战 》学习笔记Day10.md",
-    "lib/geektime/Dubbo源码剖析与实战/《Dubbo 源码剖析与实战 》学习笔记Day11.md",
-    "daily/2023-01/2023-01-26.md",
-    "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day1.md",
-    "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day8.md",
-    "lib/geektime/落地DDD/《手把手教你落地 DDD》学习笔记Day9.md",
-    "lib/geektime/落地DDD/落地DDD.md",
-    "language/english/词根.md",
-    "lib/geektime/落地DDD/pull.md"
+    "lib/geektime/Dubbo源码剖析与实战/《Dubbo 源码剖析与实战 》学习笔记Day11.md"
   ]
 }
