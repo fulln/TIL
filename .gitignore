@@ -1,9 +1,8 @@
 # Compiled class file
-*/workspace.json
 *.class
 *.idea
 til.db
-*.obsidian
+.obsidian/workspace.json
 # Log file
 *.log
 # BlueJ files
