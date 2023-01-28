@@ -1,0 +1,11 @@
+{
+	"nodes":[
+		{"id":"3c01b090747c4951","x":-135,"y":-37,"width":141,"height":60,"type":"text","text":"# jvm"},
+		{"id":"e984d37e265cdf21","x":-255,"y":-442,"width":394,"height":289,"type":"text","text":"![[jvmKnowns#1. JVM 基本常识与整体架构]]"},
+		{"id":"01d1039c0230488d","x":-496,"y":161,"width":400,"height":400,"type":"file","file":"code/jvm/JvmLoadSubarray.md"}
+	],
+	"edges":[
+		{"id":"072d32de10e8d90d","fromNode":"3c01b090747c4951","fromSide":"top","toNode":"e984d37e265cdf21","toSide":"bottom"},
+		{"id":"f58c6f9fb6b92cc7","fromNode":"3c01b090747c4951","fromSide":"bottom","toNode":"01d1039c0230488d","toSide":"top"}
+	]
+}

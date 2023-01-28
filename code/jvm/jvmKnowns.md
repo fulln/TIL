@@ -1,27 +1,16 @@
 ## JVM 虚拟机
 
-1. JVM 基本常识与整体架构
-	
+### 1. JVM 基本常识与整体架构
+^543e16
 ![[Pasted image 20230127174345.png]]
 
-2. 类加载子系统：加载时机、加载过程
+### 2. 类加载子系统:加载过程和加载时机
 
-		加载时机:
-			1. 当虚拟机启动时，初始化用户指定的主类；
-			2. 当遇到用以新建目标类实例的 new 指令时，初始化 new 指令的目标类；
-			3. 当遇到调用静态方法的指令时，初始化该静态方法所在的类；
-			4. 当遇到访问静态字段的指令时，初始化该静态字段所在的类；
-			5. 子类的初始化会触发父类的初始化；
-			6. 如果一个接口定义了 default 方法，那么直接实现或者间接实现该接口的类的初始化，会触发该接口的初始化；
-			7. 使用反射 API 对某个类进行反射调用时，初始化这个类；
-			8. 当初次调用 MethodHandle 实例时，初始化该 MethodHandle 指向的方法所在的类。
-		加载过程: 加载--> 链接 --> 初始化
-			1. 加载.选择类加载器根据字节流创建对应类的过程
-			2. 链接.将创建成的类合并至 Java 虚拟机中，使之能够执行的过程
-			3. 初始化. 在声明时直接赋值，也可以在静态代码块中对其赋值。只有当初始化完成之后，类才正式成为可执行的状态。 
-			
+![[JvmLoadSubarray#加载过程概括]]
+![[JvmLoadSubarray#加载时机]]
 
-3. 类加载器：Bootstrap ClassLoader、Extension ClassLoader、Application ClassLoader、User ClassLoader
+### 3.  类加载器：
+Bootstrap ClassLoader、Extension ClassLoader、Application ClassLoader、User ClassLoader
 
 4. JVM 加载机制剖析：一个类的一生
 
