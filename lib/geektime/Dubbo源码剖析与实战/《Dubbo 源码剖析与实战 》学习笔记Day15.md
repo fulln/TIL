@@ -69,3 +69,4 @@ dubbo.application.register-mode=interface
 
 [10｜服务认证：被异构系统侵入调用了，怎么办？](https://time.geekbang.org/column/article/615318)
 
+[11｜配置加载顺序：为什么你设置的超时时间不生效？](https://time.geekbang.org/column/article/615345)
