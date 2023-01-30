@@ -24,5 +24,39 @@ T_4 = 1 + 1 + 2 = 4
 链接：https://leetcode-cn.com/problems/n-th-tribonacci-number
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 ```go
+func tribonacci(n int) int {
 
+if n == 0 {
+
+return 0
+
+}else if n < 3{
+
+return 1
+
+}
+
+  
+
+n0 :=0
+
+n1 :=1
+
+n2 :=1
+
+temp := 0
+
+for i:= 3;i <= n;i++{
+
+temp = n0 + n1 + n2
+
+n0,n1,n2 = n1,n2,temp
+
+}
+
+  
+
+return temp
+
+}
 ```
