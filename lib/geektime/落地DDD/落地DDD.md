@@ -1,7 +1,4 @@
-#DDD #设计思想
-
-> 课程地址
-> [手把手教你落地 DDD (geekbang.org)](https://time.geekbang.org/column/intro/100311801?tab=catalog)
+#DDD #设计思想 
 
 ## 基本开发流程
 
