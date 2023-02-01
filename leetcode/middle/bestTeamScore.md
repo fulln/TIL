@@ -35,5 +35,24 @@ Given two lists, `scores` and `ages`, where each `scores[i]` and `ages[i]`
 ```go
 func bestTeamScore(scores []int, ages []int) int {
 
+  
+  
+
+}
+
+  
+
+func max(a,b int)int{
+
+    if a > b{
+
+        return a
+
+    }else{
+
+        return b
+
+    }
+
 }
 ```
