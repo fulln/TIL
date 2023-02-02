@@ -2,15 +2,19 @@
   "cookies": [
     {
       "name": "wr_gid",
-      "value": "238955272"
+      "value": "239175594"
     },
     {
       "name": "wr_fp",
-      "value": "2311350157"
+      "value": "930175131"
     },
     {
       "name": "wr_vid",
       "value": "233589967"
+    },
+    {
+      "name": "wr_skey",
+      "value": "7KkKSbpo"
     },
     {
       "name": "wr_pf",
@@ -18,7 +22,7 @@
     },
     {
       "name": "wr_rt",
-      "value": "web@ygV_HFAcpUmPcXwfnAj_WL"
+      "value": "web@wQ5tWBR7pEiSzsOgOVc_WL"
     },
     {
       "name": "wr_localvid",
@@ -35,10 +39,6 @@
     {
       "name": "wr_gender",
       "value": "1"
-    },
-    {
-      "name": "wr_skey",
-      "value": "3rDInI7x"
     }
   ],
   "noteLocation": "weread",
@@ -46,7 +46,7 @@
   "insertAfter": "<!-- start of weread -->",
   "insertBefore": "<!-- end of weread -->",
   "dailyNotesFormat": "YYYY-MM/YYYY-MM-DD",
-  "lastCookieTime": 1675166260464,
+  "lastCookieTime": 1675259749663,
   "isCookieValid": true,
   "user": "手冢治熊",
   "userVid": "233589967",
