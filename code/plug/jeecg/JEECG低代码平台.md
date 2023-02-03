@@ -71,6 +71,6 @@ http://{localhost}:8080/jeecg-boot/online/cgform/api/form/4028b28285fc0e9d0185fc
 2. 一张表按照不同条件生成不同视图：如员工表，生成在职员工视图、离职员工视图，即创建视图时支持选择筛选条件（或者写语句）。
 > jeecg目前支持多视图
 3.  树列表筛选数据无效，增加关联字段后列表错位
-> http://10.204.210.26/online/cgformTreeList/997ee931515a4620bc30a9c1246429a9
+> http://{localhost}/online/cgformTreeList/997ee931515a4620bc30a9c1246429a9
 4. 使用关联字段时候，关联表只能选列表内第一页
 > 使用控件下拉搜索框 -> 填写对应表名 和字段映射
