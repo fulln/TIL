@@ -2,11 +2,11 @@
   "cookies": [
     {
       "name": "wr_gid",
-      "value": "238955272"
+      "value": "239175594"
     },
     {
       "name": "wr_fp",
-      "value": "2311350157"
+      "value": "930175131"
     },
     {
       "name": "wr_vid",
@@ -14,7 +14,7 @@
     },
     {
       "name": "wr_skey",
-      "value": "9Dvz_O7c"
+      "value": "0zvo2mxE"
     },
     {
       "name": "wr_pf",
@@ -46,7 +46,7 @@
   "insertAfter": "<!-- start of weread -->",
   "insertBefore": "<!-- end of weread -->",
   "dailyNotesFormat": "YYYY-MM/YYYY-MM-DD",
-  "lastCookieTime": 1675748386325,
+  "lastCookieTime": 1675777971596,
   "isCookieValid": true,
   "user": "手冢治熊",
   "userVid": "233589967",
