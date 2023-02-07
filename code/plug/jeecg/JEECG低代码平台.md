@@ -53,7 +53,7 @@ http://{localhost}:8080/jeecg-boot/online/cgform/api/form/4028b28285fc0e9d0185fc
 
 ##### 生成
 
-生成url文档:http://doc.jeecg.com/2043916#b__38
+生成url文档:http://doc.jeecg.com/2043916#b38
 
 - swagger配置需要手动修改对应包
 - mapper 需要手动修改扫描包
