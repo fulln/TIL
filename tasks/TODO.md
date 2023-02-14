@@ -4,12 +4,11 @@ kanban-plugin: basic
 
 ---
 
-## 体检
+***
+
+## 归档
 
 - [ ] 体检 @{2023-02-11}
-
-
-
 
 %% kanban:settings
 ```
