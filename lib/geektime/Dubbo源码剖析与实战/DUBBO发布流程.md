@@ -291,7 +291,7 @@ private void doExportUrl(URL url, boolean withMetaData) {
 - 第二，使用 registryURL 传入到 doExportUrl 方法，有个小细节，会将接口服务的地址内容以 key = export 属性形式，放在 registryURL 中。
 - 第三，本地导出和远程导出，都调用同一个 doExportUrl 方法，也就意味着导出的主流程代码还是之前的两行代码，只不过远程导出时会走其他的实现类而已。
 
-**_主要export方法_**
+######  主要export方法
 
 ```java
 
