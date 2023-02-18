@@ -50,4 +50,4 @@
 
 ## 课程地址
 
-此文章为2月day11 学习笔记，内容来源于极客时间《[25｜泛化的实现（上）：怎样为泛化设计数据库？ (geekbang.org)](https://time.geekbang.org/column/article/627635)》
+此文章为2月day12 学习笔记，内容来源于极客时间《[25｜泛化的实现（上）：怎样为泛化设计数据库？ (geekbang.org)](https://time.geekbang.org/column/article/627635)》
