@@ -69,3 +69,7 @@ expiring，使用的是 ExpiringCacheFactory 工厂类，内部的 ExpiringCache
 
 Spring 的底层会回调 NamespaceHandler 接口的所有实现类，调用每个实现类的 parse 方法，然而 DubboNamespaceHandler 也就是在这个 parse 方法中完成了配置的解析，并转为 Spring 的 bean 对象
 
+
+## 地址
+
+此文章为2月day15 学习笔记，内容来源于极客时间《[加餐一｜中小厂高频面试：基础式的CRUD属性你清楚么？ (geekbang.org)](https://time.geekbang.org/column/article/625413)》
