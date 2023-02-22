@@ -24,5 +24,25 @@
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 
 ```go
-
+func longestConsecutive(nums []int) int {
+	maps := make(map[int]bool)
+	for _,val := range nums{
+		maps[val]= true
+	}
+	ret := 0
+	for _,val := range nums{
+		if !maps[val-1]{
+			temp := val
+			current := 1
+			for maps[temp + 1] {
+				temp ++
+				current ++
+			}
+			if current > ret {
+				ret = current
+			}
+		}
+	}
+	return ret
+}
 ```
