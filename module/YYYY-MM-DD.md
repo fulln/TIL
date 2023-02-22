@@ -29,6 +29,7 @@ tp.file.move(daily_folder)
 
 ## 每日1题
 
+<% tp.user.leetcode() %>
 
 ## 每日单词
 
