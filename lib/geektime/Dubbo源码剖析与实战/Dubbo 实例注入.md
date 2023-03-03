@@ -270,6 +270,4 @@ Spring 支持三种方式注入，字段属性注入、setter 方法注入、构
 
 ## 课程地址
 
-
-
 此文章为2月day1 学习笔记，内容来源于极客时间《[Dubbo源码与实战]([18｜实例注入：实例注入机制居然可以如此简单？ (geekbang.org)](https://time.geekbang.org/column/article/620943))》，推荐该课程

@@ -42,9 +42,7 @@ grid[i][j] 的值为 '0' 或 '1'
 
 ```go
 func numIslands(grid [][]byte) int {
-
-    // 将所有的1变0 
-
+ 
     m,n := len(grid),len(grid[0])
 
     var dfs func(x,y int)
