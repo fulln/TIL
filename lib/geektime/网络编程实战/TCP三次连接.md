@@ -91,4 +91,4 @@ int connect(int sockfd, const struct sockaddr *servaddr, socklen_t addrlen)
 
 ## 地址
 
-此文章为3月day5 学习笔记，内容来源于极客时间《[04 | TCP三次握手：怎么使用套接字格式建立连接？ (geekbang.org)](https://time.geekbang.org/column/article/116042)》，推荐该课程
+此文章为3月day6 学习笔记，内容来源于极客时间《[04 | TCP三次握手：怎么使用套接字格式建立连接？ (geekbang.org)](https://time.geekbang.org/column/article/116042)》，推荐该课程
