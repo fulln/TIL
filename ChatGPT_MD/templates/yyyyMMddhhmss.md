@@ -11,5 +11,5 @@ n: 1
 model: gpt-3.5-turbo
 ---
 
-Q: <% tp.system.clipboard() %>
+##  <% tp.system.clipboard() %>
 
