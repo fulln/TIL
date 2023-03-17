@@ -4,6 +4,6 @@
   "newFileLocation": "current",
   "promptDelete": false,
   "showUnsupportedFiles": true,
-  "newLinkFormat": "absolute",
+  "newLinkFormat": "shortest",
   "useMarkdownLinks": true
 }
