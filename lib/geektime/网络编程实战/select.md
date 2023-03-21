@@ -39,4 +39,4 @@ maxfd 表示的是待测试的描述符基数，它的值是待测试的最大�
 
 ## 地址
 
-此文章为3月day13 学习笔记，内容来源于极客时间《[20 | 大名⿍⿍的select：看我如何同时感知多个I/O事件 (geekbang.org)](https://time.geekbang.org/column/article/138948)》，推荐该课程
+此文章为3月day21学习笔记，内容来源于极客时间《[20 | 大名⿍⿍的select：看我如何同时感知多个I/O事件 (geekbang.org)](https://time.geekbang.org/column/article/138948)》，推荐该课程
