@@ -74,7 +74,5 @@ MySQL 自带了 Binlog，就是一种实时的增量备份。Binlog 里面记录
 
 
 
-
 # 地址
-
-此文章为3月day22 学习笔记，内容来源于极客时间《[02 | 流量大、数据多的商品详情页系统该如何设计？ (geekbang.org)](https://time.geekbang.org/column/article/204688)》，
+此文章为3月day22 学习笔记，内容来源于极客时间《[09 | 怎么能避免写出慢SQL？ (geekbang.org)](https://time.geekbang.org/column/article/211555)》，《[08 | 一个几乎每个系统必踩的坑儿：访问数据库超时 (geekbang.org)](https://time.geekbang.org/column/article/211008)》,《[07｜MySQL HA：如何将“删库跑路”的损失降到最低？ (geekbang.org)](https://time.geekbang.org/column/article/210210)》

@@ -3,7 +3,6 @@
 *.idea
 til.db
 .obsidian/workspace.json
-.obsidian/
 # Log file
 *.log
 # BlueJ files
