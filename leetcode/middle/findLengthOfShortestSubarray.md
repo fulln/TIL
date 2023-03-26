@@ -40,63 +40,39 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+  
+
 func findLengthOfShortestSubarray(arr []int) int {
 
-    // 1. 删除的数组最短
+    n := len(arr)
 
-    // 2. 需要删除一个连续子数组
+    j := n - 1
 
-    // 3. 删除后剩下的数据可以达到有序
+    for j > 0 && arr[j-1] <= arr[j] {
 
-    // => 1. f(n) 有序，n+1 > n, f(n+1) 有序
-
-    // 2. 只能删除1次而且保证删除之后 后面的数组有序 有个方法判断当前数组是否有序？ 可以缓存 如f(n)(m) 有序，则f(n)(m+1) 有序当 m+1 > m 时 
-
-    n := len(arr) -1    
-
-    ret := n
-
-    // 判断最后的数组的有序性
-
-    last := arr[n]
-
-    lasti := n
-
-    for i:= n;i>=0;i--{
-
-        if last >= arr[i]{
-
-            lasti = i
-
-            last = arr[i]
-
-        }else{
-
-            break
-
-        }
+        j--
 
     }
 
-    if lasti == 0 {
+    if j == 0 {
 
         return 0
 
     }
 
-    first := arr[0]
+    res := j
 
-    firsti := 0 
+    for i := 0; i < n; i++ {
 
-    for i:=0;i < lasti;i++{
+        for j < n && arr[j] < arr[i] {
 
-        if arr[i] >= first{
+            j++
 
-            first = arr[i]
+        }
 
-            firsti = i
+        res = min(res, j-i-1)
 
-        }else{
+        if i+1 < n && arr[i] > arr[i+1] {
 
             break
 
@@ -104,61 +80,9 @@ func findLengthOfShortestSubarray(arr []int) int {
 
     }
 
-    if last == first {
-
-        return lasti - firsti
-
-    }else {
-
-        temp1 := lasti
-
-        for temp1 <= n {
-
-            if arr[temp1] < first {
-
-                temp1++
-
-                continue
-
-            }else{
-
-                break
-
-            }
-
-        }
-
-        ret= min(ret, temp1- firsti + 2)
-
-        temp2 := firsti
-
-        for temp2 >= 0 {
-
-            if arr[temp2] > last {
-
-                temp2--
-
-                continue
-
-            }else{
-
-                break
-
-            }
-
-        }
-
-        ret= min(ret,lasti - temp2-2)
-
-    }
-
-  
-
-    return ret
+    return res
 
 }
-
-  
 
 func min(a,b int)int{
 
