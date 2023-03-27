@@ -1,9 +1,10 @@
 {
   "alwaysUpdateLinks": true,
   "attachmentFolderPath": "attachment",
-  "newFileLocation": "current",
+  "newFileLocation": "folder",
   "promptDelete": false,
   "showUnsupportedFiles": true,
-  "newLinkFormat": "absolute",
-  "useMarkdownLinks": true
+  "newLinkFormat": "shortest",
+  "useMarkdownLinks": false,
+  "newFileFolderPath": "newFiles"
 }

@@ -1,5 +1,7 @@
 {
   "accentColor": "",
-  "cssTheme": "Blue Topaz",
-  "translucency": true
+  "cssTheme": "Atom",
+  "translucency": true,
+  "interfaceFontFamily": "Cascadia Mono",
+  "baseFontSizeAction": true
 }
