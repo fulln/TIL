@@ -6,7 +6,6 @@ let checkDate = tp.file.creation_date("YYYY-MM-DD")
 
 getChildren(li["code"].children,fileList)
 getChildren(li["lib"].children,fileList)
-getChildren(li["economy"].children,fileList)
 
 function getChildren(list,fileList){  
    list.forEach(e => {  
@@ -25,6 +24,5 @@ fileList = fileList.map(f => {
 })
 
 return fileList.join("")
-
 
 %>
