@@ -1,3 +1,6 @@
+---
+dg-publish: true
+---
 #java #反射
 
 ## java反射使用getDeclaredMethods
