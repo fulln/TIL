@@ -14,9 +14,9 @@
   "showOtherSearchEngines": false,
   "showSearchBarInPage": false,
   "markdownPath": "/booklinks",
-  "customHighlightFormat": false,
+  "customHighlightFormat": true,
   "highlightFormat": "[{CONTENT}]({URL})",
-  "highlightInSameTab": false,
+  "highlightInSameTab": true,
   "openInSameTab": false,
   "showRefreshButton": true,
   "openInObsidianWeb": false,
@@ -43,5 +43,17 @@
     ],
     "defaultFilterType": "tree"
   },
-  "treeData": []
+  "treeData": [
+    {
+      "id": "58110b8a1ca48317",
+      "parent": 0,
+      "droppable": true,
+      "text": "07｜MySQL HA：如何将“删库跑路”的损失降到最低？-极客时间",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    }
+  ]
 }
