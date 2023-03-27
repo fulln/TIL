@@ -3,6 +3,7 @@
 *.idea
 til.db
 .obsidian/workspace.json
+.obsidian/plugins/digitalgarden/data.json
 # Log file
 *.log
 # BlueJ files
