@@ -1,6 +1,18 @@
 {
   "bookmarks": [
     {
+      "id": "-215006528",
+      "name": "题库 - 力扣 (LeetCode) 全球极客挚爱的技术成长平台",
+      "url": "https://leetcode.cn/problemset/all/",
+      "description": "",
+      "category": [
+        "ROOT"
+      ],
+      "tags": "",
+      "created": 1679931241484,
+      "modified": 1679931241484
+    },
+    {
       "id": "2014068036",
       "name": "Obsidian",
       "url": "https://obsidian.md/",

@@ -1,5 +1,5 @@
 {
-  "defaultSearchEngine": "bing",
+  "defaultSearchEngine": "duckduckgo",
   "customSearchEngine": [
     {
       "name": "duckduckgo",
@@ -29,7 +29,7 @@
     "saveBookMark": false,
     "sendToReadWise": false,
     "pagination": "12",
-    "category": "- Computer\n    - 算法\n    - 数据结构\n- obsidian\n    - surfing\n    - dataview\n",
+    "category": "- custome",
     "defaultCategory": "ROOT",
     "defaultColumnList": [
       "name",
@@ -45,10 +45,10 @@
   },
   "treeData": [
     {
-      "id": "7dcbfe6d8359282c",
+      "id": "69da62813ea253d6",
       "parent": 0,
       "droppable": true,
-      "text": "力扣",
+      "text": "扇贝，知道你在改变",
       "data": {
         "fileType": "site",
         "fileSize": "",
