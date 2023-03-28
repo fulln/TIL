@@ -1,6 +1,6 @@
 {
   "githubRepo": "digitalGarden",
-  "githubToken": "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",
+  "githubToken": "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",
   "githubUserName": "fulln",
   "gardenBaseUrl": "https://fulln.netlify.app",
   "prHistory": [],
@@ -9,7 +9,7 @@
   "faviconPath": "",
   "noteSettingsIsInitialized": true,
   "siteName": "Digital Garden",
-  "slugifyEnabled": true,
+  "slugifyEnabled": false,
   "noteIconKey": "dg-note-icon",
   "defaultNoteIcon": "",
   "showNoteIconOnTitle": false,
@@ -22,7 +22,7 @@
   "updatedTimestampKey": "dg-updated",
   "timestampFormat": "MMM dd, yyyy h:mm a",
   "styleSettingsCss": "",
-  "pathRewriteRules": "code:code\nlib:lib\ndaily:daily\nleetcode:leetcode\nweread:weread",
+  "pathRewriteRules": "",
   "defaultNoteSettings": {
     "dgHomeLink": true,
     "dgPassFrontmatter": false,

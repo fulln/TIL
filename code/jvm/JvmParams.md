@@ -1,3 +1,7 @@
+---
+dg-publish: true
+---
+
 #java #jvm 
 
 ## G1相关JVM参数

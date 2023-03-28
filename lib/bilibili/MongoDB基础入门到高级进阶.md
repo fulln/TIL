@@ -1,4 +1,8 @@
+---
+dg-publish: true
+---
 #mongodb #视频
+
 
 ## 视频地址
 

@@ -1,3 +1,6 @@
+---
+dg-publish: true
+---
 ```dataviewjs
 
 var i = [dv.pages(`"weread"`).length] 
@@ -13,4 +16,6 @@ dv.list(dv.pages(`"weread"`)
 	})
 	.sort(p=>p.lastReadDate,'desc')
 	.map(p=>moment(Number(p.lastReadDate)).format('yyyy-MM-DD') +' >> '+ p.file.link)) 
+
+
 ```

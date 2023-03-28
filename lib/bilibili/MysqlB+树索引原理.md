@@ -1,3 +1,7 @@
+---
+dg-publish: true
+---
+
 #mysql #算法 
 
 ## 请描述MySQL的B+树索引原理，B+树索引有哪些好处
