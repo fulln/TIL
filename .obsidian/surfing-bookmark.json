@@ -1,6 +1,18 @@
 {
   "bookmarks": [
     {
+      "id": "2135328235",
+      "name": "极客时间-轻松学习，高效学习-极客邦",
+      "url": "https://time.geekbang.org/",
+      "description": "",
+      "category": [
+        "ROOT"
+      ],
+      "tags": "",
+      "created": 1680012689827,
+      "modified": 1680012689828
+    },
+    {
       "id": "801831475",
       "name": "扇贝，知道你在改变",
       "url": "https://web.shanbay.com/wordsweb/#/study?type=book",
@@ -33,38 +45,9 @@
       "children": []
     },
     {
-      "value": "Computer",
-      "text": "Computer",
-      "label": "Computer",
-      "children": [
-        {
-          "value": "算法",
-          "text": "算法",
-          "label": "算法"
-        },
-        {
-          "value": "数据结构",
-          "text": "数据结构",
-          "label": "数据结构"
-        }
-      ]
-    },
-    {
-      "value": "obsidian",
-      "text": "obsidian",
-      "label": "obsidian",
-      "children": [
-        {
-          "value": "surfing",
-          "text": "surfing",
-          "label": "surfing"
-        },
-        {
-          "value": "dataview",
-          "text": "dataview",
-          "label": "dataview"
-        }
-      ]
+      "value": "custome",
+      "text": "custome",
+      "label": "custome"
     }
   ]
 }

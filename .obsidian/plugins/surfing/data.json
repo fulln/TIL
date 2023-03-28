@@ -1,5 +1,5 @@
 {
-  "defaultSearchEngine": "duckduckgo",
+  "defaultSearchEngine": "bing",
   "customSearchEngine": [
     {
       "name": "duckduckgo",
@@ -12,7 +12,7 @@
   ],
   "alwaysShowCustomSearch": false,
   "showOtherSearchEngines": false,
-  "showSearchBarInPage": true,
+  "showSearchBarInPage": false,
   "markdownPath": "/booklinks",
   "customHighlightFormat": true,
   "highlightFormat": "[{CONTENT}]({URL})",
@@ -22,7 +22,7 @@
   "openInObsidianWeb": false,
   "useCustomIcons": false,
   "useWebview": false,
-  "useIconList": true,
+  "useIconList": false,
   "darkMode": false,
   "bookmarkManager": {
     "openBookMark": true,
@@ -45,10 +45,10 @@
   },
   "treeData": [
     {
-      "id": "ee8cc823fbb1aeb9",
+      "id": "e02743639555887e",
       "parent": 0,
       "droppable": true,
-      "text": "扇贝，知道你在改变",
+      "text": "力扣",
       "data": {
         "fileType": "site",
         "fileSize": "",
