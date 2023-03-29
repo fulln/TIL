@@ -1,6 +1,18 @@
 {
   "bookmarks": [
     {
+      "id": "1707109789",
+      "name": "fulln/TIL: today i learn",
+      "url": "https://github.com/fulln/TIL",
+      "description": "",
+      "category": [
+        "ROOT"
+      ],
+      "tags": "",
+      "created": 1680104244444,
+      "modified": 1680104244444
+    },
+    {
       "id": "2135328235",
       "name": "极客时间-轻松学习，高效学习-极客邦",
       "url": "https://time.geekbang.org/",

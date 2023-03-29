@@ -3,5 +3,6 @@
   "cssTheme": "Atom",
   "translucency": true,
   "interfaceFontFamily": "Cascadia Mono",
-  "baseFontSizeAction": true
+  "baseFontSizeAction": true,
+  "baseFontSize": 17
 }

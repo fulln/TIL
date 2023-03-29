@@ -21,17 +21,29 @@
 只要把上面例子里的 `INFO` 替换为下面任意一个就行。
 
 -   note
+> [!note]
 -   abstract, summary, tldr
+> [!tldr]
 -   info, todo
+> [!info]
 -   tip, hint, important
+> [!tip]
 -   success, check, done
+> [!success]
 -   question, help, faq
+> [!faq]
 -   warning, caution, attention
+> [!warning]
 -   failure, fail, missing
+> [!FAIL]
 -   danger, error
+> [!danger]
 -   bug
+> [!BUG]
 -   example
+> [!example]
 -   quote, cite
+> [!CITE]
 
 ## 标题和内容
 
