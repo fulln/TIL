@@ -119,7 +119,7 @@ JDK文档标明的第一点说不包括继承方法,但是在实际使用中,还
   这里执行结果为 
 
   ```java
-  void com.fcbox.member.service.rights.domain.C$B.add(java.lang.Object)
+  void com.demo.service.rights.domain.C$B.add(java.lang.Object)
   ```
 
   正常的只获取了子类中的methon
@@ -151,8 +151,8 @@ JDK文档标明的第一点说不包括继承方法,但是在实际使用中,还
   这里执行结果为
 
   ```java
-  void com.fcbox.member.service.rights.domain.C$B.add(java.lang.String)
-  void com.fcbox.member.service.rights.domain.C$B.add(java.lang.Object)
+  void com.demo.member.service.rights.domain.C$B.add(java.lang.String)
+  void com.demo.member.service.rights.domain.C$B.add(java.lang.Object)
   ```
 
   发现把父类的方法也给查出来了

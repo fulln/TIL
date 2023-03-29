@@ -177,10 +177,10 @@ DDD是真正解决业务架构的思想：
        * @param model          领域模型
        * @param taskExecutor   异步执行的线程池容器
        * @param asyncStepCodes 异步执行的步骤. Attention: 异步执行的任务，在失败时是不会触发回滚的
-       * @throws FcboxMemberException 步骤执行时抛出的异常，统一封装为 FcboxMemberException
+       * @throws  步骤执行时抛出的异常，统一封装为 
        */
       public final void execute(List<String> stepCodes, Model model,
-                                SchedulingTaskExecutor taskExecutor, Set<String> asyncStepCodes) throws FcboxMemberException {
+                                SchedulingTaskExecutor taskExecutor, Set<String> asyncStepCodes)  {
           if (stepCodes == null || stepCodes.isEmpty()) {
               log.warn("Empty steps on {}", model);
               return;
@@ -201,7 +201,7 @@ DDD是真正解决业务架构的思想：
           if (stepRevisions == MAX_STEP_REVISIONS) {
               // e,g. (a -> b(revise) -> a)
               log.error("Steps revision seem to encounter dead loop, abort after {} model:{}", stepRevisions, model);
-              throw FcboxMemberException.instance(ResultCodeEnum.SYS_EXCEPTION, "Seems steps dead loop, abort after " + MAX_STEP_REVISIONS);
+              throw fs.instance(ResultCodeEnum.SYS_EXCEPTION, "Seems steps dead loop, abort after " + MAX_STEP_REVISIONS);
           }
       }
   ```
