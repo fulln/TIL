@@ -4,45 +4,45 @@ today i learn
 
 <!-- toc -->
 
-- [code](#code)
-  * [plug](#plug)
-  * [nginx](#nginx)
-  * [python](#python)
-  * [obsidian](#obsidian)
-  * [windows](#windows)
-  * [maven](#maven)
-  * [vim](#vim)
-  * [macos](#macos)
-  * [react](#react)
-  * [git](#git)
-  * [mysql](#mysql)
-  * [tomcat](#tomcat)
-  * [jvm](#jvm)
-  * [redis](#redis)
-  * [kafka](#kafka)
-  * [shell](#shell)
-  * [spring](#spring)
-  * [mybatis](#mybatis)
-  * [base](#base)
-  * [bytes](#bytes)
-  * [tech](#tech)
-    + [ddd](#ddd)
-    + [algorithm](#algorithm)
+- [ChatGPT_MD](#chatgpt_md)
+  * [chats](#chats)
+  * [templates](#templates)
 - [leetcode](#leetcode)
-  * [hard](#hard)
   * [middle](#middle)
   * [easy](#easy)
-- [newFiles](#newfiles)
+  * [hard](#hard)
 - [daily](#daily)
-  * [2022-11](#2022-11)
+  * [2023-02](#2023-02)
   * [2023-01](#2023-01)
   * [2022-12](#2022-12)
-  * [2023-02](#2023-02)
+  * [2022-11](#2022-11)
   * [2023-03](#2023-03)
-- [ChatGPT_MD](#chatgpt_md)
-  * [templates](#templates)
-  * [chats](#chats)
 - [weread](#weread)
+- [newFiles](#newfiles)
+- [code](#code)
+  * [mybatis](#mybatis)
+  * [kafka](#kafka)
+  * [obsidian](#obsidian)
+  * [tomcat](#tomcat)
+  * [nginx](#nginx)
+  * [spring](#spring)
+  * [git](#git)
+  * [tech](#tech)
+    + [algorithm](#algorithm)
+    + [ddd](#ddd)
+  * [macos](#macos)
+  * [windows](#windows)
+  * [vim](#vim)
+  * [redis](#redis)
+  * [maven](#maven)
+  * [shell](#shell)
+  * [python](#python)
+  * [jvm](#jvm)
+  * [bytes](#bytes)
+  * [react](#react)
+  * [mysql](#mysql)
+  * [plug](#plug)
+  * [base](#base)
 
 <!-- tocstop -->
 
@@ -52,131 +52,17 @@ there is total <!-- count starts -->726<!-- count ends --> TILs . keep on
 ---
 
 <!-- index starts -->
-## code
+## ChatGPT_MD
 
-### plug
+### chats
 
-* [mapStructInUse](https://github.com/fulln/TIL/blob/master/code/plug/mapStructInUse.md) - 2023-01-16
-### nginx
+* [20233823810](https://github.com/fulln/TIL/blob/master/ChatGPT_MD/chats/20233823810.md) - 2023-03-08
+* [20230315105524](https://github.com/fulln/TIL/blob/master/ChatGPT_MD/chats/20230315105524.md) - 2023-03-17
+### templates
 
-* [loadBalance](https://github.com/fulln/TIL/blob/master/code/nginx/loadBalance.md) - 2023-01-16
-### python
-
-* [networkx](https://github.com/fulln/TIL/blob/master/code/python/networkx.md) - 2023-01-16
-### obsidian
-
-* [ObsidianCallOut](https://github.com/fulln/TIL/blob/master/code/obsidian/ObsidianCallOut.md) - 2023-03-29
-### windows
-
-* [ExcelCopy](https://github.com/fulln/TIL/blob/master/code/windows/ExcelCopy.md) - 2023-01-16
-* [shellOption](https://github.com/fulln/TIL/blob/master/code/windows/shellOption.md) - 2023-01-16
-### maven
-
-* [mavenDeploy](https://github.com/fulln/TIL/blob/master/code/maven/mavenDeploy.md) - 2023-01-16
-* [maven-archetype](https://github.com/fulln/TIL/blob/master/code/maven/maven-archetype.md) - 2023-02-26
-### vim
-
-* [vim_plugins_fzf](https://github.com/fulln/TIL/blob/master/code/vim/vim_plugins_fzf.md) - 2023-01-16
-### macos
-
-* [iStat Menus 6](https://github.com/fulln/TIL/blob/master/code/macos/iStat Menus 6.md) - 2023-01-30
-### react
-
-* [react_next](https://github.com/fulln/TIL/blob/master/code/react/react_next.md) - 2023-01-16
-### git
-
-* [gitreset](https://github.com/fulln/TIL/blob/master/code/git/gitreset.md) - 2023-01-16
-### mysql
-
-* [qeury_transaction](https://github.com/fulln/TIL/blob/master/code/mysql/qeury_transaction.md) - 2023-01-16
-* [mysqlJSON](https://github.com/fulln/TIL/blob/master/code/mysql/mysqlJSON.md) - 2023-01-16
-* [alterTable](https://github.com/fulln/TIL/blob/master/code/mysql/alterTable.md) - 2023-01-16
-### tomcat
-
-* [tomcatError](https://github.com/fulln/TIL/blob/master/code/tomcat/tomcatError.md) - 2023-01-16
-### jvm
-
-* [jvmArrange](https://github.com/fulln/TIL/blob/master/code/jvm/jvmArrange.md) - 2023-01-27
-* [JvmParams](https://github.com/fulln/TIL/blob/master/code/jvm/JvmParams.md) - 2023-01-27
-* [jvmKnowns](https://github.com/fulln/TIL/blob/master/code/jvm/jvmKnowns.md) - 2023-01-27
-* [JvmLoadSubarray](https://github.com/fulln/TIL/blob/master/code/jvm/JvmLoadSubarray.md) - 2023-01-28
-* [jvmUpgrade](https://github.com/fulln/TIL/blob/master/code/jvm/jvmUpgrade.md) - 2023-03-30
-### redis
-
-* [redisCommand](https://github.com/fulln/TIL/blob/master/code/redis/redisCommand.md) - 2023-01-16
-### kafka
-
-* [kafkaReliability3](https://github.com/fulln/TIL/blob/master/code/kafka/kafkaReliability3.md) - 2023-01-16
-* [kafkaReliability](https://github.com/fulln/TIL/blob/master/code/kafka/kafkaReliability.md) - 2023-01-16
-* [kafkaReliability2](https://github.com/fulln/TIL/blob/master/code/kafka/kafkaReliability2.md) - 2023-01-16
-### shell
-
-* [expect](https://github.com/fulln/TIL/blob/master/code/shell/expect.md) - 2023-01-16
-### spring
-
-* [CVE-2020-5421](https://github.com/fulln/TIL/blob/master/code/spring/CVE-2020-5421.md) - 2023-01-16
-* [spring-quartz](https://github.com/fulln/TIL/blob/master/code/spring/spring-quartz.md) - 2023-01-16
-* [RequestBodyAdviceAdapter](https://github.com/fulln/TIL/blob/master/code/spring/RequestBodyAdviceAdapter.md) - 2023-01-16
-* [springDataRedis](https://github.com/fulln/TIL/blob/master/code/spring/springDataRedis.md) - 2023-01-16
-* [envirment](https://github.com/fulln/TIL/blob/master/code/spring/envirment.md) - 2023-01-16
-* [springcache](https://github.com/fulln/TIL/blob/master/code/spring/springcache.md) - 2023-01-16
-* [upgradeMvc](https://github.com/fulln/TIL/blob/master/code/spring/upgradeMvc.md) - 2023-01-16
-* [Valid&Validate](https://github.com/fulln/TIL/blob/master/code/spring/Valid&Validate.md) - 2023-03-10
-### mybatis
-
-* [mybatisPlus](https://github.com/fulln/TIL/blob/master/code/mybatis/mybatisPlus.md) - 2023-01-16
-* [MysqlInit](https://github.com/fulln/TIL/blob/master/code/mybatis/MysqlInit.md) - 2023-01-16
-* [transactions-unkonw](https://github.com/fulln/TIL/blob/master/code/mybatis/transactions-unkonw.md) - 2023-01-16
-### base
-
-* [threadLocal](https://github.com/fulln/TIL/blob/master/code/base/threadLocal.md) - 2023-01-16
-* [staticMain](https://github.com/fulln/TIL/blob/master/code/base/staticMain.md) - 2023-01-16
-* [DeclaredMethod](https://github.com/fulln/TIL/blob/master/code/base/DeclaredMethod.md) - 2023-01-16
-* [JDK15](https://github.com/fulln/TIL/blob/master/code/base/JDK15.md) - 2023-01-16
-* [getsourceFile](https://github.com/fulln/TIL/blob/master/code/base/getsourceFile.md) - 2023-01-16
-### bytes
-
-* [BTrace](https://github.com/fulln/TIL/blob/master/code/bytes/BTrace.md) - 2023-01-16
-* [Javassist](https://github.com/fulln/TIL/blob/master/code/bytes/Javassist.md) - 2023-01-16
-### tech
-
-#### ddd
-
-* [DDD](https://github.com/fulln/TIL/blob/master/code/tech/ddd/DDD.md) - 2023-01-16
-* [stateMachine](https://github.com/fulln/TIL/blob/master/code/tech/stateMachine.md) - 2023-01-16
-* [SSTABLE](https://github.com/fulln/TIL/blob/master/code/tech/SSTABLE.md) - 2023-01-29
-* [8 Data Structures That Power Your Databases](https://github.com/fulln/TIL/blob/master/code/tech/8 Data Structures That Power Your Databases.md) - 2023-01-29
-#### algorithm
-
-* [dpIntroduce](https://github.com/fulln/TIL/blob/master/code/tech/algorithm/dpIntroduce.md) - 2023-01-16
+* [yyyyMMddhhmss](https://github.com/fulln/TIL/blob/master/ChatGPT_MD/templates/yyyyMMddhhmss.md) - 2023-03-08
 ## leetcode
 
-### hard
-
-* [鸡蛋掉落](https://github.com/fulln/TIL/blob/master/leetcode/hard/superEggDrop.md) - 2021-02-28
-* [子序列宽度之和](https://github.com/fulln/TIL/blob/master/leetcode/hard/sumSubseqWidths.md) - 2021-06-20
-* [基本计算器](https://github.com/fulln/TIL/blob/master/leetcode/hard/calculate.md) - 2021-06-21
-* [1713. 得到子序列的最少操作次数](https://github.com/fulln/TIL/blob/master/leetcode/hard/minOperations.md) - 2021-07-26
-* [数字 1 的个数](https://github.com/fulln/TIL/blob/master/leetcode/hard/countDigitOne.md) - 2021-08-13
-* [IPO](https://github.com/fulln/TIL/blob/master/leetcode/hard/findMaximizedCapital.md) - 2021-09-08
-* [解码方法 II](https://github.com/fulln/TIL/blob/master/leetcode/hard/numDecodings.md) - 2021-09-27
-* [删除无效的括号](https://github.com/fulln/TIL/blob/master/leetcode/hard/removeInvalidParentheses.md) - 2021-10-27
-* [路径交叉](https://github.com/fulln/TIL/blob/master/leetcode/hard/isSelfCrossing.md) - 2021-10-29
-* [课程表 III](https://github.com/fulln/TIL/blob/master/leetcode/hard/scheduleCourse.md) - 2021-12-14
-* [按位与为零的三元组](https://github.com/fulln/TIL/blob/master/leetcode/hard/countTriplets.md) - 2022-01-04
-* [6030. 由单个字符重复的最长子字符串](https://github.com/fulln/TIL/blob/master/leetcode/hard/longestRepeating.md) - 2022-03-20
-* [440. 字典序的第K小数字](https://github.com/fulln/TIL/blob/master/leetcode/hard/findKthNumber.md) - 2022-03-27
-* [单词拆分 II](https://github.com/fulln/TIL/blob/master/leetcode/hard/wordBreak.md) - 2022-03-29
-* [最小覆盖子串](https://github.com/fulln/TIL/blob/master/leetcode/hard/minWindow.md) - 2022-03-31
-* [串联所有单词的子串](https://github.com/fulln/TIL/blob/master/leetcode/hard/findSubstring.md) - 2022-06-23
-* [745. 前缀和后缀搜索](https://github.com/fulln/TIL/blob/master/leetcode/hard/WordFilter.md) - 2022-07-14
-* [设置交集大小至少为2](https://github.com/fulln/TIL/blob/master/leetcode/hard/intersectionSizeTwo.md) - 2022-07-22
-* [最大相等频率](https://github.com/fulln/TIL/blob/master/leetcode/hard/maxEqualFreq.md) - 2022-08-18
-* [862. 和至少为 K 的最短子数组](https://github.com/fulln/TIL/blob/master/leetcode/hard/shortestSubarray.md) - 2022-10-26
-* [最大频率栈](https://github.com/fulln/TIL/blob/master/leetcode/hard/FreqStack.md) - 2022-11-30
-* [472. Concatenated Words](https://github.com/fulln/TIL/blob/master/leetcode/hard/findAllConcatenatedWordsInADict.md) - 2023-01-27
-* [](https://github.com/fulln/TIL/blob/master/leetcode/hard/findMedianSortedArrays.md) - 2023-02-14
-* [1092. 最短公共超序列](https://github.com/fulln/TIL/blob/master/leetcode/hard/shortestCommonSupersequence.md) - 2023-03-28
 ### middle
 
 * [钥匙和房间](https://github.com/fulln/TIL/blob/master/leetcode/middle/canVisitAllRooms.md) - 2020-09-11
@@ -509,6 +395,7 @@ there is total <!-- count starts -->726<!-- count ends --> TILs . keep on
 * [1574. 删除最短的子数组使剩余数组有序](https://github.com/fulln/TIL/blob/master/leetcode/middle/findLengthOfShortestSubarray.md) - 2023-03-26
 * [1638. 统计只差一个字符的子串数目](https://github.com/fulln/TIL/blob/master/leetcode/middle/countSubstrings.md) - 2023-03-27
 * [1641. 统计字典序元音字符串的数目](https://github.com/fulln/TIL/blob/master/leetcode/middle/countVowelStrings.md) - 2023-03-29
+* [1637. 两点之间不包含任何点的最宽垂直区域](https://github.com/fulln/TIL/blob/master/leetcode/middle/maxWidthOfVerticalArea.md) - 2023-03-30
 ### easy
 
 * [编写一个函数来查找字符串数组中的最长公共前缀。](https://github.com/fulln/TIL/blob/master/leetcode/easy/longestCommonPrefix.md) - 2020-07-28
@@ -714,21 +601,63 @@ there is total <!-- count starts -->726<!-- count ends --> TILs . keep on
 * [2351. 第一个出现两次的字母](https://github.com/fulln/TIL/blob/master/leetcode/easy/repeatedCharacter.md) - 2023-01-01
 * [2042. 检查句子中的数字是否递增](https://github.com/fulln/TIL/blob/master/leetcode/easy/areNumbersAscending.md) - 2023-01-03
 * [1807. 替换字符串中的括号内容](https://github.com/fulln/TIL/blob/master/leetcode/easy/evaluate.md) - 2023-01-12
-## newFiles
+### hard
 
-* [Internal link](https://github.com/fulln/TIL/blob/master/newFiles/Internal link.md) - 2023-03-29
-* [maxWidthOfVerticalArea](https://github.com/fulln/TIL/blob/master/newFiles/maxWidthOfVerticalArea.md) - 2023-03-30
+* [鸡蛋掉落](https://github.com/fulln/TIL/blob/master/leetcode/hard/superEggDrop.md) - 2021-02-28
+* [子序列宽度之和](https://github.com/fulln/TIL/blob/master/leetcode/hard/sumSubseqWidths.md) - 2021-06-20
+* [基本计算器](https://github.com/fulln/TIL/blob/master/leetcode/hard/calculate.md) - 2021-06-21
+* [1713. 得到子序列的最少操作次数](https://github.com/fulln/TIL/blob/master/leetcode/hard/minOperations.md) - 2021-07-26
+* [数字 1 的个数](https://github.com/fulln/TIL/blob/master/leetcode/hard/countDigitOne.md) - 2021-08-13
+* [IPO](https://github.com/fulln/TIL/blob/master/leetcode/hard/findMaximizedCapital.md) - 2021-09-08
+* [解码方法 II](https://github.com/fulln/TIL/blob/master/leetcode/hard/numDecodings.md) - 2021-09-27
+* [删除无效的括号](https://github.com/fulln/TIL/blob/master/leetcode/hard/removeInvalidParentheses.md) - 2021-10-27
+* [路径交叉](https://github.com/fulln/TIL/blob/master/leetcode/hard/isSelfCrossing.md) - 2021-10-29
+* [课程表 III](https://github.com/fulln/TIL/blob/master/leetcode/hard/scheduleCourse.md) - 2021-12-14
+* [按位与为零的三元组](https://github.com/fulln/TIL/blob/master/leetcode/hard/countTriplets.md) - 2022-01-04
+* [6030. 由单个字符重复的最长子字符串](https://github.com/fulln/TIL/blob/master/leetcode/hard/longestRepeating.md) - 2022-03-20
+* [440. 字典序的第K小数字](https://github.com/fulln/TIL/blob/master/leetcode/hard/findKthNumber.md) - 2022-03-27
+* [单词拆分 II](https://github.com/fulln/TIL/blob/master/leetcode/hard/wordBreak.md) - 2022-03-29
+* [最小覆盖子串](https://github.com/fulln/TIL/blob/master/leetcode/hard/minWindow.md) - 2022-03-31
+* [串联所有单词的子串](https://github.com/fulln/TIL/blob/master/leetcode/hard/findSubstring.md) - 2022-06-23
+* [745. 前缀和后缀搜索](https://github.com/fulln/TIL/blob/master/leetcode/hard/WordFilter.md) - 2022-07-14
+* [设置交集大小至少为2](https://github.com/fulln/TIL/blob/master/leetcode/hard/intersectionSizeTwo.md) - 2022-07-22
+* [最大相等频率](https://github.com/fulln/TIL/blob/master/leetcode/hard/maxEqualFreq.md) - 2022-08-18
+* [862. 和至少为 K 的最短子数组](https://github.com/fulln/TIL/blob/master/leetcode/hard/shortestSubarray.md) - 2022-10-26
+* [最大频率栈](https://github.com/fulln/TIL/blob/master/leetcode/hard/FreqStack.md) - 2022-11-30
+* [472. Concatenated Words](https://github.com/fulln/TIL/blob/master/leetcode/hard/findAllConcatenatedWordsInADict.md) - 2023-01-27
+* [](https://github.com/fulln/TIL/blob/master/leetcode/hard/findMedianSortedArrays.md) - 2023-02-14
+* [1092. 最短公共超序列](https://github.com/fulln/TIL/blob/master/leetcode/hard/shortestCommonSupersequence.md) - 2023-03-28
 ## daily
 
-### 2022-11
+### 2023-02
 
-* [2022-11-28](https://github.com/fulln/TIL/blob/master/daily/2022-11/2022-11-28.md) - 2023-01-16
-* [2022-11-21](https://github.com/fulln/TIL/blob/master/daily/2022-11/2022-11-21.md) - 2023-01-16
-* [2022-11-24](https://github.com/fulln/TIL/blob/master/daily/2022-11/2022-11-24.md) - 2023-01-16
-* [2022-11-22](https://github.com/fulln/TIL/blob/master/daily/2022-11/2022-11-22.md) - 2023-01-16
-* [2022-11-30](https://github.com/fulln/TIL/blob/master/daily/2022-11/2022-11-30.md) - 2023-01-16
-* [2022-11-25](https://github.com/fulln/TIL/blob/master/daily/2022-11/2022-11-25.md) - 2023-01-16
-* [2022-11-23](https://github.com/fulln/TIL/blob/master/daily/2022-11/2022-11-23.md) - 2023-01-16
+* [2023-02-01](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-01.md) - 2023-02-01
+* [2023-02-02](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-02.md) - 2023-02-02
+* [2023-02-03](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-03.md) - 2023-02-03
+* [2023-02-04](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-04.md) - 2023-02-04
+* [2023-02-05](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-05.md) - 2023-02-05
+* [2023-02-06](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-06.md) - 2023-02-06
+* [2023-02-07](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-07.md) - 2023-02-07
+* [2023-02-08](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-08.md) - 2023-02-08
+* [2023-02-09](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-09.md) - 2023-02-09
+* [2023-02-10](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-10.md) - 2023-02-10
+* [2023-02-11](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-11.md) - 2023-02-11
+* [2023-02-12](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-12.md) - 2023-02-12
+* [2023-02-13](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-13.md) - 2023-02-13
+* [2023-02-14](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-14.md) - 2023-02-14
+* [2023-02-15](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-15.md) - 2023-02-15
+* [2023-02-16](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-16.md) - 2023-02-16
+* [2023-02-17](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-17.md) - 2023-02-17
+* [2023-02-18](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-18.md) - 2023-02-18
+* [2023-02-19](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-19.md) - 2023-02-19
+* [2023-02-20](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-20.md) - 2023-02-20
+* [2023-02-21](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-21.md) - 2023-02-21
+* [2023-02-22](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-22.md) - 2023-02-22
+* [2023-02-23](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-23.md) - 2023-02-23
+* [2023-02-24](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-24.md) - 2023-02-24
+* [2023-02-26](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-26.md) - 2023-02-26
+* [2023-02-27](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-27.md) - 2023-02-27
+* [2023-02-28](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-28.md) - 2023-02-28
 ### 2023-01
 
 * [2023-01-13](https://github.com/fulln/TIL/blob/master/daily/2023-01/2023-01-13.md) - 2023-01-16
@@ -783,35 +712,15 @@ there is total <!-- count starts -->726<!-- count ends --> TILs . keep on
 * [2022-12-12](https://github.com/fulln/TIL/blob/master/daily/2022-12/2022-12-12.md) - 2023-01-16
 * [2022-12-10](https://github.com/fulln/TIL/blob/master/daily/2022-12/2022-12-10.md) - 2023-01-16
 * [2022-12-05](https://github.com/fulln/TIL/blob/master/daily/2022-12/2022-12-05.md) - 2023-01-16
-### 2023-02
+### 2022-11
 
-* [2023-02-01](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-01.md) - 2023-02-01
-* [2023-02-02](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-02.md) - 2023-02-02
-* [2023-02-03](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-03.md) - 2023-02-03
-* [2023-02-04](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-04.md) - 2023-02-04
-* [2023-02-05](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-05.md) - 2023-02-05
-* [2023-02-06](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-06.md) - 2023-02-06
-* [2023-02-07](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-07.md) - 2023-02-07
-* [2023-02-08](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-08.md) - 2023-02-08
-* [2023-02-09](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-09.md) - 2023-02-09
-* [2023-02-10](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-10.md) - 2023-02-10
-* [2023-02-11](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-11.md) - 2023-02-11
-* [2023-02-12](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-12.md) - 2023-02-12
-* [2023-02-13](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-13.md) - 2023-02-13
-* [2023-02-14](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-14.md) - 2023-02-14
-* [2023-02-15](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-15.md) - 2023-02-15
-* [2023-02-16](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-16.md) - 2023-02-16
-* [2023-02-17](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-17.md) - 2023-02-17
-* [2023-02-18](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-18.md) - 2023-02-18
-* [2023-02-19](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-19.md) - 2023-02-19
-* [2023-02-20](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-20.md) - 2023-02-20
-* [2023-02-21](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-21.md) - 2023-02-21
-* [2023-02-22](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-22.md) - 2023-02-22
-* [2023-02-23](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-23.md) - 2023-02-23
-* [2023-02-24](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-24.md) - 2023-02-24
-* [2023-02-26](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-26.md) - 2023-02-26
-* [2023-02-27](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-27.md) - 2023-02-27
-* [2023-02-28](https://github.com/fulln/TIL/blob/master/daily/2023-02/2023-02-28.md) - 2023-02-28
+* [2022-11-28](https://github.com/fulln/TIL/blob/master/daily/2022-11/2022-11-28.md) - 2023-01-16
+* [2022-11-21](https://github.com/fulln/TIL/blob/master/daily/2022-11/2022-11-21.md) - 2023-01-16
+* [2022-11-24](https://github.com/fulln/TIL/blob/master/daily/2022-11/2022-11-24.md) - 2023-01-16
+* [2022-11-22](https://github.com/fulln/TIL/blob/master/daily/2022-11/2022-11-22.md) - 2023-01-16
+* [2022-11-30](https://github.com/fulln/TIL/blob/master/daily/2022-11/2022-11-30.md) - 2023-01-16
+* [2022-11-25](https://github.com/fulln/TIL/blob/master/daily/2022-11/2022-11-25.md) - 2023-01-16
+* [2022-11-23](https://github.com/fulln/TIL/blob/master/daily/2022-11/2022-11-23.md) - 2023-01-16
 ### 2023-03
 
 * [2023-03-01](https://github.com/fulln/TIL/blob/master/daily/2023-03/2023-03-01.md) - 2023-03-01
@@ -844,18 +753,109 @@ there is total <!-- count starts -->726<!-- count ends --> TILs . keep on
 * [2023-03-28](https://github.com/fulln/TIL/blob/master/daily/2023-03/2023-03-28.md) - 2023-03-28
 * [2023-03-29](https://github.com/fulln/TIL/blob/master/daily/2023-03/2023-03-29.md) - 2023-03-29
 * [2023-03-30](https://github.com/fulln/TIL/blob/master/daily/2023-03/2023-03-30.md) - 2023-03-30
-## ChatGPT_MD
-
-### templates
-
-* [yyyyMMddhhmss](https://github.com/fulln/TIL/blob/master/ChatGPT_MD/templates/yyyyMMddhhmss.md) - 2023-03-08
-### chats
-
-* [20233823810](https://github.com/fulln/TIL/blob/master/ChatGPT_MD/chats/20233823810.md) - 2023-03-08
-* [20230315105524](https://github.com/fulln/TIL/blob/master/ChatGPT_MD/chats/20230315105524.md) - 2023-03-17
 ## weread
 
 * [readme](https://github.com/fulln/TIL/blob/master/weread/readme.md) - 2023-01-16
+## newFiles
+
+* [Internal link](https://github.com/fulln/TIL/blob/master/newFiles/Internal link.md) - 2023-03-29
+## code
+
+### mybatis
+
+* [mybatisPlus](https://github.com/fulln/TIL/blob/master/code/mybatis/mybatisPlus.md) - 2023-01-16
+* [MysqlInit](https://github.com/fulln/TIL/blob/master/code/mybatis/MysqlInit.md) - 2023-01-16
+* [transactions-unkonw](https://github.com/fulln/TIL/blob/master/code/mybatis/transactions-unkonw.md) - 2023-01-16
+### kafka
+
+* [kafkaReliability3](https://github.com/fulln/TIL/blob/master/code/kafka/kafkaReliability3.md) - 2023-01-16
+* [kafkaReliability](https://github.com/fulln/TIL/blob/master/code/kafka/kafkaReliability.md) - 2023-01-16
+* [kafkaReliability2](https://github.com/fulln/TIL/blob/master/code/kafka/kafkaReliability2.md) - 2023-01-16
+### obsidian
+
+* [ObsidianCallOut](https://github.com/fulln/TIL/blob/master/code/obsidian/ObsidianCallOut.md) - 2023-03-29
+### tomcat
+
+* [tomcatError](https://github.com/fulln/TIL/blob/master/code/tomcat/tomcatError.md) - 2023-01-16
+### nginx
+
+* [loadBalance](https://github.com/fulln/TIL/blob/master/code/nginx/loadBalance.md) - 2023-01-16
+### spring
+
+* [CVE-2020-5421](https://github.com/fulln/TIL/blob/master/code/spring/CVE-2020-5421.md) - 2023-01-16
+* [spring-quartz](https://github.com/fulln/TIL/blob/master/code/spring/spring-quartz.md) - 2023-01-16
+* [RequestBodyAdviceAdapter](https://github.com/fulln/TIL/blob/master/code/spring/RequestBodyAdviceAdapter.md) - 2023-01-16
+* [springDataRedis](https://github.com/fulln/TIL/blob/master/code/spring/springDataRedis.md) - 2023-01-16
+* [envirment](https://github.com/fulln/TIL/blob/master/code/spring/envirment.md) - 2023-01-16
+* [springcache](https://github.com/fulln/TIL/blob/master/code/spring/springcache.md) - 2023-01-16
+* [upgradeMvc](https://github.com/fulln/TIL/blob/master/code/spring/upgradeMvc.md) - 2023-01-16
+* [Valid&Validate](https://github.com/fulln/TIL/blob/master/code/spring/Valid&Validate.md) - 2023-03-10
+### git
+
+* [gitreset](https://github.com/fulln/TIL/blob/master/code/git/gitreset.md) - 2023-01-16
+### tech
+
+#### algorithm
+
+* [dpIntroduce](https://github.com/fulln/TIL/blob/master/code/tech/algorithm/dpIntroduce.md) - 2023-01-16
+* [stateMachine](https://github.com/fulln/TIL/blob/master/code/tech/stateMachine.md) - 2023-01-16
+* [SSTABLE](https://github.com/fulln/TIL/blob/master/code/tech/SSTABLE.md) - 2023-01-29
+* [8 Data Structures That Power Your Databases](https://github.com/fulln/TIL/blob/master/code/tech/8 Data Structures That Power Your Databases.md) - 2023-01-29
+#### ddd
+
+* [DDD](https://github.com/fulln/TIL/blob/master/code/tech/ddd/DDD.md) - 2023-01-16
+### macos
+
+* [iStat Menus 6](https://github.com/fulln/TIL/blob/master/code/macos/iStat Menus 6.md) - 2023-01-30
+### windows
+
+* [ExcelCopy](https://github.com/fulln/TIL/blob/master/code/windows/ExcelCopy.md) - 2023-01-16
+* [shellOption](https://github.com/fulln/TIL/blob/master/code/windows/shellOption.md) - 2023-01-16
+### vim
+
+* [vim_plugins_fzf](https://github.com/fulln/TIL/blob/master/code/vim/vim_plugins_fzf.md) - 2023-01-16
+### redis
+
+* [redisCommand](https://github.com/fulln/TIL/blob/master/code/redis/redisCommand.md) - 2023-01-16
+### maven
+
+* [mavenDeploy](https://github.com/fulln/TIL/blob/master/code/maven/mavenDeploy.md) - 2023-01-16
+* [maven-archetype](https://github.com/fulln/TIL/blob/master/code/maven/maven-archetype.md) - 2023-02-26
+### shell
+
+* [expect](https://github.com/fulln/TIL/blob/master/code/shell/expect.md) - 2023-01-16
+### python
+
+* [networkx](https://github.com/fulln/TIL/blob/master/code/python/networkx.md) - 2023-01-16
+### jvm
+
+* [jvmArrange](https://github.com/fulln/TIL/blob/master/code/jvm/jvmArrange.md) - 2023-01-27
+* [JvmParams](https://github.com/fulln/TIL/blob/master/code/jvm/JvmParams.md) - 2023-01-27
+* [jvmKnowns](https://github.com/fulln/TIL/blob/master/code/jvm/jvmKnowns.md) - 2023-01-27
+* [JvmLoadSubarray](https://github.com/fulln/TIL/blob/master/code/jvm/JvmLoadSubarray.md) - 2023-01-28
+* [jvmUpgrade](https://github.com/fulln/TIL/blob/master/code/jvm/jvmUpgrade.md) - 2023-03-30
+### bytes
+
+* [BTrace](https://github.com/fulln/TIL/blob/master/code/bytes/BTrace.md) - 2023-01-16
+* [Javassist](https://github.com/fulln/TIL/blob/master/code/bytes/Javassist.md) - 2023-01-16
+### react
+
+* [react_next](https://github.com/fulln/TIL/blob/master/code/react/react_next.md) - 2023-01-16
+### mysql
+
+* [qeury_transaction](https://github.com/fulln/TIL/blob/master/code/mysql/qeury_transaction.md) - 2023-01-16
+* [mysqlJSON](https://github.com/fulln/TIL/blob/master/code/mysql/mysqlJSON.md) - 2023-01-16
+* [alterTable](https://github.com/fulln/TIL/blob/master/code/mysql/alterTable.md) - 2023-01-16
+### plug
+
+* [mapStructInUse](https://github.com/fulln/TIL/blob/master/code/plug/mapStructInUse.md) - 2023-01-16
+### base
+
+* [threadLocal](https://github.com/fulln/TIL/blob/master/code/base/threadLocal.md) - 2023-01-16
+* [staticMain](https://github.com/fulln/TIL/blob/master/code/base/staticMain.md) - 2023-01-16
+* [DeclaredMethod](https://github.com/fulln/TIL/blob/master/code/base/DeclaredMethod.md) - 2023-01-16
+* [JDK15](https://github.com/fulln/TIL/blob/master/code/base/JDK15.md) - 2023-01-16
+* [getsourceFile](https://github.com/fulln/TIL/blob/master/code/base/getsourceFile.md) - 2023-01-16
 <!-- index ends -->
 
 
