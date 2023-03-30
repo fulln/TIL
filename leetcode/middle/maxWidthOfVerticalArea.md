@@ -32,5 +32,51 @@ points[i].length == 2
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
+func maxWidthOfVerticalArea(points [][]int) int {
 
+    //先排序后循环
+
+    sort.Slice(points,func(a,b int)bool{
+
+        return points[a][0] < points[b][0]
+
+    })
+
+    max := 0
+
+    last := points[0][0] 
+
+    for i:=1;i< len(points);i++{
+
+        if  points[i][0] - last > max{
+
+            max =  points[i][0] - last
+
+        }
+
+        last = points[i][0]
+
+    }
+
+    return max
+
+  
+
+}
+
+  
+
+func max(a,b int)int{
+
+    if a > b{
+
+        return a
+
+    }else{
+
+        return b
+
+    }
+
+}
 ```

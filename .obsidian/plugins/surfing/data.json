@@ -8,7 +8,8 @@
   ],
   "ignoreList": [
     "notion",
-    "craft"
+    "craft",
+    "leetcode"
   ],
   "alwaysShowCustomSearch": false,
   "showOtherSearchEngines": false,
@@ -49,6 +50,17 @@
       "parent": 0,
       "droppable": true,
       "text": "力扣",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "06f1d4850d5ea9b4",
+      "parent": 0,
+      "droppable": true,
+      "text": "fulln/TIL: today i learn",
       "data": {
         "fileType": "site",
         "fileSize": "",
