@@ -1,3 +1,6 @@
+---
+dg-publish: true
+---
 #java #jvm #javabasic 
 
 ## 加载过程
