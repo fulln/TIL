@@ -1,3 +1,6 @@
+---
+dg-publish: true
+---
 #java #redis #cache #集群 #极客时间 
 
 # 16 | 用Redis构建缓存集群的最佳实践有哪些？
@@ -63,4 +66,4 @@ Redis Cluster 的优点是易于使用。分片、主从复制、弹性扩容这
 
 # 地址
 
-此文章为3月day23 学习笔记，内容来源于[极客时间](https://time.geekbang.org/column/article/217590) 
+此文章为3月day31 学习笔记，内容来源于[极客时间](https://time.geekbang.org/column/article/217590) 
