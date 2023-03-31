@@ -16,7 +16,6 @@ function getChildren(list,fileList){
 }
 fileList = fileList.map(f => {
 	let p = app.vault.adapter.getFullPath(f)
-    console.log(p)
-    app.vault.adapter.remove(get)
+    app.vault.adapter.remove(p)
 })
 %>

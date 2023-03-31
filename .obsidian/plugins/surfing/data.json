@@ -46,32 +46,10 @@
   },
   "treeData": [
     {
-      "id": "67ce5476b2bfc1e0",
+      "id": "7d2358a1446df800",
       "parent": 0,
       "droppable": true,
-      "text": "16 | 用Redis构建缓存集群的最佳实践有哪些？",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "1691e871519b8501",
-      "parent": 0,
-      "droppable": true,
-      "text": "Gossip protocol - Wikipedia",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "5d150b2b5ae8ae91",
-      "parent": 0,
-      "droppable": true,
-      "text": "CodisLabs/codis: Proxy based Redis cluster solution supporting pipeline and scaling dynamically",
+      "text": "力扣",
       "data": {
         "fileType": "site",
         "fileSize": "",
