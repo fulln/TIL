@@ -12,11 +12,11 @@
   "enable_system_commands": false,
   "shell_path": "",
   "user_scripts_folder": "script",
-  "enable_folder_templates": false,
+  "enable_folder_templates": true,
   "folder_templates": [
     {
-      "folder": "",
-      "template": ""
+      "folder": "newFiles",
+      "template": "module/moveFiles.md"
     }
   ],
   "syntax_highlighting": true,
