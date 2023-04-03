@@ -49,7 +49,18 @@
       "id": "7f8d6934a1d39eb7",
       "parent": 0,
       "droppable": true,
-      "text": "题库 - 力扣 (LeetCode) 全球极客挚爱的技术成长平台",
+      "text": "极客时间-轻松学习，高效学习-极客邦",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "6b045584f379d349",
+      "parent": 0,
+      "droppable": true,
+      "text": "20 | 如何在不停机的情况下，安全地更换数据库？-极客时间",
       "data": {
         "fileType": "site",
         "fileSize": "",
