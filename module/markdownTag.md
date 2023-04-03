@@ -1,6 +1,6 @@
 ---
-标题： <% tp.file.title %>
-创建时间: <% tp.file.creation_date() %>
-备注: 
-其他:
+dg-publish: true
+title： <% tp.file.title %>
+createTime: <% tp.file.creation_date() %>  
+totals: 
 ---

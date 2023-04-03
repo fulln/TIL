@@ -1,3 +1,5 @@
+## 区间DP的解题策略
+
 区间 DP 是动态规划的一种常见形式，用于解决区间上的问题。一般来说，区间 DP 问题可以转化为字符串 DP 问题，而字符串 DP 问题的解法是比较常见和成熟的。
 
 区间 DP 的解题策略一般有以下几步：
@@ -18,10 +20,12 @@
 
 以上就是区间 DP 的解题策略，需要注意的是，区间 DP 的状态转移方程和字符串 DP 的状态转移方程有很多相似之处，因此对字符串 DP 的掌握也是解决区间 DP 问题的关键。
 
-### 例题
+## 例题
 
 1.  最长上升子序列（Longest Increasing Subsequence）：[https://leetcode-cn.com/problems/longest-increasing-subsequence/](https://leetcode-cn.com/problems/longest-increasing-subsequence/)	
 1.  最大子序和（Maximum Subarray）：[https://leetcode-cn.com/problems/maximum-subarray/](https://leetcode-cn.com/problems/maximum-subarray/)
 2.  最长公共子序列（Longest Common Subsequence）：[https://leetcode-cn.com/problems/longest-common-subsequence/](https://leetcode-cn.com/problems/longest-common-subsequence/)
 3.  最长回文子串（Longest Palindromic Substring）：[https://leetcode-cn.com/problems/longest-palindromic-substring/](https://leetcode-cn.com/problems/longest-palindromic-substring/)
 4.  最大矩形（Maximal Rectangle）：[https://leetcode-cn.com/problems/maximal-rectangle/](https://leetcode-cn.com/problems/maximal-rectangle/)
+5. 
+6. [[minScoreTriangulation#多边形三角剖分的最低得分]]
