@@ -6,5 +6,6 @@
   "showUnsupportedFiles": true,
   "newLinkFormat": "shortest",
   "useMarkdownLinks": false,
-  "newFileFolderPath": "newFiles"
+  "newFileFolderPath": "newFiles",
+  "defaultViewMode": "source"
 }

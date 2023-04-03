@@ -6,26 +6,25 @@ dg-publish: true
 
 ## G1相关JVM参数
 
-### DisableExplicitGC
-
+1. DisableExplicitGC
 
 > -XX:+DisableExplicitGC
 
 禁止调用System.gc()；但jvm的gc仍然有效
 
-### ExplicitGCInvokesConcurrent
+2. ExplicitGCInvokesConcurrent
 
 > -XX:+ExplicitGCInvokesConcurren
 
 该命令表示JVM无论什么时候调用系统GC，都执行CMS GC，而不是Full GC。
 
-### G1ReservePercent
+3. G1ReservePercent
 
 > -XX:G1ReservePercent
 
 It determines the minimum reserve we should have in the heap to minimize the probability of promotion failure.
 
-### UseLargePages 
+4. UseLargePages 
 
 > -XX:+UseLargePages/ -XX:+UseHugeTLBFS.
 
@@ -64,17 +63,17 @@ Then configure the number of pages you like for a give size like this[2](https:/
 $ echo 2500 > /sys/kernel/mm/hugepages/hugepages-2048kB/nr_hugepages
 ```
 
-#### Checking the JVM
+5. Checking the JVM
 
 To see some basic GC configuration you can run with `-Xlog:gc+init`
 
-### GCLogFileSize
+6. GCLogFileSize
 
 > -XX:GCLogFileSize=_
 
 GC log file size, requires UseGCLogFileRotation. Set to 0 to only trigger rotation via jcmd
 
-### HeapDumpOnOutOfMemoryError	
+7. HeapDumpOnOutOfMemoryError	
 
 >-XX:+HeapDumpOnOutOfMemoryError
 
@@ -120,7 +119,7 @@ Dump heap to file when java.lang.OutOfMemoryError is thrown
   }
   ```
 
-### MaxGCPauseMillis
+8. MaxGCPauseMillis
 
 > -XX:MaxGCPauseMillis=___
 
@@ -132,13 +131,13 @@ Adaptive size policy maximum GC pause time goal in millisecond, or (G1 Only) the
 
 - 如果G1设置了`-Xmn`,会导致该参数失效
 
-### MaxMetaspaceSize
+9. MaxMetaspaceSize
 
 > Maximum size of Metaspaces (in bytes)
 
 这个参数会限制metaspace(包括了Klass Metaspace以及NoKlass Metaspace)被committed的内存大小，会保证committed的内存不会超过这个值，一旦超过就会触发GC，这里要注意和MaxPermSize的区别，MaxMetaspaceSize并不会在jvm启动的时候分配一块这么大的内存出来，而MaxPermSize是会分配一块这么大的内存的。
 
-### ParallelGCThreads
+10. ParallelGCThreads
 
 > -XX:ParallelGCThreads=___
 
@@ -173,19 +172,19 @@ unsigned int Abstract_VM_Version::nof_parallel_worker_threads(
 
 - 一般建议和CPU个数相等，因为过多的线程数，可能会影响性能
 
-### ParallelRefProcEnabled
+11. ParallelRefProcEnabled
 
 > -XX:+ParallelRefProcEnabled
 
 Enable parallel reference processing whenever possible
 
-### PrintGCDateStamps
+12. PrintGCDateStamps
 
 > -XX:+PrintGCDateStamps
 
 Print date stamps at garbage collection
 
-### PrintGCDetails
+13. PrintGCDetails
 
 >-XX:-PrintGCDetails
 
@@ -193,23 +192,23 @@ Print more details at garbage collection
 
 `-XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintGCTimeStamps` 打印绝对时间和相对时间
 
-### PrintHeapAtGC
+14. PrintHeapAtGC
 
 > -XX:+PrintHeapAtGC
 
 Print heap layout before and after each GC
 
-### UseGCLogFileRotation
+15. UseGCLogFileRotation
 
 > -XX:+UseGCLogFileRotation
 
 Rotate gclog files (for long running applications). It requires -Xloggc:<filename>
 
-### Xloggc
+16. Xloggc
 
 > -Xloggc:___
 
-### Xms
+17. Xms
 
 > -Xms___ ==-XX:InitialHeapSize=___
 
@@ -217,13 +216,13 @@ Initial heap size (in bytes); zero means OldSize + NewSize
 
 Xms Xmx  可以设置相同的值,以免触发扩容
 
-### Xmx
+18. Xmx
 
 > -Xmx___ == -XX:MaxHeapSize=___
 
 Maximum heap size (in bytes)
 
-### Xss
+19. Xss
 
 > -Xss___
 
