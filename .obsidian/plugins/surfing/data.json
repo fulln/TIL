@@ -46,7 +46,7 @@
   },
   "treeData": [
     {
-      "id": "ea026f3ba8a32c63",
+      "id": "11b1d0efd959ebaf",
       "parent": 0,
       "droppable": true,
       "text": "极客时间-轻松学习，高效学习-极客邦",
@@ -57,10 +57,10 @@
       }
     },
     {
-      "id": "a6edf6f5c708fa7a",
+      "id": "6d3e0cd880a4e290",
       "parent": 0,
       "droppable": true,
-      "text": "21 | 类似“点击流”这样的海量数据应该如何存储？-极客时间",
+      "text": "23 | MySQL经常遇到的高可用、分片问题，NewSQL是如何解决的？-极客时间",
       "data": {
         "fileType": "site",
         "fileSize": "",
