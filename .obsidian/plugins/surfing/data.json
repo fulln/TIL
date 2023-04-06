@@ -46,10 +46,10 @@
   },
   "treeData": [
     {
-      "id": "11b1d0efd959ebaf",
+      "id": "194178ae4ff12212",
       "parent": 0,
       "droppable": true,
-      "text": "极客时间-轻松学习，高效学习-极客邦",
+      "text": "New Tab",
       "data": {
         "fileType": "site",
         "fileSize": "",
@@ -57,10 +57,10 @@
       }
     },
     {
-      "id": "6d3e0cd880a4e290",
+      "id": "f0493b1373b050af",
       "parent": 0,
       "droppable": true,
-      "text": "23 | MySQL经常遇到的高可用、分片问题，NewSQL是如何解决的？-极客时间",
+      "text": "力扣",
       "data": {
         "fileType": "site",
         "fileSize": "",
