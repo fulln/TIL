@@ -27,45 +27,21 @@
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 
 ```go
-func baseNeg2(n int) string {
-
-    if n == 0 {
-
-        return "0"
-
-    }
-
-    ans := []byte{}
-
-    k := 1
-
-    for n != 0 {
-
-        if n%2 != 0 {
-
-            ans = append(ans, '1')
-
-            n -= k
-
-        } else {
-
-            ans = append(ans, '0')
-
-        }
-
-        k *= -1
-
-        n /= 2
-
-    }
-
-    for i, j := 0, len(ans)-1; i < j; i, j = i+1, j-1 {
-
-        ans[i], ans[j] = ans[j], ans[i]
-
-    }
-
-    return string(ans)
-
+func baseNeg2(n int) string {
+    if n == 0 || n == 1 {
+        return strconv.Itoa(n)
+    }
+    res := []byte{}
+    for n != 0 {
+        remainder := n & 1
+        res = append(res, '0'+byte(remainder))
+        n -= remainder
+        n /= -2
+    }
+    for i, n := 0, len(res); i < n/2; i++ {
+        res[i], res[n-1-i] = res[n-1-i], res[i]
+    }
+    return string(res)
 }
+
 ```
