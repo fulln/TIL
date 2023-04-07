@@ -8,8 +8,7 @@
   ],
   "ignoreList": [
     "notion",
-    "craft",
-    "leetcode"
+    "craft"
   ],
   "alwaysShowCustomSearch": false,
   "showOtherSearchEngines": false,
@@ -44,6 +43,9 @@
     ],
     "defaultFilterType": "tree"
   },
+<<<<<<< HEAD
+  "treeData": []
+=======
   "treeData": [
     {
       "id": "1135e9220cda1574",
@@ -79,4 +81,5 @@
       }
     }
   ]
+>>>>>>> origin/master
 }

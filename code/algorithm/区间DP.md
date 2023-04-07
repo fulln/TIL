@@ -23,9 +23,8 @@
 ## 例题
 
 1.  最长上升子序列（Longest Increasing Subsequence）：[https://leetcode-cn.com/problems/longest-increasing-subsequence/](https://leetcode-cn.com/problems/longest-increasing-subsequence/)	
-1.  最大子序和（Maximum Subarray）：[https://leetcode-cn.com/problems/maximum-subarray/](https://leetcode-cn.com/problems/maximum-subarray/)
-2.  最长公共子序列（Longest Common Subsequence）：[https://leetcode-cn.com/problems/longest-common-subsequence/](https://leetcode-cn.com/problems/longest-common-subsequence/)
-3.  最长回文子串（Longest Palindromic Substring）：[https://leetcode-cn.com/problems/longest-palindromic-substring/](https://leetcode-cn.com/problems/longest-palindromic-substring/)
-4.  最大矩形（Maximal Rectangle）：[https://leetcode-cn.com/problems/maximal-rectangle/](https://leetcode-cn.com/problems/maximal-rectangle/)
-5. 
+2.  最大子序和（Maximum Subarray）：[https://leetcode-cn.com/problems/maximum-subarray/](https://leetcode-cn.com/problems/maximum-subarray/)
+3.  最长公共子序列（Longest Common Subsequence）：[https://leetcode-cn.com/problems/longest-common-subsequence/](https://leetcode-cn.com/problems/longest-common-subsequence/)
+4.  最长回文子串（Longest Palindromic Substring）：[https://leetcode-cn.com/problems/longest-palindromic-substring/](https://leetcode-cn.com/problems/longest-palindromic-substring/)
+5.  最大矩形（Maximal Rectangle）：[https://leetcode-cn.com/problems/maximal-rectangle/](https://leetcode-cn.com/problems/maximal-rectangle/)
 6. [[minScoreTriangulation#多边形三角剖分的最低得分]]
