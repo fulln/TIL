@@ -8,8 +8,7 @@
   ],
   "ignoreList": [
     "notion",
-    "craft",
-    "leetcode"
+    "craft"
   ],
   "alwaysShowCustomSearch": false,
   "showOtherSearchEngines": false,
@@ -44,17 +43,5 @@
     ],
     "defaultFilterType": "tree"
   },
-  "treeData": [
-    {
-      "id": "4eec3e30b7a23fc0",
-      "parent": 0,
-      "droppable": true,
-      "text": "1039. 多边形三角剖分的最低得分 - 力扣（LeetCode）",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    }
-  ]
+  "treeData": []
 }
