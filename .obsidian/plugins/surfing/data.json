@@ -55,6 +55,28 @@
         "fileSize": "",
         "icon": {}
       }
+    },
+    {
+      "id": "c2712482260af40c",
+      "parent": 0,
+      "droppable": true,
+      "text": "极客时间-轻松学习，高效学习-极客邦",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "e4bdf7a46c9c0e29",
+      "parent": 0,
+      "droppable": true,
+      "text": "05 | 数组：为什么很多编程语言中数组都从0开始编号？",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
     }
   ]
 }
