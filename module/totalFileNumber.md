@@ -26,6 +26,5 @@ function getChildrenSize(list){
    }) 
    return number 
 }
-
 return ret
 %>

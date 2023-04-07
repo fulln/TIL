@@ -43,5 +43,32 @@
     ],
     "defaultFilterType": "tree"
   },
+<<<<<<< HEAD
   "treeData": []
+=======
+  "treeData": [
+    {
+      "id": "194178ae4ff12212",
+      "parent": 0,
+      "droppable": true,
+      "text": "1017. 负二进制转换 - 力扣（LeetCode）",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "f0493b1373b050af",
+      "parent": 0,
+      "droppable": true,
+      "text": "力扣",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    }
+  ]
+>>>>>>> origin/master
 }
