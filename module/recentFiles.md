@@ -5,8 +5,9 @@ let tops = []
 recent.forEach(e =>{
 	let tfile = tp.file.find_tfile(e)
 	if(tfile){
-		let currDates = new Date(tfile.stat.mtime).toLocaleString()  
-		tops.push("* ["+tfile.basename+"]("+tfile.path+") - "+currDates)
+		let currDates = new Date(tfile.stat.mtime).toLocaleString()
+		let httpulrs =  "https://github.com/fulln/TIL/blob/master/" + tfile.path
+		tops.push("* ["+tfile.basename+"]("+encodeURI(httpulrs)+") - "+currDates)
 	}
 })
 const fs = require('fs');

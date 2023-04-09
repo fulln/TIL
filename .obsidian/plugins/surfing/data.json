@@ -44,39 +44,5 @@
     ],
     "defaultFilterType": "tree"
   },
-  "treeData": [
-    {
-      "id": "e689c1f763e5c6e0",
-      "parent": 0,
-      "droppable": true,
-      "text": "极客时间-轻松学习，高效学习-极客邦",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "142d1fcc2b7ee639",
-      "parent": 0,
-      "droppable": true,
-      "text": "06 | 链表（上）：如何实现LRU缓存淘汰算法?-极客时间",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "7f55b7c1a38829e6",
-      "parent": 0,
-      "droppable": true,
-      "text": "06 | 链表（上）：如何实现LRU缓存淘汰算法?-极客时间",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    }
-  ]
+  "treeData": []
 }
