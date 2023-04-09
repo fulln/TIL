@@ -21,6 +21,10 @@
     {
       "folder": "lib",
       "template": "module/markdownTag.md"
+    },
+    {
+      "folder": "daily",
+      "template": "module/recentFiles.md"
     }
   ],
   "syntax_highlighting": true,

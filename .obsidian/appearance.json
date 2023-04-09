@@ -1,8 +1,8 @@
 {
   "accentColor": "",
-  "cssTheme": "Atom",
+  "cssTheme": "Sanctum",
   "translucency": true,
   "interfaceFontFamily": "Cascadia Mono",
   "baseFontSizeAction": true,
-  "baseFontSize": 17
+  "baseFontSize": 16
 }

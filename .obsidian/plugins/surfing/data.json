@@ -46,7 +46,7 @@
   },
   "treeData": [
     {
-      "id": "a0d1afbd0f17df54",
+      "id": "e689c1f763e5c6e0",
       "parent": 0,
       "droppable": true,
       "text": "极客时间-轻松学习，高效学习-极客邦",
@@ -57,10 +57,10 @@
       }
     },
     {
-      "id": "e7c57d86f9961a16",
+      "id": "142d1fcc2b7ee639",
       "parent": 0,
       "droppable": true,
-      "text": "06 | 链表（上）：如何实现LRU缓存淘汰算法?",
+      "text": "06 | 链表（上）：如何实现LRU缓存淘汰算法?-极客时间",
       "data": {
         "fileType": "site",
         "fileSize": "",
@@ -68,21 +68,10 @@
       }
     },
     {
-      "id": "c7a15b5cdc21736e",
+      "id": "7f55b7c1a38829e6",
       "parent": 0,
       "droppable": true,
-      "text": "阿橋问题 - 维基百科，自由的百科全书",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "ca27d6f5e46d3dae",
-      "parent": 0,
-      "droppable": true,
-      "text": "题库 - 力扣 (LeetCode) 全球极客挚爱的技术成长平台",
+      "text": "06 | 链表（上）：如何实现LRU缓存淘汰算法?-极客时间",
       "data": {
         "fileType": "site",
         "fileSize": "",
