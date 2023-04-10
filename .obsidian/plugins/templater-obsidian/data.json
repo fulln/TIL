@@ -19,7 +19,7 @@
       "template": "module/markdownTag.md"
     },
     {
-      "folder": "lib",
+      "folder": "lib/geektime",
       "template": "module/markdownTag.md"
     },
     {
