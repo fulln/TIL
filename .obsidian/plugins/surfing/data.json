@@ -46,21 +46,10 @@
   },
   "treeData": [
     {
-      "id": "615d6617f54813e3",
+      "id": "d6922eae32fab190",
       "parent": 0,
       "droppable": true,
-      "text": "极客时间-轻松学习，高效学习-极客邦",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "7c3f6d8f10660854",
-      "parent": 0,
-      "droppable": true,
-      "text": "07 | 链表（下）：如何轻松写出正确的链表代码？-极客时间",
+      "text": "fulln/TIL: today i learn",
       "data": {
         "fileType": "site",
         "fileSize": "",
