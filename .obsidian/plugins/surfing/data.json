@@ -46,10 +46,17 @@
   },
   "treeData": [
     {
+<<<<<<< HEAD
       "id": "a80e0fbbfe6fa693",
       "parent": 0,
       "droppable": true,
       "text": "TIL/daily at master · fulln/TIL",
+=======
+      "id": "c81bcae28ba518b0",
+      "parent": 0,
+      "droppable": true,
+      "text": "Javassist Tutorial",
+>>>>>>> origin/master
       "data": {
         "fileType": "site",
         "fileSize": "",
