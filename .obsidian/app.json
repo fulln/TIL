@@ -7,5 +7,6 @@
   "newLinkFormat": "shortest",
   "useMarkdownLinks": false,
   "newFileFolderPath": "newFiles",
-  "defaultViewMode": "source"
+  "defaultViewMode": "source",
+  "showFrontmatter": true
 }
