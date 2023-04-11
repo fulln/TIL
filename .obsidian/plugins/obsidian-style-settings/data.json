@@ -4,5 +4,8 @@
   "sanctum@@tag-border-width": "1px",
   "sanctum@@aside-counter": true,
   "sanctum@@syntax-highlighting": "nord",
-  "sanctum@@indentation-guide-active": "var(--interactive)"
+  "sanctum@@indentation-guide-active": "var(--interactive)",
+  "shimmering-focus@@hide-settings-button": false,
+  "shimmering-focus@@show-sidebar-header-buttons": true,
+  "shimmering-focus@@show-ribbon": true
 }
