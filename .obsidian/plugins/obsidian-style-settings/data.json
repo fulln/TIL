@@ -7,5 +7,6 @@
   "sanctum@@indentation-guide-active": "var(--interactive)",
   "shimmering-focus@@hide-settings-button": false,
   "shimmering-focus@@show-sidebar-header-buttons": true,
-  "shimmering-focus@@show-ribbon": true
+  "shimmering-focus@@show-ribbon": false,
+  "shimmering-focus@@mac-os-native": true
 }
