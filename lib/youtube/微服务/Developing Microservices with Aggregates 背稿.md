@@ -195,3 +195,36 @@ Using event-driven Sagas instead of 2PC
 https://zhuanlan.zhihu.com/p/95852045
 
 ---
+Saga-based, eventually consistent order processing
+
+基于Saga的 订单最终一致性处理
+
+---
+Eventually consistent credit checking
+
+最终一致性 信用卡检查
+
+---
+Complexity of compensating transactions
+
+补偿交易的复杂性
+
+ACID transactions can simply rollback
+
+事务可以简单回滚
+
+BUT
+
+Developer must write application logic to “rollback” eventually consistent transactions
+
+开发者必须写应用逻辑去回滚一致性事务。
+
+
+---
+
+How atomically update database and publish an event
+
+如何原子性更新数据库并发布事件
+
+---
+

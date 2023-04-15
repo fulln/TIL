@@ -46,10 +46,10 @@
   },
   "treeData": [
     {
-      "id": "c7f21fef860331ca",
+      "id": "10c60a47bd6ab04b",
       "parent": 0,
       "droppable": true,
-      "text": "12 | 排序（下）：如何用快排思想在O(n)内查找第K大元素？",
+      "text": "极客时间-轻松学习，高效学习-极客邦",
       "data": {
         "fileType": "site",
         "fileSize": "",
@@ -57,21 +57,10 @@
       }
     },
     {
-      "id": "21159bef91a8db3d",
+      "id": "c278ecbfaf33d4eb",
       "parent": 0,
       "droppable": true,
       "text": "07 | 链表（下）：如何轻松写出正确的链表代码？-极客时间",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "bebd51f08b5c7733",
-      "parent": 0,
-      "droppable": true,
-      "text": "fulln/TIL: today i learn",
       "data": {
         "fileType": "site",
         "fileSize": "",
