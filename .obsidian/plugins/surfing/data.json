@@ -44,28 +44,5 @@
     ],
     "defaultFilterType": "tree"
   },
-  "treeData": [
-    {
-      "id": "d18857bfe2b58e17",
-      "parent": 0,
-      "droppable": true,
-      "text": "极客时间-轻松学习，高效学习-极客邦",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "97213d0b1cf922a4",
-      "parent": 0,
-      "droppable": true,
-      "text": "14 | 排序优化：如何实现一个通用的、高性能的排序函数？-极客时间",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    }
-  ]
+  "treeData": []
 }
