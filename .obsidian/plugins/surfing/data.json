@@ -44,28 +44,5 @@
     ],
     "defaultFilterType": "tree"
   },
-  "treeData": [
-    {
-      "id": "9200d6111bb397db",
-      "parent": 0,
-      "droppable": true,
-      "text": "1026. 节点与其祖先之间的最大差值 - 力扣（LeetCode）",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "438a98ecca33a475",
-      "parent": 0,
-      "droppable": true,
-      "text": "fulln/TIL: today i learn",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    }
-  ]
+  "treeData": []
 }
