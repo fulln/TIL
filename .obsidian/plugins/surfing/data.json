@@ -49,7 +49,18 @@
       "id": "71bdaecb8b785912",
       "parent": 0,
       "droppable": true,
-      "text": "力扣",
+      "text": "1043. 分隔数组以得到最大和 - 力扣（LeetCode）",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "5c2f8925a4dcf7f5",
+      "parent": 0,
+      "droppable": true,
+      "text": "fulln/TIL: today i learn",
       "data": {
         "fileType": "site",
         "fileSize": "",
