@@ -66,6 +66,17 @@
         "fileSize": "",
         "icon": {}
       }
+    },
+    {
+      "id": "59f76eb56b8b0200",
+      "parent": 0,
+      "droppable": true,
+      "text": "fulln/TIL: today i learn",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
     }
   ]
 }
