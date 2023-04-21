@@ -44,39 +44,5 @@
     ],
     "defaultFilterType": "tree"
   },
-  "treeData": [
-    {
-      "id": "3c2a1350945a4675",
-      "parent": 0,
-      "droppable": true,
-      "text": "极客时间-轻松学习，高效学习-极客邦",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "c00f030052e3ccf6",
-      "parent": 0,
-      "droppable": true,
-      "text": "18 | 散列表（上）：Word文档中的单词拼写检查功能是如何实现的？",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "59f76eb56b8b0200",
-      "parent": 0,
-      "droppable": true,
-      "text": "TIL/lib/geektime at master · fulln/TIL",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    }
-  ]
+  "treeData": []
 }
