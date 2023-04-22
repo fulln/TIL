@@ -44,5 +44,28 @@
     ],
     "defaultFilterType": "tree"
   },
-  "treeData": []
+  "treeData": [
+    {
+      "id": "1a82572a05213767",
+      "parent": 0,
+      "droppable": true,
+      "text": "data-bind=\"text: title\"",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "673e657843a1364c",
+      "parent": 0,
+      "droppable": true,
+      "text": "simulations - Google 搜索",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    }
+  ]
 }
