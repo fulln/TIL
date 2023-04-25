@@ -46,21 +46,10 @@
   },
   "treeData": [
     {
-      "id": "33647fb0041b772c",
+      "id": "06bd9aed26fc9040",
       "parent": 0,
       "droppable": true,
-      "text": "TIL/二叉树基础（上）.md at master · fulln/TIL",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "d3bd1c2885215a9f",
-      "parent": 0,
-      "droppable": true,
-      "text": "New Tab",
+      "text": "力扣",
       "data": {
         "fileType": "site",
         "fileSize": "",
