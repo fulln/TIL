@@ -33,6 +33,13 @@ So you should return 1 because there is only one bulb is on.
 
 -   `0 <= n <= 109`
 ```go
+
+func bulbSwitch(n int) int {
+  return int(math.Sqrt(float64(n)))
+}
+
+// 第二种方式
+
 func bulbSwitch(n int) int {
 
 ret := 0
