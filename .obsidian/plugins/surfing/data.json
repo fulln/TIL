@@ -46,65 +46,10 @@
   },
   "treeData": [
     {
-      "id": "955f1b99044d22c3",
+      "id": "cc9908e081c482b4",
       "parent": 0,
       "droppable": true,
-      "text": "极客时间-轻松学习，高效学习-极客邦",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "fbae9a9ff9323e99",
-      "parent": 0,
-      "droppable": true,
-      "text": "极客时间-轻松学习，高效学习-极客邦",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "2be9f1452ec843f4",
-      "parent": 0,
-      "droppable": true,
-      "text": "25 | 红黑树（上）：为什么工程中都用红黑树这种二叉树？",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "618cb72fbddf83ff",
-      "parent": 0,
-      "droppable": true,
-      "text": "结算台",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "32f1f651febe3588",
-      "parent": 0,
-      "droppable": true,
-      "text": "极客时间-轻松学习，高效学习-极客邦",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "0e25e455ad97c22b",
-      "parent": 0,
-      "droppable": true,
-      "text": "25 | 红黑树（上）：为什么工程中都用红黑树这种二叉树？",
+      "text": "New Tab",
       "data": {
         "fileType": "site",
         "fileSize": "",
