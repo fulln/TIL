@@ -226,5 +226,15 @@ How atomically update database and publish an event
 
 如何原子性更新数据库并发布事件
 
----
+-  订单服务  -> 订单数据库
+- 订单服务 -> 消息处理流
 
+ 会导致并发写重复数据的问题
+
+---
+Failure = inconsistent system
+
+
+
+
+---
