@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title： 阻塞I/O和进程模型
+title: 阻塞I/O和进程模型
 createTime: 2023-05-02 21:36  
 ---
 # 25 | 使用阻塞I/O和进程模型：最传统的方式
