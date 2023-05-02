@@ -41,49 +41,53 @@ func powerfulIntegers(x int, y int, bound int) []int {
 
     res := make(map[int]bool)
 
-    value1 := 1
+    lx := 1
 
-    for i := 0; i < 21; i++ {
+    for i:=0;i< 30;i++{
 
-        value2 := 1
+        ly := 1
 
-        for j := 0; j < 21; j++ {
+        for j:=0;j< 30;j++{            
 
-            value := value1 + value2
+            value := lx+ly 
 
-            if value <= bound {
-
-                res[value] = true
-
-            } else {
+            if value > bound {
 
                 break
 
+            }else{
+
+                res[value] = true
+
             }
 
-            value2 *= y
+  
+
+            ly *= y
 
         }
 
-        if value1 > bound {
+        if lx > bound {
 
             break
 
         }
 
-        value1 *= x
+  
+
+        lx *= x
 
     }
 
-    var result []int
+    ret := []int{}
 
     for k := range res {
 
-        result = append(result, k)
+        ret =append(ret,k)
 
     }
 
-    return result
+    return ret
 
 }
 ```
