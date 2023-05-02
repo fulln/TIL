@@ -8,7 +8,7 @@
 
 3. 粘贴
 
-   ```shel
+   ```shell
    Sub 合并当前工作簿下的所有工作表()
    Application.ScreenUpdating = False
    For j = 1 To Sheets.Count
