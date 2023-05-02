@@ -15,7 +15,7 @@
   "enable_folder_templates": true,
   "folder_templates": [
     {
-      "folder": "code",
+      "folder": "newFiles",
       "template": "module/markdownTag.md"
     },
     {
