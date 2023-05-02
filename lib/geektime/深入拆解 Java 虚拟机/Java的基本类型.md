@@ -1,3 +1,7 @@
+---
+dg-publish: true
+---
+
 #java #极客时间 #javabasic 
 
 ### Java 虚拟机的 boolean 类型

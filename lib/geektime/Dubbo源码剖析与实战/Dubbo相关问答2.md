@@ -1,3 +1,7 @@
+---
+dg-publish: true
+---
+
 #java #dubbo #极客时间 
 
 ## Dubbo常见问题与答案

@@ -1,3 +1,6 @@
+---
+dg-publish: true
+---
 
 ## 课程内容
 

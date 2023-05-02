@@ -1,3 +1,7 @@
+---
+dg-publish: true
+---
+
 #java #redis #mysql #极客时间 
 
 # 17 | 大厂都是怎么做MySQL to Redis同步的?

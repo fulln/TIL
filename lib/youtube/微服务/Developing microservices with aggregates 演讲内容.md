@@ -1,3 +1,6 @@
+---
+dg-publish: true
+---
 Developing microservices with aggregates - Chris Richardson - YouTube
 https://www.youtube.com/watch?v=7kX3fs0pWwc
 

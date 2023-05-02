@@ -1,3 +1,7 @@
+---
+dg-publish: true
+---
+
 #lib #geektime #后端存储实战课 
 
 # 07｜MySQL HA：如何将“删库跑路”的损失降到最低？

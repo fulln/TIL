@@ -1,3 +1,7 @@
+---
+dg-publish: true
+---
+
 #java #极客时间 #dubbo 
 
 ## 课程内容

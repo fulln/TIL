@@ -1,3 +1,7 @@
+---
+dg-publish: true
+---
+
 #lib #geektime #后端存储实战课 
 
 # 12 | MySQL如何应对高并发（二）：读写分离

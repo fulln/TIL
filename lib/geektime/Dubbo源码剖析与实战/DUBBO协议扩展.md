@@ -1,4 +1,7 @@
-
+---
+dg-publish: true
+---
+#java #极客时间 #dubbo 
 ##  协议扩展：如何快速控制应用的上下线？
 
 dubbo admin控制台服务过多导致管理混乱，短时间内的dubbo-admin内存数据急剧变化。需要改造

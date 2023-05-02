@@ -1,3 +1,7 @@
+---
+dg-publish: true
+---
+
 #java #极客时间 #dubbo 
 
 ##  注册扩展：如何统一添加注册信息？
