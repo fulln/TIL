@@ -60,9 +60,6 @@ int main(int c, char **v) {
 
 一个是锁 mutex，一个是条件变量 condition。锁很好理解，加锁的意思就是其他线程不能进入；条件变量则是在多个线程需要交互的情况下，用来线程间同步的原语。
 
-### 总结
-
-
 # 地址
 
 此文章为5月day3 学习笔记，内容来源于极客时间《https://time.geekbang.org/column/article/145464》
