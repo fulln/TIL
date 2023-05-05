@@ -44,17 +44,5 @@
     ],
     "defaultFilterType": "tree"
   },
-  "treeData": [
-    {
-      "id": "7275be21af53e552",
-      "parent": 0,
-      "droppable": true,
-      "text": "- LeetCode",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    }
-  ]
+  "treeData": []
 }
