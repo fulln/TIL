@@ -39,7 +39,9 @@ epoll 维护了一棵红黑树来跟踪所有待检测的文件描述字，黑�
 3. acceptor
 acceptor 对象表示的是服务器端监听器，acceptor 对象最终会作为一个 channel 对象，注册到 event_loop 上，以便进行连接完成的事件分发和检测。
 
+4. event_dispatcher
 
+event_dispatcher 是对事件分发机制的一种抽象，也就是说，可以实现一个基于 poll 的 poll_dispatcher，也可以实现一个基于 epoll 的 epoll_dispatcher。在这里，我们统一设计一个 event_dispatcher 结构体，来抽象这些行为。
 
 
 
