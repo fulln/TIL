@@ -46,32 +46,10 @@
   },
   "treeData": [
     {
-      "id": "7136bde2e29475be",
+      "id": "25db2f264b530b76",
       "parent": 0,
       "droppable": true,
-      "text": "Rate Limited",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "a224cd4e68798379",
-      "parent": 0,
-      "droppable": true,
-      "text": "极客时间-轻松学习，高效学习-极客邦",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "e597114b0ed56701",
-      "parent": 0,
-      "droppable": true,
-      "text": "34 | 自己动手写高性能HTTP服务器（三）：TCP字节流处理和HTTP协议实现",
+      "text": "极客时间",
       "data": {
         "fileType": "site",
         "fileSize": "",
