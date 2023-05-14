@@ -46,10 +46,10 @@
   },
   "treeData": [
     {
-      "id": "25db2f264b530b76",
+      "id": "f89d90b4ff98b085",
       "parent": 0,
       "droppable": true,
-      "text": "极客时间",
+      "text": "1054. 距离相等的条形码 - 力扣（LeetCode）",
       "data": {
         "fileType": "site",
         "fileSize": "",

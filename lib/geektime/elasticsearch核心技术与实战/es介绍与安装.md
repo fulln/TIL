@@ -62,6 +62,34 @@ sudo sysctl -w vm.max_map_count=262144
 
 ### Logstash安装使用
 
+#### logstash.yml
+```YML
+node.name: logstash-203
+# 日志文件目录配置
+path.logs: /usr/share/logstash/logs
+# 验证配置文件及存在性
+config.test_and_exit: false
+# 配置文件改变时是否自动加载
+config.reload.automatic: false
+# 重新加载配置文件间隔
+config.reload.interval: 60s
+# debug模式 开启后会打印解析后的配置文件 包括密码等信息 慎用
+# 需要同时配置日志等级为debug
+config.debug: true
+log.level: debug
+# The bind address for the metrics REST endpoint.
+http.host: 0.0.0.0
+```
+
+#### pipelines.yml
+
+```YML
+- pipeline.id: main 
+- path.config: /usr/share/logstash/config/logstash.conf
+```
+
+
+
 
 # 地址
 
