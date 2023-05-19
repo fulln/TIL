@@ -51,7 +51,7 @@ GET /_analyze
 - request boyd search
 	- es提供的，基于json格式DSL
 	- 返回值介绍
-		- took 花费时间
+		- took 花费时c间
 		- total 总文档数
 		- hits 结果集，默认前10文档
 			- _INDEX 索引名
