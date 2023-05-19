@@ -77,6 +77,17 @@
         "fileSize": "",
         "icon": {}
       }
+    },
+    {
+      "id": "238b3aec57239b5a",
+      "parent": 0,
+      "droppable": true,
+      "text": "题库 - 力扣 (LeetCode) 全球极客挚爱的技术成长平台",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
     }
   ]
 }
