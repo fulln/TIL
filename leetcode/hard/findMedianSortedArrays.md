@@ -77,3 +77,44 @@ func max(a, b int) float64 {
 }
 
 ```
+
+```java
+  
+public class LeetCode230520 {  
+    
+public double findMedianSortedArrays(int[] a, int[] b) {  
+  
+if (a.length > b.length) {  
+return findMedianSortedArrays(b, a);  
+}  
+  
+int n = a.length;  
+int m = b.length;  
+int middleTag = (n + m + 1) / 2;  
+int total = m + n;  
+int left = 0, right = n;  
+while (left <= right) {  
+int indexA = (left + right) / 2;  
+int indexB = middleTag - indexA;  
+int l1 = indexA == 0 ? Integer.MIN_VALUE : a[indexA - 1];  
+int l2 = indexB == 0 ? Integer.MIN_VALUE : b[indexB - 1];  
+int r1 = indexA == n ? Integer.MAX_VALUE : a[indexA];  
+int r2 = indexB == m ? Integer.MAX_VALUE : b[indexB];  
+  
+if (l1 <= r2 && l2 <= r1) {  
+if (total % 2 == 0) {  
+return (Math.max(l1, l2) + Math.min(r1, r2)) / 2.0;  
+} else {  
+return Math.max(l1, l2);  
+}  
+} else if (l1 > r2) {  
+right = indexA - 1;  
+} else {  
+left = indexA + 1;  
+}  
+}  
+return 0;  
+}  
+  
+}
+```
