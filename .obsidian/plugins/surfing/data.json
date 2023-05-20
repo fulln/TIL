@@ -46,43 +46,10 @@
   },
   "treeData": [
     {
-      "id": "83b014f1593b74e8",
-      "parent": 0,
-      "droppable": true,
-      "text": "极客时间-轻松学习，高效学习-极客邦",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "c7755df02414ccd4",
+      "id": "991a8b0ad62a9450",
       "parent": 0,
       "droppable": true,
       "text": "极客时间",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "783997a8cd076254",
-      "parent": 0,
-      "droppable": true,
-      "text": "极客时间",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "238b3aec57239b5a",
-      "parent": 0,
-      "droppable": true,
-      "text": "题库 - 力扣 (LeetCode) 全球极客挚爱的技术成长平台",
       "data": {
         "fileType": "site",
         "fileSize": "",
