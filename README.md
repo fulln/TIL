@@ -11,7 +11,7 @@ dg-publish: true
   
 // 得到从当前开始前6个月份的yyyy-mm 数组
 
-var m = Array(6).fill(0)
+var m = Array(12).fill(0)
     .map(function(v,i){return i})
     .map(p=>new Date(new Date().setMonth(new Date().getMonth()-p))
     .toISOString().slice(0,7));
