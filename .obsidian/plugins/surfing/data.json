@@ -44,28 +44,5 @@
     ],
     "defaultFilterType": "tree"
   },
-  "treeData": [
-    {
-      "id": "22ecc5767d390d6f",
-      "parent": 0,
-      "droppable": true,
-      "text": "极客时间-轻松学习，高效学习-极客邦",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "0413963554a9bcfe",
-      "parent": 0,
-      "droppable": true,
-      "text": "极客时间",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    }
-  ]
+  "treeData": []
 }
