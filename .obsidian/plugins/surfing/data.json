@@ -44,5 +44,28 @@
     ],
     "defaultFilterType": "tree"
   },
-  "treeData": []
+  "treeData": [
+    {
+      "id": "b949236f6b1c7cc5",
+      "parent": 0,
+      "droppable": true,
+      "text": "题库 - 力扣 (LeetCode) 全球极客挚爱的技术成长平台",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "ea934e7deb9651cf",
+      "parent": 0,
+      "droppable": true,
+      "text": "力扣",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    }
+  ]
 }
