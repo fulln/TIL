@@ -46,10 +46,10 @@
   },
   "treeData": [
     {
-      "id": "a7f7c314dbe32f83",
+      "id": "83a6734a6ccf95cb",
       "parent": 0,
       "droppable": true,
-      "text": "极客时间-轻松学习，高效学习-极客邦",
+      "text": "题库 - 力扣 (LeetCode) 全球极客挚爱的技术成长平台",
       "data": {
         "fileType": "site",
         "fileSize": "",
@@ -57,10 +57,10 @@
       }
     },
     {
-      "id": "50ab62047d2e158c",
+      "id": "f9c482a864344424",
       "parent": 0,
       "droppable": true,
-      "text": "极客时间",
+      "text": "力扣",
       "data": {
         "fileType": "site",
         "fileSize": "",
