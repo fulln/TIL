@@ -30,7 +30,7 @@ tp.file.move(daily_folder)
 
 ## 每日1题
 
-<% tp.user.leetcode() %>
+<% tp.config.target_file("leetcode") %>
 
 ## 每日单词
 
@@ -39,9 +39,7 @@ tp.file.move(daily_folder)
 
 
 ## 今日文章
-
-
-
+<% tp.config.run_mode("todayWrite") %>
 
 ## 微信阅读
 
