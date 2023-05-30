@@ -4,7 +4,7 @@
   "exportDirectory": "/export",
   "enableChalkboard": false,
   "enableOverview": false,
-  "enableMenu": true,
+  "enableMenu": false,
   "enablePointer": false,
   "enableTimeBar": true,
   "theme": "black",
