@@ -77,6 +77,17 @@
         "fileSize": "",
         "icon": {}
       }
+    },
+    {
+      "id": "98be2b967fd1af4d",
+      "parent": 0,
+      "droppable": true,
+      "text": "极客时间",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
     }
   ]
 }
