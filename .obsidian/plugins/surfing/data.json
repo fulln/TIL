@@ -46,7 +46,7 @@
   },
   "treeData": [
     {
-      "id": "19cf0403e18fdfcb",
+      "id": "278a38c81a37146e",
       "parent": 0,
       "droppable": true,
       "text": "极客时间-轻松学习，高效学习-极客邦",
@@ -57,43 +57,21 @@
       }
     },
     {
-      "id": "c48a3288eb70d72c",
+      "id": "58d5ed043b64a0d3",
+      "parent": 0,
+      "droppable": true,
+      "text": "极客时间年卡",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "d6b4435e5611117e",
       "parent": 0,
       "droppable": true,
       "text": "极客时间",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "f3f6ca17a240dc95",
-      "parent": 0,
-      "droppable": true,
-      "text": "极客时间-轻松学习，高效学习-极客邦",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "229a2c3f1b8263db",
-      "parent": 0,
-      "droppable": true,
-      "text": "极客时间-轻松学习，高效学习-极客邦",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "91f897416029a34d",
-      "parent": 0,
-      "droppable": true,
-      "text": "张汉东的Rust实战课-极客时间",
       "data": {
         "fileType": "site",
         "fileSize": "",
