@@ -44,5 +44,17 @@
     ],
     "defaultFilterType": "tree"
   },
-  "treeData": []
+  "treeData": [
+    {
+      "id": "6a69befb43c45985",
+      "parent": 0,
+      "droppable": true,
+      "text": "扇贝，知道你在改变",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    }
+  ]
 }
