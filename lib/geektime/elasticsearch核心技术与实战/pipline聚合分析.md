@@ -143,8 +143,191 @@ POST employees/_search
 	- Filter
 	- Post Filter
 	- Global
+QUERY:
+```HTTP
+POST employees/_search
 
+{
 
+  "size": 0,
+
+  "query": {
+
+    "range": {
+
+      "age": {
+
+        "gte": 20
+
+      }
+
+    }
+
+  },
+
+  "aggs": {
+
+    "jobs": {
+
+      "terms": {
+
+        "field":"job.keyword"
+
+      }
+
+    }
+
+  }
+
+}
+```
+FILTER
+```http
+POST employees/_search
+
+{
+
+  "size": 0,
+
+  "aggs": {
+
+    "older_person": {
+
+      "filter":{
+
+        "range":{
+
+          "age":{
+
+            "from":35
+
+          }
+
+        }
+
+      },
+
+      "aggs":{
+
+         "jobs":{
+
+           "terms": {
+
+        "field":"job.keyword"
+
+      }
+
+      }
+
+    }},
+
+    "all_jobs": {
+
+      "terms": {
+
+        "field":"job.keyword"
+
+      }
+
+    }
+
+  }
+
+}
+```
+
+Post field. 一条语句，找出所有的job类型。还能找到聚合后符合条件的结果
+
+```http
+POST employees/_search
+
+{
+
+  "aggs": {
+
+    "jobs": {
+
+      "terms": {
+
+        "field": "job.keyword"
+
+      }
+
+    }
+
+  },
+
+  "post_filter": {
+
+    "match": {
+
+      "job.keyword": "Dev Manager"
+
+    }
+
+  }
+
+}
+```
+global: 忽略query中的条件
+
+```http
+POST employees/_search
+
+{
+
+  "size": 0,
+
+  "query": {
+
+    "range": {
+
+      "age": {
+
+        "gte": 40
+
+      }
+
+    }
+
+  },
+
+  "aggs": {
+
+    "jobs": {
+
+      "terms": {
+
+        "field":"job.keyword"
+
+      }
+
+    },
+
+    "all":{
+
+      "global":{},
+
+      "aggs":{
+
+        "salary_avg":{
+
+          "avg":{
+
+            "field":"salary"
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
+```
 
 # 地址
 
