@@ -44,5 +44,28 @@
     ],
     "defaultFilterType": "tree"
   },
-  "treeData": []
+  "treeData": [
+    {
+      "id": "157219fdbfcf293b",
+      "parent": 0,
+      "droppable": true,
+      "text": "极客时间-轻松学习，高效学习-极客邦",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "aa8c5b0ec1344582",
+      "parent": 0,
+      "droppable": true,
+      "text": "10 | 生产者压缩算法面面观-极客时间",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    }
+  ]
 }
