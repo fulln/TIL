@@ -44,17 +44,5 @@
     ],
     "defaultFilterType": "tree"
   },
-  "treeData": [
-    {
-      "id": "e4cfc68c0f6eeba8",
-      "parent": 0,
-      "droppable": true,
-      "text": "03｜熔断：熔断-恢复-熔断-恢复，抖来抖去怎么办？",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    }
-  ]
+  "treeData": []
 }
