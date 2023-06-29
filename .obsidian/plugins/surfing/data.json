@@ -44,50 +44,5 @@
     ],
     "defaultFilterType": "tree"
   },
-  "treeData": [
-    {
-      "id": "6c6257aed3a44728",
-      "parent": 0,
-      "droppable": true,
-      "text": "极客时间-轻松学习，高效学习-极客邦",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "4024cdff4f18e5e7",
-      "parent": 0,
-      "droppable": true,
-      "text": "开篇词｜深度拆解核心原理，轻松掌握所有消息队列-极客时间",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "e560c095c1793888",
-      "parent": 0,
-      "droppable": true,
-      "text": "开篇词｜深度拆解核心原理，轻松掌握所有消息队列-极客时间",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "56007f1cc3df7df5",
-      "parent": 0,
-      "droppable": true,
-      "text": "20 | 多线程开发消费者实例-极客时间",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    }
-  ]
+  "treeData": []
 }
