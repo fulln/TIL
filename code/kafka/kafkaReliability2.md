@@ -58,7 +58,7 @@ kafka 消息保证是老生常谈的事情, 总结都做了n遍, 现在结合源
   ```
 
   3. 偏移量提交
-
+``
   > org.apache.kafka.clients.consumer.KafkaConsumer#poll(org.apache.kafka.common.utils.Timer, boolean)
 
      在consumer`poll` 拉取数据的时候,会有`coordinator.poll()`
