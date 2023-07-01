@@ -42,7 +42,31 @@ Kafka 定期自动删除过期位移的条件就是，组要处于 Empty 状态�
 1. JoinGroup
 	1. 一旦收集了全部成员的 JoinGroup 请求后，协调者会从这些成员中选择一个担任这个消费者组的领导者。
 	2. 第一个发送 JoinGroup 请求的成员自动成为领导者
+	3. 领导者消费者的任务是收集所有成员的订阅信息，然后根据这些信息，制定具体的分区消费分配方案。
 2. SyncGroup
+	1. 领导者向协调者发送 SyncGroup 请求，将刚刚做出的分配方案发给协调者
+	2. 让协调者接收分配方案，然后统一以 SyncGroup 响应的方式分发给所有成员
+	3. ![](https://static001.geekbang.org/resource/image/84/5b/84b0ffeef5cc382913a4e6cc5a4c675b.jpg?wh=3305*1880)
+
+## Broker 端重平衡场景剖析
+
+1. 新场景加入
+
+![](https://static001.geekbang.org/resource/image/27/7e/2792e00ac3206f63d8036802f4fbd77e.jpg?wh=5355*2670)
+
+2. 组成员离开组
+![](https://static001.geekbang.org/resource/image/b0/59/b0d3bc97d7b59a697yy043f1f6b79059.jpg?wh=5355*2670)
+
+3. 组成员崩溃离组。
+崩溃离组是被动的，协调者通常需要等待一段时间才能感知到，这段时间一般是由消费者端参数 session.timeout.ms 控制的。也就是说，Kafka 一般不会超过 session.timeout.ms 就能感知到这个崩溃。
+
+![](https://static001.geekbang.org/resource/image/c0/af/c033ea2f7d714fa25eb86e21612e38af.jpg?wh=5355*2670)
+
+4. 重平衡时协调者对组内成员提交位移的处理。
+当重平衡开启时，协调者会给予成员一段缓冲时间，要求每个成员必须在这段时间内快速地上报自己的位移信息，然后再开启正常的 JoinGroup/SyncGroup 请求发送
+![](https://static001.geekbang.org/resource/image/f6/44/f60a3852e743c0877753141ec5d2d944.jpg?wh=5355*2670)
+
+
 
 
 # 地址
