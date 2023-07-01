@@ -45,6 +45,8 @@ Broker 端参数 num.io.threads 控制了这个线程池中的线程数。目前
 
 所谓延时请求，就是那些一时未满足条件不能立刻处理的请求。比如设置了 acks=all 的 PRODUCE 请求，一旦设置了 acks=all，那么该请求就必须等待 ISR 中所有副本都接收了消息后才能返回，此时处理该请求的 IO 线程就必须等待其他 Broker 的写入结果。当请求不能立刻处理时，它就会暂存在 Purgatory 中。稍后一旦满足了完成条件，IO 线程会继续处理该请求，并将 Response 放入对应网络线程的响应队列中
 
+
+
 # 地址
 
 此文章为6月day30 学习笔记，内容来源于极客时间《https://time.geekbang.org/column/article/110482》
