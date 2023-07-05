@@ -1,0 +1,10 @@
+{
+	"nodes":[
+		{"id":"863d6e687895b4ee","x":205,"y":-180,"width":250,"height":60,"type":"file","file":"code/plug/idea/idea插件基础架构.md"},
+		{"type":"file","file":"code/plug/idea/基础配置.md","id":"c9df381be581f136","x":-400,"y":-220,"width":340,"height":241},
+		{"type":"text","text":"IDEA 插件开发","id":"7e995a5c03d7dc35","x":80,"y":180,"width":250,"height":60,"color":"1"}
+	],
+	"edges":[
+		{"id":"f74fe5c1a3bf2e5d","fromNode":"7e995a5c03d7dc35","fromSide":"top","toNode":"c9df381be581f136","toSide":"bottom"}
+	]
+}
