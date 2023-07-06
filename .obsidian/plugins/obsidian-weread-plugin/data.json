@@ -38,7 +38,7 @@
     },
     {
       "name": "wr_skey",
-      "value": "qg2fwpAA"
+      "value": "ZEjQhJAH"
     }
   ],
   "noteLocation": "weread",
@@ -46,7 +46,7 @@
   "insertAfter": "<!-- start of weread -->",
   "insertBefore": "<!-- end of weread -->",
   "dailyNotesFormat": "YYYY-MM/YYYY-MM-DD",
-  "lastCookieTime": 1688562903150,
+  "lastCookieTime": 1688658619551,
   "isCookieValid": true,
   "user": "手冢治熊",
   "userVid": "233589967",
@@ -54,5 +54,6 @@
   "noteCountLimit": -1,
   "subFolderType": "category",
   "fileNameType": "BOOK_NAME",
-  "dailyNotesToggle": true
+  "dailyNotesToggle": true,
+  "notesBlacklist": ""
 }
