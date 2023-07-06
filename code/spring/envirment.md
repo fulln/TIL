@@ -806,7 +806,7 @@ protected void applyPropertyValues(String beanName, BeanDefinition mbd, BeanWrap
 
 对属性值的解析是在BeanDefinitionValueResolver 类中的resolveValueIfNecessary()方法中进行的，对属性值的依赖注入是通过bw.setPropertyValues()方法实现的，在分析属性值的依赖注入之前，我们先分析一下对属性值的解析过程。
 
-```
+```java
 
 				Object originalValue = pv.getValue();
 				if (originalValue == AutowiredPropertyMarker.INSTANCE) {
@@ -821,7 +821,7 @@ protected void applyPropertyValues(String beanName, BeanDefinition mbd, BeanWrap
 ``` 
 ,然后解析下成员变量的处理过程
 
-```
+```java
 public Object resolveValueIfNecessary(Object argName, @Nullable Object value) {
 		// We must check each value to see whether it requires a runtime reference
 		// to another bean to be resolved.
@@ -960,7 +960,7 @@ public Object resolveValueIfNecessary(Object argName, @Nullable Object value) {
 
 这里主要针对进行解析,平常使用的也是比较多的是`resolveReference`
 
-```
+```java
 
     /**
      * Resolve a reference to another bean in the factory.
@@ -1032,7 +1032,7 @@ public Object resolveValueIfNecessary(Object argName, @Nullable Object value) {
 ```
 ,上面就是如何从bean工厂中获取到已经初始化好的bean,获取到之后还不能直接注入设置为对应值, 还需要改动下对应转换,看能否适配,下面说下适配的过程
 
-```
+```java
 
     public void setPropertyValues(PropertyValues pvs, boolean ignoreUnknown, boolean ignoreInvalid)
 	throws BeansException {
@@ -1088,7 +1088,7 @@ public Object resolveValueIfNecessary(Object argName, @Nullable Object value) {
 
 然后跳转到`org.springframework.beans.AbstractNestablePropertyAccessor#setPropertyValue(java.lang.String, java.lang.Object)`
 
-```
+```java
 @Override
 public void setPropertyValue(String propertyName, Object value) throws BeansException {
         AbstractNestablePropertyAccessor nestedPa;
@@ -1164,7 +1164,7 @@ private Object getPropertyHoldingValue(PropertyTokenHolder tokens) {
 
 2)、对于非集合类型的属性，大量使用了JDK 的反射机制，通过属性的getter()方法获取指定属性注入以前的值，同时调用属性的setter()方法为属性设置注入后的值。看到这里相信很多人都明白了Spring的setter()注入原理。(processLocalProperty -> 到BeanWrapperImpl类的ph.setValue(valueToApply))
 
-```
+```java
 public void setValue(final Object object, Object valueToApply) throws Exception {
 			final Method writeMethod = (this.pd instanceof GenericTypeAwarePropertyDescriptor ?
 					((GenericTypeAwarePropertyDescriptor) this.pd).getWriteMethodForActualAccess() :
