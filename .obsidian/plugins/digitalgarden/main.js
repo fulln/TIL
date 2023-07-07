@@ -9110,7 +9110,7 @@ var require_axios2 = __commonJS({
 __export(exports, {
   default: () => DigitalGarden
 });
-var import_obsidian7 = __toModule(require("obsidian"));
+var import_obsidian9 = __toModule(require("obsidian"));
 
 // node_modules/luxon/src/errors.js
 var LuxonError = class extends Error {
@@ -14214,6 +14214,7 @@ var Publisher = class {
         return [yield this.generateExcalidrawMarkdown(file, true), assets];
       }
       let text = yield this.vault.cachedRead(file);
+      text = yield this.convertCustomFilters(text);
       text = yield this.convertFrontMatter(text, file);
       text = yield this.createBlockIDs(text);
       text = yield this.createTranscludedText(text, file.path, 0);
@@ -14224,6 +14225,14 @@ var Publisher = class {
       const text_and_images = yield this.convertImageLinks(text, file.path);
       assets.images = text_and_images[1];
       return [text_and_images[0], assets];
+    });
+  }
+  convertCustomFilters(text) {
+    return __async(this, null, function* () {
+      for (const filter of this.settings.customFilters) {
+        text = text.replace(RegExp(filter.pattern, filter.flags), filter.replace);
+      }
+      return text;
     });
   }
   createBlockIDs(text) {
@@ -14368,7 +14377,8 @@ var Publisher = class {
           const block = queryBlock[0];
           const query = queryBlock[1];
           const markdown = yield dvApi.tryQueryMarkdown(query, path);
-          replacedText = replacedText.replace(block, markdown);
+          replacedText = replacedText.replace(block, `${markdown}
+{ .block-language-dataview}`);
         } catch (e) {
           console.log(e);
           new import_obsidian2.Notice("Unable to render dataview query. Please update the dataview plugin to the latest version.");
@@ -14428,6 +14438,7 @@ var Publisher = class {
     let publishedFrontMatter = { "dg-publish": true };
     publishedFrontMatter = this.addPermalink(fileFrontMatter, publishedFrontMatter, file.path);
     publishedFrontMatter = this.addDefaultPassThrough(fileFrontMatter, publishedFrontMatter);
+    publishedFrontMatter = this.addContentClasses(fileFrontMatter, publishedFrontMatter);
     publishedFrontMatter = this.addPageTags(fileFrontMatter, publishedFrontMatter);
     publishedFrontMatter = this.addFrontMatterSettings(fileFrontMatter, publishedFrontMatter);
     publishedFrontMatter = this.addNoteIconFrontMatter(fileFrontMatter, publishedFrontMatter);
@@ -14489,6 +14500,22 @@ ${frontMatterString}
       }
       if (tags.length > 0) {
         publishedFrontMatter["tags"] = tags;
+      }
+    }
+    return publishedFrontMatter;
+  }
+  addContentClasses(baseFrontMatter, newFrontMatter) {
+    const publishedFrontMatter = __spreadValues({}, newFrontMatter);
+    if (baseFrontMatter) {
+      const contentClassesKey = this.settings.contentClassesKey;
+      if (contentClassesKey && baseFrontMatter[contentClassesKey]) {
+        if (typeof baseFrontMatter[contentClassesKey] == "string") {
+          publishedFrontMatter["contentClasses"] = baseFrontMatter[contentClassesKey];
+        } else if (Array.isArray(baseFrontMatter[contentClassesKey])) {
+          publishedFrontMatter["contentClasses"] = baseFrontMatter[contentClassesKey].join(" ");
+        } else {
+          publishedFrontMatter["contentClasses"] = "";
+        }
       }
     }
     return publishedFrontMatter;
@@ -14643,6 +14670,7 @@ ${frontMatterString}
                 }
               }
               fileText = fileText.replace(this.frontmatterRegex, "");
+              fileText = yield this.convertCustomFilters(fileText);
               const header = this.generateTransclusionHeader(headerName, linkedFile);
               const headerSection = header ? `$<div class="markdown-embed-title">
 
@@ -14867,6 +14895,7 @@ ${headerSection}
 };
 
 // src/DigitalGardenSiteManager.ts
+var import_obsidian3 = __toModule(require("obsidian"));
 var DigitalGardenSiteManager = class {
   constructor(metadataCache, settings) {
     this.settings = settings;
@@ -14938,7 +14967,11 @@ ${key}=${defaultNoteSettings[key]}`;
     });
   }
   getNoteUrl(file) {
-    const baseUrl = this.settings.gardenBaseUrl ? `https://${extractBaseUrl(this.settings.gardenBaseUrl)}` : `https://${this.settings.githubRepo}.netlify.app`;
+    if (!this.settings.gardenBaseUrl) {
+      new import_obsidian3.Notice("Please set the garden base url in the settings");
+      return;
+    }
+    const baseUrl = `https://${extractBaseUrl(this.settings.gardenBaseUrl)}`;
     const noteUrlPath = generateUrlPath(getGardenPathForNote(file.path, this.rewriteRules), this.settings.slugifyEnabled);
     let urlPath = `/${noteUrlPath}`;
     const frontMatter = this.metadataCache.getCache(file.path).frontmatter;
@@ -15152,11 +15185,11 @@ ${key}=${defaultNoteSettings[key]}`;
 };
 
 // src/SettingView.ts
-var import_obsidian5 = __toModule(require("obsidian"));
+var import_obsidian7 = __toModule(require("obsidian"));
 var import_axios = __toModule(require_axios2());
 
 // src/ui/file-suggest.ts
-var import_obsidian4 = __toModule(require("obsidian"));
+var import_obsidian5 = __toModule(require("obsidian"));
 
 // node_modules/@popperjs/core/lib/enums.js
 var top = "top";
@@ -16731,7 +16764,7 @@ var createPopper = /* @__PURE__ */ popperGenerator({
 });
 
 // src/ui/suggest.ts
-var import_obsidian3 = __toModule(require("obsidian"));
+var import_obsidian4 = __toModule(require("obsidian"));
 var Suggest = class {
   constructor(owner, containerEl, scope) {
     this.owner = owner;
@@ -16801,7 +16834,7 @@ var TextInputSuggest = class {
   constructor(app, inputEl) {
     this.app = app;
     this.inputEl = inputEl;
-    this.scope = new import_obsidian3.Scope();
+    this.scope = new import_obsidian4.Scope();
     this.suggestEl = createDiv("suggestion-container");
     const suggestion = this.suggestEl.createDiv("suggestion");
     this.suggest = new Suggest(this, suggestion, this.scope);
@@ -16859,7 +16892,7 @@ var SvgFileSuggest = class extends TextInputSuggest {
     const files = [];
     const lowerCaseInputStr = inputStr.toLowerCase();
     abstractFiles.forEach((file) => {
-      if (file instanceof import_obsidian4.TFile && file.extension === "svg" && file.path.toLowerCase().contains(lowerCaseInputStr)) {
+      if (file instanceof import_obsidian5.TFile && file.extension === "svg" && file.path.toLowerCase().contains(lowerCaseInputStr)) {
         files.push(file);
       }
     });
@@ -16875,107 +16908,174 @@ var SvgFileSuggest = class extends TextInputSuggest {
   }
 };
 
+// src/ui/addFilterInput.ts
+var import_obsidian6 = __toModule(require("obsidian"));
+function addFilterInput(filter, el, idx, plugin) {
+  const item = el.createEl("li", { attr: { style: "list-style-type: none; position: relative; margin: 5px 0; padding-right: 45px" } });
+  const patternField = new import_obsidian6.TextComponent(el);
+  patternField.setPlaceholder("regex pattern").setValue(filter.pattern).onChange((value) => __async(this, null, function* () {
+    if (!value) {
+      return;
+    }
+    plugin.settings.customFilters[idx].pattern = value;
+    yield plugin.saveSettings();
+  }));
+  const patternEl = patternField.inputEl;
+  patternEl.style.width = "250px";
+  item.appendChild(patternEl);
+  const replaceField = new import_obsidian6.TextComponent(el);
+  replaceField.setPlaceholder("replacement").setValue(filter.replace).onChange((value) => __async(this, null, function* () {
+    if (!value) {
+      return;
+    }
+    plugin.settings.customFilters[idx].replace = value;
+    yield plugin.saveSettings();
+  }));
+  const replaceEl = replaceField.inputEl;
+  replaceEl.style.width = "250px";
+  replaceEl.style.marginLeft = "5px";
+  item.appendChild(replaceEl);
+  const flagField = new import_obsidian6.TextComponent(el);
+  flagField.setPlaceholder("flags").setValue(filter.flags).onChange((value) => __async(this, null, function* () {
+    if (!value) {
+      return;
+    }
+    plugin.settings.customFilters[idx].flags = value;
+    yield plugin.saveSettings();
+  }));
+  const flagEl = flagField.inputEl;
+  flagEl.style.width = "50px";
+  flagEl.style.marginLeft = "5px";
+  item.appendChild(flagEl);
+  const removeButton = new import_obsidian6.ButtonComponent(el);
+  removeButton.setIcon("minus");
+  removeButton.setTooltip("Remove filter");
+  removeButton.onClick(() => __async(this, null, function* () {
+    plugin.settings.customFilters.splice(idx, 1);
+    el.empty();
+    for (let i = 0; i < plugin.settings.customFilters.length; i++) {
+      addFilterInput(plugin.settings.customFilters[i], el, i, plugin);
+    }
+    yield plugin.saveSettings();
+  }));
+  const removeButtonEl = removeButton.buttonEl;
+  removeButtonEl.style.marginLeft = "5px";
+  removeButtonEl.style.position = "absolute";
+  removeButtonEl.style.right = "0";
+  item.appendChild(removeButtonEl);
+}
+
 // src/SettingView.ts
 var SettingView = class {
   constructor(app, settingsRootElement, settings, saveSettings) {
-    this.debouncedSaveAndUpdate = (0, import_obsidian5.debounce)(this.saveSiteSettingsAndUpdateEnv, 500, true);
+    this.debouncedSaveAndUpdate = (0, import_obsidian7.debounce)(this.saveSiteSettingsAndUpdateEnv, 500, true);
     this.app = app;
     this.settingsRootElement = settingsRootElement;
+    this.settingsRootElement.classList.add("dg-settings");
     this.settings = settings;
     this.saveSettings = saveSettings;
   }
   initialize(prModal) {
     return __async(this, null, function* () {
       this.settingsRootElement.empty();
-      this.settingsRootElement.createEl("h2", { text: "Settings " });
+      this.settingsRootElement.createEl("h1", { text: "Digital Garden Settings" });
       const linkDiv = this.settingsRootElement.createEl("div", { attr: { style: "margin-bottom: 10px;" } });
       linkDiv.createEl("span", { text: "Remember to read the setup guide if you haven't already. It can be found " });
-      linkDiv.createEl("a", { text: "here.", href: "https://github.com/oleeskild/Obsidian-Digital-Garden" });
+      linkDiv.createEl("a", { text: "here.", href: "https://dg-docs.ole.dev/getting-started/01-getting-started/" });
+      this.settingsRootElement.createEl("h3", { text: "GitHub Authentication (required)" }).prepend((0, import_obsidian7.getIcon)("github"));
       this.initializeGitHubRepoSetting();
       this.initializeGitHubUserNameSetting();
       this.initializeGitHubTokenSetting();
+      this.settingsRootElement.createEl("h3", { text: "URL" }).prepend((0, import_obsidian7.getIcon)("link"));
       this.initializeGitHubBaseURLSetting();
-      this.initializeDefaultNoteSettings();
-      this.initializeThemesSettings();
       this.initializeSlugifySetting();
+      this.settingsRootElement.createEl("h3", { text: "Features" }).prepend((0, import_obsidian7.getIcon)("star"));
+      this.initializeDefaultNoteSettings();
+      this.settingsRootElement.createEl("h3", { text: "Appearance" }).prepend((0, import_obsidian7.getIcon)("brush"));
+      this.initializeThemesSettings();
+      this.settingsRootElement.createEl("h3", { text: "Advanced" }).prepend((0, import_obsidian7.getIcon)("cog"));
       this.initializePathRewriteSettings();
+      this.initializeCustomFilterSettings();
       prModal.titleEl.createEl("h1", "Site template settings");
     });
   }
   initializeDefaultNoteSettings() {
     return __async(this, null, function* () {
-      const noteSettingsModal = new import_obsidian5.Modal(this.app);
-      noteSettingsModal.titleEl.createEl("h1", { text: "Note Settings" });
-      new import_obsidian5.Setting(this.settingsRootElement).setName("Note Settings").setDesc(`Default settings for each published note. These can be overwritten per note via frontmatter.`).addButton((cb) => {
-        cb.setButtonText("Edit");
+      const noteSettingsModal = new import_obsidian7.Modal(this.app);
+      noteSettingsModal.titleEl.createEl("h1", { text: "Default Note Settings" });
+      const linkDiv = noteSettingsModal.contentEl.createEl("div", { attr: { style: "margin-bottom: 20px; margin-top: -30px;" } });
+      linkDiv.createEl("span", { text: "Note Setting Docs is available " });
+      linkDiv.createEl("a", { text: "here.", href: "https://dg-docs.ole.dev/getting-started/03-note-settings/" });
+      new import_obsidian7.Setting(this.settingsRootElement).setName("Global Note Settings").setDesc(`Default settings for each published note. These can be overwritten per note via frontmatter.`).addButton((cb) => {
+        cb.setButtonText("Manage note settings");
         cb.onClick(() => __async(this, null, function* () {
           noteSettingsModal.open();
         }));
       });
-      new import_obsidian5.Setting(noteSettingsModal.contentEl).setName("Show home link (dg-home-link)").setDesc("Determines whether to show a link back to the homepage or not.").addToggle((t) => {
+      new import_obsidian7.Setting(noteSettingsModal.contentEl).setName("Show home link (dg-home-link)").setDesc("Determines whether to show a link back to the homepage or not.").addToggle((t) => {
         t.setValue(this.settings.defaultNoteSettings.dgHomeLink);
         t.onChange((val) => {
           this.settings.defaultNoteSettings.dgHomeLink = val;
           this.saveSiteSettingsAndUpdateEnv(this.app.metadataCache, this.settings, this.saveSettings);
         });
       });
-      new import_obsidian5.Setting(noteSettingsModal.contentEl).setName("Show local graph for notes (dg-show-local-graph)").setDesc("When turned on, notes will show its local graph in a sidebar on desktop and at the bottom of the page on mobile.").addToggle((t) => {
+      new import_obsidian7.Setting(noteSettingsModal.contentEl).setName("Show local graph for notes (dg-show-local-graph)").setDesc("When turned on, notes will show its local graph in a sidebar on desktop and at the bottom of the page on mobile.").addToggle((t) => {
         t.setValue(this.settings.defaultNoteSettings.dgShowLocalGraph);
         t.onChange((val) => {
           this.settings.defaultNoteSettings.dgShowLocalGraph = val;
           this.saveSiteSettingsAndUpdateEnv(this.app.metadataCache, this.settings, this.saveSettings);
         });
       });
-      new import_obsidian5.Setting(noteSettingsModal.contentEl).setName("Show backlinks for notes (dg-show-backlinks)").setDesc("When turned on, notes will show backlinks in a sidebar on desktop and at the bottom of the page on mobile.").addToggle((t) => {
+      new import_obsidian7.Setting(noteSettingsModal.contentEl).setName("Show backlinks for notes (dg-show-backlinks)").setDesc("When turned on, notes will show backlinks in a sidebar on desktop and at the bottom of the page on mobile.").addToggle((t) => {
         t.setValue(this.settings.defaultNoteSettings.dgShowBacklinks);
         t.onChange((val) => {
           this.settings.defaultNoteSettings.dgShowBacklinks = val;
           this.saveSiteSettingsAndUpdateEnv(this.app.metadataCache, this.settings, this.saveSettings);
         });
       });
-      new import_obsidian5.Setting(noteSettingsModal.contentEl).setName("Show a table of content for notes (dg-show-toc)").setDesc("When turned on, notes will show all headers as a table of content in a sidebar on desktop. It will not be shown on mobile devices.").addToggle((t) => {
+      new import_obsidian7.Setting(noteSettingsModal.contentEl).setName("Show a table of content for notes (dg-show-toc)").setDesc("When turned on, notes will show all headers as a table of content in a sidebar on desktop. It will not be shown on mobile devices.").addToggle((t) => {
         t.setValue(this.settings.defaultNoteSettings.dgShowToc);
         t.onChange((val) => {
           this.settings.defaultNoteSettings.dgShowToc = val;
           this.saveSiteSettingsAndUpdateEnv(this.app.metadataCache, this.settings, this.saveSettings);
         });
       });
-      new import_obsidian5.Setting(noteSettingsModal.contentEl).setName("Show inline title (dg-show-inline-title)").setDesc("When turned on, the title of the note will show on top of the page.").addToggle((t) => {
+      new import_obsidian7.Setting(noteSettingsModal.contentEl).setName("Show inline title (dg-show-inline-title)").setDesc("When turned on, the title of the note will show on top of the page.").addToggle((t) => {
         t.setValue(this.settings.defaultNoteSettings.dgShowInlineTitle);
         t.onChange((val) => {
           this.settings.defaultNoteSettings.dgShowInlineTitle = val;
           this.saveSiteSettingsAndUpdateEnv(this.app.metadataCache, this.settings, this.saveSettings);
         });
       });
-      new import_obsidian5.Setting(noteSettingsModal.contentEl).setName("Show filetree sidebar (dg-show-file-tree)").setDesc("When turned on, a filetree will be shown on your site.").addToggle((t) => {
+      new import_obsidian7.Setting(noteSettingsModal.contentEl).setName("Show filetree sidebar (dg-show-file-tree)").setDesc("When turned on, a filetree will be shown on your site.").addToggle((t) => {
         t.setValue(this.settings.defaultNoteSettings.dgShowFileTree);
         t.onChange((val) => {
           this.settings.defaultNoteSettings.dgShowFileTree = val;
           this.saveSiteSettingsAndUpdateEnv(this.app.metadataCache, this.settings, this.saveSettings);
         });
       });
-      new import_obsidian5.Setting(noteSettingsModal.contentEl).setName("Enable search (dg-enable-search)").setDesc("When turned on, users will be able to search through the content of your site.").addToggle((t) => {
+      new import_obsidian7.Setting(noteSettingsModal.contentEl).setName("Enable search (dg-enable-search)").setDesc("When turned on, users will be able to search through the content of your site.").addToggle((t) => {
         t.setValue(this.settings.defaultNoteSettings.dgEnableSearch);
         t.onChange((val) => {
           this.settings.defaultNoteSettings.dgEnableSearch = val;
           this.saveSiteSettingsAndUpdateEnv(this.app.metadataCache, this.settings, this.saveSettings);
         });
       });
-      new import_obsidian5.Setting(noteSettingsModal.contentEl).setName("Enable link preview (dg-link-preview)").setDesc("When turned on, hovering over links to notes in your garden shows a scrollable preview.").addToggle((t) => {
+      new import_obsidian7.Setting(noteSettingsModal.contentEl).setName("Enable link preview (dg-link-preview)").setDesc("When turned on, hovering over links to notes in your garden shows a scrollable preview.").addToggle((t) => {
         t.setValue(this.settings.defaultNoteSettings.dgLinkPreview);
         t.onChange((val) => {
           this.settings.defaultNoteSettings.dgLinkPreview = val;
           this.saveSiteSettingsAndUpdateEnv(this.app.metadataCache, this.settings, this.saveSettings);
         });
       });
-      new import_obsidian5.Setting(noteSettingsModal.contentEl).setName("Show Tags (dg-show-tags)").setDesc("When turned on, tags in your frontmatter will be displayed on each note. If search is enabled, clicking on a tag will bring up a search for all notes containing that tag.").addToggle((t) => {
+      new import_obsidian7.Setting(noteSettingsModal.contentEl).setName("Show Tags (dg-show-tags)").setDesc("When turned on, tags in your frontmatter will be displayed on each note. If search is enabled, clicking on a tag will bring up a search for all notes containing that tag.").addToggle((t) => {
         t.setValue(this.settings.defaultNoteSettings.dgShowTags);
         t.onChange((val) => {
           this.settings.defaultNoteSettings.dgShowTags = val;
           this.saveSiteSettingsAndUpdateEnv(this.app.metadataCache, this.settings, this.saveSettings);
         });
       });
-      new import_obsidian5.Setting(noteSettingsModal.contentEl).setName("Let all frontmatter through (dg-pass-frontmatter)").setDesc("Determines whether to let all frontmatter data through to the site template. Be aware that this could break your site if you have data in a format not recognized by the template engine, 11ty.").addToggle((t) => {
+      new import_obsidian7.Setting(noteSettingsModal.contentEl).setName("Let all frontmatter through (dg-pass-frontmatter)").setDesc("Determines whether to let all frontmatter data through to the site template. Be aware that this could break your site if you have data in a format not recognized by the template engine, 11ty.").addToggle((t) => {
         t.setValue(this.settings.defaultNoteSettings.dgPassFrontmatter);
         t.onChange((val) => {
           this.settings.defaultNoteSettings.dgPassFrontmatter = val;
@@ -16986,41 +17086,42 @@ var SettingView = class {
   }
   initializeThemesSettings() {
     return __async(this, null, function* () {
-      const themeModal = new import_obsidian5.Modal(this.app);
+      const themeModal = new import_obsidian7.Modal(this.app);
+      themeModal.containerEl.addClass("dg-settings");
       themeModal.titleEl.createEl("h1", { text: "Appearance Settings" });
-      new import_obsidian5.Setting(this.settingsRootElement).setName("Appearance").setDesc("Manage themes, sitename and favicons on your site").addButton((cb) => {
-        cb.setButtonText("Manage");
+      new import_obsidian7.Setting(this.settingsRootElement).setName("Appearance").setDesc("Manage themes, sitename and styling on your site").addButton((cb) => {
+        cb.setButtonText("Manage appearance");
         cb.onClick(() => __async(this, null, function* () {
           themeModal.open();
         }));
       });
       try {
         if (this.app.plugins && this.app.plugins.plugins["obsidian-style-settings"]._loaded) {
-          themeModal.contentEl.createEl("h2", { text: "Style Settings Plugin" });
-          new import_obsidian5.Setting(themeModal.contentEl).setName("Apply current style settings to site").setDesc("Click the apply button to use the current style settings from the Style Settings Plugin on your site.").addButton((btn) => {
+          themeModal.contentEl.createEl("h2", { text: "Style Settings Plugin" }).prepend((0, import_obsidian7.getIcon)("paintbrush"));
+          new import_obsidian7.Setting(themeModal.contentEl).setName("Apply current style settings to site").setDesc("Click the apply button to use the current style settings from the Style Settings Plugin on your site.").addButton((btn) => {
             btn.setButtonText("Apply");
             btn.onClick((ev) => __async(this, null, function* () {
-              new import_obsidian5.Notice("Applying Style Settings...");
+              new import_obsidian7.Notice("Applying Style Settings...");
               const styleSettingsNode = document.querySelector("#css-settings-manager");
               if (!styleSettingsNode) {
-                new import_obsidian5.Notice("No Style Settings found");
+                new import_obsidian7.Notice("No Style Settings found");
                 return;
               }
               this.settings.styleSettingsCss = styleSettingsNode.innerHTML;
               if (!this.settings.styleSettingsCss) {
-                new import_obsidian5.Notice("No Style Settings found");
+                new import_obsidian7.Notice("No Style Settings found");
                 return;
               }
               this.saveSiteSettingsAndUpdateEnv(this.app.metadataCache, this.settings, this.saveSettings);
-              new import_obsidian5.Notice("Style Settings applied to site");
+              new import_obsidian7.Notice("Style Settings applied to site");
             }));
           });
         }
       } catch (e) {
       }
-      themeModal.contentEl.createEl("h2", { text: "Theme Settings" });
+      themeModal.contentEl.createEl("h2", { text: "Theme Settings" }).prepend((0, import_obsidian7.getIcon)("palette"));
       const themesListResponse = yield import_axios.default.get("https://raw.githubusercontent.com/obsidianmd/obsidian-releases/master/community-css-themes.json");
-      new import_obsidian5.Setting(themeModal.contentEl).setName("Theme").addDropdown((dd) => {
+      new import_obsidian7.Setting(themeModal.contentEl).setName("Theme").addDropdown((dd) => {
         dd.addOption('{"name": "default", "modes": ["dark"]}', "Default");
         const sortedThemes = themesListResponse.data.sort((a, b) => a.name.localeCompare(b.name));
         sortedThemes.map((x) => {
@@ -17032,7 +17133,7 @@ var SettingView = class {
           }));
         });
       });
-      new import_obsidian5.Setting(themeModal.contentEl).setName("Base theme").addDropdown((dd) => {
+      new import_obsidian7.Setting(themeModal.contentEl).setName("Base theme").addDropdown((dd) => {
         dd.addOption("dark", "Dark");
         dd.addOption("light", "Light");
         dd.setValue(this.settings.baseTheme);
@@ -17041,11 +17142,11 @@ var SettingView = class {
           yield this.saveSettings();
         }));
       });
-      new import_obsidian5.Setting(themeModal.contentEl).setName("Sitename").setDesc("The name of your site. This will be displayed as the site header.").addText((text) => text.setValue(this.settings.siteName).onChange((value) => __async(this, null, function* () {
+      new import_obsidian7.Setting(themeModal.contentEl).setName("Sitename").setDesc("The name of your site. This will be displayed as the site header.").addText((text) => text.setValue(this.settings.siteName).onChange((value) => __async(this, null, function* () {
         this.settings.siteName = value;
         yield this.saveSettings();
       })));
-      new import_obsidian5.Setting(themeModal.contentEl).setName("Favicon").setDesc("Path to an svg in your vault you wish to use as a favicon. Leave blank to use default.").addText((tc) => {
+      new import_obsidian7.Setting(themeModal.contentEl).setName("Favicon").setDesc("Path to an svg in your vault you wish to use as a favicon. Leave blank to use default.").addText((tc) => {
         tc.setPlaceholder("myfavicon.svg");
         tc.setValue(this.settings.faviconPath);
         tc.onChange((val) => __async(this, null, function* () {
@@ -17054,92 +17155,96 @@ var SettingView = class {
         }));
         new SvgFileSuggest(this.app, tc.inputEl);
       });
-      themeModal.contentEl.createEl("h2", { text: "Timestamps Settings" });
-      new import_obsidian5.Setting(themeModal.contentEl).setName("Timestamp format").setDesc("The format string to render timestamp on the garden. Must be luxon compatible").addText((text) => text.setValue(this.settings.timestampFormat).onChange((value) => __async(this, null, function* () {
+      themeModal.contentEl.createEl("h2", { text: "Timestamps Settings" }).prepend((0, import_obsidian7.getIcon)("calendar-clock"));
+      new import_obsidian7.Setting(themeModal.contentEl).setName("Timestamp format").setDesc("The format string to render timestamp on the garden. Must be luxon compatible").addText((text) => text.setValue(this.settings.timestampFormat).onChange((value) => __async(this, null, function* () {
         this.settings.timestampFormat = value;
         yield this.saveSettings();
       })));
-      new import_obsidian5.Setting(themeModal.contentEl).setName("Show created timestamp").addToggle((t) => {
+      new import_obsidian7.Setting(themeModal.contentEl).setName("Show created timestamp").addToggle((t) => {
         t.setValue(this.settings.showCreatedTimestamp).onChange((value) => __async(this, null, function* () {
           this.settings.showCreatedTimestamp = value;
           yield this.saveSettings();
         }));
       });
-      new import_obsidian5.Setting(themeModal.contentEl).setName("Created timestamp Frontmatter Key").setDesc("Key to get the created timestamp from the frontmatter. Keep blank to get the value from file creation time. The value can be any value that luxon Datetime.fromISO can parse.").addText((text) => text.setValue(this.settings.createdTimestampKey).onChange((value) => __async(this, null, function* () {
+      new import_obsidian7.Setting(themeModal.contentEl).setName("Created timestamp Frontmatter Key").setDesc("Key to get the created timestamp from the frontmatter. Keep blank to get the value from file creation time. The value can be any value that luxon Datetime.fromISO can parse.").addText((text) => text.setValue(this.settings.createdTimestampKey).onChange((value) => __async(this, null, function* () {
         this.settings.createdTimestampKey = value;
         yield this.saveSettings();
       })));
-      new import_obsidian5.Setting(themeModal.contentEl).setName("Show updated timestamp").addToggle((t) => {
+      new import_obsidian7.Setting(themeModal.contentEl).setName("Show updated timestamp").addToggle((t) => {
         t.setValue(this.settings.showUpdatedTimestamp).onChange((value) => __async(this, null, function* () {
           this.settings.showUpdatedTimestamp = value;
           yield this.saveSettings();
         }));
       });
-      new import_obsidian5.Setting(themeModal.contentEl).setName("Updated timestamp Frontmatter Key").setDesc("Key to get the updated timestamp from the frontmatter. Keep blank to get the value from file update time. The value can be any value that luxon Datetime.fromISO can parse.").addText((text) => text.setValue(this.settings.updatedTimestampKey).onChange((value) => __async(this, null, function* () {
+      new import_obsidian7.Setting(themeModal.contentEl).setName("Updated timestamp Frontmatter Key").setDesc("Key to get the updated timestamp from the frontmatter. Keep blank to get the value from file update time. The value can be any value that luxon Datetime.fromISO can parse.").addText((text) => text.setValue(this.settings.updatedTimestampKey).onChange((value) => __async(this, null, function* () {
         this.settings.updatedTimestampKey = value;
         yield this.saveSettings();
       })));
-      themeModal.contentEl.createEl("h2", { text: "Note icons Settings" });
+      themeModal.contentEl.createEl("h2", { text: "CSS settings" }).prepend((0, import_obsidian7.getIcon)("code"));
+      new import_obsidian7.Setting(themeModal.contentEl).setName("Body Classes Key").setDesc("Key for setting css-classes to the note body from the frontmatter.").addText((text) => text.setValue(this.settings.contentClassesKey).onChange((value) => __async(this, null, function* () {
+        this.settings.contentClassesKey = value;
+        yield this.saveSettings();
+      })));
+      themeModal.contentEl.createEl("h2", { text: "Note icons Settings" }).prepend((0, import_obsidian7.getIcon)("image"));
       themeModal.contentEl.createEl("div", { attr: { style: "margin-bottom: 10px;" } }).createEl("a", {
         text: "Documentation on note icons",
         href: "https://dg-docs.ole.dev/advanced/note-specific-settings/#note-icons"
       });
-      new import_obsidian5.Setting(themeModal.contentEl).setName("Note icon Frontmatter Key").setDesc("Key to get the note icon value from the frontmatter").addText((text) => text.setValue(this.settings.noteIconKey).onChange((value) => __async(this, null, function* () {
+      new import_obsidian7.Setting(themeModal.contentEl).setName("Note icon Frontmatter Key").setDesc("Key to get the note icon value from the frontmatter").addText((text) => text.setValue(this.settings.noteIconKey).onChange((value) => __async(this, null, function* () {
         this.settings.noteIconKey = value;
         yield this.saveSettings();
       })));
-      new import_obsidian5.Setting(themeModal.contentEl).setName("Default note icon Value").setDesc("The default value for note icon if not specified").addText((text) => {
+      new import_obsidian7.Setting(themeModal.contentEl).setName("Default note icon Value").setDesc("The default value for note icon if not specified").addText((text) => {
         text.setValue(this.settings.defaultNoteIcon).onChange((value) => __async(this, null, function* () {
           this.settings.defaultNoteIcon = value;
           yield this.saveSettings();
         }));
       });
-      new import_obsidian5.Setting(themeModal.contentEl).setName("Show note icon on Title").addToggle((t) => {
+      new import_obsidian7.Setting(themeModal.contentEl).setName("Show note icon on Title").addToggle((t) => {
         t.setValue(this.settings.showNoteIconOnTitle).onChange((value) => __async(this, null, function* () {
           this.settings.showNoteIconOnTitle = value;
           yield this.saveSettings();
         }));
       });
-      new import_obsidian5.Setting(themeModal.contentEl).setName("Show note icon in FileTree").addToggle((t) => {
+      new import_obsidian7.Setting(themeModal.contentEl).setName("Show note icon in FileTree").addToggle((t) => {
         t.setValue(this.settings.showNoteIconInFileTree).onChange((value) => __async(this, null, function* () {
           this.settings.showNoteIconInFileTree = value;
           yield this.saveSettings();
         }));
       });
-      new import_obsidian5.Setting(themeModal.contentEl).setName("Show note icon on Internal Links").addToggle((t) => {
+      new import_obsidian7.Setting(themeModal.contentEl).setName("Show note icon on Internal Links").addToggle((t) => {
         t.setValue(this.settings.showNoteIconOnInternalLink).onChange((value) => __async(this, null, function* () {
           this.settings.showNoteIconOnInternalLink = value;
           yield this.saveSettings();
         }));
       });
-      new import_obsidian5.Setting(themeModal.contentEl).setName("Show note icon on Backlinks").addToggle((t) => {
+      new import_obsidian7.Setting(themeModal.contentEl).setName("Show note icon on Backlinks").addToggle((t) => {
         t.setValue(this.settings.showNoteIconOnBackLink).onChange((value) => __async(this, null, function* () {
           this.settings.showNoteIconOnBackLink = value;
           yield this.saveSettings();
         }));
       });
-      new import_obsidian5.Setting(themeModal.contentEl).addButton((cb) => {
+      new import_obsidian7.Setting(themeModal.contentEl).addButton((cb) => {
         cb.setButtonText("Apply settings to site");
         cb.onClick((ev) => __async(this, null, function* () {
           const octokit = new Octokit({ auth: this.settings.githubToken });
-          yield this.saveThemeAndUpdateEnv();
+          yield this.saveSettingsAndUpdateEnv();
           yield this.addFavicon(octokit);
         }));
       });
     });
   }
-  saveThemeAndUpdateEnv() {
+  saveSettingsAndUpdateEnv() {
     return __async(this, null, function* () {
       const theme = JSON.parse(this.settings.theme);
       const baseTheme = this.settings.baseTheme;
       if (theme.modes.indexOf(baseTheme) < 0) {
-        new import_obsidian5.Notice(`The ${theme.name} theme doesn't support ${baseTheme} mode.`);
+        new import_obsidian7.Notice(`The ${theme.name} theme doesn't support ${baseTheme} mode.`);
         return;
       }
       const gardenManager = new DigitalGardenSiteManager(this.app.metadataCache, this.settings);
       yield gardenManager.updateEnv();
-      new import_obsidian5.Notice("Successfully applied theme");
-      new import_obsidian5.Notice("Successfully set sitename");
+      new import_obsidian7.Notice("Successfully applied settings");
     });
   }
   saveSiteSettingsAndUpdateEnv(metadataCache, settings, saveSettings) {
@@ -17150,7 +17255,7 @@ var SettingView = class {
         const gardenManager = new DigitalGardenSiteManager(metadataCache, settings);
         yield gardenManager.updateEnv();
       } catch (e) {
-        new import_obsidian5.Notice("Failed to update settings. Make sure you have an internet connection.");
+        new import_obsidian7.Notice("Failed to update settings. Make sure you have an internet connection.");
         updateFailed = true;
       }
       if (!updateFailed) {
@@ -17163,8 +17268,8 @@ var SettingView = class {
       let base64SettingsFaviconContent = "";
       if (this.settings.faviconPath) {
         const faviconFile = this.app.vault.getAbstractFileByPath(this.settings.faviconPath);
-        if (!(faviconFile instanceof import_obsidian5.TFile)) {
-          new import_obsidian5.Notice(`${this.settings.faviconPath} is not a valid file.`);
+        if (!(faviconFile instanceof import_obsidian7.TFile)) {
+          new import_obsidian7.Notice(`${this.settings.faviconPath} is not a valid file.`);
           return;
         }
         const faviconContent = yield this.app.vault.readBinary(faviconFile);
@@ -17199,18 +17304,17 @@ var SettingView = class {
           content: base64SettingsFaviconContent,
           sha: faviconExists ? currentFaviconOnSite.data.sha : null
         });
-        new import_obsidian5.Notice(`Successfully set favicon`);
       }
     });
   }
   initializeGitHubRepoSetting() {
-    new import_obsidian5.Setting(this.settingsRootElement).setName("GitHub repo name").setDesc("The name of the GitHub repository").addText((text) => text.setPlaceholder("mydigitalgarden").setValue(this.settings.githubRepo).onChange((value) => __async(this, null, function* () {
+    new import_obsidian7.Setting(this.settingsRootElement).setName("GitHub repo name").setDesc("The name of the GitHub repository").addText((text) => text.setPlaceholder("mydigitalgarden").setValue(this.settings.githubRepo).onChange((value) => __async(this, null, function* () {
       this.settings.githubRepo = value;
       yield this.saveSettings();
     })));
   }
   initializeGitHubUserNameSetting() {
-    new import_obsidian5.Setting(this.settingsRootElement).setName("GitHub Username").setDesc("Your GitHub Username").addText((text) => text.setPlaceholder("myusername").setValue(this.settings.githubUserName).onChange((value) => __async(this, null, function* () {
+    new import_obsidian7.Setting(this.settingsRootElement).setName("GitHub Username").setDesc("Your GitHub Username").addText((text) => text.setPlaceholder("myusername").setValue(this.settings.githubUserName).onChange((value) => __async(this, null, function* () {
       this.settings.githubUserName = value;
       yield this.saveSettings();
     })));
@@ -17224,53 +17328,96 @@ var SettingView = class {
         link.innerText = "here!";
       });
     });
-    new import_obsidian5.Setting(this.settingsRootElement).setName("GitHub token").setDesc(desc).addText((text) => text.setPlaceholder("Secret Token").setValue(this.settings.githubToken).onChange((value) => __async(this, null, function* () {
+    new import_obsidian7.Setting(this.settingsRootElement).setName("GitHub token").setDesc(desc).addText((text) => text.setPlaceholder("Secret Token").setValue(this.settings.githubToken).onChange((value) => __async(this, null, function* () {
       this.settings.githubToken = value;
       yield this.saveSettings();
     })));
   }
   initializeGitHubBaseURLSetting() {
-    new import_obsidian5.Setting(this.settingsRootElement).setName("Base URL").setDesc(`
-            This is optional. It is used for the "Copy Garden URL" command, and for generating a sitemap.xml for better SEO. 
-            `).addText((text) => text.setPlaceholder("https://my-garden.netlify.app").setValue(this.settings.gardenBaseUrl).onChange((value) => __async(this, null, function* () {
+    new import_obsidian7.Setting(this.settingsRootElement).setName("Base URL").setDesc(`
+            This is optional, but recommended. It is used for the "Copy Garden URL" command, generating a sitemap.xml for better SEO and an RSS feed located at /feed.xml. 
+            `).addText((text) => text.setPlaceholder("https://my-garden.vercel.app").setValue(this.settings.gardenBaseUrl).onChange((value) => __async(this, null, function* () {
       this.settings.gardenBaseUrl = value;
       this.debouncedSaveAndUpdate(this.app.metadataCache, this.settings, this.saveSettings);
     })));
   }
   initializeSlugifySetting() {
-    new import_obsidian5.Setting(this.settingsRootElement).setName("Slugify Note URL").setDesc('Transform the URL from "/My Folder/My Note/" to "/my-folder/my-note". If your note titles contains non-English characters, this should be turned off.').addToggle((toggle) => toggle.setValue(this.settings.slugifyEnabled).onChange((value) => __async(this, null, function* () {
+    new import_obsidian7.Setting(this.settingsRootElement).setName("Slugify Note URL").setDesc('Transform the URL from "/My Folder/My Note/" to "/my-folder/my-note". If your note titles contains non-English characters, this should be disabled.').addToggle((toggle) => toggle.setValue(this.settings.slugifyEnabled).onChange((value) => __async(this, null, function* () {
       this.settings.slugifyEnabled = value;
       yield this.saveSettings();
     })));
   }
   initializePathRewriteSettings() {
-    const rewritesettingContainer = this.settingsRootElement.createEl("div", { attr: { class: "setting-item", style: "align-items:flex-start; flex-direction: column;" } });
-    rewritesettingContainer.createEl("h2", { text: "Path Rewrite rules", attr: { class: "setting-item-name" } });
-    rewritesettingContainer.createEl("div", { text: `Define rules to rewrite note paths, meaning folder structure, using following syntax:` });
+    const rewriteRulesModal = new import_obsidian7.Modal(this.app);
+    rewriteRulesModal.titleEl.createEl("h1", { text: "Path Rewrite Rules" });
+    rewriteRulesModal.modalEl.style.width = "fit-content";
+    new import_obsidian7.Setting(this.settingsRootElement).setName("Path Rewrite Rules").setDesc("Define rules to rewrite note folder structure in the garden. See the modal for more information.").addButton((cb) => {
+      cb.setButtonText("Manage Rewrite Rules");
+      cb.onClick(() => {
+        rewriteRulesModal.open();
+      });
+    });
+    const rewritesettingContainer = rewriteRulesModal.contentEl.createEl("div", { attr: { class: "", style: "align-items:flex-start; flex-direction: column;" } });
+    rewritesettingContainer.createEl("div", { text: `Define rules to rewrite note paths/folder structure, using following syntax:` });
     const list = rewritesettingContainer.createEl("ol");
     list.createEl("li", { text: `One rule-per line` });
     list.createEl("li", { text: `The format is [from_vault_path]:[to_garden_path]` });
     list.createEl("li", { text: `Matching will exit on first match` });
     rewritesettingContainer.createEl("div", { text: `Example: If you want the vault folder "Personal/Journal" to be shown as only "Journal" in the left file sidebar in the garden, add the line "Personal/Journal:Journal"`, attr: { class: "setting-item-description" } });
     rewritesettingContainer.createEl("div", { text: `Any affected notes will show up as changed in the publication center`, attr: { class: "setting-item-description" } });
-    new import_obsidian5.Setting(rewritesettingContainer).setName("Rules").addTextArea((field) => {
+    new import_obsidian7.Setting(rewritesettingContainer).setName("Rules").addTextArea((field) => {
       field.setPlaceholder("Personal/Journal:Journal");
       field.inputEl.rows = 5;
-      field.inputEl.cols = 75;
+      field.inputEl.cols = 100;
       field.setValue(this.settings.pathRewriteRules).onChange((value) => __async(this, null, function* () {
         this.settings.pathRewriteRules = value;
         yield this.saveSettings();
       }));
     });
   }
+  initializeCustomFilterSettings() {
+    const customFilterModal = new import_obsidian7.Modal(this.app);
+    customFilterModal.titleEl.createEl("h1", { text: "Custom Filters" });
+    customFilterModal.modalEl.style.width = "fit-content";
+    new import_obsidian7.Setting(this.settingsRootElement).setName("Custom Filters").setDesc("Define custom rules to replace parts of the note before publishing.").addButton((cb) => {
+      cb.setButtonText("Manage Custom Filters");
+      cb.onClick(() => {
+        customFilterModal.open();
+      });
+    });
+    const rewritesettingContainer = customFilterModal.contentEl.createEl("div", { attr: { class: "", style: "align-items:flex-start; flex-direction: column; margin: 5px;" } });
+    rewritesettingContainer.createEl("div").innerHTML = `Define regex filters to replace note content before publishing.`;
+    rewritesettingContainer.createEl("div", { attr: { class: "setting-item-description" } }).innerHTML = `Format: [<code>regex pattern</code>, <code>replacement</code>, <code>regex flags</code>]`;
+    rewritesettingContainer.createEl("div", { attr: { class: "setting-item-description", style: "margin-bottom: 15px" } }).innerHTML = `Example: filter [<code>:smile:</code>, <code>\u{1F600}</code>, <code>g</code>] will replace text with real emojis`;
+    const customFilters = this.settings.customFilters;
+    new import_obsidian7.Setting(rewritesettingContainer).setName("Filters").addButton((button) => {
+      button.setButtonText("Add");
+      button.setTooltip("Add a filter");
+      button.setIcon("plus");
+      button.onClick(() => __async(this, null, function* () {
+        const customFilters2 = this.settings.customFilters;
+        customFilters2.push({ pattern: "", flags: "g", replace: "" });
+        filterList.empty();
+        for (let i = 0; i < customFilters2.length; i++) {
+          addFilterInput(customFilters2[i], filterList, i, this);
+        }
+      }));
+    });
+    const filterList = rewritesettingContainer.createDiv("custom-filter-list");
+    for (let i = 0; i < customFilters.length; i++) {
+      addFilterInput(customFilters[i], filterList, i, this);
+    }
+  }
   renderCreatePr(modal, handlePR) {
-    new import_obsidian5.Setting(this.settingsRootElement).setName("Site Template").setDesc("Manage updates to the base template. You should try updating the template when you update the plugin to make sure your garden support all features.").addButton((button) => {
+    this.settingsRootElement.createEl("h3", { text: "Update site" }).prepend((0, import_obsidian7.getIcon)("sync"));
+    new import_obsidian7.Setting(this.settingsRootElement).setName("Site Template").setDesc("Manage updates to the base template. You should try updating the template when you update the plugin to make sure your garden support all features.").addButton((button) => {
       button.setButtonText("Manage site template");
       button.onClick(() => {
         modal.open();
       });
     });
-    new import_obsidian5.Setting(modal.contentEl).setName("Update site to latest template").setDesc(`
+    modal.titleEl.createEl("h2", { text: "Update site" });
+    new import_obsidian7.Setting(modal.contentEl).setName("Update site to latest template").setDesc(`
 				This will create a pull request with the latest template changes, which you'll need to use all plugin features. 
 				It will not publish any changes before you approve them.
 			`).addButton((button) => button.setButtonText("Create PR").onClick(() => handlePR(button)));
@@ -17281,6 +17428,8 @@ var SettingView = class {
       this.loading = modal.contentEl.createEl("div", {});
       this.loading.hide();
     }
+    this.settingsRootElement.createEl("h3", { text: "Support" }).prepend((0, import_obsidian7.getIcon)("heart"));
+    this.settingsRootElement.createDiv({ attr: { style: "display:flex; align-items:center; justify-content:center; margin-top: 20px;" } }).createEl("a", { attr: { href: "https://ko-fi.com/oleeskild", target: "_blank" } }).createEl("img", { attr: { src: "https://cdn.ko-fi.com/cdn/kofi3.png?v=3", width: "200" } });
   }
   renderPullRequestHistory(modal, previousPrUrls) {
     if (previousPrUrls.length === 0) {
@@ -17365,10 +17514,10 @@ var PublishStatusBar = class {
 };
 
 // src/PublishModal.ts
-var import_obsidian6 = __toModule(require("obsidian"));
+var import_obsidian8 = __toModule(require("obsidian"));
 var PublishModal = class {
   constructor(app, publishStatusManager, publisher, settings) {
-    this.modal = new import_obsidian6.Modal(app);
+    this.modal = new import_obsidian8.Modal(app);
     this.settings = settings;
     this.publishStatusManager = publishStatusManager;
     this.publisher = publisher;
@@ -17380,7 +17529,7 @@ var PublishModal = class {
     const toggleHeader = titleContainer.createEl("h3", { text: `\u2795\uFE0F ${title}`, attr: { class: "collapsable collapsed" } });
     const counter = titleContainer.createEl("span", { attr: { class: "count", style: "margin-left:10px" } });
     if (buttonText && buttonCallback) {
-      const button = new import_obsidian6.ButtonComponent(headerContainer).setButtonText(buttonText).onClick(() => __async(this, null, function* () {
+      const button = new import_obsidian8.ButtonComponent(headerContainer).setButtonText(buttonText).onClick(() => __async(this, null, function* () {
         button.setDisabled(true);
         yield buttonCallback();
         button.setDisabled(false);
@@ -17658,6 +17807,8 @@ var DEFAULT_SETTINGS = {
   timestampFormat: "MMM dd, yyyy h:mm a",
   styleSettingsCss: "",
   pathRewriteRules: "",
+  customFilters: [],
+  contentClassesKey: "dg-content-classes",
   defaultNoteSettings: {
     dgHomeLink: true,
     dgPassFrontmatter: false,
@@ -17671,7 +17822,7 @@ var DEFAULT_SETTINGS = {
     dgShowTags: false
   }
 };
-var DigitalGarden = class extends import_obsidian7.Plugin {
+var DigitalGarden = class extends import_obsidian9.Plugin {
   onload() {
     return __async(this, null, function* () {
       this.appVersion = this.manifest.version;
@@ -17679,7 +17830,7 @@ var DigitalGarden = class extends import_obsidian7.Plugin {
       yield this.loadSettings();
       this.addSettingTab(new DigitalGardenSettingTab(this.app, this));
       yield this.addCommands();
-      (0, import_obsidian7.addIcon)("digital-garden-icon", seedling);
+      (0, import_obsidian9.addIcon)("digital-garden-icon", seedling);
       this.addRibbonIcon("digital-garden-icon", "Digital Garden Publication Center", () => __async(this, null, function* () {
         this.openPublishModal();
       }));
@@ -17703,7 +17854,7 @@ var DigitalGarden = class extends import_obsidian7.Plugin {
         id: "quick-publish-and-share-note",
         name: "Quick Publish And Share Note",
         callback: () => __async(this, null, function* () {
-          new import_obsidian7.Notice("Adding publish flag to note and publishing it.");
+          new import_obsidian9.Notice("Adding publish flag to note and publishing it.");
           yield this.addPublishFlag();
           const activeFile = this.app.workspace.getActiveFile();
           const event = this.app.metadataCache.on("changed", (file, data, cache) => __async(this, null, function* () {
@@ -17733,7 +17884,7 @@ var DigitalGarden = class extends import_obsidian7.Plugin {
         callback: () => __async(this, null, function* () {
           const statusBarItem = this.addStatusBarItem();
           try {
-            new import_obsidian7.Notice("Processing files to publish...");
+            new import_obsidian9.Notice("Processing files to publish...");
             const { vault, metadataCache } = this.app;
             const publisher = new Publisher(vault, metadataCache, this.settings);
             const siteManager = new DigitalGardenSiteManager(metadataCache, this.settings);
@@ -17746,14 +17897,14 @@ var DigitalGarden = class extends import_obsidian7.Plugin {
             let errorFiles = 0;
             let errorDeleteFiles = 0;
             let errorDeleteImage = 0;
-            new import_obsidian7.Notice(`Publishing ${filesToPublish.length} notes, deleting ${filesToDelete.length} notes and ${imagesToDelete.length} images. See the status bar in lower right corner for progress.`, 8e3);
+            new import_obsidian9.Notice(`Publishing ${filesToPublish.length} notes, deleting ${filesToDelete.length} notes and ${imagesToDelete.length} images. See the status bar in lower right corner for progress.`, 8e3);
             for (const file of filesToPublish) {
               try {
                 statusBar.increment();
                 yield publisher.publish(file);
               } catch (e) {
                 errorFiles++;
-                new import_obsidian7.Notice(`Unable to publish note ${file.name}, skipping it.`);
+                new import_obsidian9.Notice(`Unable to publish note ${file.name}, skipping it.`);
               }
             }
             for (const filePath of filesToDelete) {
@@ -17762,7 +17913,7 @@ var DigitalGarden = class extends import_obsidian7.Plugin {
                 yield publisher.deleteNote(filePath);
               } catch (e) {
                 errorDeleteFiles++;
-                new import_obsidian7.Notice(`Unable to delete note ${filePath}, skipping it.`);
+                new import_obsidian9.Notice(`Unable to delete note ${filePath}, skipping it.`);
               }
             }
             for (const filePath of imagesToDelete) {
@@ -17771,21 +17922,21 @@ var DigitalGarden = class extends import_obsidian7.Plugin {
                 yield publisher.deleteImage(filePath);
               } catch (e) {
                 errorDeleteImage++;
-                new import_obsidian7.Notice(`Unable to delete image ${filePath}, skipping it.`);
+                new import_obsidian9.Notice(`Unable to delete image ${filePath}, skipping it.`);
               }
             }
             statusBar.finish(8e3);
-            new import_obsidian7.Notice(`Successfully published ${filesToPublish.length - errorFiles} notes to your garden.`);
+            new import_obsidian9.Notice(`Successfully published ${filesToPublish.length - errorFiles} notes to your garden.`);
             if (filesToDelete.length > 0) {
-              new import_obsidian7.Notice(`Successfully deleted ${filesToDelete.length - errorDeleteFiles} notes from your garden.`);
+              new import_obsidian9.Notice(`Successfully deleted ${filesToDelete.length - errorDeleteFiles} notes from your garden.`);
             }
             if (imagesToDelete.length > 0) {
-              new import_obsidian7.Notice(`Successfully deleted ${imagesToDelete.length - errorDeleteImage} images from your garden.`);
+              new import_obsidian9.Notice(`Successfully deleted ${imagesToDelete.length - errorDeleteImage} images from your garden.`);
             }
           } catch (e) {
             statusBarItem.remove();
             console.error(e);
-            new import_obsidian7.Notice("Unable to publish multiple notes, something went wrong.");
+            new import_obsidian9.Notice("Unable to publish multiple notes, something went wrong.");
           }
         })
       });
@@ -17818,16 +17969,16 @@ var DigitalGarden = class extends import_obsidian7.Plugin {
         const { metadataCache, workspace } = this.app;
         const currentFile = workspace.getActiveFile();
         if (!currentFile) {
-          new import_obsidian7.Notice("No file is open/active. Please open a file and try again.");
+          new import_obsidian9.Notice("No file is open/active. Please open a file and try again.");
           return;
         }
         const siteManager = new DigitalGardenSiteManager(metadataCache, this.settings);
         const fullUrl = siteManager.getNoteUrl(currentFile);
         yield navigator.clipboard.writeText(fullUrl);
-        new import_obsidian7.Notice(`Note URL copied to clipboard`);
+        new import_obsidian9.Notice(`Note URL copied to clipboard`);
       } catch (e) {
         console.log(e);
-        new import_obsidian7.Notice("Unable to copy note URL to clipboard, something went wrong.");
+        new import_obsidian9.Notice("Unable to copy note URL to clipboard, something went wrong.");
       }
     });
   }
@@ -17837,23 +17988,23 @@ var DigitalGarden = class extends import_obsidian7.Plugin {
         const { vault, workspace, metadataCache } = this.app;
         const currentFile = workspace.getActiveFile();
         if (!currentFile) {
-          new import_obsidian7.Notice("No file is open/active. Please open a file and try again.");
+          new import_obsidian9.Notice("No file is open/active. Please open a file and try again.");
           return;
         }
         if (currentFile.extension !== "md") {
-          new import_obsidian7.Notice("The current file is not a markdown file. Please open a markdown file and try again.");
+          new import_obsidian9.Notice("The current file is not a markdown file. Please open a markdown file and try again.");
           return;
         }
-        new import_obsidian7.Notice("Publishing note...");
+        new import_obsidian9.Notice("Publishing note...");
         const publisher = new Publisher(vault, metadataCache, this.settings);
         const publishSuccessful = yield publisher.publish(currentFile);
         if (publishSuccessful) {
-          new import_obsidian7.Notice(`Successfully published note to your garden.`);
+          new import_obsidian9.Notice(`Successfully published note to your garden.`);
         }
         return publishSuccessful;
       } catch (e) {
         console.error(e);
-        new import_obsidian7.Notice("Unable to publish note, something went wrong.");
+        new import_obsidian9.Notice("Unable to publish note, something went wrong.");
         return false;
       }
     });
@@ -17874,7 +18025,7 @@ var DigitalGarden = class extends import_obsidian7.Plugin {
     this.publishModal.open();
   }
 };
-var DigitalGardenSettingTab = class extends import_obsidian7.PluginSettingTab {
+var DigitalGardenSettingTab = class extends import_obsidian9.PluginSettingTab {
   constructor(app, plugin) {
     super(app, plugin);
     this.plugin = plugin;
@@ -17891,7 +18042,7 @@ var DigitalGardenSettingTab = class extends import_obsidian7.PluginSettingTab {
       const settingView = new SettingView(this.app, containerEl, this.plugin.settings, () => __async(this, null, function* () {
         return yield this.plugin.saveData(this.plugin.settings);
       }));
-      const prModal = new import_obsidian7.Modal(this.app);
+      const prModal = new import_obsidian9.Modal(this.app);
       yield settingView.initialize(prModal);
       const handlePR = (button) => __async(this, null, function* () {
         settingView.renderLoading();

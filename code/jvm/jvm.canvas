@@ -1,11 +1,19 @@
 {
 	"nodes":[
-		{"type":"text","text":"# jvm","id":"3c01b090747c4951","x":-135,"y":-37,"width":141,"height":60},
-		{"id":"170d85af36c7d979","x":-920,"y":-407,"width":400,"height":400,"type":"file","file":"code/jvm/jvmArrange.md"},
-		{"type":"file","file":"code/jvm/JvmLoadSubSystem.md","id":"01d1039c0230488d","x":-840,"y":200,"width":400,"height":400}
+		{"type":"text","text":"JVM","id":"bfc465841ca6c10f","x":-680,"y":-20,"width":120,"height":60,"color":"4"},
+		{"id":"8eb2307d36f2649d","x":-1080,"y":10,"width":100,"height":60,"type":"text","text":"GC"},
+		{"id":"db2f6e83ee1da1c6","x":-1700,"y":-500,"width":400,"height":400,"type":"file","file":"code/jvm/jvmUpgrade.md"},
+		{"type":"file","file":"code/jvm/JvmLoadSubSystem.md","id":"01d1039c0230488d","x":-560,"y":380,"width":400,"height":400},
+		{"type":"file","file":"code/jvm/JvmParams.md","id":"0d680ca0388b8533","x":-1700,"y":140,"width":400,"height":400},
+		{"type":"file","file":"code/jvm/jvmArrange.md","id":"170d85af36c7d979","x":-820,"y":-840,"width":400,"height":400},
+		{"type":"file","file":"code/jvm/jvmKnowns.md","id":"377afa9cfc4934a1","x":-160,"y":-300,"width":400,"height":400}
 	],
 	"edges":[
-		{"id":"f58c6f9fb6b92cc7","fromNode":"3c01b090747c4951","fromSide":"bottom","toNode":"01d1039c0230488d","toSide":"top"},
-		{"id":"fdc778122a2d1562","fromNode":"3c01b090747c4951","fromSide":"top","toNode":"170d85af36c7d979","toSide":"right"}
+		{"id":"324b802dd177c113","fromNode":"bfc465841ca6c10f","fromSide":"top","toNode":"170d85af36c7d979","toSide":"bottom","label":"图解"},
+		{"id":"bcab4e0f2b49d154","fromNode":"bfc465841ca6c10f","fromSide":"right","toNode":"377afa9cfc4934a1","toSide":"left","label":"常见问题"},
+		{"id":"f3642c28c8ebba14","fromNode":"bfc465841ca6c10f","fromSide":"bottom","toNode":"01d1039c0230488d","toSide":"top","label":"加载"},
+		{"id":"01ff33d2d50bb8c4","fromNode":"bfc465841ca6c10f","fromSide":"left","toNode":"8eb2307d36f2649d","toSide":"right"},
+		{"id":"fe42688c12d80fed","fromNode":"8eb2307d36f2649d","fromSide":"left","toNode":"db2f6e83ee1da1c6","toSide":"right"},
+		{"id":"eee81060220c301b","fromNode":"bfc465841ca6c10f","fromSide":"bottom","toNode":"0d680ca0388b8533","toSide":"right","label":"jvm 参数"}
 	]
 }

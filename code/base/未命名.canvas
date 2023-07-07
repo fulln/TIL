@@ -1,0 +1,9 @@
+{
+	"nodes":[
+		{"id":"8439f463d7aba8f1","x":-660,"y":80,"width":400,"height":400,"type":"file","file":"code/base/异常的分类.md"},
+		{"id":"fa141d1d615210aa","x":-80,"y":-120,"width":131,"height":50,"color":"6","type":"text","text":"JavaBase\n"}
+	],
+	"edges":[
+		{"id":"f797006294d8442f","fromNode":"fa141d1d615210aa","fromSide":"bottom","toNode":"8439f463d7aba8f1","toSide":"top"}
+	]
+}
