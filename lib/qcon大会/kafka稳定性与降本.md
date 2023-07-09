@@ -4,6 +4,8 @@ title: kafka稳定性与降本
 createTime: 2023-05-26 16:01  
 ---
 
+>PDF : [[03.降本增效下+Kafka+的稳定性实践-许文强.pdf]]
+
 1. 部署
 	1. zk
 	2. kraft
