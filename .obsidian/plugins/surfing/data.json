@@ -44,17 +44,5 @@
     ],
     "defaultFilterType": "tree"
   },
-  "treeData": [
-    {
-      "id": "a276a57ebe52892a",
-      "parent": 0,
-      "droppable": true,
-      "text": "模拟面试（一）｜微服务架构面试思路一图懂",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    }
-  ]
+  "treeData": []
 }
