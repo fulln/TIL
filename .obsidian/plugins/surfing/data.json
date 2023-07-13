@@ -44,39 +44,5 @@
     ],
     "defaultFilterType": "tree"
   },
-  "treeData": [
-    {
-      "id": "65337ef454a31ecd",
-      "parent": 0,
-      "droppable": true,
-      "text": "极客时间-轻松学习，高效学习-极客邦",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "813103c1b167048b",
-      "parent": 0,
-      "droppable": true,
-      "text": "12｜数据库锁：明明有行锁，怎么突然就加了表锁？",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "bf464c3012e31348",
-      "parent": 0,
-      "droppable": true,
-      "text": "分享到微博-微博-随时随地分享身边的新鲜事儿",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    }
-  ]
+  "treeData": []
 }
