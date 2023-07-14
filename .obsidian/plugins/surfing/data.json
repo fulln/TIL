@@ -44,5 +44,28 @@
     ],
     "defaultFilterType": "tree"
   },
-  "treeData": []
+  "treeData": [
+    {
+      "id": "6adb9c474f059346",
+      "parent": 0,
+      "droppable": true,
+      "text": "极客时间-轻松学习，高效学习-极客邦",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "2b5e02fc03c8c1f1",
+      "parent": 0,
+      "droppable": true,
+      "text": "12｜数据库锁：明明有行锁，怎么突然就加了表锁？-极客时间",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    }
+  ]
 }
