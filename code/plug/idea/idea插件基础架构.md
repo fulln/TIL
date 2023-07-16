@@ -15,12 +15,7 @@ createTime: 2023-07-05 21:50
 
 ### window
 
-#### idea 插件图形化开发
-
-1.  idea 选择new GUI-Form 创建对应插件swing界面文件
-2. 
-
-
+[[FPlugins 插件图形化开发]]
 
 ### service
 
