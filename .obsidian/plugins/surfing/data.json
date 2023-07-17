@@ -44,39 +44,5 @@
     ],
     "defaultFilterType": "tree"
   },
-  "treeData": [
-    {
-      "id": "348135ff39bd602b",
-      "parent": 0,
-      "droppable": true,
-      "text": "极客时间-轻松学习，高效学习-极客邦",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "9f05003d3cfff172",
-      "parent": 0,
-      "droppable": true,
-      "text": "29 | Kafka动态配置了解下？-极客时间",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "058698473f1fd584",
-      "parent": 0,
-      "droppable": true,
-      "text": "13｜MVCC协议：MySQL 在修改数据的时候，还能不能读到这条数据？-极客时间",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    }
-  ]
+  "treeData": []
 }
