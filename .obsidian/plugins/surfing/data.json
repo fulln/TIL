@@ -44,5 +44,28 @@
     ],
     "defaultFilterType": "tree"
   },
-  "treeData": []
+  "treeData": [
+    {
+      "id": "c15da0b80a79aac2",
+      "parent": 0,
+      "droppable": true,
+      "text": "期末测试 | 这些Kafka核心要点，你都掌握了吗？",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "9ae464de651c235a",
+      "parent": 0,
+      "droppable": true,
+      "text": "极客时间",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    }
+  ]
 }
