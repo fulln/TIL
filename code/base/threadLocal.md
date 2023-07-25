@@ -20,8 +20,6 @@ public ThreadLocal() {
 
 ```
 
-
-
 #### 成员变量
 
 ```java
@@ -40,8 +38,6 @@ private static AtomicInteger nextHashCode =
 private static final int HASH_INCREMENT = 0x61c88647;
 
 ```
-
-
 
 #### 实现方法
 
