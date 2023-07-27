@@ -1,4 +1,6 @@
+#
 ## 两数之合
+
 
 ```go
 package main
