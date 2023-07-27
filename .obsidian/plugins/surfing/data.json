@@ -71,7 +71,7 @@
       "id": "d7fe9720b491d84e",
       "parent": 0,
       "droppable": true,
-      "text": "03｜通信协议：如何设计一个好的通信协议？-极客时间",
+      "text": "05｜存储：消息数据和元数据的存储是如何设计的？",
       "data": {
         "fileType": "site",
         "fileSize": "",
