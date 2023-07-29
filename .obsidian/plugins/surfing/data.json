@@ -77,6 +77,28 @@
         "fileSize": "",
         "icon": {}
       }
+    },
+    {
+      "id": "365844db720cf270",
+      "parent": 0,
+      "droppable": true,
+      "text": "04 | 我应该选择哪种Kafka？-极客时间",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "2253070e63831656",
+      "parent": 0,
+      "droppable": true,
+      "text": "02｜负载均衡：调用结果、缓存机制是怎么影响负载均衡的？-极客时间",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
     }
   ]
 }
