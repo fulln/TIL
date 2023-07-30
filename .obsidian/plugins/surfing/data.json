@@ -46,7 +46,7 @@
   },
   "treeData": [
     {
-      "id": "dd9043d74dc32fb5",
+      "id": "cf2ab281dfc1d823",
       "parent": 0,
       "droppable": true,
       "text": "极客时间-轻松学习，高效学习-极客邦",
@@ -57,43 +57,10 @@
       }
     },
     {
-      "id": "2e91ece43bf63a1a",
+      "id": "2602b4b37524ea6e",
       "parent": 0,
       "droppable": true,
-      "text": "极客时间-轻松学习，高效学习-极客邦",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "d7fe9720b491d84e",
-      "parent": 0,
-      "droppable": true,
-      "text": "05｜存储：消息数据和元数据的存储是如何设计的？",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "365844db720cf270",
-      "parent": 0,
-      "droppable": true,
-      "text": "04 | 我应该选择哪种Kafka？-极客时间",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "2253070e63831656",
-      "parent": 0,
-      "droppable": true,
-      "text": "02｜负载均衡：调用结果、缓存机制是怎么影响负载均衡的？-极客时间",
+      "text": "19｜分库分表无分库分表键查询：你按照买家分库分表，那我卖家怎么查？-极客时间",
       "data": {
         "fileType": "site",
         "fileSize": "",
