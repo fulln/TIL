@@ -46,32 +46,10 @@
   },
   "treeData": [
     {
-      "id": "cf2ab281dfc1d823",
+      "id": "1253598bb0350112",
       "parent": 0,
       "droppable": true,
-      "text": "极客时间-轻松学习，高效学习-极客邦",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "2602b4b37524ea6e",
-      "parent": 0,
-      "droppable": true,
-      "text": "19｜分库分表无分库分表键查询：你按照买家分库分表，那我卖家怎么查？-极客时间",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "50ff39888ab955a6",
-      "parent": 0,
-      "droppable": true,
-      "text": "07｜超时控制：怎么保证用户一定能在1s内拿到响应？",
+      "text": "New Tab",
       "data": {
         "fileType": "site",
         "fileSize": "",
