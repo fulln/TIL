@@ -2,13 +2,16 @@
 
 1. 两数之和：https://leetcode-cn.com/problems/two-sum/
 > [!INFO] [[twoSum]]  
+
 2. 盛最多水的容器：https://leetcode-cn.com/problems/container-with-most-water/
 > [!info] [[maxArea]]  
 
 3. 无重复字符的最长子串：https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
+> [!info] [[lengthOfLongestSubstring]]  
 
+4. 最长回文子串：https://leetcode-cn.com/problems/longest-palindromic-substring/
+> [!info] [[leetcode/middle/longestPalindrome|longestPalindrome]]  
 
-最长回文子串：https://leetcode-cn.com/problems/longest-palindromic-substring/
 正则表达式匹配：https://leetcode-cn.com/problems/regular-expression-matching/
 爬楼梯：https://leetcode-cn.com/problems/climbing-stairs/
 最大子序和：https://leetcode-cn.com/problems/maximum-subarray/

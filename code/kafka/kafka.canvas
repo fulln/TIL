@@ -1,0 +1,15 @@
+{
+	"nodes":[
+		{"type":"text","text":"consumer","id":"cfbbda841392a08d","x":280,"y":-50,"width":250,"height":60},
+		{"type":"text","text":"kafka","id":"2ff99447f8599bbb","x":-100,"y":120,"width":250,"height":60,"color":"1"},
+		{"type":"text","text":"broker","id":"8dae1bd6b84514b7","x":-120,"y":-260,"width":250,"height":60},
+		{"type":"text","text":"producer","id":"9e88f642ea87bb0c","x":-790,"y":-110,"width":250,"height":60},
+		{"type":"file","file":"code/kafka/producer流程解析.md","id":"6ecf436986148470","x":-865,"y":-660,"width":400,"height":400}
+	],
+	"edges":[
+		{"id":"8ae172cd233ab93a","fromNode":"9e88f642ea87bb0c","fromSide":"top","toNode":"6ecf436986148470","toSide":"bottom"},
+		{"id":"57f135392d6fdfa4","fromNode":"2ff99447f8599bbb","fromSide":"top","toNode":"8dae1bd6b84514b7","toSide":"bottom"},
+		{"id":"dcaef942866c99fd","fromNode":"2ff99447f8599bbb","fromSide":"right","toNode":"cfbbda841392a08d","toSide":"bottom"},
+		{"id":"fff63a03ce95b70f","fromNode":"2ff99447f8599bbb","fromSide":"left","toNode":"9e88f642ea87bb0c","toSide":"bottom"}
+	]
+}

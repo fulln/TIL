@@ -70,4 +70,4 @@ flowchart TB
 ## javassist使用遇到的问题
 
 ### 1. 使用限制![[javassist使用限制#使用限制]]
-### 2.  [[ javassist 范型问题]]
+### 2.  泛型问题![[ javassist 范型问题]]
