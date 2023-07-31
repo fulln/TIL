@@ -18,15 +18,21 @@
 # 目录
 </grid>
 
-- **应用流量调度之虎牙多云流量调度**
-- 可用性微服务工具平台
+<style>
+	.menu {
+		  font-size:45px;
+	}
+</style>
+
+<div class= 'menu'>
+
+- **应用流量调度**
+- 微服务可用性工具
 - 核心微服务架构
 - Kafka
 - 混沌工程
 
----
-
-![[Pasted image 20230709214925.png]]
+</div>
 
 ---
 <grid drag="50 10" drop="topleft">
@@ -88,52 +94,78 @@
 # 目录
 </grid>
 
+<style>
+	.menu {
+		  font-size:45px;
+	}
+</style>
+
+<div class= 'menu'  >
+
 - 应用流量调度
 - **微服务可用性工具**
 - 核心微服务架构
 - Kafka
 - 混沌工程
 
+</div>
+
 ---
-## 菜鸟服务可用性工具能力建设
+## 菜鸟单笔高可用体系建设大图
 
 ![[Pasted image 20230710114445.png]]
 
 ---
+<grid  drop="top" drag="100" >
 
-##  统一的结构化日志
+## 统一的结构化日志
 
-主要元素有：事件、用户身份、系统表现、错误码，业务单号，单据状态
+_事件、用户身份、系统表现、错误码，业务单号，单据状态_
+
+</grid>
+
+
+<grid drop="left" style="font-size:16px" drop= "5 10">
 
 > [!info] 正常日志格式 
-时间戳->业务场景->是否成功->耗时->错误码->错误信息->请求id->调用序号
-timestamp->eventCode->success->rt->errorCode->errorMsg->traceId->rpcId
+> 时间戳->业务场景->是否成功->耗时->错误码->错误信息->请求id->调用序号
+> timestamp->eventCode->success->rt->errorCode->errorMsg->traceId->rpcId
 
 > [!ERROR] 异常日志格式
- 时间戳->异常类->异常方法->异常行号->错误码->错误信息->请求id->堆栈
-timestamp->clazz->method->lineNumber->errorCode->errorMsg->traceId-> exceptionStack
+> 时间戳->异常类->异常方法->异常行号->错误码->错误信息->请求id->堆栈
+> timestamp->clazz->method->lineNumber->errorCode->errorMsg->traceId-> exceptionStack
+</grid>
 
+<grid  drop="right" drag= "40 50" bg="white" opacity="0.5" flow="col" >
 
-根据日志场景分为:
-1. 场景入口日志
-	- entrance.log
-2. 出入参日志
-	- biz.log
-3. 下游调用日志
-	- event.log
-4. 异常日志
-	- error.log
+| 日志场景     | 日志名称     |
+| ------------ | ------------ |
+| 场景入口日志 | entrance.log |
+| 出入参日志   | biz.log      |
+| 下游调用日志 | event.log    |
+| 异常日志     | error.log    |
 
+</grid>
 
 ---
 
-##  单笔全链路查询排查
 
-根据标准的日志结构,搭建全链路排查平台
+<grid  drag="60 100" drop="center" bg="coral" flow="col">
+## 单笔全链路查询排查
+
+_根据标准的日志结构,搭建全链路排查能力_
+
+![[Pasted image 20230731232243.png]]
+
 1. 调用链路（一次完整RPC调用，traceId唯一）
+
 2. 业务全链路（多次RPC调用，业务单号唯一）
 
---- 
+</grid>
+
+---
+
+
 
 ## 2. 单笔全链路查询排查
 根据标准的日志结构,搭建全链路排查平台

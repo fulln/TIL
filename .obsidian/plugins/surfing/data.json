@@ -46,10 +46,21 @@
   },
   "treeData": [
     {
-      "id": "1253598bb0350112",
+      "id": "a721d1dc0aaddba1",
       "parent": 0,
       "droppable": true,
-      "text": "New Tab",
+      "text": "极客时间-轻松学习，高效学习-极客邦",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "f7bb5b1966ae72d8",
+      "parent": 0,
+      "droppable": true,
+      "text": "07｜超时控制：怎么保证用户一定能在1s内拿到响应？-极客时间",
       "data": {
         "fileType": "site",
         "fileSize": "",

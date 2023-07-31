@@ -6,11 +6,15 @@
     },
     {
       "name": "wr_fp",
-      "value": "930175131"
+      "value": "3380375348"
     },
     {
       "name": "wr_vid",
       "value": "233589967"
+    },
+    {
+      "name": "wr_skey",
+      "value": "0od0W9wl"
     },
     {
       "name": "wr_pf",
@@ -18,15 +22,7 @@
     },
     {
       "name": "wr_rt",
-      "value": "web@wQ5tWBR7pEiSzsOgOVc_WL"
-    },
-    {
-      "name": "wr_avatar",
-      "value": "https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJhf641n2ibQopV7OtdkUaMqRgQ8EcxRdmlmJn6UicFK1FhZzA3bDhicH92gdsMW57fVCMwuQdEQRIqA/132"
-    },
-    {
-      "name": "wr_gender",
-      "value": "1"
+      "value": "web@vXJuQw8p2DSBoK3IZ3O_AL"
     },
     {
       "name": "wr_localvid",
@@ -37,8 +33,12 @@
       "value": "手冢治熊"
     },
     {
-      "name": "wr_skey",
-      "value": "94Kkfo2j"
+      "name": "wr_avatar",
+      "value": "https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJhf641n2ibQopV7OtdkUaMqRgQ8EcxRdmlmJn6UicFK1FhZzA3bDhicH92gdsMW57fVCMwuQdEQRIqA/132"
+    },
+    {
+      "name": "wr_gender",
+      "value": "1"
     }
   ],
   "noteLocation": "weread",
@@ -46,7 +46,7 @@
   "insertAfter": "<!-- start of weread -->",
   "insertBefore": "<!-- end of weread -->",
   "dailyNotesFormat": "YYYY-MM/YYYY-MM-DD",
-  "lastCookieTime": 1690732236342,
+  "lastCookieTime": 1690818588614,
   "isCookieValid": true,
   "user": "手冢治熊",
   "userVid": "233589967",
