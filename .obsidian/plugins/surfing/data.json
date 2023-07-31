@@ -60,7 +60,7 @@
       "id": "f7bb5b1966ae72d8",
       "parent": 0,
       "droppable": true,
-      "text": "07｜超时控制：怎么保证用户一定能在1s内拿到响应？-极客时间",
+      "text": "20｜分库分表容量预估：分库分表的时候怎么计算需要多少个库多少个表？",
       "data": {
         "fileType": "site",
         "fileSize": "",
