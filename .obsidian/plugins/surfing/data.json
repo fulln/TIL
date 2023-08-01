@@ -82,7 +82,7 @@
       "id": "4387e4e4d89a2fcf",
       "parent": 0,
       "droppable": true,
-      "text": "05｜存储：消息数据和元数据的存储是如何设计的？-极客时间",
+      "text": "06｜存储：如何提升存储模块的性能和可靠性？",
       "data": {
         "fileType": "site",
         "fileSize": "",
