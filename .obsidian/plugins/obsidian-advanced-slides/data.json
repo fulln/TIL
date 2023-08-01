@@ -15,7 +15,7 @@
   "progress": true,
   "slideNumber": true,
   "showGrid": false,
-  "autoComplete": "inPreview",
+  "autoComplete": "always",
   "paneMode": "split",
   "motm": "2023-07-30T18:16:13.287Z"
 }
