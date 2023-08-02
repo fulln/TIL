@@ -88,6 +88,28 @@
         "fileSize": "",
         "icon": {}
       }
+    },
+    {
+      "id": "4a6030bc37d5e574",
+      "parent": 0,
+      "droppable": true,
+      "text": "极客时间-轻松学习，高效学习-极客邦",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "1bc8008b9becf9fb",
+      "parent": 0,
+      "droppable": true,
+      "text": "极客时间训练营-让优秀的人一起学习",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
     }
   ]
 }
