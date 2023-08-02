@@ -77,6 +77,17 @@
         "fileSize": "",
         "icon": {}
       }
+    },
+    {
+      "id": "82efaf6c50bf2811",
+      "parent": 0,
+      "droppable": true,
+      "text": "14｜数据库事务：事务提交了，你的数据就一定不会丢吗？-极客时间",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
     }
   ]
 }
