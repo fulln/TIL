@@ -46,7 +46,7 @@
   },
   "treeData": [
     {
-      "id": "8b6e95a342c03239",
+      "id": "12cc8a341b8c9dbc",
       "parent": 0,
       "droppable": true,
       "text": "极客时间-轻松学习，高效学习-极客邦",
@@ -57,10 +57,10 @@
       }
     },
     {
-      "id": "aa1e5251c74a11e6",
+      "id": "c80439747eb19c54",
       "parent": 0,
       "droppable": true,
-      "text": "20｜分库分表容量预估：分库分表的时候怎么计算需要多少个库多少个表？-极客时间",
+      "text": "New Tab",
       "data": {
         "fileType": "site",
         "fileSize": "",
@@ -68,21 +68,10 @@
       }
     },
     {
-      "id": "75421f4b95851475",
+      "id": "55402518279d6f1a",
       "parent": 0,
       "droppable": true,
-      "text": "极客时间-轻松学习，高效学习-极客邦",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "4387e4e4d89a2fcf",
-      "parent": 0,
-      "droppable": true,
-      "text": "06｜存储：如何提升存储模块的性能和可靠性？",
+      "text": "21｜数据库综合应用：怎么保证数据库的高可用、高性能？",
       "data": {
         "fileType": "site",
         "fileSize": "",
