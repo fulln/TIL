@@ -46,10 +46,10 @@
   },
   "treeData": [
     {
-      "id": "12cc8a341b8c9dbc",
+      "id": "e12d99a56579753a",
       "parent": 0,
       "droppable": true,
-      "text": "极客时间-轻松学习，高效学习-极客邦",
+      "text": "深入拆解消息队列 47 讲",
       "data": {
         "fileType": "site",
         "fileSize": "",
@@ -57,54 +57,10 @@
       }
     },
     {
-      "id": "c80439747eb19c54",
+      "id": "d3a049d3a4ec5fbe",
       "parent": 0,
       "droppable": true,
-      "text": "New Tab",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "55402518279d6f1a",
-      "parent": 0,
-      "droppable": true,
-      "text": "21｜数据库综合应用：怎么保证数据库的高可用、高性能？",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "82efaf6c50bf2811",
-      "parent": 0,
-      "droppable": true,
-      "text": "14｜数据库事务：事务提交了，你的数据就一定不会丢吗？-极客时间",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "4a6030bc37d5e574",
-      "parent": 0,
-      "droppable": true,
-      "text": "极客时间-轻松学习，高效学习-极客邦",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "1bc8008b9becf9fb",
-      "parent": 0,
-      "droppable": true,
-      "text": "极客时间训练营-让优秀的人一起学习",
+      "text": "07｜生产端：生产者客户端的SDK有哪些设计要点？-极客时间",
       "data": {
         "fileType": "site",
         "fileSize": "",
