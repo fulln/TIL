@@ -66,6 +66,17 @@
         "fileSize": "",
         "icon": {}
       }
+    },
+    {
+      "id": "d065d9ff2aac7103",
+      "parent": 0,
+      "droppable": true,
+      "text": "01｜业界的主流消息队列是如何发展起来的？-极客时间",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
     }
   ]
 }
