@@ -44,39 +44,5 @@
     ],
     "defaultFilterType": "tree"
   },
-  "treeData": [
-    {
-      "id": "e12d99a56579753a",
-      "parent": 0,
-      "droppable": true,
-      "text": "深入拆解消息队列 47 讲",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "d3a049d3a4ec5fbe",
-      "parent": 0,
-      "droppable": true,
-      "text": "07｜生产端：生产者客户端的SDK有哪些设计要点？-极客时间",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "d065d9ff2aac7103",
-      "parent": 0,
-      "droppable": true,
-      "text": "01｜业界的主流消息队列是如何发展起来的？-极客时间",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    }
-  ]
+  "treeData": []
 }
