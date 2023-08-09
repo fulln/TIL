@@ -46,32 +46,10 @@
   },
   "treeData": [
     {
-      "id": "8b99df64e00965ca",
+      "id": "c23aa8275b5922f0",
       "parent": 0,
       "droppable": true,
-      "text": "10｜从基础功能拆解RabbitMQ的架构设计与实现",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "9bb47732da34efe2",
-      "parent": 0,
-      "droppable": true,
-      "text": "模拟面试｜数据库面试思路一图懂",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "01ffb1edce101177",
-      "parent": 0,
-      "droppable": true,
-      "text": "10｜数据库索引：为什么MySQL用B+树而不用B树？",
+      "text": "模拟面试（一）｜微服务架构面试思路一图懂",
       "data": {
         "fileType": "site",
         "fileSize": "",
