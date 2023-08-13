@@ -46,7 +46,7 @@
   },
   "treeData": [
     {
-      "id": "87861b5160ef9aea",
+      "id": "dcb6a1079a17512f",
       "parent": 0,
       "droppable": true,
       "text": "极客时间-轻松学习，高效学习-极客邦",
@@ -57,10 +57,21 @@
       }
     },
     {
-      "id": "623c8fcd8f8db4c5",
+      "id": "1074419e78082d0e",
       "parent": 0,
       "droppable": true,
-      "text": "23｜延迟消息：怎么在 Kafka 上支持延迟消息？-极客时间",
+      "text": "24｜消息顺序：保证消息有序，一个 topic 只能有一个 partition 吗？-极客时间",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "90afef82f17c701e",
+      "parent": 0,
+      "droppable": true,
+      "text": "12｜从基础功能拆解Kafka的架构设计与实现-极客时间",
       "data": {
         "fileType": "site",
         "fileSize": "",
