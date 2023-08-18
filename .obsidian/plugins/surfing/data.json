@@ -77,6 +77,17 @@
         "fileSize": "",
         "icon": {}
       }
+    },
+    {
+      "id": "8470fde62904a8ac",
+      "parent": 0,
+      "droppable": true,
+      "text": "27｜重复消费：高并发场景下怎么保证消息不会重复消费？",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
     }
   ]
 }
