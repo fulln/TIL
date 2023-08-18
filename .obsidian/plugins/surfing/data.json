@@ -44,50 +44,5 @@
     ],
     "defaultFilterType": "tree"
   },
-  "treeData": [
-    {
-      "id": "066ffe3066688bfc",
-      "parent": 0,
-      "droppable": true,
-      "text": "极客时间-轻松学习，高效学习-极客邦",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "6e5c4d866744d15b",
-      "parent": 0,
-      "droppable": true,
-      "text": "26｜消息不丢失：生产者收到写入成功响应后消息一定不会丢失吗？-极客时间",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "0515d08452d07827",
-      "parent": 0,
-      "droppable": true,
-      "text": "13｜从基础功能拆解Pulsar的架构设计与实现-极客时间",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "8470fde62904a8ac",
-      "parent": 0,
-      "droppable": true,
-      "text": "27｜重复消费：高并发场景下怎么保证消息不会重复消费？",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    }
-  ]
+  "treeData": []
 }
