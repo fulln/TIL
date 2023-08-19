@@ -44,5 +44,50 @@
     ],
     "defaultFilterType": "tree"
   },
-  "treeData": []
+  "treeData": [
+    {
+      "id": "c9ff2f2dbac6e9e3",
+      "parent": 0,
+      "droppable": true,
+      "text": "极客时间-轻松学习，高效学习-极客邦",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "4c047cf52219e434",
+      "parent": 0,
+      "droppable": true,
+      "text": "27｜重复消费：高并发场景下怎么保证消息不会重复消费？-极客时间",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "d6a865d11d6e511c",
+      "parent": 0,
+      "droppable": true,
+      "text": "01 | 架构到底是指什么？-极客时间",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "22b1044c7de0a269",
+      "parent": 0,
+      "droppable": true,
+      "text": "27 | 递归树：如何借助树来求解递归算法的时间复杂度？-极客时间",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    }
+  ]
 }
