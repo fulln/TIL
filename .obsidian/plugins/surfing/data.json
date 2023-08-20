@@ -46,7 +46,7 @@
   },
   "treeData": [
     {
-      "id": "c9ff2f2dbac6e9e3",
+      "id": "2c782e76abdff5a5",
       "parent": 0,
       "droppable": true,
       "text": "极客时间-轻松学习，高效学习-极客邦",
@@ -57,7 +57,7 @@
       }
     },
     {
-      "id": "4c047cf52219e434",
+      "id": "77616ea4ba7b7a9a",
       "parent": 0,
       "droppable": true,
       "text": "27｜重复消费：高并发场景下怎么保证消息不会重复消费？-极客时间",
@@ -68,21 +68,10 @@
       }
     },
     {
-      "id": "d6a865d11d6e511c",
+      "id": "2cef9956c4199aea",
       "parent": 0,
       "droppable": true,
-      "text": "01 | 架构到底是指什么？-极客时间",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "22b1044c7de0a269",
-      "parent": 0,
-      "droppable": true,
-      "text": "27 | 递归树：如何借助树来求解递归算法的时间复杂度？-极客时间",
+      "text": "28 | 堆和堆排序：为什么说堆排序没有快速排序快？-极客时间",
       "data": {
         "fileType": "site",
         "fileSize": "",
