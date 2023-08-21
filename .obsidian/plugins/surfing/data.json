@@ -46,7 +46,7 @@
   },
   "treeData": [
     {
-      "id": "2c782e76abdff5a5",
+      "id": "a8888ff2f55af238",
       "parent": 0,
       "droppable": true,
       "text": "极客时间-轻松学习，高效学习-极客邦",
@@ -57,21 +57,10 @@
       }
     },
     {
-      "id": "77616ea4ba7b7a9a",
+      "id": "c1a0f013f912a6b1",
       "parent": 0,
       "droppable": true,
       "text": "27｜重复消费：高并发场景下怎么保证消息不会重复消费？-极客时间",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "2cef9956c4199aea",
-      "parent": 0,
-      "droppable": true,
-      "text": "28 | 堆和堆排序：为什么说堆排序没有快速排序快？-极客时间",
       "data": {
         "fileType": "site",
         "fileSize": "",
