@@ -46,21 +46,10 @@
   },
   "treeData": [
     {
-      "id": "a8888ff2f55af238",
+      "id": "d8da28abf9db45b9",
       "parent": 0,
       "droppable": true,
-      "text": "极客时间-轻松学习，高效学习-极客邦",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "c1a0f013f912a6b1",
-      "parent": 0,
-      "droppable": true,
-      "text": "27｜重复消费：高并发场景下怎么保证消息不会重复消费？-极客时间",
+      "text": "30 | 图的表示：如何存储微博、微信等社交网络中的好友关系？",
       "data": {
         "fileType": "site",
         "fileSize": "",
