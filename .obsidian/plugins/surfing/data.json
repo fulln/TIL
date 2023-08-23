@@ -46,10 +46,32 @@
   },
   "treeData": [
     {
-      "id": "d8da28abf9db45b9",
+      "id": "66856c91f4d0a48c",
       "parent": 0,
       "droppable": true,
-      "text": "30 | 图的表示：如何存储微博、微信等社交网络中的好友关系？",
+      "text": "极客时间-轻松学习，高效学习-极客邦",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "f37914d5ec88e526",
+      "parent": 0,
+      "droppable": true,
+      "text": "28｜架构设计：如果让你设计一个消息队列，你会怎么设计它的架构？-极客时间",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "9d0fd467586dd276",
+      "parent": 0,
+      "droppable": true,
+      "text": "极客时间训练营-让优秀的人一起学习",
       "data": {
         "fileType": "site",
         "fileSize": "",
