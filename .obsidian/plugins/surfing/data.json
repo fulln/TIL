@@ -115,7 +115,7 @@
       "id": "b42f3a3d4459333b",
       "parent": 0,
       "droppable": true,
-      "text": "02｜挑战与趋势：云原生时代JVM的演进之路-极客时间",
+      "text": "03｜工作台：JVM 运行时数据区的内部机制是怎样的？",
       "data": {
         "fileType": "site",
         "fileSize": "",
