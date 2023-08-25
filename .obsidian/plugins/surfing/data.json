@@ -77,6 +77,50 @@
         "fileSize": "",
         "icon": {}
       }
+    },
+    {
+      "id": "955e1f6f328d6198",
+      "parent": 0,
+      "droppable": true,
+      "text": "29｜高性能：Kafka 为什么性能那么好？-极客时间",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "07fecfb32ff5dd20",
+      "parent": 0,
+      "droppable": true,
+      "text": "极客时间训练营-让优秀的人一起学习",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "afb0c02b1d9395d9",
+      "parent": 0,
+      "droppable": true,
+      "text": "极客时间",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "b42f3a3d4459333b",
+      "parent": 0,
+      "droppable": true,
+      "text": "02｜挑战与趋势：云原生时代JVM的演进之路-极客时间",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
     }
   ]
 }
