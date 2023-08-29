@@ -46,7 +46,7 @@
   },
   "treeData": [
     {
-      "id": "2e16a109307374ef",
+      "id": "acc28809175f5a86",
       "parent": 0,
       "droppable": true,
       "text": "极客时间-轻松学习，高效学习-极客邦",
@@ -57,10 +57,10 @@
       }
     },
     {
-      "id": "2b2181b97df27d4a",
+      "id": "3b3ec2b30f97dcb8",
       "parent": 0,
       "droppable": true,
-      "text": "14｜集群：哪些环节会存在性能瓶颈和数据可靠性风险？-极客时间",
+      "text": "AI大模型之美_AI_ChatGPT_OpenAI_大模型_大数据_NLP-极客时间",
       "data": {
         "fileType": "site",
         "fileSize": "",
@@ -68,10 +68,21 @@
       }
     },
     {
-      "id": "0068a305845ac67c",
+      "id": "311a901d68749de3",
       "parent": 0,
       "droppable": true,
-      "text": "14｜集群：哪些环节会存在性能瓶颈和数据可靠性风险？-极客时间",
+      "text": "极客时间-轻松学习，高效学习-极客邦",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "3f13296defab25b8",
+      "parent": 0,
+      "droppable": true,
+      "text": "15｜集群：如何构建分布式的消息队列集群？（上）-极客时间",
       "data": {
         "fileType": "site",
         "fileSize": "",
