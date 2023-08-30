@@ -46,10 +46,10 @@
   },
   "treeData": [
     {
-      "id": "acc28809175f5a86",
+      "id": "0319ff3d0949f8e0",
       "parent": 0,
       "droppable": true,
-      "text": "极客时间-轻松学习，高效学习-极客邦",
+      "text": "17｜可靠性：分布式集群的数据一致性都有哪些实现方案?",
       "data": {
         "fileType": "site",
         "fileSize": "",
@@ -57,32 +57,10 @@
       }
     },
     {
-      "id": "3b3ec2b30f97dcb8",
+      "id": "697f4cdb959f9c5c",
       "parent": 0,
       "droppable": true,
-      "text": "AI大模型之美_AI_ChatGPT_OpenAI_大模型_大数据_NLP-极客时间",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "311a901d68749de3",
-      "parent": 0,
-      "droppable": true,
-      "text": "极客时间-轻松学习，高效学习-极客邦",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "3f13296defab25b8",
-      "parent": 0,
-      "droppable": true,
-      "text": "15｜集群：如何构建分布式的消息队列集群？（上）-极客时间",
+      "text": "New Tab",
       "data": {
         "fileType": "site",
         "fileSize": "",
