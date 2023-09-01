@@ -82,6 +82,31 @@ mmap 在内存充足、数据文件较小且相对固定的场景下，性能比
 
 ### 预分配文件、预初始化、池化
 
+预分配文件是一个简单实用的优化技巧。比如前面讲过，消息队列的数据文件都是需要分段的，所以在创建分段文件的时候，可以预先写入空数据（比如 0）将文件预分配好。此时当我们真正写入业务数据的时候，速度就会快很多。
+
+```JAVA
+public void allocate(FileChannel fileChannel, 
+long preFileSize) throw IOException{
+    int bufferSize = 1024;
+    ByteBuffer byteBuffer = ByteBuffer.allocateDirect(bufferSize);
+    for (int i = 0; i < bufferSize; i++) {
+        byteBuffer.put((byte)0);
+    }
+    byteBuffer.flip();
+    long loop = preFileSize / bufferSize;
+    for (long i = 0; i < loop; i++) {
+        fileChannel.write(byteBuffer);
+        byteBuffer.flip();
+    }
+    fileChannel.force(true);
+    fileChannel.position(0);
+}
+```
+
+对一些需要重复用到的对象或者实例化成本较高的对象进行预初始化，可以降低核心流程的资源开销。
+
+还一点就是对象池化，对象池化是指只要是需要反复 new 出来的东西都可以池化，以避免内存分配后再回收，造成额外的开销。Netty 中的 Recycler、RingBuffer 中预先分配的对象都是按照这个池化的思路来实现的。
+
 
 
 # 地址

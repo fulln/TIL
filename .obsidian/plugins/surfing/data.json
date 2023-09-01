@@ -46,32 +46,10 @@
   },
   "treeData": [
     {
-      "id": "0319ff3d0949f8e0",
+      "id": "08167ce76f3668d1",
       "parent": 0,
       "droppable": true,
-      "text": "17｜可靠性：分布式集群的数据一致性都有哪些实现方案?",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "697f4cdb959f9c5c",
-      "parent": 0,
-      "droppable": true,
-      "text": "New Tab",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "ae511f8fc9aa9939",
-      "parent": 0,
-      "droppable": true,
-      "text": "GitHub - smacke/jaydio: A Java library to perform direct I/O in Linux, bypassing file page cache.",
+      "text": "07 | 白话容器基础（三）：深入理解容器镜像-极客时间",
       "data": {
         "fileType": "site",
         "fileSize": "",
