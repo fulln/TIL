@@ -1,11 +1,14 @@
 ---
 dg-publish: true
+tags:
+  - 日志
+createTime: <% tp.file.creation_date() %>
 ---
 <%*
 let checkDate = tp.file.creation_date("YYYY-MM-DD")
 let checkTime = tp.file.creation_date("YYYY-MM")
 daily_folder = "daily/"+checkTime+"/"+checkDate
-tp.file.move(daily_folder)
+await tp.file.move(daily_folder)
 %>
 
 <% tp.user.get_date() %>
@@ -38,7 +41,31 @@ tp.file.move(daily_folder)
 
 
 ## 今日文章
+ <%*
+let li = app.fileManager.vault.fileMap
+let fileList = []
 
+getChildren(li["code"].children,fileList)
+getChildren(li["lib"].children,fileList)
+
+function getChildren(list,fileList){  
+   list.forEach(e => {  
+       if (e.children) {  
+           getChildren(e.children,fileList)  
+       }else{       
+		    if(moment(e.stat.ctime).format("YYYY-MM-DD") == checkDate){
+			    fileList.push(e)
+		    }
+       }  
+   })  
+}
+
+fileList = fileList.map(f => {
+    return "- [["+f.name+"]]\n"
+})
+fileList = fileList.join("")
+%>
+<% fileList %>
 ## 微信阅读
 
 <!-- start of weread -->
