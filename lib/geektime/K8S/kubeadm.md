@@ -2,7 +2,9 @@
 dg-publish: true
 title: Kubernetes一键部署利器：kubeadm
 createTime: 2023-09-05 23:13
-tags: []
+tags:
+  - k8s
+  - 运维
 ---
 # Kubernetes一键部署利器：kubeadm
 **要真正发挥容器技术的实力，你就不能仅仅局限于对 Linux 容器本身的钻研和使用。**
