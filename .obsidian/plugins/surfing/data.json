@@ -88,6 +88,28 @@
         "fileSize": "",
         "icon": {}
       }
+    },
+    {
+      "id": "966ba51f00e43560",
+      "parent": 0,
+      "droppable": true,
+      "text": "极客时间",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "c48fe9d5f677436f",
+      "parent": 0,
+      "droppable": true,
+      "text": "极客时间",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
     }
   ]
 }
