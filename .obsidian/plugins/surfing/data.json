@@ -46,65 +46,10 @@
   },
   "treeData": [
     {
-      "id": "444f40bd10128fe1",
+      "id": "589baf9c33c6bd92",
       "parent": 0,
       "droppable": true,
-      "text": "极客时间-轻松学习，高效学习-极客邦",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "de0083c6111ccd92",
-      "parent": 0,
-      "droppable": true,
-      "text": "极客时间-轻松学习，高效学习-极客邦",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "870ca8ffc5594c31",
-      "parent": 0,
-      "droppable": true,
-      "text": "极客时间",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "498cb679f87c40f1",
-      "parent": 0,
-      "droppable": true,
-      "text": "02｜挑战与趋势：云原生时代JVM的演进之路-极客时间",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "966ba51f00e43560",
-      "parent": 0,
-      "droppable": true,
-      "text": "极客时间",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "c48fe9d5f677436f",
-      "parent": 0,
-      "droppable": true,
-      "text": "极客时间",
+      "text": "极客时间 | 深入剖析Kubernetes",
       "data": {
         "fileType": "site",
         "fileSize": "",
