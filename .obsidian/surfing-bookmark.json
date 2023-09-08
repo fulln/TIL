@@ -1,16 +1,16 @@
 {
   "bookmarks": [
     {
-      "id": "41244630",
-      "name": "极客时间 | 深入剖析Kubernetes",
-      "url": "file://wsl.localhost/Ubuntu-20.04/home/fulln/opt/books/kubernetes/HTML/13%20%20%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E4%BB%AC%E9%9C%80%E8%A6%81Pod%EF%BC%9F.html",
+      "id": "312774099",
+      "name": "Kubernetes本地",
+      "url": "file://wsl.localhost/Ubuntu-20.04/home/fulln/opt/books/kubernetes/HTML/",
       "description": "",
       "category": [
         "ROOT"
       ],
       "tags": "",
-      "created": 1694188689851,
-      "modified": 1694188689851
+      "created": 1694188680000,
+      "modified": 1694188920000
     },
     {
       "id": "1707109789",
