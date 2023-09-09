@@ -44,17 +44,5 @@
     ],
     "defaultFilterType": "tree"
   },
-  "treeData": [
-    {
-      "id": "e17118aba703e4c6",
-      "parent": 0,
-      "droppable": true,
-      "text": "Design Patterns for Container-based Distributed Systems | USENIX",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    }
-  ]
+  "treeData": []
 }
