@@ -15,7 +15,7 @@ dg-publish: true
 > [!note] 2023 tags
 > #日漫 #程序员 #散漫 #随和 #科技爱好者 #探索   #系统设计 #java #python  #规划者
 
-# life's a struggle 
+## life's a struggle 
 
 > [!Abstract] 日拱一卒 
 > 
