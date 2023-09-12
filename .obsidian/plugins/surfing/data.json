@@ -44,28 +44,5 @@
     ],
     "defaultFilterType": "tree"
   },
-  "treeData": [
-    {
-      "id": "797a3ebaed120ecc",
-      "parent": 0,
-      "droppable": true,
-      "text": "20｜安全：如何设计高吞吐和大流量分布式集群的限流方案？",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "d2278895dbe0008b",
-      "parent": 0,
-      "droppable": true,
-      "text": "kafka/core/src/main/scala/kafka/server/ClientQuotaManager.scala at trunk · apache/kafka · GitHub",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    }
-  ]
+  "treeData": []
 }
