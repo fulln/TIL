@@ -44,5 +44,28 @@
     ],
     "defaultFilterType": "tree"
   },
-  "treeData": []
+  "treeData": [
+    {
+      "id": "316a77e4d59cd31e",
+      "parent": 0,
+      "droppable": true,
+      "text": "Spring Initializr Reference Guide",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "34c4c909a7433aed",
+      "parent": 0,
+      "droppable": true,
+      "text": "极客时间 | 深入剖析Kubernetes",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    }
+  ]
 }

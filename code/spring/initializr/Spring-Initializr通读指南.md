@@ -30,20 +30,23 @@ Initializr 分为几个模块：
 
 为了了解项目生成背后的概念，让我们 更详细地看`initializr-generator`一下。`initializr-generator-spring`
 
-##  `initializr-generator`
+###  `initializr-generator`
+该`initializr-generator`模块包含生成基于 JVM 的项目所需的低级基础设施。
+
+#### Project Generator
 
 类`ProjectGenerator`是项目生成的主要入口点。 `ProjectGenerator`定义`ProjectDescription`了要生成的特定项目以及`ProjectAssetGenerator`负责根据可用候选人生成资产的实现。
 
 项目由`ProjectDescription`以下属性组成：
 
-- Basic coordinates such as `groupId`, `artifactId`, `name`, `description`
-- The `BuildSystem` and `Packaging`
-- The JVM `Language`
-- The requested dependencies, indexed by ID
-- A platform `Version` used by the project. This can be used to tune available dependencies according to the chosen generation.
-- The name of the `application`
-- The root package name
-- The base directory for the project (if different from the root)
+- 基本信息如`groupId`, `artifactId`, `name`,`description`
+- `BuildSystem` 和 `Packaging`
+- JVM`Language`
+- 请求的依赖项，按 ID 索引
+- `Version`项目使用的平台。这可用于根据所选代来调整可用的依赖项。
+- `application` 名
+- 根包名称
+- 项目的基目录（如果与根目录不同）
 
 项目生成发生在专用应用程序上下文 ( `ProjectGenerationContext`) 中，这意味着对于生成的每个项目，上下文仅包含与该特定项目相关的配置和组件。a 的候选组件`ProjectGenerationContext`在带注释的配置类中定义`@ProjectGenerationConfiguration`。如果在 中注册了这些配置类，则会自动导入这些配置类`META-INF/spring.factories`，如下例所示：
 
@@ -53,9 +56,29 @@ com.example.acme.build.BuildProjectGenerationConfiguration,\
 com.example.acme.code.SourceCodeProjectGenerationConfiguration
 ```
 
+添加到的组件`ProjectGenerationContext`通常具有可用的使用条件。使用条件可以避免暴露必须检查是否必须执行某些操作的 Bean，并使声明更加惯用。考虑以下示例：
+```
+@Bean
+@ConditionalOnBuildSystem(GradleBuildSystem.ID)
+@ConditionalOnPackaging(WarPackaging.ID)
+public BuildCustomizer<GradleBuild> warPluginContributor() {
+    return (build) -> build.plugins().add("war");
+}
+```
 
+`BuildSystem`仅当要生成的项目使用“Gradle”和“war”时，这才会注册一个可以自定义 Gradle 构建的组件`Packaging`。查看 `io.spring.initializr.generator.condition`包以了解更多条件。您可以通过继承轻松创建自定义条件`ProjectGenerationCondition`。
 
+您只能对已加载的 bean 使用此类条件， `ProjectGenerationConfiguration`因为它们需要具体的`ProjectDescription`bean 才能正常运行。
 
+项目生成还可能依赖于不特定于特定项目配置的基础设施，并且通常在 main 中配置，`ApplicationContext`以避免每次新请求进入时都注册它。一个常见的用例是将 main 设置 `ApplicationContext`为`ProjectGenerationContext`,如下例所示：
+```
+public ProjectGenerator createProjectGenerator(ApplicationContext appContext) {
+    return new ProjectGenerator((context) -> {
+        context.setParent(appContext);
+        context.registerBean(SampleContributor.class, SampleContributor::new);
+    });
+}
+```
+这将创建一个新的`ProjectGenerator`，可以使用应用程序的任何 bean，注册在`META-INF/spring.factories`中找到的所有contributors，并以编程方式注册一个额外的`ProjectContributor`。
 
-
-
+项目生成还可能依赖于不特定于特定项目配置的基础设施，并且通常在主 ApplicationContext 中进行配置，以避免每次新请求进入时都进行注册。一个常见的用例是将主 ApplicationContext 设置为 ProjectGenerationContext，如以下示例所示：
