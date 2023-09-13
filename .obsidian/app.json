@@ -15,5 +15,9 @@
     "landscape": false,
     "margin": "0",
     "downscalePercent": 100
-  }
+  },
+  "readableLineLength": false,
+  "smartIndentList": true,
+  "tabSize": 3,
+  "strictLineBreaks": true
 }
