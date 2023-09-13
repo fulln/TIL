@@ -82,3 +82,5 @@ public ProjectGenerator createProjectGenerator(ApplicationContext appContext) {
 这将创建一个新的`ProjectGenerator`，可以使用应用程序的任何 bean，注册在`META-INF/spring.factories`中找到的所有contributors，并以编程方式注册一个额外的`ProjectContributor`。
 
 项目生成还可能依赖于不特定于特定项目配置的基础设施，并且通常在主 ApplicationContext 中进行配置，以避免每次新请求进入时都进行注册。一个常见的用例是将主 ApplicationContext 设置为 ProjectGenerationContext，如以下示例所示：
+
+

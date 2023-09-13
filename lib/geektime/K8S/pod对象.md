@@ -130,49 +130,27 @@ metadata.annotations - Pod 的所有 Annotation
 在 Kubernetes 中，你可以为 Pod 里的容器定义一个健康检查“探针”（Probe）。这样，kubelet 就会根据这个 Probe 的返回值决定这个容器的状态，而不是直接以容器进行是否运行（来自 Docker 返回的信息）作为依据。这种机制，是生产环境中保证应用健康存活的重要手段。
 
 ```yml
-
 apiVersion: v1
-
 kind: Pod
-
 metadata:
-
   labels:
-
     test: liveness
-
   name: test-liveness-exec
-
 spec:
-
   containers:
-
   - name: liveness
-
     image: busybox
-
     args:
-
     - /bin/sh
-
     - -c
-
     - touch /tmp/healthy; sleep 30; rm -rf /tmp/healthy; sleep 600
-
     livenessProbe:
-
       exec:
-
         command:
-
         - cat
-
         - /tmp/healthy
-
       initialDelaySeconds: 5
-
       periodSeconds: 5
-
 ```
 
 > 我们定义了一个这样的 livenessProbe（健康检查）。它的类型是 exec，这意味着，它会在容器启动后，在容器里面执行一句我们指定的命令，比如：“cat /tmp/healthy”。这时，如果这个文件存在，这条命令的返回值就是 0，Pod 就会认为这个容器不仅已经启动，而且是健康的。这个健康检查，在容器启动 5 s 后开始执行（initialDelaySeconds: 5），每 5 s 执行一次（periodSeconds: 5）。
@@ -197,27 +175,16 @@ spec:
 livenessProbe 也可以定义为发起 HTTP 或者 TCP 请求的方式，定义格式如下：
 
 ```yml
-
 livenessProbe:
-
      httpGet:
-
        path: /healthz
-
        port: 8080
-
        httpHeaders:
-
        - name: X-Custom-Header
-
          value: Awesome
-
        initialDelaySeconds: 3
-
        periodSeconds: 3
-
 ```
-
 在 Kubernetes 的 Pod 中，还有一个叫 readinessProbe 的字段。虽然它的用法与 livenessProbe 类似，但作用却大不一样。readinessProbe 检查结果的成功与否，决定的这个 Pod 是不是能被通过 Service 的方式访问到，而并不影响 Pod 的生命周期
 
 
@@ -227,41 +194,23 @@ Pod 的字段这么多，我又不可能全记住，Kubernetes 能不能自动�
 
 #### PodPreset
 ```yml
-
 apiVersion: settings.k8s.io/v1alpha1
-
 kind: PodPreset
-
 metadata:
-
   name: allow-database
-
 spec:
-
   selector:
-
     matchLabels:
-
       role: frontend
-
   env:
-
     - name: DB_PORT
-
       value: "6379"
-
   volumeMounts:
-
     - mountPath: /cache
-
       name: cache-volume
-
   volumes:
-
     - name: cache-volume
-
       emptyDir: {}
-
 ```
 在这个 PodPreset 的定义中，首先是一个 selector。这就意味着后面这些追加的定义，只会作用于 selector 所定义的、带有“role: frontend”标签的 Pod 对象，这就可以防止“误伤”。
 
