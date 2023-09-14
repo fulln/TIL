@@ -100,3 +100,5 @@ public class SampleContributor implements ProjectContributor {
 一旦根据可用的 s 定制了描述 `ProjectDescriptionCustomizer`，生成器就会使用 s`ProjectAssetGenerator`来生成项目资产。该`initializr-generator`模块提供了此接口 ( ) 的默认实现`` `DefaultProjectAssetGenerator ``，它使用可用的 bean 生成目录结构`ProjectContributor`。
 
 虽然默认`ProjectAssetGenerator`使用文件系统并调用一组特定的组件，但可以将同一`ProjectGenerator`实例与完全专注于其他内容的自定义实现一起使用
+
+
