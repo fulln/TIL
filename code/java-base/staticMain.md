@@ -1,5 +1,10 @@
-#java  #javabasic 
-
+---
+dg-publish: true
+tags:
+  - java
+  - javabasic
+createTime: 2023-01-27 12:49
+---
 ## java为啥会有static main?
 
 ### 为啥main 方法要static修饰
