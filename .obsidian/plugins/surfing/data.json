@@ -46,10 +46,10 @@
   },
   "treeData": [
     {
-      "id": "b7a0fe17cff0f444",
+      "id": "832e236b57db1794",
       "parent": 0,
       "droppable": true,
-      "text": "极客时间-轻松学习，高效学习-极客邦",
+      "text": "极客时间 | 深入剖析Kubernetes",
       "data": {
         "fileType": "site",
         "fileSize": "",
@@ -57,21 +57,10 @@
       }
     },
     {
-      "id": "7268111a089f9940",
+      "id": "fa892807c499d280",
       "parent": 0,
       "droppable": true,
-      "text": "极客时间-轻松学习，高效学习-极客邦",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "76cff523be4c79ea",
-      "parent": 0,
-      "droppable": true,
-      "text": "16 | 编排其实很简单：谈谈“控制器”模型",
+      "text": "New Tab",
       "data": {
         "fileType": "site",
         "fileSize": "",

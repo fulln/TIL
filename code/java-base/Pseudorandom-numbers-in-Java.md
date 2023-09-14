@@ -1,5 +1,3 @@
-#java #javabasic #数据结构 
-
 ## Random and pseudorandom numbers are needed for everything from simulations to cryptography. Here’s how they work.
 
 ### What is randomness?

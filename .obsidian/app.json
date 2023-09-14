@@ -4,7 +4,7 @@
   "newFileLocation": "folder",
   "promptDelete": false,
   "showUnsupportedFiles": true,
-  "newLinkFormat": "shortest",
+  "newLinkFormat": "absolute",
   "useMarkdownLinks": false,
   "newFileFolderPath": "newFiles",
   "defaultViewMode": "source",
