@@ -1,5 +1,10 @@
-#markdown  #流程图
-
+---
+dg-publish: true
+tags:
+  - markdown
+  - "#流程图"
+createTime: <% tp.file.creation_date() %>
+---
 ## 概念
 
 -   什么是Mermaid？
