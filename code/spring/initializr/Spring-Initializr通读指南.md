@@ -9,9 +9,9 @@
 
 Spring Initializr 提供了一个可扩展的 API 来生成基于 JVM 的项目，并检查用于生成项目的元数据，例如列出可用的依赖项和版本。
 
-您可以使用 Spring Initializr 轻松创建自己的实例，将 jar 用作您自己的应用程序中的库。涉及的代码最少，并且该服务具有非常丰富的配置结构，使您不仅可以定义各种项目属性的值，还可以定义依赖项列表以及应用于它们的约束。如果这听起来很有趣，那么[配置指南](https://docs.spring.io/initializr/docs/current-SNAPSHOT/reference/html/#configuration-guide)包含您需要的所有详细信息。您可能只想修改 Spring Initializr 的现有实例，例如添加新的依赖项类型，或更新现有依赖项类型的版本。对于这些以及其他简单和常见的用例，请查看 [“操作方法”指南](https://docs.spring.io/initializr/docs/current-SNAPSHOT/reference/html/#configuration-howto)。
+您可以使用 Spring Initializr 轻松创建自己的实例，将 `initializr-generator` 用作您自己的应用程序中的库。涉及的代码最少，并且该服务具有非常丰富的配置结构，使您不仅可以定义各种项目属性的值，还可以定义依赖项列表以及应用于它们的约束。如果这听起来很有趣，那么[配置指南](https://docs.spring.io/initializr/docs/current-SNAPSHOT/reference/html/#configuration-guide)包含您需要的所有详细信息。您可能只想修改 Spring Initializr 的现有实例，例如添加新的依赖项类型，或更新现有依赖项类型的版本。对于这些以及其他简单和常见的用例，请查看 [“操作方法”指南](https://docs.spring.io/initializr/docs/current-SNAPSHOT/reference/html/#configuration-howto)。
 
-Spring Initializr 还提供了一个可扩展的 API 来生成基于 JVM 的项目，并检查用于生成项目的元数据，例如列出可用的依赖项和版本。该 API 可以独立使用，也可以嵌入到其他工具中（例如，它用于 Spring Tool Suite、IntelliJ IDEA Ultimate、Netbeans 和 VSCode 等主要 IDE）。[API 指南](https://docs.spring.io/initializr/docs/current-SNAPSHOT/reference/html/#api-guide)中介绍了这些功能。
+Spring Initializr 还提供了一个可扩展的 API 来生成基于 JVM 的WEB项目，并检查用于生成项目的元数据，例如列出可用的依赖项和版本。该 API 可以独立使用，也可以嵌入到其他工具中（例如，它用于 Spring Tool Suite、IntelliJ IDEA Ultimate、Netbeans 和 VSCode 等主要 IDE）。[API 指南](https://docs.spring.io/initializr/docs/current-SNAPSHOT/reference/html/#api-guide)中介绍了这些功能。
 
 ## 项目生成概述
 
@@ -70,7 +70,7 @@ public BuildCustomizer<GradleBuild> warPluginContributor() {
 
 您只能对已加载的 bean 使用此类条件， `ProjectGenerationConfiguration`因为它们需要具体的`ProjectDescription`bean 才能正常运行。
 
-项目生成还可能依赖于不特定于特定项目配置的基础设施，并且通常在 main 中配置，`ApplicationContext`以避免每次新请求进入时都注册它。一个常见的用例是将 main 设置 `ApplicationContext`为`ProjectGenerationContext`,如下例所示：
+项目生成还可能依赖于不特定于特定项目配置的基础设施，并且通常在主 ApplicationContext 中进行配置，以避免每次新请求进入时都进行注册。一个常见的用例是将主 ApplicationContext 设置为 ProjectGenerationContext，如以下示例所示：
 ```
 public ProjectGenerator createProjectGenerator(ApplicationContext appContext) {
     return new ProjectGenerator((context) -> {
@@ -79,8 +79,24 @@ public ProjectGenerator createProjectGenerator(ApplicationContext appContext) {
     });
 }
 ```
-这将创建一个新的`ProjectGenerator`，可以使用应用程序的任何 bean，注册在`META-INF/spring.factories`中找到的所有contributors，并以编程方式注册一个额外的`ProjectContributor`。
+这将创建一个新的`ProjectGenerator`，可以使用应用程序的任何 bean，注册在`META-INF/spring.factories`中找到的所有contributors，并以编程方式注册一个额外的`ProjectContributor`。`ProjectContributor`是为项目生成的最高级别需要实现接口。下面注册后会在项目结构根部`SampleContributor`生成一个文件，
+```java
+public class SampleContributor implements ProjectContributor {
 
-项目生成还可能依赖于不特定于特定项目配置的基础设施，并且通常在主 ApplicationContext 中进行配置，以避免每次新请求进入时都进行注册。一个常见的用例是将主 ApplicationContext 设置为 ProjectGenerationContext，如以下示例所示：
+    @Override
+    public void contribute(Path projectRoot) throws IOException {
+        Path file = Files.createFile(projectRoot.resolve("hello.txt"));
+        try (PrintWriter writer = new PrintWriter(Files.newBufferedWriter(file))) {
+            writer.println("Test");
+        }
+    }
+}
+```
 
+#### 项目生成生命周期
 
+当使用`ProjectGenerator`用来生成项目时指定的 `ProjectDescription` 可以使用可用的 `ProjectDescriptionCustomizer` bean 进行定制，并且可以使用 Spring 的 Ordered 接口进行排序。`ProjectDescriptionDiff` 可用于希望知道原始`ProjectDescription`是否已被修改。
+
+一旦根据可用的 s 定制了描述 `ProjectDescriptionCustomizer`，生成器就会使用 s`ProjectAssetGenerator`来生成项目资产。该`initializr-generator`模块提供了此接口 ( ) 的默认实现`` `DefaultProjectAssetGenerator ``，它使用可用的 bean 生成目录结构`ProjectContributor`。
+
+虽然默认`ProjectAssetGenerator`使用文件系统并调用一组特定的组件，但可以将同一`ProjectGenerator`实例与完全专注于其他内容的自定义实现一起使用
