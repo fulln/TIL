@@ -1,9 +1,6 @@
 ---
 dg-publish: true
 ---
-
-#java #反射
-
 ## java反射使用getDeclaredMethods
 
 最近在使用`getDeclaredMethods`方法获取类中的方法时碰到奇怪的问题，先来看看`getDeclaredMethods`方法的注释：
