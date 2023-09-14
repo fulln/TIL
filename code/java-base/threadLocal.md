@@ -1,4 +1,11 @@
-#java #javabasic  #thread
+---
+dg-publish: true
+createTime: <% tp.file.creation_date() %>
+tags:
+  - java
+  - javabasic
+  - thread
+---
 ## ThreadLocal 解析
 
 ### 简介

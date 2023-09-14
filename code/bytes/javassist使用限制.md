@@ -1,7 +1,13 @@
-#javassist  #字节码增强 
-
-http://www.javassist.org/tutorial/tutorial2.html#limit
-
+---
+dg-publish: true
+tags:
+  - java
+  - javassist
+  - javabasic
+  - 字节码增强
+createTime: 2023-01-27 12:49
+---
+> http://www.javassist.org/tutorial/tutorial2.html#limit
 ## 使用限制
 
 在当前的实现中，Javassist 中包含的 Java 编译器在编译器可以接受的语言方面有一些限制。这些限制是：

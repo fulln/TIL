@@ -1,5 +1,10 @@
-#git
-
+---
+dg-publish: true
+createTime: <% tp.file.creation_date() %>
+tags:
+  - git
+  - 程序员
+---
 ## git 版本的回滚
 
 有时候git提交错误需要回滚，这里总结下回滚相关的命令

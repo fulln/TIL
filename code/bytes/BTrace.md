@@ -1,5 +1,11 @@
-#java #字节码增强 #BTrace
-
+---
+dg-publish: true
+tags:
+  - javabasic
+  - java
+  - 字节码增强
+createTime: 2023-01-27 12:49
+---
 ## 通过BTrace进行分析
 
 BTrace 能动态的修改程序行为,是基于java虚拟机的Instrument开发的.阿里的Arthas 也是通过Instrument实现了与BTrace类似的功能
@@ -14,16 +20,14 @@ import static com.sun.btrace.BTraceUtils.*;
 @BTrace
 public class TracingScript {
 	/* put your code here */
-    @OnMethod(clazz="com.fulln.common.controller.BTraceTest",method="add",location=@Location(Kind.RETURN))
-public static void fun(@Self com.fulln.common.controller.BTraceTest instance,int a,int b ,@Return int result)
-{
-println("调用堆栈:");
-jstack();
-println(strcat("方法参数A:",str(a)));
-println(strcat("方法参数B:",str(b)));
-println(strcat("方法结果",str(result)));
-        
-}
+	@OnMethod(clazz="com.fulln.common.controller.BTraceTest",method="add",location=@Location(Kind.RETURN))
+	public static void fun(@Self com.fulln.common.controller.BTraceTest instance,int a,int b ,@Return int result){
+		println("调用堆栈:");
+		jstack();
+		println(strcat("方法参数A:",str(a)));
+		println(strcat("方法参数B:",str(b)));
+		println(strcat("方法结果",str(result)));        
+	}
 }
 ```
 
