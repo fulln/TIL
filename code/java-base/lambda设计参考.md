@@ -1,5 +1,12 @@
-#javabasic #lambda
-
+---
+dg-publish:
+  - "true"
+tags:
+  - javabasic
+  - lambda
+  - 字节码增强
+createTime: 2023-01-27 12:49
+---
 > 本文为研读[lambda设计参考](https://cr.openjdk.java.net/~briangoetz/lambda/lambda-translation.html) 的翻译和小结
 
 本文档概述了将 lambda 表达式和方法引用从 Java 源代码转换为字节码的策略。Java 的 Lambda 表达式由[JSR 335](http://jcp.org/en/jsr/detail?id=335)指定并在 OpenJDK [Lambda 项目](http://openjdk.java.net/projects/lambda/)中实现。可以在[State of the Lambda](http://cr.openjdk.java.net/~briangoetz/lambda/lambda-state-4.html)中找到语言功能的概述。

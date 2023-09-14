@@ -1,5 +1,12 @@
-## Random and pseudorandom numbers are needed for everything from simulations to cryptography. Here’s how they work.
-
+---
+dg-publish: true
+tags:
+  - java
+  - random
+  - javabasic
+createTime: 2023-04-22 21:14
+---
+Random and pseudorandom numbers are needed for everything from simulations to cryptography. Here’s how they work.
 ### What is randomness?
 
 随机性是指不可预测或缺乏明确的模式或顺序的质量或状态。换句话说，随机性是事件或过程中预测性或规律性的缺失。例如，抛硬币是一个随机事件，因为无法确定它会落在正面还是反面。随机性是科学和数学许多领域中的基本概念，经常用于模拟复杂系统和生成各种目的的随机数。

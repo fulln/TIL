@@ -1,8 +1,14 @@
-#java #jdk 
+---
+tags:
+  - java
+  - javabasic
+  - jdk
+createTime: 2023-01-27 12:49
+dg-publish: true
+---
 ## JDK15视频发布会及新特性
 
 > B站视频地址:<a>https://www.bilibili.com/video/BV1Va4y1s7Qu?t=2884</a> 直接从25分钟看起
-
 ### 文本块
 
 文本块（text block）是多行字符串字面量，可以用代码表示，而不必处理大多数转义符号和笨重的连接操作
