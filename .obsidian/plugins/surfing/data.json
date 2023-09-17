@@ -46,21 +46,10 @@
   },
   "treeData": [
     {
-      "id": "832e236b57db1794",
+      "id": "9ced0e5e8c548136",
       "parent": 0,
       "droppable": true,
-      "text": "极客时间 | 深入剖析Kubernetes",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "fa892807c499d280",
-      "parent": 0,
-      "droppable": true,
-      "text": "New Tab",
+      "text": "17 | 经典PaaS的记忆：作业副本与水平扩展-极客时间",
       "data": {
         "fileType": "site",
         "fileSize": "",
