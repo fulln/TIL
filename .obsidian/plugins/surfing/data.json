@@ -46,10 +46,10 @@
   },
   "treeData": [
     {
-      "id": "9ced0e5e8c548136",
+      "id": "aef28b984892ea40",
       "parent": 0,
       "droppable": true,
-      "text": "极客时间 | 深入剖析Kubernetes",
+      "text": "极客时间",
       "data": {
         "fileType": "site",
         "fileSize": "",
