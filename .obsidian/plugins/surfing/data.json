@@ -46,10 +46,21 @@
   },
   "treeData": [
     {
-      "id": "aef28b984892ea40",
+      "id": "2cb88c9b17c4687d",
       "parent": 0,
       "droppable": true,
       "text": "极客时间",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
+    },
+    {
+      "id": "d17d57db2a3bc88f",
+      "parent": 0,
+      "droppable": true,
+      "text": "New Tab",
       "data": {
         "fileType": "site",
         "fileSize": "",
