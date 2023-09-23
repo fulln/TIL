@@ -28,6 +28,21 @@ Reactor的3种版本
 ### 主从线程版本
 ![[attachment/Pasted image 20230924000611.png]]
 
+### netty 怎么支持的reactor模式
+
+将serverSocketChannel 绑定到BossGroup，ScoketChannel绑定到ChildGroup
+### mainReactor 只有1个线程
+dobind 绑定一个地址和端口，只会调用一次。
+### childGroup怎么选出的
+2种模式进行选取，普通就是用hash值取模，高级就是用2的次幂获取
+### 怎么跨平台
+
+使用spi 赋值给provider，创建跨平台不同的provide。
+
+
+
+
+
 
 
 
