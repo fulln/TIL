@@ -7,6 +7,27 @@ tags:
 ---
 # Netty的Reactor模式
 
+Reactor的3种版本
+
+1. reactor 单线程
+2. reactor 多线程
+3.  主从reactor 多线程
+
+![[attachment/Pasted image 20230924000327.png]]
+
+### BIO 的模式
+![[attachment/Pasted image 20230924000429.png]]
+
+### 单线程模型
+![[attachment/Pasted image 20230924000500.png]]
+
+### 多线程版本
+
+![[attachment/Pasted image 20230924000533.png]]
+
+### 主从线程版本
+![[attachment/Pasted image 20230924000611.png]]
+
 
 
 
