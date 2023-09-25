@@ -66,6 +66,17 @@
         "fileSize": "",
         "icon": {}
       }
+    },
+    {
+      "id": "471397fe6783c0e5",
+      "parent": 0,
+      "droppable": true,
+      "text": "Dynamically modifying Logger log levels in Spring Boot applications - Spring Cloud",
+      "data": {
+        "fileType": "site",
+        "fileSize": "",
+        "icon": {}
+      }
     }
   ]
 }
