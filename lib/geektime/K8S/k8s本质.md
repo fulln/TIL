@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: <%* tp.file.title %>
+title: 
 createTime: 2023-09-04 22:28
 tags:
   - k8s
