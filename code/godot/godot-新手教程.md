@@ -39,5 +39,22 @@ tags:
 5. 命名2个Frames，一个叫walk，一个叫up，把`art` 中的4个资源贴过来
 6. 图片太大了，需要调整大小。点击在`AnimatedSprite2D` 下的 `Node2D` -> `Transform` ，调整Scale为`0.5,0.5`
 7. 在`Player` 下面添加 [CollisionShape2D](https://docs.godotengine.org/en/stable/classes/class_collisionshape2d.html#class-collisionshape2d)子场景，这个是用来创建物品边界的node，创建一个`CapsuleShape2D` 的节点，然后调整边界大小，覆盖图片大小
-8. 设置脚本
 
+ ###### 设置Player脚本
+1. 设置全局变量
+```scpipt
+extends Area2D
+
+@export var speed = 400 # How fast the player will move (pixels/sec).
+var screen_size # Size of the game window.
+```
+
+2. 设置初始化方法，初始化下屏幕大小
+```
+func _ready():
+	screen_size = get_viewport_rect().size
+```
+
+3. 设置处理方法， 这个方法来定义用户怎么操控这个游戏，
+
+> 项目设置，将所有输入map定义好，映射用户的操作按钮上
