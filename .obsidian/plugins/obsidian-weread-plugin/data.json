@@ -5,10 +5,6 @@
       "value": "239175594"
     },
     {
-      "name": "wr_fp",
-      "value": "3380375348"
-    },
-    {
       "name": "wr_vid",
       "value": "233589967"
     },
@@ -38,7 +34,11 @@
     },
     {
       "name": "wr_skey",
-      "value": "X0AOvP3a"
+      "value": "SfPfyL4B"
+    },
+    {
+      "name": "wr_fp",
+      "value": "65306946"
     }
   ],
   "noteLocation": "weread",
@@ -46,7 +46,7 @@
   "insertAfter": "<!-- start of weread -->",
   "insertBefore": "<!-- end of weread -->",
   "dailyNotesFormat": "YYYY-MM/YYYY-MM-DD",
-  "lastCookieTime": 1698071255216,
+  "lastCookieTime": 1698335971600,
   "isCookieValid": true,
   "user": "手冢治熊",
   "userVid": "233589967",

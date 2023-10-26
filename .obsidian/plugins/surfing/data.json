@@ -44,17 +44,5 @@
     ],
     "defaultFilterType": "tree"
   },
-  "treeData": [
-    {
-      "id": "d6ac85e05c0ac969",
-      "parent": 0,
-      "droppable": true,
-      "text": "12 | 连接无效：使用Keep-Alive还是应用心跳来检测？-极客时间",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    }
-  ]
+  "treeData": []
 }
