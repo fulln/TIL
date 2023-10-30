@@ -56,5 +56,34 @@ func _ready():
 ```
 
 3. 设置处理方法， 这个方法来定义用户怎么操控这个游戏，
-
 > 项目设置，将所有输入map定义好，映射用户的操作按钮上
+
+4. 设置上下左右移动方法，每帧计算移动偏移量position
+5. 选择动画
+ 通过上下移动控制展示的动画类型
+```
+if velocity.x != 0:
+	$AnimatedSprite2D.animation = "walk"
+	$AnimatedSprite2D.flip_v = false
+	# See the note below about boolean assignment.
+	$AnimatedSprite2D.flip_h = velocity.x < 0
+elif velocity.y != 0:
+	$AnimatedSprite2D.animation = "up"
+	$AnimatedSprite2D.flip_v = velocity.y > 0
+```
+
+6. 设置碰撞校验
+只需要设置一次碰撞校验即可，所以在开始时隐藏，并且在碰撞的时候关闭碰撞校验
+```gd
+func _on_body_entered(body):
+	hide() # Player disappears after being hit.
+	hit.emit()
+	# Must be deferred as we can't change physics properties on a physics callback.
+	$CollisionShape2D.set_deferred("disabled", true)
+```
+
+7. 设置敌人
+	1. 设置方法如player
+	2. 设置防止坠落
+
+
