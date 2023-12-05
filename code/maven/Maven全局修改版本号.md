@@ -22,3 +22,4 @@ mvn versions:set -DnewVersion=your_new_version
 这样就可以全局升级你的Maven项目的版本号了。请注意，这个命令会修改所有依赖项的版本号，所以请确保你的所有依赖项都兼容你选择的新的版本号。
 
 5. 运行 `mvn versions:commit` 确认修改
+

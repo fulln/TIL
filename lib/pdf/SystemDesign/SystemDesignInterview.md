@@ -18,4 +18,15 @@ tags:
 
 [[attachment/System Design Interview An Insider’s Guide by Alex Xu (z-lib.org).pdf#page=8&selection=21,11,25,45|System Design Interview An Insider’s Guide by Alex Xu (z-lib.org), page 8]]
 
+## 横向扩展 VS 纵向扩展
+
+纵向扩展的问题:
+> it comes with serious limitations. 
+>  • Vertical scaling has a hard limit. It is impossible to add unlimited CPU and memory to a single server. 
+>  • Vertical scaling does not have failover and redundancy. If one server goes down, the website/app goes down with it completely.
+
+[[attachment/System Design Interview An Insider’s Guide by Alex Xu (z-lib.org).pdf#page=9&selection=6,35,10,41|System Design Interview An Insider’s Guide by Alex Xu (z-lib.org), page 9]]
+
+## 负载均衡
+
 
