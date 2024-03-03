@@ -1,9 +1,15 @@
 {
 	"nodes":[
-		{"id":"8439f463d7aba8f1","x":-660,"y":80,"width":400,"height":400,"type":"file","file":"code/java-base/异常的分类.md"},
-		{"id":"fa141d1d615210aa","x":-80,"y":-120,"width":131,"height":50,"color":"6","type":"text","text":"JavaBase\n"}
+		{"id":"8439f463d7aba8f1","type":"file","file":"code/java-base/base/异常的分类.md","x":-660,"y":80,"width":400,"height":400},
+		{"id":"fa141d1d615210aa","type":"text","text":"JavaBase\n","x":-80,"y":-120,"width":131,"height":50,"color":"6"},
+		{"id":"d7b924a96a61d1bd","type":"file","file":"code/java-base/base/ArrayList.md","x":-660,"y":-495,"width":400,"height":400},
+		{"id":"dab764eb66fc3703","type":"file","file":"code/java-base/base/hashMap.md","x":260,"y":-495,"width":400,"height":400},
+		{"id":"83e4dc0e72966bea","x":-660,"y":-980,"width":400,"height":400,"type":"file","file":"code/java-base/base/String.md"}
 	],
 	"edges":[
-		{"id":"f797006294d8442f","fromNode":"fa141d1d615210aa","fromSide":"bottom","toNode":"8439f463d7aba8f1","toSide":"top"}
+		{"id":"db6e2fc718edca38","fromNode":"fa141d1d615210aa","fromSide":"top","toNode":"d7b924a96a61d1bd","toSide":"right"},
+		{"id":"d3a57eacc0771b94","fromNode":"fa141d1d615210aa","fromSide":"bottom","toNode":"8439f463d7aba8f1","toSide":"right"},
+		{"id":"046311de01e7ce43","fromNode":"fa141d1d615210aa","fromSide":"top","toNode":"dab764eb66fc3703","toSide":"left"},
+		{"id":"d2e139cc9f30df55","fromNode":"fa141d1d615210aa","fromSide":"top","toNode":"83e4dc0e72966bea","toSide":"right"}
 	]
 }
