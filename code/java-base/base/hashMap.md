@@ -60,3 +60,9 @@ tags:
 ## 源码解析
 
 [[code/java-base/base/HashMap源码解析|HashMap源码解析]]
+
+## 相关文档
+
+- [[lib/geektime/数据结构与算法/散列表|散列表]]
+- [[lib/geektime/数据结构与算法/散列表（中）|散列表（中）]]
+- [[lib/geektime/数据结构与算法/散列表（下）|散列表（下）]]

@@ -39,3 +39,7 @@ tags:
     - 获取到当前要删除的变量
 - 1.8中`removeif`
     - [[ArrayList中removeif的源码实现分析]]
+
+## 相关文档
+
+[[lib/geektime/数据结构与算法/QUEUE|QUEUE]]
