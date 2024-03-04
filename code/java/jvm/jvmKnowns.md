@@ -4,19 +4,19 @@
 ![[Pasted image 20230127174345.png]]
 
 ### 2. 类加载子系统:加载过程和加载时机
-1. [[JvmLoadSubSystem#加载过程]]
-2. [[JvmLoadSubSystem#加载时机]]
+1. [[code/java/jvm/JvmLoadSubSystem#加载过程]]
+2. [[code/java/jvm/JvmLoadSubSystem#加载时机]]
 
 ### 3.  类加载器：
 
-[[classLoader#类加载器]]
+[[code/java/jvm/classLoader#类加载器]]
 
 ### 4. JVM 加载机制剖析：
-[[JvmLoadSubSystem#类的生命周期]]
+[[code/java/jvm/JvmLoadSubSystem#类的生命周期]]
 
 ### 5. 双亲委派与打破双亲委派
-1. [[classLoader#双亲委派模型]]
-2. [[classLoader#破坏双亲委派模型]]
+1. [[code/java/jvm/classLoader#双亲委派模型]]
+2. [[code/java/jvm/classLoader#破坏双亲委派模型]]
 
 ### 6. 自定义类加载器
 例子： tomcat
@@ -24,9 +24,9 @@
 ### 7. JVM 运行时数据区
 堆、虚拟机栈、本地方法栈、方法区、字符串常量池、程序计数器
 
-### 8. [[栈帧剖析]]与栈异常案例
+### 8. [[code/java/jvm/栈帧剖析]]与栈异常案例
 
-### 9.[[ 字符串常量池]]如何存储和查找数据
+### 9.[[code/java/jvm/字符串常量池]]如何存储和查找数据
 
 
 ### 10. 方法区存储什么，永久代与元空间是什么关系

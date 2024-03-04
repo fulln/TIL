@@ -95,7 +95,7 @@ dg-publish: true
 8. 调用限定符
 
 #### 初始化
-[[class加载流程之初始化]]
+[[code/java/jvm/class加载流程之初始化]]
 
 ## 加载时机
 
@@ -109,6 +109,6 @@ dg-publish: true
 8. 当初次调用 MethodHandle 实例时，初始化该 MethodHandle 指向的方法所在的类。
 
 
-## 加载器 [[classLoader]]
+## 加载器 [[code/java/jvm/classLoader]]
 
 

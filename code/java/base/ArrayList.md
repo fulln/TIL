@@ -38,7 +38,7 @@ tags:
     - modcount+1
     - 获取到当前要删除的变量
 - 1.8中`removeif`
-    - [[ArrayList中removeif的源码实现分析]]
+    - [[code/java/base/ArrayList中removeif的源码实现分析]]
 
 ## 相关文档
 

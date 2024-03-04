@@ -2,11 +2,11 @@
 	"nodes":[
 		{"type":"text","text":"JVM","id":"bfc465841ca6c10f","x":-680,"y":-20,"width":120,"height":60,"color":"4"},
 		{"id":"8eb2307d36f2649d","x":-1080,"y":10,"width":100,"height":60,"type":"text","text":"GC"},
-		{"id":"db2f6e83ee1da1c6","x":-1700,"y":-500,"width":400,"height":400,"type":"file","file":"code/jvm/jvmUpgrade.md"},
-		{"type":"file","file":"code/jvm/JvmLoadSubSystem.md","id":"01d1039c0230488d","x":-560,"y":380,"width":400,"height":400},
-		{"type":"file","file":"code/jvm/JvmParams.md","id":"0d680ca0388b8533","x":-1700,"y":140,"width":400,"height":400},
-		{"type":"file","file":"code/jvm/jvmArrange.md","id":"170d85af36c7d979","x":-820,"y":-840,"width":400,"height":400},
-		{"type":"file","file":"code/jvm/jvmKnowns.md","id":"377afa9cfc4934a1","x":-160,"y":-300,"width":400,"height":400}
+		{"id":"db2f6e83ee1da1c6","x":-1700,"y":-500,"width":400,"height":400,"type":"file","file":"code/java/jvm/jvmUpgrade.md"},
+		{"type":"file","file":"code/java/jvm/JvmLoadSubSystem.md","id":"01d1039c0230488d","x":-560,"y":380,"width":400,"height":400},
+		{"type":"file","file":"code/java/jvm/JvmParams.md","id":"0d680ca0388b8533","x":-1700,"y":140,"width":400,"height":400},
+		{"type":"file","file":"code/java/jvm/jvmArrange.md","id":"170d85af36c7d979","x":-820,"y":-840,"width":400,"height":400},
+		{"type":"file","file":"code/java/jvm/jvmKnowns.md","id":"377afa9cfc4934a1","x":-160,"y":-300,"width":400,"height":400}
 	],
 	"edges":[
 		{"id":"324b802dd177c113","fromNode":"bfc465841ca6c10f","fromSide":"top","toNode":"170d85af36c7d979","toSide":"bottom","label":"图解"},

@@ -15,7 +15,7 @@ tags:
 	- 单向链表结构
 	- `k,v,hash,nextNode`
 	-  红黑树(TreeNode)
-		- [[code/java-base/base/Map中为啥使用红黑树而不使用平衡二叉树|Map中为啥使用红黑树而不使用平衡二叉树]]
+		- [[code/java/base/Map中为啥使用红黑树而不使用平衡二叉树|Map中为啥使用红黑树而不使用平衡二叉树]]
   - 重写了equals 和hashcode方法
 	- 重写equals以便通过k,v的值都相等时候直接相等
   - 防止hash碰撞
@@ -59,7 +59,7 @@ tags:
 
 ## 源码解析
 
-[[code/java-base/base/HashMap源码解析|HashMap源码解析]]
+[[code/java/base/HashMap源码解析|HashMap源码解析]]
 
 ## 相关文档
 

@@ -1,13 +1,4 @@
 {
-	"nodes":[
-		{"type":"text","text":"mysql","id":"f953869486ed2327","x":-162,"y":-12,"width":250,"height":60},
-		{"type":"text","text":"日志","id":"22e94ec442a7e5c1","x":-600,"y":-12,"width":250,"height":60},
-		{"type":"file","file":"code/mysql/mysqlRedoLog.md","id":"aa6ed246ee50b243","x":-1000,"y":-640,"width":400,"height":400},
-		{"id":"8fc49984c6efe1be","x":-209,"y":-230,"width":250,"height":60,"type":"text","text":"基本结构"}
-	],
-	"edges":[
-		{"id":"e1db5f5c279cc1fd","fromNode":"f953869486ed2327","fromSide":"left","toNode":"22e94ec442a7e5c1","toSide":"right"},
-		{"id":"01273a7389c71406","fromNode":"22e94ec442a7e5c1","fromSide":"top","toNode":"aa6ed246ee50b243","toSide":"bottom"},
-		{"id":"391a06c6b14848ee","fromNode":"f953869486ed2327","fromSide":"top","toNode":"8fc49984c6efe1be","toSide":"bottom"}
-	]
+	"nodes":[],
+	"edges":[]
 }

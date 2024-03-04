@@ -45,7 +45,7 @@ spring-boot 2.2之前默认`spring.jmx.enable=false`
 
 ### 6.  Jar index
 
-通过[[JvmLoadSubSystem]]加载jar包，找到对应文件加载， 然后验证，准备，解析，初始化.
+通过[[code/java/jvm/JvmLoadSubSystem]]加载jar包，找到对应文件加载， 然后验证，准备，解析，初始化.
 `JAR INDEX` 就是用来解决在加载类的时候，遍历jar性能的问题。
 
 #### 使用过程
@@ -60,7 +60,7 @@ spring-boot 2.2之前默认`spring.jmx.enable=false`
 
 ### 7. APP CDS （application  class data sharding）
 
-主要用于启动加速和节省内存，在jdk1.5引入。 jdk8后支持APPClassloader 和自定义classloader，类在加载过程中伴随[[JvmLoadSubSystem#解析(Resolution)]],[[JvmLoadSubSystem#验证(Verification)]]等过程，CDS就是将这个过程产生的数据结构存储到归档文件，在下次运行时重复使用，这个归档文件就是Shared Archive ，以jsa文件为后缀，在使用过程中，就是将jsa文件映射到内存中，让对象头的类型指针指向该地址。
+主要用于启动加速和节省内存，在jdk1.5引入。 jdk8后支持APPClassloader 和自定义classloader，类在加载过程中伴随[[code/java/jvm/JvmLoadSubSystem#解析(Resolution)]],[[code/java/jvm/JvmLoadSubSystem#验证(Verification)]]等过程，CDS就是将这个过程产生的数据结构存储到归档文件，在下次运行时重复使用，这个归档文件就是Shared Archive ，以jsa文件为后缀，在使用过程中，就是将jsa文件映射到内存中，让对象头的类型指针指向该地址。
 
 APP CDS 只会在包含所有class文件的fat-jar生效，对于spring-boot的嵌套jar结构无法生效。需要用maven-shade 插件创建shade jar
 
