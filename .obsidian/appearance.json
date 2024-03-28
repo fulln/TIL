@@ -4,7 +4,7 @@
   "translucency": true,
   "interfaceFontFamily": "Cascadia Mono",
   "baseFontSizeAction": true,
-  "baseFontSize": 15,
+  "baseFontSize": 13,
   "theme": "obsidian",
   "monospaceFontFamily": "Cascadia Mono"
 }
