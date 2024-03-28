@@ -5,7 +5,6 @@
   "obsidian-git",
   "templater-obsidian",
   "obsidian-weread-plugin",
-  "obsidian-kanban",
   "digitalgarden",
   "surfing",
   "obsidian-style-settings",
@@ -13,5 +12,6 @@
   "obsidian-charts",
   "obsidian-advanced-slides",
   "obsidian-excalidraw-plugin",
-  "obsidian-local-rest-api"
+  "obsidian-local-rest-api",
+  "obsidian-mind-map"
 ]
