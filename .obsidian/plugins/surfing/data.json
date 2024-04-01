@@ -46,21 +46,10 @@
   },
   "treeData": [
     {
-      "id": "6a95938f67869898",
+      "id": "f4972300498356e4",
       "parent": 0,
       "droppable": true,
       "text": "系统之美-德内拉·梅多斯-微信读书",
-      "data": {
-        "fileType": "site",
-        "fileSize": "",
-        "icon": {}
-      }
-    },
-    {
-      "id": "7ff7c3152f44dd45",
-      "parent": 0,
-      "droppable": true,
-      "text": "Build your own newsfeed | Inoreader",
       "data": {
         "fileType": "site",
         "fileSize": "",
