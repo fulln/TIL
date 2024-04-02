@@ -14,11 +14,11 @@
     },
     {
       "name": "wr_skey",
-      "value": "35BtBrO1"
+      "value": "DrPawqY0"
     },
     {
       "name": "wr_pf",
-      "value": "undefined"
+      "value": "NaN"
     },
     {
       "name": "wr_rt",
@@ -46,7 +46,7 @@
   "insertAfter": "<!-- start of weread -->",
   "insertBefore": "<!-- end of weread -->",
   "dailyNotesFormat": "YYYY-MM/YYYY-MM-DD",
-  "lastCookieTime": 1706454154154,
+  "lastCookieTime": 1712059510632,
   "isCookieValid": true,
   "user": "手冢治熊",
   "userVid": "233589967",
