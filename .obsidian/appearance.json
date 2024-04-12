@@ -1,10 +1,11 @@
 {
   "accentColor": "",
-  "cssTheme": "Minimal",
+  "cssTheme": "Border",
   "translucency": true,
   "interfaceFontFamily": "Cascadia Mono",
   "baseFontSizeAction": true,
   "baseFontSize": 13,
   "theme": "obsidian",
-  "monospaceFontFamily": "Cascadia Mono"
+  "monospaceFontFamily": "Cascadia Mono",
+  "textFontFamily": "Cousine Nerd Font Mono"
 }
