@@ -1,9 +1,11 @@
 {
 	"nodes":[
-		{"id":"26355a1a2e1608c0","x":-100,"y":-360,"width":400,"height":400,"type":"file","file":"code/mysql/mysql索引.md"},
-		{"id":"811eaa73c5287323","type":"text","text":"mysql","x":500,"y":80,"width":250,"height":60}
+		{"id":"26355a1a2e1608c0","type":"file","file":"code/mysql/mysql索引.md","x":-100,"y":-360,"width":400,"height":400},
+		{"id":"811eaa73c5287323","type":"text","text":"mysql","x":500,"y":80,"width":250,"height":60},
+		{"id":"fa92f1703d9813d9","x":-100,"y":140,"width":400,"height":400,"type":"file","file":"code/mysql/mysql锁.md"}
 	],
 	"edges":[
-		{"id":"cea6190409b86abc","fromNode":"811eaa73c5287323","fromSide":"top","toNode":"26355a1a2e1608c0","toSide":"right"}
+		{"id":"cea6190409b86abc","fromNode":"811eaa73c5287323","fromSide":"top","toNode":"26355a1a2e1608c0","toSide":"right"},
+		{"id":"c1779e0db2482a04","fromNode":"811eaa73c5287323","fromSide":"bottom","toNode":"fa92f1703d9813d9","toSide":"right"}
 	]
 }
